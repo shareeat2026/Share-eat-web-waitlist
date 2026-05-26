@@ -1,0 +1,6 @@
+{
+  "name": "Share eat!",
+  "description": "A mobile app landing page connecting food KOLs with restaurants.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
