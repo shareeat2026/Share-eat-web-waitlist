@@ -6,6 +6,8 @@
   <title>Share eat! - Eat Free. Go Viral. Together.</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
     :root {
       --bg-color: #faf9f5;
       --text-color: #1a1a1a;
@@ -366,6 +368,99 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* KOL-specific high-converting copy styling additions */
+    .pill-accent {
+      background: rgba(245, 200, 66, 0.15);
+      color: #c99308;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .pain-box {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.01);
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .checklist-collab {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+      margin-top: 24px;
+    }
+
+    .checklist-collab li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      font-size: 1.1rem;
+      color: #333333;
+      text-align: left;
+    }
+
+    .checklist-collab .check-icon {
+      color: #c99308;
+      background: rgba(245, 200, 66, 0.15);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .faq-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.02);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(245, 200, 66, 0.4);
+      box-shadow: 0 10px 25px rgba(245, 200, 66, 0.05);
+    }
+
+    .faq-question {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .faq-answer {
+      color: #555555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -389,8 +484,8 @@
           <h1>Eat Free.<br><span style="color: #dfa612;">Go Viral.</span><br>Together.</h1>
           <p>The exclusive platform where culinary experiences meet authentic social clout.<br/>Honest reviews in exchange for complimentary dining.</p>
           <div class="hero-buttons">
-            <a href="kol.html" class="btn btn-primary">I'm a Food KOL</a>
-            <a href="restaurant.html" class="btn btn-secondary">I'm a Restaurant</a>
+            <a href="#/kol" class="btn btn-primary">I'm a Food KOL</a>
+            <a href="#/restaurant" class="btn btn-secondary">I'm a Restaurant</a>
           </div>
         </div>
       </section>
@@ -417,40 +512,98 @@
 
     <!-- ROUTE: KOL -->
     <div v-if="route === 'kol'">
+      <!-- HERO SECTION -->
       <section class="hero fade-in">
-        <div class="container">
-          <h1>The VIP Pass For<br><span style="color: #dfa612;">Food Creators</span></h1>
-          <p>Discover and claim complimentary dining experiences hosted by top-rated local restaurants. Grow your portfolio risk-free.</p>
-          <div class="hero-buttons">
-            <button @click="redirectToKol" class="btn btn-primary">Join the Waitlist</button>
+        <div class="container" style="max-width: 800px;">
+          <span class="pill-accent">For Malaysian Food Creators</span>
+          <h1 style="font-size: clamp(2.5rem, 6vw, 64px); line-height: 1.1; margin-bottom: 24px;">
+            Stop paying for your own content.<br>
+          </h1>
+          <p style="font-size: 1.15rem; max-width: 650px; margin: 0 auto 40px; color: #4a4a4a; line-height: 1.6;">
+            Malaysia’s first collaborative app connecting foodie creators directly with approved restaurant complimentary dining.
+          </p>
+          
+          <!-- Mock Email Capture bar for maximum Waitlist conversions -->
+          <div style="max-width: 500px; margin: 0 auto 16px; display: flex; gap: 12px; background: #ffffff; padding: 6px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+            <input type="email" placeholder="Enter your email address..." style="flex: 1; border: none; outline: none; padding: 12px 16px; font-size: 1rem; font-family: var(--font-body); border-radius: 12px; background: transparent;" />
+            <button @click="redirectToKol" class="btn btn-primary" style="padding: 12px 24px; font-size: 13px; border-radius: 10px; white-space: nowrap;">Join Waitlist</button>
+          </div>
+          <p style="font-size: 0.85rem; color: #6c757d; margin-top: 12px;">
+            ✨ Join over 158+ Malaysian foodie creators already on the waitlist
+          </p>
+        </div>
+      </section>
+
+      <!-- WHO IS THIS FOR -->
+      <section class="section pt-0">
+        <div class="container" style="max-width: 800px;">
+          <div class="pain-box fade-in">
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 2rem; color: #1a1a1a; margin-bottom: 8px;">
+              You're in the right place if...
+            </h3>
+            <p style="color: #666666; font-size: 1rem; font-family: 'Poppins', sans-serif;">
+            
+            </p>
+            
+            <ul class="checklist-collab">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You're tired of spending RM100+ of your own money every single week just to shoot one food review video.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You have sent 50+ Instagram or TikTok DMs to restaurants and got left on 'read' or completely ghosted.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You want to do professional food reviews, but cold emailing and pitching feels like a draining, full-time sales job.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You have between 1K to 100K followers and know your content is fire, but have no reliable pipeline of collabs.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You feel like you're running this creator journey entirely alone with zero infrastructure or support.</span>
+              </li>
+            </ul>
+
+            <div style="border-top: 1px solid rgba(0,0,0,0.06); padding-top: 24px; text-align: center;">
+              <p style="font-size: 1.15rem; color: #1a1a1a; font-weight: 600;">
+                If that's you, you're exactly who we built this for.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- HOW IT WORKS -->
       <section class="section pt-0">
         <div class="container">
            <div class="split-grid fade-in" style="grid-template-columns: 1fr;">
-              <div class="column" style="max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title" style="margin-bottom: 40px; text-align: left; font-size: 2.5rem;">How It Works</h2>
+              <div class="column" style="max-width: 800px; margin: 0 auto; width: 100%;"><h2 class="section-title" style="margin-bottom: 40px; text-align: center; font-size: 2.5rem; font-family: 'Poppins', sans-serif;">How It Works</h2>
+                
                 <div class="step">
                   <div class="step-number">01</div>
                   <div class="step-content">
-                    <h4>Browse Exclusive Offers</h4>
-                    <p>Discover and claim complimentary dining experiences hosted by top-rated local restaurants.</p>
+                    <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Browse Campaigns</h4>
+                    <p>Open your feed and explore active restaurants seeking creators.</p>
                   </div>
                 </div>
+                
                 <div class="step">
                   <div class="step-number">02</div>
                   <div class="step-content">
-                    <h4>Dine &amp; Indulge</h4>
-                    <p>Verify your deal, show up, and enjoy a curated meal entirely on the house.</p>
+                    <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Apply &amp; Dine</h4>
+                    <p>Select campaigns that fit your style, get approved, and feast on the house.</p>
                   </div>
                 </div>
+                
                 <div class="step">
                   <div class="step-number">03</div>
                   <div class="step-content">
-                    <h4>Post Your Review</h4>
-                    <p>Share your honest footage and thoughts on your socials to build your food portfolio.</p>
+                    <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Post &amp; Grow</h4>
+                    <p>Share your honest review and grow your creator profile.</p>
                   </div>
                 </div>
               </div>
@@ -458,25 +611,94 @@
         </div>
       </section>
 
+      <!-- BENEFITS SECTION -->
       <section class="section pt-0">
         <div class="container fade-in">
-          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem;">Why Join?</h2>
+          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem; text-align: center; font-family: 'Poppins', sans-serif;">From The Grind to True Independance</h2>
           <div class="cards-grid">
-            <div class="card" v-for="prop in valPropsKol" :key="prop.title">
-              <div class="card-icon">{{ prop.icon }}</div>
-              <h4>{{ prop.title }}</h4>
-              <p>{{ prop.desc }}</p>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">🎯</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Stop Chasing, Start Choosing</h4>
+              <p>Say goodbye to sending cold DMs. Restaurants post active campaigns, you browse, pick your favorites, and apply on your own terms.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">💵</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Zero Out-of-Pocket</h4>
+              <p>Stop funding your content yourself. Get complimentary dining experiences entirely sponsored so you can reinvest in your equipment and editing.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">📈</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Build Creative Following</h4>
+              <p>Collaborate with actual, verified Malaysian F&B brands. Turn casual foodie posting into a credible, structured portfolio.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">🏠</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Create with Infrastructure</h4>
+              <p>You don't have to navigate the hustle alone. Get the structured campaigns, clear deliverables, and creative independence you need to run your brand.</p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- FAQ SECTION -->
+      <section class="section pt-0">
+        <div class="container fade-in">
+          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem; text-align: center; font-family: 'Poppins', sans-serif;">Frequently Asked Questions</h2>
+          <div class="faq-wrapper">
+            <div class="faq-item">
+              <div class="faq-question">Do I need a big following?</div>
+              <div class="faq-answer">
+                No, lah! We focus heavily on micro-influencers and rising creators (typically between 1K–10K followers). If your videos look good and your audience is active, Malaysian brands want to host you.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">Is it actually free?</div>
+              <div class="faq-answer">
+                Yes, 100% free for foodie creators. No membership fees, no hidden platform cuts. You bring your raw, authentic creativity, the restaurant team serves your meal on the house.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">What restaurants are on the platform?</div>
+              <div class="faq-answer">
+                We are actively partnering with dining spots and trendy cafes across Klang Valley, from artisanal burger joints and aesthetic matcha spaces to hotpots and fine dining.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">How do I get approved for campaigns?</div>
+              <div class="faq-answer">
+                Super simple. Once you join, browse the campaign feed and apply to campaigns you like. Restaurants review your social handles, verify your audience vibe, and approve you directly in the platform.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">How is this different from just DMing restaurants myself?</div>
+              <div class="faq-answer">
+                DMing is a massive headache. You get ghosted, or you deal with an intern with zero authority. On Share Eat!, every restaurant listed is actively searching and looking to host partners immediately.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA SECTION -->
       <section class="section">
         <div class="container fade-in">
-          <div class="form-card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <h3 style="color: #1a1a1a; font-size: 28px !important; margin-bottom: 24px !important; letter-spacing: normal; text-transform: none; font-family: var(--font-heading);">Ready to eat for free?</h3>
-            <p style="color: #4a4a4a; margin-bottom: 32px; font-size: 1.1rem;">Join hundreds of creators in your city already dining on the house.</p>
-            <button @click="redirectToKol" class="btn btn-primary" style="width: 100%;">Join the Waitlist</button>
+          <div class="form-card" style="max-width: 650px; margin: 0 auto; text-align: center; background: #ffffff;">
+            <span class="pill-accent" style="margin-bottom: 16px;">⏳ Limited Early Access</span>
+            <h3 style="color: #1a1a1a; font-size: 2.2rem !important; margin-bottom: 16px !important; letter-spacing: -0.02em; text-transform: none; font-family: var(--font-heading); line-height: 1.2;">
+              Stop funding your own content meals. Start creating & growing for free.
+            </h3>
+            <p style="color: #555555; margin-bottom: 32px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+              Phase 1 Klang Valley invites are strictly capped at 200 foodie creators. Pre-register today to secure your spot.
+            </p>
+            
+            <div style="max-width: 500px; margin: 0 auto 16px; display: flex; gap: 12px; background: #ffffff; padding: 6px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+              <input type="email" placeholder="Enter your email address..." style="flex: 1; border: none; outline: none; padding: 12px 16px; font-size: 1rem; font-family: var(--font-body); border-radius: 12px; background: transparent;" />
+              <button @click="redirectToKol" class="btn btn-primary" style="padding: 12px 24px; font-size: 13px; border-radius: 10px; white-space: nowrap;">Secure My Spot</button>
+            </div>
           </div>
         </div>
       </section>
@@ -484,40 +706,98 @@
 
     <!-- ROUTE: RESTAURANT -->
     <div v-if="route === 'restaurant'">
+      <!-- HERO SECTION -->
       <section class="hero fade-in">
-        <div class="container">
-          <h1>Risk-Free Marketing<br>With <span style="color: #dfa612;">Real Creators</span></h1>
-          <p>Host local food influencers for a complimentary meal, and receive authentic, high-quality social media exposure that drives immediate foot traffic.</p>
-          <div class="hero-buttons">
-            <button @click="redirectToRest" class="btn btn-primary">Join the Waitlist</button>
+        <div class="container" style="max-width: 800px;">
+          <span class="pill-accent" style="font-family: 'Poppins', sans-serif;">For Restaurant Partners</span>
+          <h1 style="font-size: clamp(2.5rem, 6vw, 64px); line-height: 1.1; margin-bottom: 24px; font-family: Georgia, serif;">
+            Pack your empty tables with real local crowds. Paid in food, not cash.
+          </h1>
+          <p style="font-size: 1.15rem; max-width: 650px; margin: 0 auto 40px; color: #4a4a4a; line-height: 1.6; font-family: 'Poppins', sans-serif;">
+            Share Eat! is Malaysia’s first meal-for-marketing platform connecting you directly with approved foodie creators, replacing expensive agencies, random cold DMs, and guesswork advertising.
+          </p>
+          
+          <div style="max-width: 500px; margin: 0 auto 16px; display: flex; gap: 12px; background: #ffffff; padding: 6px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+            <input type="email" placeholder="Enter your business email..." style="flex: 1; border: none; outline: none; padding: 12px 16px; font-size: 1rem; font-family: var(--font-body); border-radius: 12px; background: transparent;" />
+            <button @click="redirectToRest" class="btn btn-primary" style="padding: 12px 24px; font-size: 13px; border-radius: 10px; white-space: nowrap;">Apply For Access</button>
+          </div>
+          <p style="font-size: 0.85rem; color: #6c757d; margin-top: 12px; font-family: 'Poppins', sans-serif;">
+            ✨ Join the exclusive waitlist of premier F&B brands and cafes
+          </p>
+        </div>
+      </section>
+
+      <!-- WHO IS THIS FOR -->
+      <section class="section pt-0">
+        <div class="container" style="max-width: 800px;">
+          <div class="pain-box fade-in">
+            <h3 style="font-family: 'Poppins', sans-serif; font-size: 2rem; color: #1a1a1a; margin-bottom: 8px;">
+              You're in the right place if...
+            </h3>
+            <p style="color: #666666; font-size: 1rem; font-family: 'Poppins', sans-serif; margin-bottom: 16px;">
+              
+            </p>
+            
+            <ul class="checklist-collab">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You're tired of spending RM1,000+ monthly on Facebook and Instagram ads only to see 'likes' but no actual customers walking through your doors.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You struggle to create TikToks or Reels consistently because running a kitchen, managing inventory, and training staff is already a 24/7 job.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You've been burned by 'famous' food influencers who asked for expensive fees but delivered content that drove zero actual bookings.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You watch competitor cafes and trendy eateries constantly going viral on XiaoHongShu or TikTok, wishing you had the time and connections to do the same.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>You know User Generated Content (UGC) is the single fastest way to build local trust, but negotiating briefs and cold DMing hundred creators feels exhausting.</span>
+              </li>
+            </ul>
+
+            <div style="border-top: 1px solid rgba(0,0,0,0.06); padding-top: 24px; text-align: center;">
+              <p style="font-size: 1.15rem; color: #1a1a1a; font-weight: 600; font-family: 'Poppins', sans-serif;">
+                If that's you, Share Eat! was built for your restaurant.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-      
+
+      <!-- HOW IT WORKS -->
       <section class="section pt-0">
         <div class="container">
            <div class="split-grid fade-in" style="grid-template-columns: 1fr;">
-              <div class="column" style="max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title" style="margin-bottom: 40px; text-align: left; font-size: 2.5rem;">How It Works</h2>
+              <div class="column" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <h2 class="section-title" style="margin-bottom: 40px; text-align: center; font-size: 2.5rem; font-family: 'Poppins', sans-serif;">How It Works</h2>
+                
                 <div class="step">
                   <div class="step-number">01</div>
                   <div class="step-content">
-                    <h4>List Your Offer</h4>
-                    <p>Set up your profile and list specific complementary meals you'd like to feature.</p>
+                    <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Create your tasting campaign</h4>
+                    <p>Define the complimentary meal offer and we help you with content guidelines for creators in minutes.</p>
                   </div>
                 </div>
+                
                 <div class="step">
                   <div class="step-number">02</div>
                   <div class="step-content">
-                    <h4>Approve Influencers</h4>
-                    <p>Review applying KOL profiles, follower counts, and engagement to ensure the perfect match.</p>
+                    <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Review and approve creators</h4>
+                    <p>See real creators apply and get access to their actual pages, engagement, and past content, selecting only the ones you love.</p>
                   </div>
                 </div>
+                
                 <div class="step">
                   <div class="step-number">03</div>
                   <div class="step-content">
-                    <h4>Gain Authentic Reach</h4>
-                    <p>Host the KOL and receive high-quality, authentic social media content that drives local foot traffic.</p>
+                    <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Host and receive authentic buzz</h4>
+                    <p>Welcome approved creators to your restaurant, serve your signature dishes, and watch high-converting videos go live.</p>
                   </div>
                 </div>
               </div>
@@ -525,27 +805,125 @@
         </div>
       </section>
 
+      <!-- BENEFITS SECTION -->
       <section class="section pt-0">
         <div class="container fade-in">
-          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem;">Benefits</h2>
+          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem; text-align: center; font-family: 'Poppins', sans-serif;">Real Buzz. Real Traffic. Real ROI.</h2>
           <div class="cards-grid">
-            <div class="card" v-for="prop in valPropsRest" :key="prop.title">
-              <div class="card-icon">{{ prop.icon }}</div>
-              <h4>{{ prop.title }}</h4>
-              <p>{{ prop.desc }}</p>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">🍳</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Marketing Funded by Your Kitchen</h4>
+              <p>Stop burning monthly cash. Pay for major local exposure using your food cost rather than premium marketing agency fees.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">👥</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Attract Real Local Customers</h4>
+              <p>Move from robotic, studio-filmed commercials to trusted local voices who have highly engaged, hungry Malaysian followers looking for their next dining spot.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">📸</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Build an Endless Content Library</h4>
+              <p>Transform one-off meals into raw, library-grade creative assets that you can reuse for your own social accounts, ads, and website.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon" style="color: #dfa612;">🔒</div>
+              <h4 style="font-weight: 700; font-family: 'Poppins', sans-serif;">Complete Vetting Control</h4>
+              <p>No more blind invitations or random influencers showing up. You review profiles, follower demographics, and visual styles to approve only the creators who fit your vibe.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container fade-in">
-          <div class="form-card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <h3 style="color: #1a1a1a; font-size: 28px !important; margin-bottom: 24px !important; letter-spacing: normal; text-transform: none; font-family: var(--font-heading);">Want more customers?</h3>
-            <p style="color: #4a4a4a; margin-bottom: 32px; font-size: 1.1rem;">Join our waitlist to be among the first partners in your city.</p>
-            <button @click="redirectToRest" class="btn btn-primary" style="width: 100%;">Join the Waitlist</button>
+      <!-- WHY UGC WORKS -->
+      <section class="section pt-0">
+        <div class="container" style="max-width: 800px;">
+          <div class="pain-box fade-in" style="background: #fdfcf7; border-color: rgba(245, 200, 66, 0.3);">
+            <h2 class="section-title" style="margin-bottom: 24px; text-align: center; font-size: 2.2rem; font-family: 'Poppins', sans-serif; text-transform: none;">Why restaurants are ditching ads for creator content</h2>
+            <p style="color: #555555; font-size: 1.1rem; text-align: center; margin-bottom: 40px; font-family: 'Poppins', sans-serif;">
+              Traditional billboards and expensive Facebook ads don't work for F&B anymore. Here's why:
+            </p>
+            
+            <ul class="checklist-collab">
+              <li>
+                <span class="check-icon">🔥</span>
+                <span><strong>92% of Malaysians trust micro creator's word-of-mouth recommendations</strong> from local food creators over highly polished restaurant commercials.</span>
+              </li>
+              <li>
+                <span class="check-icon">📈</span>
+                <span><strong>Creator content converts up to 5x higher</strong> because customers want to see real, unedited cheese pulls and honest dining vibes before driving to your spot.</span>
+              </li>
+              <li>
+                <span class="check-icon">🚀</span>
+                <span><strong>Algorithm favoritism</strong> means TikTok, Reels, and XiaoHongShu prioritize organic creator videos, giving your brand free exposure that paid ads can never match.</span>
+              </li>
+            </ul>
           </div>
         </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="section pt-0">
+        <div class="container fade-in">
+          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem; text-align: center; font-family: 'Poppins', sans-serif;">Frequently Asked Questions</h2>
+          <div class="faq-wrapper">
+            <div class="faq-item">
+              <div class="faq-question">How much does it cost?</div>
+              <div class="faq-answer">
+                Pre-registering for early access is 100% free. Once we launch, there is no cash layout for campaigns—you only sponsor the complimentary meal (essentially your raw ingredients cost) to get authentic content and exposure.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">What kind of creators will visit my restaurant?</div>
+              <div class="faq-answer">
+                Real Malaysian foodie creators, food vloggers, and micro-influencers (typically 1K to 10K followers) who have trusted local audiences in your specific city. Every applicant is fully approved by our team before they can apply.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">Can I control what they post?</div>
+              <div class="faq-answer">
+                Yes. When setting up your campaign, you define your brief (e.g., "highlight our signature nasi lemak" or "show the casual dining vibe"). Plus, you only host the creators you review and choose to approve. But we always advocate for honest reviews to build genuine customer trust!
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">What if I've never worked with influencers before?</div>
+              <div class="faq-answer">
+                No worries at all. Share Eat! is built specifically for busy restaurant owners with no influencer marketing experience. The system handles application vetting, content briefs, and post tracking for you step-by-step so you can focus completely on your food.
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">How is this different from hiring a marketing agency?</div>
+              <div class="faq-answer">
+                Traditional agencies charge RM2,000–RM5,000+ per month with long duration contracts just to manage a single social media channel or run ads. Share Eat! automates influencer collaboration, giving you a continuous stream of fresh creator content and wide local reach funded purely by your kitchen.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA SECTION -->
+      <section class="section">
+        <div class="container fade-in">
+          <div class="form-card" style="max-width: 650px; margin: 0 auto; text-align: center; background: #ffffff;">
+            <span class="pill-accent" style="margin-bottom: 16px;">⏳ Limited Early Access</span>
+            <h3 style="color: #1a1a1a; font-size: 2.2rem !important; margin-bottom: 16px !important; letter-spacing: -0.02em; text-transform: none; font-family: 'Poppins', sans-serif; line-height: 1.2;">
+              Stop paying massive agency fees. Let Malaysia’s authentic food creators drive customers to your tables.
+            </h3>
+            <p style="color: #555555; margin-bottom: 32px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto; font-family: 'Poppins', sans-serif;">
+              Phase 1 early access is limited to 50 approved restaurants in Klang Valley. Pre-register today to secure your invitation.
+            </p>
+            
+            <div style="max-width: 500px; margin: 0 auto 16px; display: flex; gap: 12px; background: #ffffff; padding: 6px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+              <input type="email" placeholder="Enter your business email..." style="flex: 1; border: none; outline: none; padding: 12px 16px; font-size: 1rem; font-family: var(--font-body); border-radius: 12px; background: transparent;" />
+              <button @click="redirectToRest" class="btn btn-primary" style="padding: 12px 24px; font-size: 13px; border-radius: 10px; white-space: nowrap;">Apply for Early Access</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>v>
       </section>
     </div>
 
