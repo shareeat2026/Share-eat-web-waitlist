@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Share eat! - Eat Free. Go Viral. Together.</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <style>
     :root {
       --bg-color: #faf9f5;
@@ -372,63 +373,296 @@
     <div class="nav-container">
       <div class="container">
         <nav>
-          <a href="index.html" class="logo">Share eat!</a>
+          <a href="#/" class="logo">Share eat!</a>
           <div style="display: flex; align-items: center; gap: 24px;">
+            <!-- <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; font-family: var(--font-body); font-weight: 500;">Launching Summer 2024</span> -->
             <div style="padding: 4px 12px; font-size: 10px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.05em; border: 1px solid rgba(0,0,0,0.1); background-color: rgba(0,0,0,0.03); border-radius: 9999px; font-family: var(--font-body); color: var(--text-color);">Coming Soon</div>
           </div>
         </nav>
       </div>
     </div>
 
-    <!-- HOME PAGE -->
-    <section class="hero fade-in">
-      <div class="container">
-        <h1>Eat Free.<br><span style="color: #dfa612;">Go Viral.</span><br>Together.</h1>
-        <p>The exclusive platform where culinary experiences meet authentic social clout.<br/>Honest reviews in exchange for complimentary dining.</p>
-        <div class="hero-buttons">
-          <a href="kol.html" class="btn btn-primary">I'm a Food KOL</a>
-          <a href="restaurant.html" class="btn btn-secondary">I'm a Restaurant</a>
+    <!-- ROUTE: HOME -->
+    <div v-if="route === 'home'">
+      <section class="hero fade-in">
+        <div class="container">
+          <h1>Eat Free.<br><span style="color: #dfa612;">Go Viral.</span><br>Together.</h1>
+          <p>The exclusive platform where culinary experiences meet authentic social clout.<br/>Honest reviews in exchange for complimentary dining.</p>
+          <div class="hero-buttons">
+            <a href="kol.html" class="btn btn-primary">I'm a Food KOL</a>
+            <a href="restaurant.html" class="btn btn-secondary">I'm a Restaurant</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      
+      <!-- <section class="section pt-0">
+        <div class="container fade-in">
+          <div class="stats-bar">
+            <div class="stat-item">
+              <div class="stat-num" style="color: #dfa612;">{{ kolCount }}</div>
+              <div class="stat-label">KOLs Waiting</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" style="color: #dfa612;">{{ restCount }}</div>
+              <div class="stat-label">Restaurants Interested</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" style="color: #1a1a1a;">{{ cityCount }}</div>
+              <div class="stat-label">Cities Launching</div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+    </div>
 
-    <section class="section pt-0">
-      <div class="container fade-in">
-        <p style="text-align: center; margin-top: 40px;">
-          <a href="privacy.html" style="font-weight: bold; letter-spacing: 0.1em; font-size: 10px; text-transform: uppercase; color: #555555; transition: color 0.3s;">Privacy Policy</a>
-        </p>
-      </div>
-    </section>
+    <!-- ROUTE: KOL -->
+    <div v-if="route === 'kol'">
+      <section class="hero fade-in">
+        <div class="container">
+          <h1>The VIP Pass For<br><span style="color: #dfa612;">Food Creators</span></h1>
+          <p>Discover and claim complimentary dining experiences hosted by top-rated local restaurants. Grow your portfolio risk-free.</p>
+          <div class="hero-buttons">
+            <button @click="redirectToKol" class="btn btn-primary">Join the Waitlist</button>
+          </div>
+        </div>
+      </section>
 
+      <section class="section pt-0">
+        <div class="container">
+           <div class="split-grid fade-in" style="grid-template-columns: 1fr;">
+              <div class="column" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="margin-bottom: 40px; text-align: left; font-size: 2.5rem;">How It Works</h2>
+                <div class="step">
+                  <div class="step-number">01</div>
+                  <div class="step-content">
+                    <h4>Browse Exclusive Offers</h4>
+                    <p>Discover and claim complimentary dining experiences hosted by top-rated local restaurants.</p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">02</div>
+                  <div class="step-content">
+                    <h4>Dine &amp; Indulge</h4>
+                    <p>Verify your deal, show up, and enjoy a curated meal entirely on the house.</p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">03</div>
+                  <div class="step-content">
+                    <h4>Post Your Review</h4>
+                    <p>Share your honest footage and thoughts on your socials to build your food portfolio.</p>
+                  </div>
+                </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      <section class="section pt-0">
+        <div class="container fade-in">
+          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem;">Why Join?</h2>
+          <div class="cards-grid">
+            <div class="card" v-for="prop in valPropsKol" :key="prop.title">
+              <div class="card-icon">{{ prop.icon }}</div>
+              <h4>{{ prop.title }}</h4>
+              <p>{{ prop.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container fade-in">
+          <div class="form-card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h3 style="color: #1a1a1a; font-size: 28px !important; margin-bottom: 24px !important; letter-spacing: normal; text-transform: none; font-family: var(--font-heading);">Ready to eat for free?</h3>
+            <p style="color: #4a4a4a; margin-bottom: 32px; font-size: 1.1rem;">Join hundreds of creators in your city already dining on the house.</p>
+            <button @click="redirectToKol" class="btn btn-primary" style="width: 100%;">Join the Waitlist</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ROUTE: RESTAURANT -->
+    <div v-if="route === 'restaurant'">
+      <section class="hero fade-in">
+        <div class="container">
+          <h1>Risk-Free Marketing<br>With <span style="color: #dfa612;">Real Creators</span></h1>
+          <p>Host local food influencers for a complimentary meal, and receive authentic, high-quality social media exposure that drives immediate foot traffic.</p>
+          <div class="hero-buttons">
+            <button @click="redirectToRest" class="btn btn-primary">Join the Waitlist</button>
+          </div>
+        </div>
+      </section>
+      
+      <section class="section pt-0">
+        <div class="container">
+           <div class="split-grid fade-in" style="grid-template-columns: 1fr;">
+              <div class="column" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="margin-bottom: 40px; text-align: left; font-size: 2.5rem;">How It Works</h2>
+                <div class="step">
+                  <div class="step-number">01</div>
+                  <div class="step-content">
+                    <h4>List Your Offer</h4>
+                    <p>Set up your profile and list specific complementary meals you'd like to feature.</p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">02</div>
+                  <div class="step-content">
+                    <h4>Approve Influencers</h4>
+                    <p>Review applying KOL profiles, follower counts, and engagement to ensure the perfect match.</p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">03</div>
+                  <div class="step-content">
+                    <h4>Gain Authentic Reach</h4>
+                    <p>Host the KOL and receive high-quality, authentic social media content that drives local foot traffic.</p>
+                  </div>
+                </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      <section class="section pt-0">
+        <div class="container fade-in">
+          <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem;">Benefits</h2>
+          <div class="cards-grid">
+            <div class="card" v-for="prop in valPropsRest" :key="prop.title">
+              <div class="card-icon">{{ prop.icon }}</div>
+              <h4>{{ prop.title }}</h4>
+              <p>{{ prop.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container fade-in">
+          <div class="form-card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h3 style="color: #1a1a1a; font-size: 28px !important; margin-bottom: 24px !important; letter-spacing: normal; text-transform: none; font-family: var(--font-heading);">Want more customers?</h3>
+            <p style="color: #4a4a4a; margin-bottom: 32px; font-size: 1.1rem;">Join our waitlist to be among the first partners in your city.</p>
+            <button @click="redirectToRest" class="btn btn-primary" style="width: 100%;">Join the Waitlist</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer
     <footer>
       <div class="container footer-container fade-in">
         <span style="opacity: 0.4;">&copy; 2024 Share Eat Technologies Inc.</span>
-        <div class="social-links" style="visibility: hidden;">
+        <div class="social-links">
           <a href="#">Instagram</a>
           <a href="#">TikTok</a>
           <a href="#">Terms</a>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </div>
 
   <script>
-    // Setup fade-in animations
-    const setupAnimations = () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+    const { createApp, ref, computed, onMounted, nextTick } = Vue;
+
+    createApp({
+      setup() {
+        const currentPath = ref(window.location.hash || '#/');
+        
+        window.addEventListener('hashchange', () => {
+          currentPath.value = window.location.hash || '#/';
+          // Small timeout to allow v-if elements to render before observing
+          setTimeout(setupAnimations, 50);
+          window.scrollTo(0, 0);
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-      document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-      });
-    };
+        const route = computed(() => {
+          if (currentPath.value.includes('kol')) return 'kol';
+          if (currentPath.value.includes('restaurant')) return 'restaurant';
+          return 'home';
+        });
 
-    document.addEventListener('DOMContentLoaded', setupAnimations);
+        const valPropsKol = [
+          { icon: '🍽️', title: 'Free Meals', desc: 'Secure complimentary dining experiences at top local restaurants.' },
+          { icon: '📈', title: 'Grow Audience', desc: 'Create engaging content to continuously build your following.' },
+          { icon: '🕰️', title: 'Flexible Schedule', desc: 'Dine and post on your own time without rigid constraints.' },
+          { icon: '🔓', title: 'No Commitments', desc: 'Accept only the restaurant offers that fit your personal vibe.' }
+        ];
+
+        const valPropsRest = [
+          { icon: '💸', title: 'Zero Upfront Cost', desc: 'Pay for marketing entirely with your delicious food.' },
+          { icon: '📸', title: 'Authentic Reviews', desc: 'Receive real, high-quality content from trusted local foodies.' },
+          { icon: '🎯', title: 'Targeted Reach', desc: 'Expose your brand directly to highly engaged local audiences.' },
+          { icon: '📊', title: 'Measurable Results', desc: 'Watch your engagement and foot traffic increase immediately.' }
+        ];
+
+        const redirectToKol = () => {
+          // Placeholder URL — replace with your actual link
+          window.open('https://tally.so/r/A7j8Yz', '_blank'); 
+        };
+
+        const redirectToRest = () => {
+          // Placeholder URL — replace with your actual link
+          window.open('https://tally.so/r/81RGqo', '_blank');
+        };
+
+        const setupAnimations = () => {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+          document.querySelectorAll('.fade-in').forEach(el => {
+            el.classList.remove('visible'); // Reset
+            observer.observe(el);
+          });
+        };
+
+        const kolCount = ref(0);
+        const restCount = ref(0);
+        const cityCount = ref(0);
+
+        onMounted(() => {
+          setupAnimations();
+
+          const animateValue = (refVar, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+              if (!startTimestamp) startTimestamp = timestamp;
+              const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+              const easeProgress = 1 - Math.pow(1 - progress, 4);
+              refVar.value = Math.floor(easeProgress * end);
+              if (progress < 1) {
+                window.requestAnimationFrame(step);
+              } else {
+                if (end > 50) refVar.value = refVar.value + '+';
+              }
+            };
+            window.requestAnimationFrame(step);
+          };
+
+          setTimeout(() => {
+            animateValue(kolCount, 500, 2500);
+            animateValue(restCount, 120, 2500);
+            animateValue(cityCount, 8, 2000);
+          }, 800);
+        });
+
+        return {
+          route,
+          valPropsKol,
+          valPropsRest,
+          redirectToKol,
+          redirectToRest,
+          kolCount,
+          restCount,
+          cityCount
+        };
+      }
+    }).mount('#app');
   </script>
 </body>
 </html>
