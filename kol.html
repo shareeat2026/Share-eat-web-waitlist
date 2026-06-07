@@ -3,614 +3,717 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KOL Waitlist - Share eat!</title>
+  <title>Share Eat! Get hosted, not ghosted. Free dining for Malaysian food creators.</title>
+  <meta name="description" content="Malaysia's first app connecting food creators with restaurants for complimentary dining. No cold DMs, no out-of-pocket spend. Join the Phase 1 waitlist, 200 Klang Valley spots.">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Get hosted, not ghosted. Share Eat!">
+  <meta property="og:description" content="Free restaurant collabs for Malaysian food creators. No cold DMs. Join the Phase 1 waitlist.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-color: #faf9f5;
-      --text-color: #1a1a1a;
+      --bg: #faf9f5;
+      --bg-warm: #fbf3e0;
+      --ink: #1a1714;
+      --ink-soft: #5c554d;
       --primary: #f5c842;
-      --font-heading: Georgia, serif;
-      --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --primary-deep: #e0a90a;
+      --primary-ink: #8a6500;
+      --tomato: #e8543b;
+      --line: rgba(26,23,20,0.08);
+      --card: #ffffff;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --shadow-sm: 0 4px 18px rgba(26,23,20,0.04);
+      --shadow-md: 0 14px 40px rgba(26,23,20,0.08);
+      --shadow-lg: 0 30px 70px rgba(26,23,20,0.12);
+      --radius: 22px;
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      background: var(--bg);
+      color: var(--ink);
       font-family: var(--font-body);
       line-height: 1.6;
       overflow-x: hidden;
-      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-    }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    img { display: block; max-width: 100%; }
 
-    .nav-container {
-      background-color: #ffffff;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
-    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 22px; }
+    .narrow { max-width: 820px; }
 
-    nav {
-      height: 64px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: var(--text-color);
-      letter-spacing: -0.025em;
-    }
-
-    .logo img {
-      width: 32px;
-      height: 32px;
-      display: block;
-    }
-
+    /* ---------- Buttons ---------- */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 32px;
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-      text-align: center;
-      text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 700;
+      padding: 16px 30px; border: none; border-radius: 14px; cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+      text-align: center; white-space: nowrap;
     }
-
-    .btn:hover {
-      transform: scale(1.03);
-    }
-    
-    .btn:active {
-      transform: scale(0.97);
-    }
-
     .btn-primary {
-      background-color: var(--primary);
-      color: #1a1a1a;
-      box-shadow: 0 4px 14px rgba(245, 200, 66, 0.45);
+      background: linear-gradient(180deg, #ffd454, var(--primary) 60%, var(--primary-deep));
+      color: #2a2000;
+      box-shadow: 0 10px 26px rgba(224,169,10,0.40), inset 0 1px 0 rgba(255,255,255,0.5);
     }
-    
-    .btn-primary:hover {
-      box-shadow: 0 6px 20px rgba(245, 200, 66, 0.6);
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(224,169,10,0.52), inset 0 1px 0 rgba(255,255,255,0.5); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-ghost {
+      background: rgba(26,23,20,0.04); color: var(--ink);
+      border: 1px solid var(--line);
     }
+    .btn-ghost:hover { background: rgba(26,23,20,0.07); transform: translateY(-2px); }
+    .btn-lg { padding: 19px 40px; font-size: 16px; }
+    .btn-block { width: 100%; }
 
-    .hero {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 0;
-      position: relative;
+    /* ---------- Nav ---------- */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(250,249,245,0.82);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease, box-shadow .25s ease;
     }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 84px);
-      line-height: 0.95;
-      font-weight: 900;
-      margin-bottom: 24px;
-      letter-spacing: -0.05em;
+    .nav-wrap.scrolled { border-color: var(--line); box-shadow: 0 6px 20px rgba(26,23,20,0.04); }
+    nav { height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 30px; width: auto; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 13px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; border-radius: 999px;
+      background: rgba(232,84,59,0.10); color: var(--tomato);
     }
+    .nav-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--tomato); animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: .4; transform: scale(.7);} }
+    .nav-cta { padding: 11px 22px; font-size: 14px; }
+    @media (max-width: 640px){ .nav-badge { display: none; } }
 
-    .hero p {
-      font-size: 20px;
-      max-width: 32rem;
-      margin: 0 auto 32px;
-      color: #4a4a4a;
-      font-weight: 400;
-      line-height: 1.625;
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: 70px 0 80px; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background:
+        radial-gradient(60% 60% at 85% 10%, rgba(245,200,66,0.28), transparent 60%),
+        radial-gradient(50% 50% at 0% 90%, rgba(232,84,59,0.10), transparent 60%);
     }
-
-    .hero-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 15px; border-radius: 999px; font-size: 12.5px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      background: #fff; border: 1px solid var(--line); color: var(--primary-ink);
+      box-shadow: var(--shadow-sm); margin-bottom: 22px;
     }
-
-    .section {
-      padding: 60px 0;
+    .hero h1 { font-size: clamp(2.6rem, 6.4vw, 5rem); font-weight: 900; margin-bottom: 20px; }
+    .hero h1 .hl { position: relative; white-space: nowrap; color: var(--ink); }
+    .hero h1 .hl::after {
+      content: ""; position: absolute; left: -2%; right: -2%; bottom: 0.06em; height: 0.34em; z-index: -1;
+      background: linear-gradient(90deg, var(--primary), #ffe08a);
+      border-radius: 4px; transform: rotate(-1.2deg);
     }
-
-    .pt-0 {
-      padding-top: 0 !important;
-    }
-
-    .section-title {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      text-align: center;
-      margin-bottom: 72px;
-    }
-
-    .split-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-    }
-
-    @media (max-width: 768px) {
-      .split-grid {
-        grid-template-columns: 1fr;
-        gap: 64px;
-      }
-    }
-
-    .column h3 {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      padding-bottom: 16px;
-      border-bottom: 2px solid;
-      color: #1a1a1a;
-      border-color: rgba(245, 200, 66, 0.4);
-    }
-
-    .step {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 32px;
-      background: #ffffff;
-      padding: 28px;
-      border-radius: 20px;
-      border: 1px solid rgba(0,0,0,0.04);
-      box-shadow: 0 4px 18px rgba(0,0,0,0.02);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    }
-
-    .step:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    .step-number {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-style: italic;
-      color: #dfa612;
-      opacity: 0.8;
-      line-height: 1;
-    }
-
-    .step-content h4 {
-      font-size: 1.35rem;
-      margin-bottom: 8px;
+    .hero p.sub { font-size: clamp(1.05rem, 1.6vw, 1.28rem); color: var(--ink-soft); max-width: 33rem; margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-trust { margin-top: 26px; display: flex; align-items: center; gap: 14px; color: var(--ink-soft); font-size: 0.92rem; }
+    .avatars { display: flex; }
+    .avatars span {
+      width: 34px; height: 34px; border-radius: 50%; margin-left: -10px; border: 2.5px solid var(--bg);
+      display: grid; place-items: center; font-size: 15px; font-weight: 700; color: #fff;
       font-family: var(--font-body);
-      color: #1a1a1a;
     }
+    .avatars span:first-child { margin-left: 0; }
 
-    .step-content p {
-      color: #555555;
-      font-size: 1rem;
+    /* ---------- Phone mockup ---------- */
+    .phone-stage { display: grid; place-items: center; position: relative; }
+    .phone-stage .blob {
+      position: absolute; width: 115%; height: 115%; z-index: 0;
+      background: radial-gradient(closest-side, rgba(245,200,66,0.35), transparent);
+      filter: blur(10px);
     }
+    .phone {
+      position: relative; z-index: 1;
+      width: 320px; max-width: 80vw; aspect-ratio: 320 / 660;
+      background: #15110d; border-radius: 46px; padding: 11px;
+      box-shadow: var(--shadow-lg), 0 0 0 2px rgba(0,0,0,0.06);
+      transform: rotate(2deg);
+    }
+    .phone.flat { transform: none; }
+    .phone-screen { background: var(--bg); width: 100%; height: 100%; border-radius: 35px; overflow: hidden; position: relative; }
+    .island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 92px; height: 22px; background: #15110d; border-radius: 999px; z-index: 5; }
+    .statusbar { display: flex; align-items: center; justify-content: space-between; padding: 13px 20px 4px; font-size: 11px; font-weight: 700; color: var(--ink); }
+    .statusbar .sb-icons { display: flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: -1px; }
+    .app-head { padding: 6px 16px 0; }
+    .app-loc { display: flex; align-items: center; justify-content: space-between; }
+    .app-loc .pin { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: var(--ink); }
+    .app-loc .pin .ico { color: var(--primary-deep); }
+    .app-bell { width: 30px; height: 30px; border-radius: 50%; background: #fff; box-shadow: var(--shadow-sm); display: grid; place-items: center; font-size: 13px; }
+    .app-title { font-family: var(--font-display); font-weight: 900; font-size: 1.55rem; letter-spacing: -0.03em; margin: 8px 0 12px; }
+    .app-search { display: flex; align-items: center; gap: 9px; }
+    .app-search .field { flex: 1; display: flex; align-items: center; gap: 8px; background: rgba(26,23,20,0.05); border-radius: 13px; padding: 10px 13px; color: var(--ink-soft); font-size: 11.5px; }
+    .app-search .filter { width: 38px; height: 38px; border-radius: 12px; background: #fff; box-shadow: var(--shadow-sm); display: grid; place-items: center; font-size: 13px; flex-shrink: 0; }
+    .app-chips { display: flex; gap: 8px; padding: 13px 16px 8px; overflow: hidden; }
+    .app-chips .c { font-size: 11px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); white-space: nowrap; color: var(--ink); }
+    .app-chips .c.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .feed { padding: 2px 16px 14px; display: flex; flex-direction: column; gap: 13px; }
+    .feed-card { background: #fff; border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
+    .feed-photo { height: 132px; position: relative; background-size: cover; background-position: center; }
+    .feed-photo .emoji-bg { position: absolute; inset: 0; display: grid; place-items: center; font-size: 3.6rem; opacity: 0.9; }
+    .feed-photo .badge { position: absolute; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 4px; font-size: 9.5px; font-weight: 800; padding: 5px 10px; border-radius: 999px; background: var(--primary); color: #2a2000; }
+    .feed-photo .badge.new { left: 78px; background: #fff; color: var(--ink); }
+    .feed-photo .heart { position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.92); display: grid; place-items: center; font-size: 12px; }
+    .feed-photo .comp { position: absolute; bottom: 10px; left: 10px; display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; padding: 6px 11px; border-radius: 999px; background: rgba(255,255,255,0.95); color: var(--ink); box-shadow: var(--shadow-sm); }
+    .feed-body { padding: 11px 13px 13px; }
+    .feed-body .row1 { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 3px; }
+    .feed-body .rest { display: flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; color: var(--ink); }
+    .feed-body .rest .verified { color: var(--primary-deep); font-size: 11px; }
+    .feed-body .rest .cat { font-weight: 500; color: var(--ink-soft); }
+    .feed-body .star { font-size: 11px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+    .feed-body h5 { font-family: var(--font-body); font-size: 13.5px; font-weight: 700; line-height: 1.25; margin-bottom: 9px; }
+    .feed-body .deliv { display: flex; gap: 6px; margin-bottom: 10px; }
+    .feed-body .deliv span { font-size: 9.5px; font-weight: 600; padding: 4px 9px; border-radius: 8px; border: 1px solid var(--line); color: var(--ink-soft); }
+    .feed-body .foot { display: flex; align-items: center; justify-content: space-between; gap: 6px; border-top: 1px solid var(--line); padding-top: 9px; font-size: 10px; color: var(--ink-soft); }
+    .feed-body .foot .meta { display: flex; gap: 10px; }
+    .feed-body .foot .spots { font-weight: 800; color: var(--tomato); }
+    .app-tabbar { position: absolute; bottom: 0; left: 0; right: 0; height: 62px; background: rgba(255,255,255,0.96); border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-around; backdrop-filter: blur(8px); }
+    .app-tabbar .tab { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 9px; font-weight: 600; color: var(--ink-soft); }
+    .app-tabbar .tab.on { color: var(--primary-deep); }
+    .app-tabbar .tab .ti { font-size: 16px; }
+    .app-tabbar .tab.add .ti { width: 42px; height: 34px; border-radius: 12px; background: var(--primary); color: #2a2000; display: grid; place-items: center; font-size: 20px; box-shadow: 0 6px 14px rgba(224,169,10,0.4); margin-top: -2px; }
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 32px;
-    }
+    /* food-photo placeholder gradients */
+    .ph-sushi { background: linear-gradient(135deg, #f7a98c, #e8543b); }
+    .ph-burger { background: linear-gradient(135deg, #f6cd5b, #dd8a2a); }
+    .ph-matcha { background: linear-gradient(135deg, #b7dca6, #3f9d6c); }
+    .ph-mala   { background: linear-gradient(135deg, #f08a6e, #c5341c); }
+    .ph-dessert{ background: linear-gradient(135deg, #f9c6d6, #e87aa0); }
 
-    .card {
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.04);
-      border-radius: 20px;
-      padding: 40px 32px;
-      text-align: center;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.02);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    /* ---------- Category strip ---------- */
+    .strip { padding: 26px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+    .strip-head { text-align: center; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px; border-radius: 999px; font-weight: 600; font-size: 0.92rem;
+      background: var(--bg); border: 1px solid var(--line); color: var(--ink);
     }
+    .chip .emoji { font-size: 1.05rem; }
 
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(245, 200, 66, 0.4);
-      box-shadow: 0 12px 30px rgba(245, 200, 66, 0.12), 0 4px 12px rgba(0,0,0,0.03);
-    }
+    /* ---------- Sections ---------- */
+    .section { padding: 84px 0; }
+    .section.tight { padding: 60px 0; }
+    .sec-eyebrow { text-align: center; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary-ink); margin-bottom: 14px; }
+    .sec-title { font-size: clamp(2rem, 4.4vw, 3.1rem); text-align: center; max-width: 760px; margin: 0 auto 16px; }
+    .sec-intro { text-align: center; color: var(--ink-soft); font-size: 1.1rem; max-width: 600px; margin: 0 auto 56px; }
 
-    .card-icon {
-      font-size: 3rem;
-      margin-bottom: 24px;
-    }
+    /* pain box */
+    .pain-box { background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 48px; box-shadow: var(--shadow-md); }
+    .pain-box h3 { font-family: var(--font-body); font-size: 1.7rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 28px; }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .checklist li { display: flex; gap: 15px; align-items: flex-start; font-size: 1.06rem; color: #38332d; }
+    .check-icon { color: var(--primary-ink); background: rgba(245,200,66,0.20); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; font-weight: 800; font-size: 14px; margin-top: 2px; }
+    .pain-foot { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 26px; text-align: center; font-size: 1.18rem; font-weight: 600; }
 
-    .card h4 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      font-family: var(--font-body);
-      color: #1a1a1a;
-    }
+    /* how it works */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 34px 28px; box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease; }
+    .step:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .step-num { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 2.6rem; color: var(--primary-deep); line-height: 1; margin-bottom: 16px; }
+    .step h4 { font-family: var(--font-body); font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--ink-soft); font-size: 1rem; }
 
-    .card p {
-      color: #555555;
-      font-size: 0.95rem;
-    }
+    /* benefits */
+    .benefits { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .benefit { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px 32px; box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .benefit:hover { transform: translateY(-6px); border-color: rgba(245,200,66,0.55); box-shadow: var(--shadow-md); }
+    .benefit .ico { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 1.7rem; margin-bottom: 18px; background: rgba(245,200,66,0.16); }
+    .benefit h4 { font-family: var(--font-body); font-size: 1.28rem; font-weight: 700; margin-bottom: 10px; }
+    .benefit p { color: var(--ink-soft); }
 
-    .form-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 48px;
-      border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-      position: relative;
-      overflow: hidden;
-    }
+    /* app preview band */
+    .preview-band { background: linear-gradient(160deg, #fff6df, #fbe8c8); border-radius: 36px; padding: 56px; display: grid; grid-template-columns: 1fr 0.85fr; gap: 48px; align-items: center; border: 1px solid rgba(224,169,10,0.18); }
+    .preview-band .pv-list { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-top: 26px; }
+    .preview-band .pv-list li { display: flex; gap: 13px; align-items: flex-start; font-size: 1.05rem; }
+    .preview-band .pv-list .check-icon { background: rgba(224,169,10,0.22); }
 
-    footer {
-      border-top: 1px solid rgba(0,0,0,0.06);
-      padding: 24px 0;
-      background-color: #ffffff;
-    }
-    
-    .footer-container {
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: bold;
-      color: #555555;
-    }
+    /* founders */
+    .founders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .founder { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 26px; text-align: center; box-shadow: var(--shadow-sm); }
+    .founder .pfp { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 16px; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 2.1rem; color: #fff; overflow: hidden; }
+    .founder .pfp img { width: 100%; height: 100%; object-fit: cover; }
+    .founder h4 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; margin-bottom: 2px; }
+    .founder .role { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--primary-ink); margin-bottom: 12px; }
+    .founder p { color: var(--ink-soft); font-size: 0.95rem; }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
+    /* FAQ */
+    .faq-wrap { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm); overflow: hidden; }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 24px; cursor: pointer; font-weight: 700; font-size: 1.1rem; list-style: none; }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(245,200,66,0.20); color: var(--primary-ink); display: grid; place-items: center; font-weight: 700; transition: transform .25s ease; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-a { padding: 0 24px 24px; color: var(--ink-soft); }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* waitlist */
+    .waitlist-band { background: var(--ink); color: #fff; border-radius: 36px; padding: 60px 48px; position: relative; overflow: hidden; }
+    .waitlist-band::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 70% at 90% 0%, rgba(245,200,66,0.22), transparent 60%), radial-gradient(40% 60% at 0% 100%, rgba(232,84,59,0.16), transparent 60%); }
+    .waitlist-band > * { position: relative; }
+    .waitlist-band .eyebrow { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.16); color: #ffd454; }
+    .waitlist-band h2 { color: #fff; font-size: clamp(1.9rem, 4vw, 2.9rem); text-align: center; max-width: 720px; margin: 0 auto 16px; }
+    .waitlist-band .lead { text-align: center; color: rgba(255,255,255,0.78); font-size: 1.12rem; max-width: 560px; margin: 0 auto 28px; }
+    .progress-wrap { max-width: 440px; margin: 0 auto 34px; }
+    .progress-meta { display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 8px; letter-spacing: 0.03em; text-transform: uppercase; }
+    .progress-track { height: 11px; background: rgba(255,255,255,0.12); border-radius: 999px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--primary), #ffe08a); transition: width 1.4s cubic-bezier(.2,.8,.2,1); }
+    .form-card { background: #fff; border-radius: 24px; padding: 16px; max-width: 760px; margin: 0 auto; box-shadow: var(--shadow-lg); }
+    .form-card iframe { display: block; border-radius: 14px; }
 
-    /* KOL-specific high-converting copy styling additions */
-    .pill-accent {
-      background: rgba(245, 200, 66, 0.15);
-      color: #c99308;
-      font-weight: 700;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: inline-block;
-      margin-bottom: 24px;
-    }
+    /* footer */
+    footer { border-top: 1px solid var(--line); padding: 40px 0; background: #fff; }
+    .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-grid .logo img { height: 26px; }
+    .footer-meta { font-size: 0.84rem; color: var(--ink-soft); }
 
-    .pain-box {
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.05);
-      border-radius: 24px;
-      padding: 48px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.01);
-      margin-top: 32px;
-      text-align: left;
-    }
+    /* sticky mobile CTA */
+    .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(250,249,245,0.92); backdrop-filter: blur(12px); border-top: 1px solid var(--line); display: none; }
+    @media (max-width: 768px){ .mobile-cta { display: block; } body { padding-bottom: 80px; } }
 
-    .checklist-collab {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-bottom: 32px;
-      margin-top: 24px;
-    }
+    /* reveal anim */
+    .reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s cubic-bezier(.165,.84,.44,1), transform .8s cubic-bezier(.165,.84,.44,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce){ .reveal { opacity: 1; transform: none; transition: none; } .phone { transform: none; } }
 
-    .checklist-collab li {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      font-size: 1.1rem;
-      color: #333333;
-      text-align: left;
+    /* ---------- Responsive ---------- */
+    @media (max-width: 940px){
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: left; }
+      .hero .eyebrow, .hero-actions, .hero-trust { justify-content: flex-start; }
+      .hero p.sub { margin-left: 0; margin-right: 0; }
+      .preview-band { grid-template-columns: 1fr; text-align: center; }
+      .preview-band .pv-list li { text-align: left; }
+      .steps, .benefits, .founders { grid-template-columns: 1fr; }
     }
-
-    .checklist-collab .check-icon {
-      color: #c99308;
-      background: rgba(245, 200, 66, 0.15);
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .faq-wrapper {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .faq-item {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: left;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.02);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .faq-item:hover {
-      border-color: rgba(245, 200, 66, 0.4);
-      box-shadow: 0 10px 25px rgba(245, 200, 66, 0.05);
-    }
-
-    .faq-question {
-      font-family: var(--font-body);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-    }
-
-    .faq-answer {
-      color: #555555;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .logo img {
-      height: 100px; /* Adjust this value up or down to change the overall size */
-      width: auto;   /* Keeps the aspect ratio perfect */
+    @media (max-width: 600px){
+      .section { padding: 60px 0; }
+      .pain-box, .preview-band, .waitlist-band { padding: 32px 22px; }
+      .benefits { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div id="app">
-    <div class="nav-container">
-      <div class="container">
-        <nav>
-          <a class="logo"><img src="./Share Eat Typography.svg" alt="Share Eat!"></a>
-          <div style="display: flex; align-items: center; gap: 24px;">
-            <div style="padding: 4px 12px; font-size: 10px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.05em; border: 1px solid rgba(0,0,0,0.1); background-color: rgba(0,0,0,0.03); border-radius: 9999px; font-family: var(--font-body); color: var(--text-color);">Launching Soon</div>
-          </div>
-        </nav>
-      </div>
+
+  <!-- ============ NAV ============ -->
+  <div class="nav-wrap" id="navWrap">
+    <div class="container">
+      <nav>
+        <a class="logo" href="#top"><img src="Share Eat Typography.svg" alt="Share Eat!"></a>
+        <div class="nav-right">
+          <span class="nav-badge"><span class="dot"></span> Phase 1 · Now Open</span>
+          <a href="#waitlist" class="btn btn-primary nav-cta">Join the Waitlist</a>
+        </div>
+      </nav>
     </div>
-
-    <!-- KOL PAGE -->
-    <section class="hero fade-in">
-      <div class="container" style="max-width: 800px;">
-        <span class="pill-accent">For Malaysian Food Creators</span>
-        <h1 style="font-size: clamp(2.5rem, 6vw, 64px); line-height: 1.1; margin-bottom: 24px;">
-          Create Foodie Content Without Spending<br>
-        </h1>
-        <p style="font-size: 1.15rem; max-width: 650px; margin: 0 auto 40px; color: #4a4a4a; line-height: 1.6;">
-          Malaysia's first collaborative app connecting foodie creators directly with approved restaurant complimentary dining.
-        </p>
-        
-        <a href="#waitlist" class="btn btn-primary" style="padding: 16px 40px; font-size: 14px; border-radius: 12px;">
-          Join the Waitlist
-        </a>
-      </div>
-    </section>
-
-    <section class="section pt-0">
-      <div class="container" style="max-width: 800px;">
-        <div class="pain-box fade-in">
-          <h3 style="font-family: var(--font-body); font-size: 2rem; color: #1a1a1a; margin-bottom: 8px;">
-            You're in the right place if...
-          </h3>
-          <p style="color: #666666; font-size: 1rem; font-family: var(--font-body);">
-          
-          </p>
-          
-          <ul class="checklist-collab">
-            <li>
-              <span class="check-icon">✓</span>
-              <span>You're tired of spending RM100+ of your own money every single week just to shoot one food review video.</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>You have sent 50+ Instagram or TikTok DMs to restaurants and got left on 'read' or completely ghosted.</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>You want to do professional food reviews, but cold emailing and pitching feels like a draining, full-time sales job.</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>You have between 1K to 100K followers and know your content is fire, but have no reliable pipeline of collabs.</span>
-            </li>
-            <li>
-              <span class="check-icon">✓</span>
-              <span>You feel like you're running this creator journey entirely alone with zero infrastructure or support.</span>
-            </li>
-          </ul>
-
-          <div style="border-top: 1px solid rgba(0,0,0,0.06); padding-top: 24px; text-align: center;">
-            <p style="font-size: 1.15rem; color: #1a1a1a; font-weight: 600;">
-              If that's you, you're exactly who we built this for.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section pt-0">
-      <div class="container">
-         <div class="split-grid fade-in" style="grid-template-columns: 1fr;">
-            <div class="column" style="max-width: 800px; margin: 0 auto; width: 100%;"><h2 class="section-title" style="margin-bottom: 40px; text-align: center; font-size: 2.5rem;">How It Works</h2>
-              
-              <div class="step">
-                <div class="step-number">01</div>
-                <div class="step-content">
-                  <h4>Browse Campaigns</h4>
-                  <p>Open your feed and explore active restaurants seeking creators.</p>
-                </div>
-              </div>
-              
-              <div class="step">
-                <div class="step-number">02</div>
-                <div class="step-content">
-                  <h4>Apply &amp; Dine</h4>
-                  <p>Select campaigns that fit your style, get approved, and feast on the house.</p>
-                </div>
-              </div>
-              
-              <div class="step">
-                <div class="step-number">03</div>
-                <div class="step-content">
-                  <h4>Post &amp; Grow</h4>
-                  <p>Share your honest review and grow your creator profile.</p>
-                </div>
-              </div>
-            </div>
-         </div>
-      </div>
-    </section>
-
-    <section class="section pt-0">
-      <div class="container fade-in">
-        <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem;">From The Grind to True Independance</h2>
-        <div class="cards-grid">
-          <div class="card">
-            <div class="card-icon" style="color: #dfa612;">🎯</div>
-            <h4>Stop Chasing, Start Choosing</h4>
-            <p>Say goodbye to sending cold DMs. Restaurants post active campaigns, you browse, pick your favorites, and apply on your own terms.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon" style="color: #dfa612;">💵</div>
-            <h4>Zero Out-of-Pocket</h4>
-            <p>Stop funding your content yourself. Get complimentary dining experiences entirely sponsored so you can reinvest in your equipment and editing.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon" style="color: #dfa612;">📈</div>
-            <h4>Build Creative Following</h4>
-            <p>Collaborate with actual, verified Malaysian F&B brands. Turn casual foodie posting into a credible, structured portfolio.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon" style="color: #dfa612;">🏠</div>
-            <h4>Create with Infrastructure</h4>
-            <p>You don't have to navigate the hustle alone. Get the structured campaigns, clear deliverables, and creative independence you need to run your brand.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section pt-0">
-      <div class="container fade-in">
-        <h2 class="section-title" style="margin-bottom: 48px; font-size: 2.5rem;">Frequently Asked Questions</h2>
-        <div class="faq-wrapper">
-          <div class="faq-item">
-            <div class="faq-question">Do I need a big following?</div>
-            <div class="faq-answer">
-              No, lah! We focus heavily on micro-influencers and rising creators (typically between 1K–10K followers). If your videos look good and your audience is active, Malaysian brands want to host you.
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">Is it actually free?</div>
-            <div class="faq-answer">
-              Yes, 100% free for foodie creators. No membership fees, no hidden platform cuts. You bring your raw, authentic creativity, the restaurant team serves your meal on the house.
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">What restaurants are on the platform?</div>
-            <div class="faq-answer">
-              We are actively partnering with dining spots and trendy cafes across Klang Valley, from artisanal burger joints and aesthetic matcha spaces to hotpots and fine dining.
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">How do I get approved for campaigns?</div>
-            <div class="faq-answer">
-              Super simple. Once you join, browse the campaign feed and apply to campaigns you like. Restaurants review your social handles, verify your audience vibe, and approve you directly in the platform.
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">How is this different from just DMing restaurants myself?</div>
-            <div class="faq-answer">
-              DMing is a massive headache. You get ghosted, or you deal with an intern with zero authority. On Share Eat!, every restaurant listed is actively searching and looking to host partners immediately.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="waitlist">
-      <div class="container fade-in">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 40px;">
-          <span class="pill-accent" style="margin-bottom: 16px;">⏳ Limited Early Access</span>
-          <h3 style="color: #1a1a1a; font-size: 2.2rem !important; margin-bottom: 16px !important; letter-spacing: -0.02em; text-transform: none; font-family: var(--font-heading); line-height: 1.2;">
-            Stop funding your own content meals. Start creating & grow for free.
-          </h3>
-          <p style="color: #555555; margin-bottom: 32px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-            Phase 1 Klang Valley invites are strictly capped at 200 foodie creators. Pre-register today to secure your spot.
-          </p>
-        </div>
-        <div style="max-width: 800px; margin: 0 auto;">
-          <iframe data-tally-src="https://tally.so/embed/A7j8Yz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1463" frameborder="0" marginheight="0" marginwidth="0" title="KOL Waitlist"></iframe>
-          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container footer-container fade-in">
-        <span style="opacity: 0.4;">&copy; 2024 Share Eat Technologies Inc.</span>
-      </div>
-    </footer>
   </div>
 
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">🍜 For Malaysian Food Creators</span>
+          <h1>Get <span class="hl">hosted</span>,<br>not ghosted.</h1>
+          <p class="sub">Stop paying for the meals you review. Share Eat! connects foodie creators with restaurants for <strong>complimentary dining</strong>. No cold DMs, no out-of-pocket spend, no chasing.</p>
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn btn-primary btn-lg">Join the Free Waitlist →</a>
+            <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+          </div>
+          <div class="hero-trust">
+            <div class="avatars">
+              <span style="background:#e8543b">A</span>
+              <span style="background:#e0a90a">N</span>
+              <span style="background:#2a8a6a">J</span>
+              <span style="background:#6a4ce8">S</span>
+            </div>
+            <span>Klang Valley creators are claiming Phase 1 spots. <strong>200 only.</strong></span>
+          </div>
+        </div>
+
+        <!-- App mockup: Explore feed -->
+        <div class="phone-stage reveal">
+          <div class="blob"></div>
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="island"></div>
+              <div class="statusbar">
+                <span>9:41</span>
+                <span class="sb-icons">▮▮▮ &#x1F4F6; &#x1F50B;</span>
+              </div>
+              <div class="app-head">
+                <div class="app-loc">
+                  <span class="pin"><span class="ico">📍</span> Kuala Lumpur ⌄</span>
+                  <span class="app-bell">🔔</span>
+                </div>
+                <div class="app-title">Collabs near you</div>
+                <div class="app-search">
+                  <div class="field">🔍 Search restaurants, cuisines…</div>
+                  <div class="filter">⚙️</div>
+                </div>
+              </div>
+              <div class="app-chips">
+                <span class="c on">All</span>
+                <span class="c">Nasi Lemak</span>
+                <span class="c">Ramen</span>
+                <span class="c">Mala</span>
+                <span class="c">Brunch</span>
+              </div>
+              <div class="feed">
+                <div class="feed-card">
+                  <div class="feed-photo ph-sushi">
+                    <div class="emoji-bg">🍣</div>
+                    <span class="badge">✦ Featured</span>
+                    <span class="heart">♡</span>
+                    <span class="comp">RM 200 Food Credit</span>
+                  </div>
+                  <div class="feed-body">
+                    <div class="row1">
+                      <span class="rest">SHIN Zushi <span class="cat">· Omakase</span></span>
+                      <span class="star">★ 4.9</span>
+                    </div>
+                    <h5>8-Course Chef's Omakase</h5>
+                    <div class="deliv"><span>1 Reel</span><span>Instagram Reel</span></div>
+                    <div class="foot">
+                      <span class="meta"><span>📍 1.2 km</span><span>👥 27 applied</span></span>
+                      <span class="spots">3 spots left</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="feed-card">
+                  <div class="feed-photo ph-mala">
+                    <div class="emoji-bg">🍲</div>
+                    <span class="badge">✦ Featured</span>
+                    <span class="badge new">New</span>
+                    <span class="heart">♡</span>
+                  </div>
+                  <div class="feed-body">
+                    <div class="row1">
+                      <span class="rest">Mala Republic <span class="verified">✔</span> <span class="cat">· Hotpot</span></span>
+                      <span class="star">★ 4.7</span>
+                    </div>
+                    <h5>Film our signature mala tornado pot</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="app-tabbar">
+                <div class="tab on"><span class="ti">🧭</span> Explore</div>
+                <div class="tab"><span class="ti">♡</span> Saved</div>
+                <div class="tab add"><span class="ti">+</span></div>
+                <div class="tab"><span class="ti">👤</span> Profile</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY STRIP ============ -->
+  <!-- TODO: Replace category chips with real restaurant logos as partners confirm -->
+  <div class="strip reveal">
+    <div class="container">
+      <p class="strip-head">Restaurants joining across the Klang Valley</p>
+      <div class="chips">
+        <span class="chip"><span class="emoji">🍔</span> Burger joints</span>
+        <span class="chip"><span class="emoji">🍵</span> Matcha &amp; cafés</span>
+        <span class="chip"><span class="emoji">🍲</span> Hotpot &amp; mala</span>
+        <span class="chip"><span class="emoji">🍰</span> Dessert bars</span>
+        <span class="chip"><span class="emoji">🍣</span> Japanese</span>
+        <span class="chip"><span class="emoji">🥩</span> Fine dining</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAIN / QUALIFY ============ -->
+  <section class="section">
+    <div class="container narrow">
+      <div class="pain-box reveal">
+        <h3>You're in the right place if…</h3>
+        <ul class="checklist">
+          <li><span class="check-icon">✓</span><span>You're tired of dropping <strong>RM100+ of your own money</strong> every week just to shoot one food review.</span></li>
+          <li><span class="check-icon">✓</span><span>You've sent <strong>50+ DMs</strong> to restaurants and got left on read, or ghosted entirely.</span></li>
+          <li><span class="check-icon">✓</span><span>You want professional collabs, but cold pitching feels like a draining full-time sales job.</span></li>
+          <li><span class="check-icon">✓</span><span>You have <strong>1K to 100K followers</strong>, your content is fire, but you have no reliable pipeline of collabs.</span></li>
+          <li><span class="check-icon">✓</span><span>You feel like you're running this creator journey completely alone, with zero support.</span></li>
+        </ul>
+        <div class="pain-foot">If that's you, you're exactly who we built this for. 🙌</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section tight" id="how">
+    <div class="container">
+      <p class="sec-eyebrow reveal">Three steps</p>
+      <h2 class="sec-title reveal">From hungry to hosted in minutes</h2>
+      <p class="sec-intro reveal">No pitching. No waiting around. Just open the app and pick where you want to eat next.</p>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h4>Browse campaigns</h4>
+          <p>Open your feed and explore active restaurants seeking creators, right now, near you.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <h4>Apply &amp; dine</h4>
+          <p>Pick campaigns that fit your style, get approved, and feast on the house with zero out of pocket.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <h4>Post &amp; grow</h4>
+          <p>Share your honest review, build a real portfolio, and turn casual posting into a creator brand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="section tight">
+    <div class="container">
+      <p class="sec-eyebrow reveal">Why creators join</p>
+      <h2 class="sec-title reveal">From the grind to true independence</h2>
+      <div class="benefits">
+        <div class="benefit reveal">
+          <div class="ico">🎯</div>
+          <h4>Stop chasing, start choosing</h4>
+          <p>No more cold DMs. Restaurants post live campaigns, you browse, pick your favourites, and apply on your own terms.</p>
+        </div>
+        <div class="benefit reveal">
+          <div class="ico">💸</div>
+          <h4>Zero out-of-pocket</h4>
+          <p>Stop funding your own content. Meals are fully sponsored, so you can reinvest in your gear and editing instead.</p>
+        </div>
+        <div class="benefit reveal">
+          <div class="ico">📈</div>
+          <h4>Build real credibility</h4>
+          <p>Collaborate with verified Malaysian F&amp;B brands and turn casual foodie posts into a structured, credible portfolio.</p>
+        </div>
+        <div class="benefit reveal">
+          <div class="ico">🤝</div>
+          <h4>Create with support</h4>
+          <p>You're not navigating the hustle alone. Get structured campaigns, clear deliverables, and creative independence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APP PREVIEW BAND ============ -->
+  <section class="section tight">
+    <div class="container">
+      <div class="preview-band reveal">
+        <div>
+          <p class="sec-eyebrow" style="text-align:left">A peek inside the app</p>
+          <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem); text-align:left; max-width:none; margin:0 0 12px;">Your next free meal is one tap away</h2>
+          <p style="color:var(--ink-soft); font-size:1.08rem;">Everything happens in one place: discover, apply, get approved, and track your collabs. No spreadsheets, no DMs, no chasing replies.</p>
+          <ul class="pv-list">
+            <li><span class="check-icon">✓</span><span>A live feed of restaurants <strong>actively looking</strong> for creators</span></li>
+            <li><span class="check-icon">✓</span><span>Clear deliverables up front, so you know exactly what's expected</span></li>
+            <li><span class="check-icon">✓</span><span>Get approved <strong>inside the app</strong>, not buried in your DMs</span></li>
+          </ul>
+        </div>
+        <div class="phone-stage">
+          <div class="phone flat" style="width:288px;">
+            <div class="phone-screen">
+              <div class="island"></div>
+              <div class="statusbar">
+                <span>9:41</span>
+                <span class="sb-icons">▮▮▮ &#x1F4F6; &#x1F50B;</span>
+              </div>
+              <div class="app-head">
+                <div class="app-loc">
+                  <span class="pin"><span class="ico">📍</span> Petaling Jaya ⌄</span>
+                  <span class="app-bell">🔔</span>
+                </div>
+                <div class="app-title">My collabs</div>
+              </div>
+              <div class="app-chips">
+                <span class="c on">Active · 3</span>
+                <span class="c">Pending</span>
+                <span class="c">Done</span>
+              </div>
+              <div class="feed">
+                <div class="feed-card">
+                  <div class="feed-photo ph-burger">
+                    <div class="emoji-bg">🍔</div>
+                    <span class="badge" style="background:#2a8a6a;color:#fff">✓ Approved</span>
+                    <span class="comp">RM 120 Food Credit</span>
+                  </div>
+                  <div class="feed-body">
+                    <div class="row1">
+                      <span class="rest">Smash &amp; Co <span class="cat">· Bangsar</span></span>
+                      <span class="star">★ 4.8</span>
+                    </div>
+                    <h5>Smash burger combo for two</h5>
+                    <div class="deliv"><span>1 Reel</span><span>Instagram Reel</span></div>
+                  </div>
+                </div>
+                <div class="feed-card">
+                  <div class="feed-photo ph-matcha">
+                    <div class="emoji-bg">🍵</div>
+                    <span class="badge" style="background:#fff;color:var(--ink)">⏳ Pending</span>
+                  </div>
+                  <div class="feed-body">
+                    <div class="row1">
+                      <span class="rest">Hojicha House <span class="cat">· KL</span></span>
+                      <span class="star">Applied 2h</span>
+                    </div>
+                    <h5>Aesthetic matcha latte pour shots</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="app-tabbar">
+                <div class="tab"><span class="ti">🧭</span> Explore</div>
+                <div class="tab"><span class="ti">♡</span> Saved</div>
+                <div class="tab add"><span class="ti">+</span></div>
+                <div class="tab on"><span class="ti">👤</span> Profile</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDERS ============ -->
+  <section class="section tight">
+    <div class="container">
+      <p class="sec-eyebrow reveal">Built by Malaysian foodies</p>
+      <h2 class="sec-title reveal">Real Founders. Real Food Obsession.</h2>
+      <p class="sec-intro reveal">We're three Malaysians who got tired of watching talented creators burn cash and get ghosted, so we built the platform we wished existed.</p>
+      <div class="founders">
+        <div class="founder reveal">
+          <!-- Keith: blue-shirt photo. Save the uploaded blue-shirt photo as keith.jpg in this folder. -->
+          <div class="pfp"><img src="keith.jpg" alt="Keith, Co-Founder"></div>
+          <h4>Keith</h4>
+          <div class="role">Co-Founder · Community</div>
+          <p>Leads brand and community, and personally onboards every early creator.</p>
+        </div>
+        <div class="founder reveal">
+          <!-- Kelvin: photo to be added later. Keeps initial avatar for now. -->
+          <div class="pfp" style="background:linear-gradient(150deg,#f9b16e,#e8543b)">K</div>
+          <h4>Kelvin</h4>
+          <div class="role">Co-Founder · COO</div>
+          <p>Runs the F&amp;B network, so there are real restaurants ready on day one.</p>
+        </div>
+        <div class="founder reveal">
+          <!-- Jason: white-shirt (glasses) photo. Save the uploaded white-shirt photo as jason.jpg in this folder. -->
+          <div class="pfp"><img src="jason.jpg" alt="Jason, Co-Founder"></div>
+          <h4>Jason</h4>
+          <div class="role">Co-Founder · CTO</div>
+          <p>Built the app from scratch to make collabs effortless for creators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section tight">
+    <div class="container">
+      <p class="sec-eyebrow reveal">Good questions</p>
+      <h2 class="sec-title reveal">Frequently asked questions</h2>
+      <div class="faq-wrap reveal">
+        <details class="faq-item">
+          <summary class="faq-q">Do I need a big following? <span class="faq-icon">+</span></summary>
+          <div class="faq-a">No, lah! We focus on micro-influencers and rising creators (typically 1K to 10K followers). If your content looks good and your audience is active, Malaysian brands want to host you.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is it actually free? <span class="faq-icon">+</span></summary>
+          <div class="faq-a">Yes, 100% free for foodie creators. No membership fees, no hidden platform cuts. You bring authentic creativity; the restaurant serves your meal on the house.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What restaurants are on the platform? <span class="faq-icon">+</span></summary>
+          <div class="faq-a">We're partnering with dining spots and cafés across the Klang Valley, from artisanal burger joints and aesthetic matcha spaces to hotpot and fine dining.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How do I get approved for campaigns? <span class="faq-icon">+</span></summary>
+          <div class="faq-a">Super simple. Once you join, browse the campaign feed and apply to ones you like. Restaurants review your handles, check your audience vibe, and approve you directly in the app.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How is this different from DMing restaurants myself? <span class="faq-icon">+</span></summary>
+          <div class="faq-a">DMing is a headache. You get ghosted or stuck with an intern who has zero authority. On Share Eat!, every listed restaurant is actively searching and ready to host partners right now.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WAITLIST ============ -->
+  <section class="section" id="waitlist">
+    <div class="container">
+      <div class="waitlist-band reveal">
+        <div style="text-align:center;">
+          <span class="eyebrow">⏳ Limited Phase 1 Access</span>
+        </div>
+        <h2>Stop funding your own meals. Start creating for free.</h2>
+        <p class="lead">Phase 1 invites are strictly capped at <strong>200 Klang Valley creators</strong>. Pre-register now to lock in your spot.</p>
+
+        <div class="progress-wrap">
+          <div class="progress-meta"><span>Phase 1 spots</span><span id="spotsLabel">Filling fast</span></div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+
+        <div class="form-card">
+          <iframe data-tally-src="https://tally.so/embed/A7j8Yz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1463" frameborder="0" marginheight="0" marginwidth="0" title="KOL Waitlist"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container footer-grid">
+      <a class="logo" href="#top"><img src="Share Eat Typography.svg" alt="Share Eat!"></a>
+      <span class="footer-meta">&copy; 2026 Share Eat Technologies. Made with 🍜 in Malaysia.</span>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY MOBILE CTA ============ -->
+  <div class="mobile-cta">
+    <a href="#waitlist" class="btn btn-primary btn-block btn-lg">Join the Free Waitlist</a>
+  </div>
+
+  <!-- Tally embed loader -->
+  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
   <script>
-    const setupAnimations = () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-      document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-      });
-    };
+    // Nav shadow on scroll
+    const navWrap = document.getElementById('navWrap');
+    const onScroll = () => navWrap.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
 
-    document.addEventListener('DOMContentLoaded', setupAnimations);
+    // Animate scarcity bar when waitlist enters view (visual urgency cue, adjust the % as real signups come in)
+    const fill = document.getElementById('progressFill');
+    const fillObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { fill.style.width = '72%'; fillObs.disconnect(); } });
+    }, { threshold: 0.5 });
+    fillObs.observe(document.getElementById('waitlist'));
   </script>
 </body>
 </html>
