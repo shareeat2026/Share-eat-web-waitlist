@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner with Share Eat! The infrastructure for meal-for-content campaigns.</title>
+  <meta name="description" content="Share Eat! is Malaysia's meal-for-content platform. KOL agencies, creator communities, F&B groups, and brands plug into our infrastructure to run authentic restaurant campaigns fast. Bring the supply or the demand, we run the rails.">
+
+  <meta property="og:title" content="Partner with Share Eat! The meal-for-content engine.">
+  <meta property="og:description" content="Bring your creators or your brands. We run the campaigns. Partner with Malaysia's meal-for-content platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shareeat.io/partners">
+  <meta property="og:image" content="https://shareeat.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://shareeat.io/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #faf9f5; --ink: #1a1714; --ink-soft: #5c554d;
+      --primary: #f5c842; --primary-deep: #e0a90a; --primary-ink: #8a6500;
+      --tomato: #e8543b; --line: rgba(26,23,20,0.08); --card: #ffffff;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --shadow-sm: 0 4px 18px rgba(26,23,20,0.04);
+      --shadow-md: 0 14px 40px rgba(26,23,20,0.08);
+      --shadow-lg: 0 30px 70px rgba(26,23,20,0.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.06; letter-spacing: -0.02em; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 22px; }
+    .narrow { max-width: 860px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: var(--font-body); font-size: 15px; font-weight: 700; padding: 16px 30px; border: none; border-radius: 14px; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; text-align: center; white-space: nowrap; }
+    .btn-primary { background: linear-gradient(180deg, #ffd454, var(--primary) 60%, var(--primary-deep)); color: #2a2000; box-shadow: 0 10px 26px rgba(224,169,10,0.40), inset 0 1px 0 rgba(255,255,255,0.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(224,169,10,0.52), inset 0 1px 0 rgba(255,255,255,0.5); }
+    .btn-ghost { background: rgba(26,23,20,0.04); color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { background: rgba(26,23,20,0.07); transform: translateY(-2px); }
+    .btn-lg { padding: 19px 40px; font-size: 16px; }
+    .btn-block { width: 100%; }
+
+    /* Nav */
+    .nav-wrap { position: sticky; top: 0; z-index: 50; background: rgba(250,249,245,0.82); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid transparent; transition: border-color .25s ease, box-shadow .25s ease; }
+    .nav-wrap.scrolled { border-color: var(--line); box-shadow: 0 6px 20px rgba(26,23,20,0.04); }
+    nav { height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .logo img { height: 28px; width: auto; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-badge { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 999px; background: rgba(232,84,59,0.10); color: var(--tomato); }
+    .nav-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--tomato); animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: .4; transform: scale(.7);} }
+    .nav-cta { padding: 11px 22px; font-size: 14px; }
+    @media (max-width: 600px){ .nav-badge { display: none; } }
+
+    /* Hero */
+    .hero { position: relative; padding: 70px 0 80px; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(55% 55% at 85% 8%, rgba(245,200,66,0.26), transparent 62%), radial-gradient(45% 45% at 2% 45%, rgba(232,84,59,0.09), transparent 70%); }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 7px 15px; border-radius: 999px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: #fff; border: 1px solid var(--line); color: var(--primary-ink); box-shadow: var(--shadow-sm); margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(2.5rem, 5.8vw, 4.4rem); font-weight: 900; margin-bottom: 20px; }
+    .hero h1 .hl { position: relative; white-space: nowrap; color: var(--ink); }
+    .hero h1 .hl::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: 0.05em; height: 0.32em; z-index: -1; background: linear-gradient(90deg, var(--primary), #ffe08a); border-radius: 4px; transform: rotate(-1.2deg); }
+    .hero p.sub { font-size: clamp(1.05rem, 1.6vw, 1.24rem); color: var(--ink-soft); max-width: 34rem; margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-note { margin-top: 24px; color: var(--ink-soft); font-size: 0.92rem; }
+
+    /* Engine diagram */
+    .engine { background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 26px; box-shadow: var(--shadow-md); }
+    .engine .io { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .engine .io .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; padding: 10px 15px; border-radius: 999px; background: rgba(245,200,66,0.16); color: var(--primary-ink); border: 1px solid rgba(224,169,10,0.2); }
+    .engine .arrow { text-align: center; color: var(--primary-deep); font-size: 1.3rem; margin: 11px 0; opacity: .55; }
+    .engine .core { background: var(--ink); color: #fff; border-radius: 20px; padding: 22px 20px; text-align: center; }
+    .engine .core .t { font-family: var(--font-display); font-weight: 900; font-size: 1.35rem; }
+    .engine .core .st { font-size: 11px; opacity: .65; margin-top: 3px; }
+    .engine .core .fns { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin-top: 14px; }
+    .engine .core .fns span { font-size: 10.5px; font-weight: 600; background: rgba(255,255,255,0.1); padding: 6px 11px; border-radius: 999px; color: #fff; }
+    .engine .out { text-align: center; margin-top: 16px; font-weight: 800; font-size: 0.95rem; color: var(--primary-ink); }
+
+    /* Sections */
+    .section { padding: 84px 0; }
+    .section.tight { padding: 60px 0; }
+    .sec-eyebrow { text-align: center; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary-ink); margin-bottom: 14px; }
+    .sec-title { font-size: clamp(2rem, 4.4vw, 3rem); text-align: center; max-width: 800px; margin: 0 auto 16px; }
+    .sec-intro { text-align: center; color: var(--ink-soft); font-size: 1.1rem; max-width: 640px; margin: 0 auto 56px; }
+
+    /* category band */
+    .category { background: linear-gradient(160deg, #fff6df, #fbe8c8); border: 1px solid rgba(224,169,10,0.18); border-radius: 32px; padding: 56px; text-align: center; }
+    .category h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); margin: 0 auto 14px; max-width: 720px; }
+    .category .lead { color: #6a5b2e; font-size: 1.08rem; max-width: 520px; margin: 0 auto; }
+    .cat-cols { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 16px; margin-top: 36px; text-align: left; }
+    .cat-col { background: #fff; border: 1px solid rgba(224,169,10,0.2); border-radius: 18px; padding: 24px 22px; }
+    .cat-col.win { background: var(--ink); border-color: transparent; }
+    .cat-col .tag { font-size: 11.5px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 9px; }
+    .cat-col.old .tag { color: var(--tomato); }
+    .cat-col.win .tag { color: #ffd454; }
+    .cat-col h4 { font-family: var(--font-body); font-size: 1.02rem; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+    .cat-col.win h4 { color: #fff; }
+    .cat-col p { font-size: 0.94rem; color: var(--ink-soft); }
+    .cat-col.win p { color: rgba(255,255,255,0.82); }
+    .cat-foot { margin-top: 28px; font-weight: 600; color: #6a5b2e; font-size: 1.02rem; }
+    @media (max-width: 760px){ .cat-cols { grid-template-columns: 1fr; } }
+
+    /* cards grid */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .pcard { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .pcard:hover { transform: translateY(-6px); border-color: rgba(245,200,66,0.55); box-shadow: var(--shadow-md); }
+    .pcard .ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 16px; background: rgba(245,200,66,0.16); }
+    .pcard h4 { font-family: var(--font-body); font-size: 1.18rem; font-weight: 700; margin-bottom: 9px; }
+    .pcard p { color: var(--ink-soft); font-size: 0.98rem; }
+
+    /* steps */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 34px 28px; box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease; }
+    .step:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .step-num { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 2.6rem; color: var(--primary-deep); line-height: 1; margin-bottom: 16px; }
+    .step h4 { font-family: var(--font-body); font-size: 1.22rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--ink-soft); font-size: 1rem; }
+
+    /* loop */
+    .loop { display: flex; align-items: stretch; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 940px; margin: 0 auto; }
+    .loop-node { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 18px; box-shadow: var(--shadow-sm); text-align: center; flex: 1; min-width: 150px; }
+    .loop-node .e { font-size: 1.7rem; }
+    .loop-node h5 { font-family: var(--font-body); font-size: 0.98rem; font-weight: 700; margin: 8px 0 4px; }
+    .loop-node p { color: var(--ink-soft); font-size: 0.84rem; }
+    .loop-arrow { display: grid; place-items: center; color: var(--primary-deep); font-size: 1.4rem; opacity: .55; }
+    .loop-cap { text-align: center; margin-top: 28px; font-size: 1rem; color: var(--ink-soft); }
+    .loop-cap strong { color: var(--ink); }
+
+    /* founders */
+    .founders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .founder { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 26px; text-align: center; box-shadow: var(--shadow-sm); }
+    .founder .pfp { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 16px; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 2.1rem; color: #fff; overflow: hidden; }
+    .founder .pfp img { width: 100%; height: 100%; object-fit: cover; }
+    .founder h4 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; margin-bottom: 2px; }
+    .founder .role { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--primary-ink); margin-bottom: 12px; }
+    .founder p { color: var(--ink-soft); font-size: 0.95rem; }
+
+    /* CTA band */
+    .cta-band { background: var(--ink); color: #fff; border-radius: 36px; padding: 64px 48px; position: relative; overflow: hidden; text-align: center; }
+    .cta-band::before { content:""; position:absolute; inset:0; background: radial-gradient(50% 70% at 90% 0%, rgba(245,200,66,0.22), transparent 60%), radial-gradient(40% 60% at 0% 100%, rgba(232,84,59,0.16), transparent 60%); }
+    .cta-band > * { position: relative; }
+    .cta-band .eyebrow { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.16); color: #ffd454; }
+    .cta-band h2 { color: #fff; font-size: clamp(1.9rem, 4vw, 2.9rem); max-width: 720px; margin: 0 auto 16px; }
+    .cta-band p { color: rgba(255,255,255,0.78); font-size: 1.12rem; max-width: 560px; margin: 0 auto 30px; }
+    .cta-band .email { margin-top: 18px; font-size: 0.95rem; color: rgba(255,255,255,0.7); }
+    .cta-band .email a { color: #ffd454; font-weight: 700; }
+
+    /* join band */
+    .join-band { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 28px 34px; box-shadow: var(--shadow-sm); flex-wrap: wrap; }
+    .join-band h3 { font-family: var(--font-body); font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+    .join-band p { color: var(--ink-soft); font-size: 0.98rem; }
+    .join-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 620px){
+      .join-band { flex-direction: column; align-items: stretch; text-align: left; padding: 26px 24px; }
+      .join-actions { width: 100%; }
+      .join-actions .btn { flex: 1; }
+    }
+
+    /* footer */
+    footer { border-top: 1px solid var(--line); padding: 40px 0; background: #fff; }
+    .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-grid .logo img { height: 22px; }
+    .footer-meta { font-size: 0.84rem; color: var(--ink-soft); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.165,.84,.44,1), transform .8s cubic-bezier(.165,.84,.44,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce){ .reveal { opacity: 1; transform: none; transition: none; } }
+
+    @media (max-width: 940px){
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .grid, .grid.two, .steps, .founders { grid-template-columns: 1fr; }
+      .loop { flex-direction: column; }
+      .loop-node { width: 100%; flex: none; min-width: 0; }
+      .loop-arrow { transform: rotate(90deg); }
+    }
+    @media (max-width: 600px){
+      .section { padding: 60px 0; }
+      .category, .cta-band { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <div class="nav-wrap" id="navWrap">
+    <div class="container">
+      <nav>
+        <a class="logo" href="index.html"><img src="Share Eat Typography.svg" alt="Share Eat!"></a>
+        <div class="nav-right">
+          <span class="nav-badge"><span class="dot"></span> Partnerships open</span>
+          <a href="#contact" class="btn btn-primary nav-cta">Become a partner</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">🤝 Partner with Share Eat!</span>
+          <h1>We connect restaurants<br>with creators, and <span class="hl">a lot more</span>.</h1>
+          <p class="sub">Malaysia's meal-for-content platform. Partners plug in to launch authentic campaigns in days, not months. Bring the supply or the demand, we run the rails.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary btn-lg">Become a partner →</a>
+            <a href="#model" class="btn btn-ghost btn-lg">See the model</a>
+          </div>
+          <p class="hero-note">In conversations with KOL agencies and F&amp;B groups across the Klang Valley ahead of our July 2026 launch.</p>
+        </div>
+
+        <!-- Engine diagram -->
+        <div class="reveal">
+          <div class="engine">
+            <div class="io">
+              <span class="pill">🎤 Agencies &amp; creators</span>
+              <span class="pill">🍽️ Restaurants &amp; brands</span>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="core">
+              <div class="t">The Share Eat! engine</div>
+              <div class="st">One platform, end to end</div>
+              <div class="fns">
+                <span>Campaign creation</span>
+                <span>Creator vetting</span>
+                <span>Matching</span>
+                <span>Deliverable tracking</span>
+                <span>Content library</span>
+              </div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="out">Live campaigns · Authentic content · Real ROI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOIN (not a partner) ============ -->
+  <section class="section tight" style="padding-top: 0;">
+    <div class="container">
+      <div class="join-band reveal">
+        <div>
+          <h3>Here to sign up, not partner?</h3>
+          <p>If you're a restaurant or a creator, join the waitlist directly.</p>
+        </div>
+        <div class="join-actions">
+          <a href="restaurant.html" class="btn btn-ghost">Enrol as a restaurant →</a>
+          <a href="kol.html" class="btn btn-primary">Sign up as a creator →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEW CATEGORY ============ -->
+  <section class="section tight">
+    <div class="container narrow">
+      <div class="category reveal">
+        <p class="sec-eyebrow">A new category</p>
+        <h2>Meal-for-content is the win-win F&amp;B has been waiting for</h2>
+        <p class="lead">The old playbook is broken. Here's the shift:</p>
+        <div class="cat-cols">
+          <div class="cat-col old">
+            <div class="tag">✗ Paid ads</div>
+            <h4>Expensive, and ignored</h4>
+            <p>Costs add up fast, and people scroll right past them.</p>
+          </div>
+          <div class="cat-col old">
+            <div class="tag">✗ Cold influencer deals</div>
+            <h4>Slow and risky</h4>
+            <p>Pricey, hard to manage, and hit-or-miss on results.</p>
+          </div>
+          <div class="cat-col win">
+            <div class="tag">✓ Meal-for-content</div>
+            <h4>A free meal becomes marketing</h4>
+            <p>Restaurants get honest content and real customers. Creators get fed and grow. Funded by food cost, not ad budgets.</p>
+          </div>
+        </div>
+        <p class="cat-foot">We've built the infrastructure to run it at scale, and we're opening it up to partners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO WE PARTNER WITH ============ -->
+  <section class="section tight">
+    <div class="container">
+      <p class="sec-eyebrow reveal">Who we partner with</p>
+      <h2 class="sec-title reveal">One platform, many ways to plug in</h2>
+      <p class="sec-intro reveal">Whether you bring creators, restaurants, brands, or the tech around them, there's a place for you in the loop.</p>
+      <div class="grid">
+        <div class="pcard reveal">
+          <div class="ico">🎤</div>
+          <h4>KOL &amp; talent agencies</h4>
+          <p>Turn your roster's downtime into always-on meal campaigns. We handle the briefs, matching, and tracking; your creators stay busy, get hosted, and grow.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">👥</div>
+          <h4>Creator communities &amp; platforms</h4>
+          <p>Give your members a steady pipeline of real, local collabs they actually want, with zero campaign ops on your side.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">🍽️</div>
+          <h4>Restaurant groups &amp; franchises</h4>
+          <p>Run consistent creator campaigns across every outlet from a single dashboard, instead of outlet-by-outlet guesswork.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">🥤</div>
+          <h4>F&amp;B brands &amp; FMCG</h4>
+          <p>Sponsor creator campaigns at scale and ride authentic local content instead of paid ads that people scroll past.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">💳</div>
+          <h4>POS, booking &amp; loyalty tech</h4>
+          <p>Integrate Share Eat! campaigns into the tools restaurants already use, and add a marketing layer to your product.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">🏙️</div>
+          <h4>Malls, tourism &amp; F&amp;B clusters</h4>
+          <p>Drive measurable foot traffic to your tenants and destinations through trusted local creators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY PARTNER ============ -->
+  <section class="section tight">
+    <div class="container">
+      <p class="sec-eyebrow reveal">Why partner with us</p>
+      <h2 class="sec-title reveal">The rails are already built</h2>
+      <div class="grid two">
+        <div class="pcard reveal">
+          <div class="ico">🚀</div>
+          <h4>Skip the build</h4>
+          <p>Campaign creation, creator vetting, matching, deliverable tracking, and a content library are done. Plug in instead of building a marketplace from zero.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">💰</div>
+          <h4>A new revenue stream</h4>
+          <p>Monetize idle creator capacity and unlock recurring campaign volume, funded by F&amp;B food cost rather than thin ad budgets.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">⚡</div>
+          <h4>Launch in days</h4>
+          <p>Spin up and run campaigns at the speed local F&amp;B actually moves, not on a three-month agency timeline.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="ico">✅</div>
+          <h4>Vetted on both sides</h4>
+          <p>Approved creators and verified restaurants mean quality supply and demand from day one, and content you can trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW A PARTNERSHIP WORKS ============ -->
+  <section class="section tight">
+    <div class="container">
+      <p class="sec-eyebrow reveal">How a partnership works</p>
+      <h2 class="sec-title reveal">From handshake to live campaigns</h2>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h4>Connect your pool</h4>
+          <p>Bring your creators, your outlets, or your brand briefs. We onboard them onto the platform together.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <h4>We run the campaigns</h4>
+          <p>Restaurants post offers, creators apply and dine, and content goes live, all created, matched, and tracked in one place.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <h4>Everyone wins</h4>
+          <p>Creators grow, restaurants get customers, and you get revenue and reach with no infrastructure to build or maintain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE LOOP / MODEL ============ -->
+  <section class="section tight" id="model">
+    <div class="container">
+      <p class="sec-eyebrow reveal">The model</p>
+      <h2 class="sec-title reveal">A loop that feeds itself</h2>
+      <p class="sec-intro reveal">Every campaign makes the next one easier. That flywheel is what you're plugging into.</p>
+      <div class="loop reveal">
+        <div class="loop-node">
+          <div class="e">🍽️</div>
+          <h5>A meal is offered</h5>
+          <p>A restaurant posts a tasting campaign.</p>
+        </div>
+        <div class="loop-arrow">→</div>
+        <div class="loop-node">
+          <div class="e">🎥</div>
+          <h5>Content is created</h5>
+          <p>An approved creator dines and posts honestly.</p>
+        </div>
+        <div class="loop-arrow">→</div>
+        <div class="loop-node">
+          <div class="e">🚶</div>
+          <h5>Customers arrive</h5>
+          <p>Local audiences discover and visit.</p>
+        </div>
+        <div class="loop-arrow">→</div>
+        <div class="loop-node">
+          <div class="e">📈</div>
+          <h5>The restaurant grows</h5>
+          <p>So it runs more campaigns, feeding more creators.</p>
+        </div>
+      </div>
+      <p class="loop-cap reveal"><strong>Partners plug in on either side:</strong> bring creators to power the supply, or restaurants and brands to power the demand. The platform does the rest.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDERS ============ -->
+  <section class="section tight">
+    <div class="container">
+      <p class="sec-eyebrow reveal">Who's building this</p>
+      <h2 class="sec-title reveal">A Malaysian team, obsessed with food and creators</h2>
+      <p class="sec-intro reveal">We're three Malaysians building the infrastructure for a fairer, faster way for restaurants and creators to work together.</p>
+      <div class="founders">
+        <div class="founder reveal">
+          <div class="pfp"><img src="keith.jpg" alt="Keith, Co-Founder"></div>
+          <h4>Keith</h4>
+          <div class="role">Co-Founder · Community</div>
+          <p>Leads brand, community, and creator partnerships.</p>
+        </div>
+        <div class="founder reveal">
+          <div class="pfp" style="background:linear-gradient(150deg,#f9b16e,#e8543b)">K</div>
+          <h4>Kelvin</h4>
+          <div class="role">Co-Founder · COO</div>
+          <p>Runs the F&amp;B network and restaurant partnerships.</p>
+        </div>
+        <div class="founder reveal">
+          <div class="pfp"><img src="jason.jpg" alt="Jason, Co-Founder"></div>
+          <h4>Jason</h4>
+          <div class="role">Co-Founder · CTO</div>
+          <p>Built the platform and the campaign engine from scratch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / CTA ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta-band reveal">
+        <span class="eyebrow">🚀 Phase 1 partner slots</span>
+        <h2>Let's build the meal-for-content economy together</h2>
+        <p>We're hand-picking a small group of launch partners before July 2026. If you bring creators, restaurants, brands, or the tech around them, we'd love to talk.</p>
+        <a href="mailto:keith@shareeat.io?subject=Partnership%20with%20Share%20Eat!" class="btn btn-primary btn-lg">Become a partner →</a>
+        <p class="email">Or email us directly at <a href="mailto:keith@shareeat.io">keith@shareeat.io</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container footer-grid">
+      <a class="logo" href="index.html"><img src="Share Eat Typography.svg" alt="Share Eat!"></a>
+      <span class="footer-meta">&copy; 2026 Share Eat Technologies. Made with 🍜 in Malaysia.</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    const navWrap = document.getElementById('navWrap');
+    const onScroll = () => navWrap.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
+</body>
+</html>
