@@ -12,7 +12,7 @@
       --font-heading: Georgia, serif;
       --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -43,11 +43,11 @@
       .container {
         padding: 0 16px;
       }
-      
+
       .max-w-3xl {
         padding: 0 8px !important;
       }
-      
+
       body {
         padding: 0 8px;
       }
@@ -141,9 +141,9 @@
   <div class="container py-12">
     <div class="max-w-3xl">
       <h1 class="text-4xl mb-8">Privacy Policy</h1>
-      <p class="text-gray-700 mb-2"><strong>Effective Date:</strong> 25 June 2026</p>
-      <p class="text-gray-700 mb-8"><em>Version 2.2 (supersedes Version 2.1 dated 11 June 2026)</em></p>
-      
+      <p class="text-gray-700 mb-2"><strong>Effective Date:</strong> 15 July 2026</p>
+      <p class="text-gray-700 mb-8"><em>Version 3.0 (supersedes Version 2.2 dated 25 June 2026)</em></p>
+
       <div class="space-y-8">
         <section>
           <h2 class="text-2xl font-semibold mb-4">1. Introduction</h2>
@@ -157,11 +157,11 @@
             For the purposes of the Personal Data Protection Act 2010 of Malaysia, as amended by the Personal Data Protection (Amendment) Act 2024 (collectively, the "PDPA"), Share Eat Sdn. Bhd. is the <strong>data controller</strong> of your personal data. This document also serves as our Personal Data Protection Notice issued pursuant to Section 7 of the PDPA.
           </p>
           <p class="text-gray-700 mb-4">
-            When you register for the App, you will be presented with a clear, explicit consent step — a mandatory tickbox requiring you to actively confirm that you have read and agree to this Privacy Policy. Without giving this consent, registration cannot be completed. If you do not agree to this Policy, please do not register for or use the App. Your consent is recorded with a timestamp and the policy version in force at the point of registration.
+            When you register for the App, you will be presented with a clear, explicit consent step — a mandatory tickbox requiring you to actively confirm that you have read and agree to this Privacy Policy. Without giving this consent, registration cannot be completed. If you do not agree to this Policy, please do not register for or use the App. Your consent is recorded with a timestamp and the policy version in force at the point of registration, and is kept in a permanent consent log.
           </p>
           <div class="bg-gray-50 rounded p-4">
             <p class="font-semibold mb-2">CONSENT NOTICE:</p>
-            <p class="text-gray-700">Your consent is collected actively at registration via a mandatory tickbox. Your consent timestamp and the policy version you agreed to are logged. You may withdraw your consent at any time by contacting us, though this will affect your ability to use the App.</p>
+            <p class="text-gray-700">Your consent is collected actively at registration via a mandatory tickbox. Your consent timestamp and the policy version you agreed to are logged. If you sign in using Google or Apple, tapping the sign-in button after being shown the consent notice constitutes the same consent. You may withdraw your consent at any time by contacting us, though this will affect your ability to use the App.</p>
           </div>
         </section>
 
@@ -178,54 +178,76 @@
         <section>
           <h2 class="text-2xl font-semibold mb-4">3. Information We Collect</h2>
           <p class="text-gray-700 mb-4">We collect the following categories of personal data:</p>
-          
-          <h3 class="font-semibold mb-2">3.1 Account & Identity Information</h3>
+
+          <h3 class="font-semibold mb-2">3.1 Account &amp; Identity Information</h3>
           <ul class="text-gray-700 mb-4">
             <li>Display name</li>
             <li>Email address (verified at registration via a one-time passcode (OTP) sent to your email)</li>
-            <li>Phone number (used to contact you and to coordinate approved collaborations — see Section 6.1)</li>
-            <li>Account password</li>
+            <li>Account password (stored in hashed form by our authentication provider; we never see your plaintext password)</li>
+            <li>If you choose to sign in with Google or Apple (where offered): your name and email address as provided by that sign-in provider. If you use Apple's "Hide My Email", we receive the private relay address Apple generates for you.</li>
+            <li>Phone number (WhatsApp contact number, collected during profile setup — see Section 6.1 for how it is shared)</li>
+            <li>Referral code (optional — if you sign up through a friend's referral link or enter a code manually)</li>
           </ul>
 
           <h3 class="font-semibold mb-2">3.2 Profile Information</h3>
           <p class="text-gray-700 mb-2"><strong>For Creators:</strong></p>
           <ul class="text-gray-700 mb-4">
             <li>Profile photo</li>
-            <li>Bio and content niche/specialisation</li>
-            <li>Social media handles and platform links (e.g. Instagram, TikTok, YouTube)</li>
+            <li>Bio, location (a free-text city/area label you type in — not GPS), and content niche and style tags you select</li>
+            <li>Social media handles (e.g. Instagram, TikTok, RedNote)</li>
             <li>Content samples and portfolio photos or videos uploaded by you</li>
           </ul>
           <p class="text-gray-700 mb-2"><strong>For Restaurants:</strong></p>
           <ul class="text-gray-700 mb-4">
-            <li>Restaurant name and description</li>
-            <li>Restaurant profile photo and food/venue photos</li>
-            <li>Physical address and operating location</li>
-            <li>Social media handles and website links</li>
+            <li>Restaurant name, description, and cuisine type</li>
+            <li>Restaurant profile photo (logo), cover photo, and food/menu photos</li>
+            <li>Business location (a free-text label you type in)</li>
+            <li>Contact phone number</li>
           </ul>
 
           <h3 class="font-semibold mb-2">3.3 Location Information</h3>
           <ul class="text-gray-700 mb-4">
-            <li>Address information provided by you during registration or profile setup</li>
-            <li>General location derived from your IP address (used to surface relevant opportunities)</li>
-            <li>Note: We do not continuously track your real-time GPS location without your explicit consent.</li>
+            <li>The App does <strong>not</strong> collect GPS or device location, and does not request location permission. Location fields in your profile are free-text labels you type yourself.</li>
+            <li>Approximate (city-level) location may be derived from your IP address by our analytics providers (see Section 13).</li>
           </ul>
 
-          <h3 class="font-semibold mb-2">3.4 Content You Upload & Content Licence</h3>
+          <h3 class="font-semibold mb-2">3.4 Content You Upload &amp; Content Licence</h3>
           <ul class="text-gray-700 mb-4">
-            <li>Photos and videos submitted as part of your portfolio or UGC deliverables</li>
+            <li>Photos you upload from your photo library (profile images, restaurant logos/covers, food and menu photos). The App accesses your photo library only when you actively pick an image, and does not use your camera.</li>
+            <li>Campaign application pitch messages written by Creators (shared with the Restaurant that owns the campaign)</li>
+            <li>Links to your published posts and their performance metrics (views, likes, comments) submitted as campaign deliverables</li>
+            <li>Screenshots of your post analytics uploaded as proof of performance (shared with the campaign's Restaurant)</li>
           </ul>
-          <p class="text-gray-700 mb-4">The App does not currently provide an in-app messaging feature. Communication between Creators and Restaurants takes place off-platform (see Section 10.3).</p>
+          <div class="bg-gray-50 rounded p-4 mb-4">
+            <p class="font-semibold mb-2">PUBLIC IMAGE HOSTING NOTICE:</p>
+            <p class="text-gray-700">Images you upload to the App (profile photos, logos, food photos, and analytics screenshots) are hosted at publicly accessible web addresses. Anyone who has the link can view them, even without a Share Eat account. Please do not upload images containing information you are not comfortable being publicly viewable — in particular, crop analytics screenshots so they show only the metrics requested.</p>
+          </div>
+          <p class="text-gray-700 mb-4">The App does not currently provide an in-app messaging feature. Communication between Creators and Restaurants takes place off-platform (see Section 12.3).</p>
           <div class="bg-gray-50 rounded p-4">
             <p class="font-semibold mb-2">CONTENT LICENCE:</p>
             <p class="text-gray-700">By uploading any photo, video, or other content to the App, you grant Share Eat Sdn. Bhd. a non-exclusive, royalty-free, worldwide, sub-licensable licence to host, store, display, and reproduce that content solely for the purposes of operating and improving the App (including showing your portfolio to Restaurant partners). You retain full ownership of all content you upload. Share Eat will not use your content for external marketing or advertising without your separate, express written consent. Rights between Creators and Restaurants in respect of UGC deliverables are governed by the individual collaboration agreement and the Terms of Service.</p>
           </div>
 
-          <h3 class="font-semibold mb-2 mt-4">3.5 Usage & Technical Data</h3>
-          <ul class="text-gray-700">
+          <h3 class="font-semibold mb-2 mt-4">3.5 Usage &amp; Technical Data</h3>
+          <ul class="text-gray-700 mb-4">
             <li>Device type, operating system, and app version</li>
-            <li>IP address and approximate location</li>
-            <li>App usage patterns, session duration, features accessed (via Google Analytics for Firebase)</li>
-            <li>Crash reports and performance data</li>
+            <li>IP address and the approximate location derived from it</li>
+            <li>App usage events: screens viewed, buttons and elements tapped, session information, sign-up and campaign funnel events, and app install/open/update events (collected via Google Analytics for Firebase and PostHog — see Section 13)</li>
+            <li>Search terms you enter when browsing campaigns</li>
+            <li>How you interact with campaign listings (for example, how long a listing stays on your screen and how far you scroll), which we use to personalise the order of campaigns shown to you</li>
+            <li>A push notification token for your device (if you enable push notifications)</li>
+          </ul>
+
+          <h3 class="font-semibold mb-2">3.6 Referral Data</h3>
+          <ul class="text-gray-700 mb-4">
+            <li>Your unique referral code (a randomly generated code — it contains no personal information)</li>
+            <li>If you redeem someone's code (or someone redeems yours): a record linking the two accounts, used to grant rewards and enforce programme limits</li>
+            <li>The sharing channel you choose when you share your referral link (e.g. which app you shared it to)</li>
+          </ul>
+
+          <h3 class="font-semibold mb-2">3.7 Consent &amp; Legal Records</h3>
+          <ul class="text-gray-700">
+            <li>A permanent log of your privacy-policy consent: the policy version, the action (granted or withdrawn), and the timestamp. We retain this as a legal record even after other data is deleted, to evidence compliance with the PDPA.</li>
           </ul>
         </section>
 
@@ -235,8 +257,11 @@
           <ul class="text-gray-700">
             <li>To create, verify, and manage your account</li>
             <li>To display your profile to relevant parties (Restaurants viewing Creator profiles and vice versa)</li>
-            <li>To facilitate collaboration matching between Creators and Restaurants</li>
+            <li>To facilitate collaboration matching between Creators and Restaurants, including personalising the campaigns shown to Creators based on their in-app activity and interests</li>
             <li>To facilitate contact between matched Creators and Restaurants to coordinate collaborations (currently conducted off-platform, e.g. via WhatsApp)</li>
+            <li>To let Restaurants review Creator applications, invite Creators to campaigns, and rate submitted work (see Section 6.1)</li>
+            <li>To generate AI-assisted campaign briefs and topic tags for Restaurants (see Section 7)</li>
+            <li>To operate the referral programme and grant referral rewards</li>
             <li>To send push notifications about new collaboration opportunities, application updates, and important platform updates</li>
             <li>To send transactional emails (e.g. account verification codes and password reset codes)</li>
             <li>To improve our App's features and user experience through analytics</li>
@@ -250,7 +275,7 @@
           <h2 class="text-2xl font-semibold mb-4">5. Legal Basis for Processing Your Data</h2>
           <p class="text-gray-700 mb-4">In accordance with Section 6 of the PDPA, we process your personal data on the following bases:</p>
           <ul class="text-gray-700">
-            <li><strong>Consent</strong> – You have given explicit, active consent at registration, recorded with a timestamp and the policy version then in force. You may withdraw this consent at any time, subject to Section 9 below.</li>
+            <li><strong>Consent</strong> – You have given explicit, active consent at registration, recorded with a timestamp and the policy version then in force. You may withdraw this consent at any time, subject to Section 10 below.</li>
             <li><strong>Contractual necessity</strong> – Processing is necessary for the performance of a contract to which you are a party (our Terms of Service), or for the taking of steps at your request with a view to entering into such a contract.</li>
             <li><strong>Legal obligation</strong> – Processing is necessary for compliance with a legal obligation to which we are subject, other than an obligation imposed by contract.</li>
             <li><strong>Other grounds permitted under Section 6(2) of the PDPA</strong> – including where processing is necessary to protect your vital interests, for the administration of justice, or for the exercise of any functions conferred on any person by or under any law.</li>
@@ -260,26 +285,34 @@
         <section>
           <h2 class="text-2xl font-semibold mb-4">6. How We Share Your Information</h2>
           <p class="text-gray-700 mb-4">We do not sell your personal data. We may share your information in the following circumstances:</p>
-          
+
           <h3 class="font-semibold mb-2">6.1 Between Users on the Platform</h3>
-          <p class="text-gray-700 mb-2">Certain profile information is visible to other registered users on the App to facilitate collaboration matching. This includes:</p>
+          <p class="text-gray-700 mb-2">Certain profile information is visible to other users on the App to facilitate collaboration matching. This includes:</p>
           <ul class="text-gray-700 mb-4">
-            <li><strong>For Creators:</strong> display name, profile photo, bio, social media handles, content portfolio, and niche.</li>
-            <li><strong>For Restaurants:</strong> restaurant name, profile photo, address, description, and social media handles.</li>
+            <li><strong>For Creators:</strong> display name, profile photo, bio, location label, social media handles, content portfolio, niche and style tags, and your average rating from past collaborations.</li>
+            <li><strong>For Restaurants:</strong> restaurant name, profile photo, cover photo, location, cuisine type, description, and contact number (visible while you have an active campaign).</li>
           </ul>
-          <p class="text-gray-700 mb-4">Your email address and account password are never shared with other users. Once a Restaurant approves your application for a collaboration, your phone number is shared with that Restaurant so they can contact you to coordinate the collaboration (currently via WhatsApp). Payment details (if and when collected in the future) will not be shared with other users.</p>
+          <p class="text-gray-700 mb-4">Your email address and account password are never shared with other users. In addition:</p>
+          <ul class="text-gray-700 mb-4">
+            <li>When a Creator applies to a Restaurant's campaign (or is invited to one), that Restaurant can view the Creator's profile, <strong>including their WhatsApp contact number and pitch message</strong>, to evaluate the application and coordinate the collaboration off-platform. This access relates to that Restaurant's own campaigns only.</li>
+            <li>Restaurants can rate a Creator's submitted work (1–5 stars). Your aggregate rating and the number of ratings appear on your Creator profile; you can also see ratings given to your own submissions.</li>
+            <li>If someone signs up using your referral code, you will be notified and shown that user's display name (and they can see they were referred by you).</li>
+            <li>Your display name and profile photo may appear in notifications sent to your collaboration counterparties (for example, "X applied to your campaign").</li>
+          </ul>
 
           <h3 class="font-semibold mb-2">6.2 Third-Party Service Providers</h3>
-          <p class="text-gray-700 mb-4">We share data with trusted third-party providers who assist us in operating the App, including:</p>
+          <p class="text-gray-700 mb-4">We share data with trusted third-party providers who assist us in operating the App:</p>
           <ul class="text-gray-700 mb-4">
-            <li>Cloud infrastructure, database, and file storage providers (Supabase, which hosts our database, authentication, and storage on Amazon Web Services; and Google Firebase / Google Cloud Platform)</li>
-            <li>Authentication services (Supabase Auth — email and password sign-in, with email one-time passcode (OTP) verification)</li>
-            <li>Analytics providers (Google Analytics for Firebase)</li>
-            <li>Push notification delivery (Expo push notification service) and transactional email delivery</li>
+            <li><strong>Supabase</strong> — hosts our database, authentication, and file storage (on Amazon Web Services, Sydney, Australia region)</li>
+            <li><strong>Resend</strong> — delivers our transactional emails (account verification and password reset codes)</li>
+            <li><strong>Google</strong> — Google Analytics for Firebase (usage analytics), Google Cloud / Vertex AI (AI processing described in Section 7), and Google Sign-In (if you use it)</li>
+            <li><strong>Apple</strong> — Sign in with Apple (if you use it)</li>
+            <li><strong>PostHog, Inc.</strong> (United States) — product analytics (see Section 13)</li>
+            <li><strong>Expo</strong> — push notification delivery</li>
           </ul>
           <p class="text-gray-700 mb-4">These providers are contractually bound to process your data only on our instructions and in accordance with applicable data protection laws.</p>
 
-          <h3 class="font-semibold mb-2">6.3 Legal & Regulatory Disclosure</h3>
+          <h3 class="font-semibold mb-2">6.3 Legal &amp; Regulatory Disclosure</h3>
           <p class="text-gray-700 mb-4">We may disclose your data if required to do so by law, court order, or government authority, or where we believe disclosure is necessary to protect the rights, property, or safety of Share Eat, our users, or the public.</p>
 
           <h3 class="font-semibold mb-2">6.4 Business Transfers</h3>
@@ -287,8 +320,23 @@
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">7. Data Storage & International Transfers</h2>
-          <p class="text-gray-700 mb-4">Your data is stored on third-party cloud infrastructure, including Supabase (which hosts our database, authentication, and file storage on Amazon Web Services), Google Firebase (Google Cloud Platform), and the Expo push notification service. These services may store and process your data on servers located in countries outside of Malaysia, including but not limited to the United States, Singapore, and Ireland.</p>
+          <h2 class="text-2xl font-semibold mb-4">7. AI Processing</h2>
+          <p class="text-gray-700 mb-4">The App uses Google's Gemini model (via Google Cloud Vertex AI, processed in the United States) for two features:</p>
+          <ul class="text-gray-700 mb-4">
+            <li><strong>AI campaign briefs</strong> — when a Restaurant uses the AI assistant while creating a campaign, the campaign draft details it has entered (title, goal, cuisine type, platforms, menu items to feature, deal details, and any additional free-text context) are sent to Gemini to generate a suggested brief.</li>
+            <li><strong>Campaign topic tagging</strong> — campaign details are sent to Gemini to suggest topic tags that help match campaigns to relevant Creators.</li>
+          </ul>
+          <p class="text-gray-700 mb-4">What is <strong>not</strong> sent to AI: Creator personal data, user photos, contact details, and account information are never sent to Gemini. Only Restaurant-authored campaign text is processed.</p>
+          <p class="text-gray-700 mb-4">AI outputs are returned to the requesting Restaurant and are only stored if the Restaurant saves the campaign. We do not use your data to train AI models, and under Google Cloud's data-governance terms, Google does not use data submitted through Vertex AI to train its foundation models.</p>
+          <div class="bg-gray-50 rounded p-4">
+            <p class="font-semibold mb-2">A NOTE FOR RESTAURANTS:</p>
+            <p class="text-gray-700">Free-text fields you submit to the AI assistant are processed by Google Cloud. Please do not include personal data about identifiable individuals (yours or anyone else's) in campaign descriptions or additional-context fields.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold mb-4">8. Data Storage &amp; International Transfers</h2>
+          <p class="text-gray-700 mb-4">Your data is stored and processed on third-party cloud infrastructure. Our primary database, authentication, and file storage are hosted by Supabase on Amazon Web Services in <strong>Australia (Sydney region)</strong>. Other providers — Google (Firebase Analytics, Google Cloud / Vertex AI), PostHog, Inc., Resend, and the Expo push notification service — store and process data primarily in the <strong>United States</strong>. Accordingly, your data may be stored and processed on servers located in countries outside of Malaysia, including but not limited to Australia and the United States.</p>
           <p class="text-gray-700 mb-4">Section 129 of the PDPA, as amended by the Personal Data Protection (Amendment) Act 2024, permits the transfer of personal data outside Malaysia only where the receiving jurisdiction has in force laws substantially similar to the PDPA, or otherwise ensures an adequate level of protection equivalent to that afforded under the PDPA, or where another condition under Section 129(3) applies (including your consent). We ensure that all international transfers of your data are protected by appropriate safeguards, including:</p>
           <ul class="text-gray-700 mb-4">
             <li>Standard contractual clauses (data processing agreements) with our cloud service providers</li>
@@ -299,31 +347,36 @@
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">8. Data Retention</h2>
+          <h2 class="text-2xl font-semibold mb-4">9. Data Retention</h2>
           <p class="text-gray-700 mb-4">We retain your personal data for as long as your account is active or as needed to provide you with the App's services.</p>
 
-          <h3 class="font-semibold mb-2">8.1 Active Accounts</h3>
-          <p class="text-gray-700 mb-4">We retain your data for the duration of your account's active status. You may request deactivation of your account at any time by contacting us at hello@shareeat.io.</p>
+          <h3 class="font-semibold mb-2">9.1 Active Accounts</h3>
+          <p class="text-gray-700 mb-4">We retain your data for the duration of your account's active status.</p>
 
-          <h3 class="font-semibold mb-2">8.2 Following Deactivation – 12-Month Retention Window</h3>
-          <p class="text-gray-700 mb-4">Deactivating your account from within the App signs you out; it does not by itself remove your data or hide your profile from other users. To have your account suspended so that it is no longer accessible to other users, or to have your data deleted, please contact us at hello@shareeat.io. Following a deactivation or suspension request, we will retain your personal data for a period of up to 12 months for the following purposes:</p>
+          <h3 class="font-semibold mb-2">9.2 Closing or Deleting Your Account</h3>
+          <p class="text-gray-700 mb-4">The App's Settings screen provides two separate controls:</p>
           <ul class="text-gray-700 mb-4">
-            <li>To resolve any ongoing or potential disputes arising from your use of the App</li>
-            <li>To comply with legal and regulatory obligations</li>
-            <li>To prevent fraud and enforce our Terms of Service</li>
+            <li><strong>Log Out</strong> — signs you out of the App on your device. Logging out does <strong>not</strong> delete, close, or hide your account, and your profile remains visible to other users.</li>
+            <li><strong>Delete Account</strong> — opens a pre-filled email to hello@shareeat.io requesting deletion of your account. Your account is not deleted merely by tapping this button — <strong>you must send the email</strong> (or email us directly). Our team then actions your request.</li>
           </ul>
-          <p class="text-gray-700 mb-4">After this 12-month period, your data will be permanently and irreversibly deleted from our systems, unless we are required by applicable law to retain it for longer. Where law requires longer retention (for example, financial records under Malaysia's Companies Act 2016 may need to be kept for up to 7 years once payments are introduced), we will retain only the minimum data necessary to fulfil that specific legal obligation.</p>
+          <p class="text-gray-700 mb-4">There is no self-service button that deletes or deactivates your account instantly; every closure and deletion request is handled by our team so that we can verify the request and meet our legal obligations. You may send a deletion, closure, or suspension request to hello@shareeat.io at any time, whether or not you use the in-app button.</p>
 
-          <h3 class="font-semibold mb-2">8.3 Requesting Permanent Erasure</h3>
-          <p class="text-gray-700 mb-4">Deactivation is not the same as permanent erasure. If you wish to have your personal data permanently deleted before the 12-month window has elapsed, you must submit a separate written erasure request to hello@shareeat.io. We will process erasure requests within 21 calendar days, subject to any overriding legal obligations.</p>
+          <h3 class="font-semibold mb-2">9.3 What Happens After You Request Deletion</h3>
+          <p class="text-gray-700 mb-4">Once we receive your deletion request, we will permanently erase your personal data within <strong>21 calendar days</strong>, subject to any overriding legal obligations. We retain a limited subset of data beyond that point only where necessary, and for no longer than necessary, for the following purposes:</p>
+          <ul class="text-gray-700 mb-4">
+            <li>To resolve any ongoing or potential disputes arising from your use of the App, and to prevent fraud and enforce our Terms of Service — retained for no longer than 12 months</li>
+            <li>To comply with legal and regulatory obligations. Where a specific law requires longer retention (for example, financial records under Malaysia's Companies Act 2016 may need to be kept for up to 7 years once payments are introduced), we retain only the minimum data necessary to fulfil that obligation</li>
+            <li>Our consent log (Section 3.7) is retained as a permanent legal record that consent was given or withdrawn</li>
+          </ul>
+          <p class="text-gray-700 mb-4">If, instead of deleting your account, we suspend it (for example, while a dispute is being resolved), we will retain your data for no longer than 12 months before permanently deleting it, unless a longer period is required by law.</p>
           <div class="bg-gray-50 rounded p-4">
-            <p class="font-semibold mb-2">IMPORTANT – Deactivation vs. Erasure:</p>
-            <p class="text-gray-700">Deactivating your account in the App signs you out; it does not by itself delete your data. To suspend your account or to delete your data, contact us at hello@shareeat.io. Data associated with a deactivation or suspension request is retained for up to 12 months and then deleted. If you want your data deleted sooner, you must submit a separate erasure request by email to hello@shareeat.io. These are different processes.</p>
+            <p class="font-semibold mb-2">IMPORTANT – Logging Out ≠ Deleting Your Account:</p>
+            <p class="text-gray-700">Logging out of the App only signs you out on your device; it does not delete or close your account, and your profile stays visible to other users. To delete or close your account, use the "Delete Account" option in Settings and send the email it opens, or email hello@shareeat.io directly. We action deletion requests within 21 calendar days.</p>
           </div>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">9. Your Rights Under Malaysia's PDPA</h2>
+          <h2 class="text-2xl font-semibold mb-4">10. Your Rights Under Malaysia's PDPA</h2>
           <p class="text-gray-700 mb-4">As a data subject under the PDPA, you have the following rights:</p>
           <ul class="text-gray-700 mb-4">
             <li><strong>Right of Access</strong> (Section 30) – You may request a copy of the personal data we hold about you. We may charge a prescribed fee for access requests as permitted under the PDPA.</li>
@@ -332,53 +385,63 @@
             <li><strong>Right to Prevent Processing Likely to Cause Damage or Distress</strong> (Section 42) – You may, by written notice, require us to cease or not begin processing of your personal data that is causing or likely to cause substantial damage or distress that is unwarranted.</li>
             <li><strong>Right to Prevent Processing for Direct Marketing</strong> (Section 43) – You may, by written notice, require us to cease or not begin processing your personal data for purposes of direct marketing.</li>
             <li><strong>Right to Data Portability</strong> (Section 43A, introduced by the Personal Data Protection (Amendment) Act 2024) – You may request that we transmit your personal data to another data controller of your choice, where technically feasible and compatible in data format.</li>
-            <li><strong>Right to Deactivation</strong> – You may deactivate (sign out of) your account in the App at any time, and you may request suspension or removal of your account by contacting hello@shareeat.io. Deactivation does not constitute permanent erasure (see Sections 8.2 and 8.3).</li>
-            <li><strong>Right to Erasure</strong> – You may separately request permanent deletion of your personal data by submitting a written erasure request to hello@shareeat.io. This is distinct from deactivation and must be requested explicitly. We will action erasure requests within 21 calendar days, subject to legal retention obligations.</li>
+            <li><strong>Right to Close Your Account</strong> – You may request closure of your account at any time using the "Delete Account" option in the App's Settings screen (which opens an email to us) or by contacting hello@shareeat.io directly. Closing your account is handled by our team; logging out of the App only signs you out and does not close your account (see Section 9.2).</li>
+            <li><strong>Right to Erasure</strong> – You may request permanent deletion of your personal data by submitting a written erasure request to hello@shareeat.io (the in-app "Delete Account" option opens this email for you). We will action erasure requests within 21 calendar days, subject to legal retention obligations.</li>
           </ul>
           <div class="bg-gray-50 rounded p-4 mb-4">
-            <p class="font-semibold mb-2">DEACTIVATION ≠ ERASURE:</p>
-            <p class="text-gray-700">Requesting deactivation of your account and requesting erasure of your personal data are two separate actions requiring two separate requests. Please be explicit about which you are requesting when you contact us.</p>
+            <p class="font-semibold mb-2">HOW TO DELETE YOUR ACCOUNT:</p>
+            <p class="text-gray-700">Use the "Delete Account" option in Settings and send the email it opens, or email hello@shareeat.io directly. Logging out is not the same as deleting your account — it only signs you out on your device. We action deletion requests within 21 calendar days.</p>
           </div>
-          <p class="text-gray-700 mb-4">To exercise any of these rights, please contact us at hello@shareeat.io. We will respond to all requests within 21 calendar days, in line with the timeframes prescribed under the PDPA.</p>
+          <p class="text-gray-700 mb-4">To exercise any of these rights, please contact us at hello@shareeat.io. We will respond to all requests within 21 calendar days, in line with the timeframes prescribed under the PDPA. If you object to analytics processing described in Section 13, you can turn it off yourself at any time using the "Analytics" toggle in the App's Settings screen; you may also contact us and we will apply the controls available to limit further analytics processing of your data.</p>
           <p class="text-gray-700">If you are dissatisfied with how we have handled your personal data or a request relating to it, you have the right to lodge a complaint with the Personal Data Protection Commissioner, Department of Personal Data Protection (Jabatan Perlindungan Data Peribadi), Malaysia.</p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">10. Communications & Notifications</h2>
-          
-          <h3 class="font-semibold mb-2">10.1 Push Notifications</h3>
-          <p class="text-gray-700 mb-4">We send push notifications to inform you of new collaboration opportunities, updates on your applications, and important platform updates. You may manage push notification preferences in the App's notification settings and through your device settings at any time.</p>
+          <h2 class="text-2xl font-semibold mb-4">11. Users Outside Malaysia</h2>
+          <p class="text-gray-700 mb-4">The App is intended for the Malaysian market. If you access the App from the European Economic Area, the United Kingdom, or another jurisdiction with its own data protection law, you may have additional rights under that law (for example, under the EU/UK General Data Protection Regulation: rights of access, rectification, erasure, restriction, portability, and objection, and the right to complain to your local supervisory authority). Where such laws apply to our processing of your data, we will honour those rights. You may exercise them through the same contact point in Section 20.</p>
+        </section>
 
-          <h3 class="font-semibold mb-2">10.2 Email Communications</h3>
+        <section>
+          <h2 class="text-2xl font-semibold mb-4">12. Communications &amp; Notifications</h2>
+
+          <h3 class="font-semibold mb-2">12.1 Push Notifications</h3>
+          <p class="text-gray-700 mb-4">We send push notifications to inform you of new collaboration opportunities, updates on your applications, and important platform updates. If you enable push notifications, a device push token is stored against your account to deliver them; invalid tokens are removed automatically. You may manage push notification preferences in the App's notification settings and through your device settings at any time. Notifications may include the display name of your collaboration counterparty and campaign titles; a copy of your notifications is kept in your in-app notification inbox.</p>
+
+          <h3 class="font-semibold mb-2">12.2 Email Communications</h3>
           <p class="text-gray-700 mb-4">We send transactional emails, such as account verification codes and password reset codes. We do not currently send marketing or promotional emails. If we introduce marketing emails in the future, we will provide a clear opt-out (an "Unsubscribe" link in every such email) and update this Privacy Policy accordingly. Transactional emails cannot be opted out of while your account is active.</p>
 
-          <h3 class="font-semibold mb-2">10.3 Communication Between Users</h3>
+          <h3 class="font-semibold mb-2">12.3 Communication Between Users</h3>
           <p class="text-gray-700">The App does not currently provide an in-app messaging feature. Once a Restaurant approves a Creator for a collaboration, the parties coordinate directly off-platform (for example, via WhatsApp) using the contact details shared for that purpose (see Section 6.1). We do not control, monitor, or store the content of these off-platform communications. Please do not share sensitive personal or financial information through them.</p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">11. Analytics & Tracking</h2>
-          <p class="text-gray-700 mb-4">We use Google Analytics for Firebase to collect data about how users interact with the App. Firebase Analytics may collect data such as app events, session information, and device identifiers. Because device identifiers may constitute personal data, this data is treated as pseudonymous rather than anonymous; we analyse it only in aggregated form to understand usage patterns and improve the App experience, and we do not use it to identify you personally.</p>
-          <p class="text-gray-700">We do not currently use third-party advertising or tracking SDKs. Should we introduce such tools in the future, we will update this Privacy Policy and notify you accordingly.</p>
+          <h2 class="text-2xl font-semibold mb-4">13. Analytics &amp; Tracking</h2>
+          <p class="text-gray-700 mb-4">We use two analytics services to understand how the App is used and to improve it. Analytics collection begins only after you accept this Privacy Policy — at the registration consent tickbox, or when you tap a Google or Apple sign-in button after being shown the consent notice. Before that moment, no analytics events are collected or sent. You can turn analytics off (and back on) at any time using the "Analytics" toggle in the App's Settings screen; while it is off, no analytics events are collected.</p>
+          <ul class="text-gray-700 mb-4">
+            <li><strong>Google Analytics for Firebase</strong> — collects app events (screens viewed, features used, searches, sign-up and campaign funnel steps), session information, and device identifiers. We do not attach your name, email, or user ID to Firebase Analytics data.</li>
+            <li><strong>PostHog</strong> (PostHog, Inc., hosted in the United States) — collects product analytics events (screens viewed, elements tapped, sign-up, application, campaign, and referral funnel events, and app install/open/update events). PostHog events are associated with a pseudonymous account identifier (your random internal user ID) and your account role. We do not send your name, email address, or phone number to PostHog.</li>
+          </ul>
+          <p class="text-gray-700 mb-4">Analytics data is used in aggregated form to understand usage patterns and improve the App experience; we do not use it to make decisions with legal effect about you. In addition, the App records how you interact with campaign listings (view duration and scroll depth) in our own database to personalise your campaign feed — this data is not shared with third parties.</p>
+          <p class="text-gray-700">We do not use advertising SDKs, do not track you across other companies' apps or websites, and do not sell analytics data. Should we introduce such tools in the future, we will update this Privacy Policy and notify you accordingly. To stop analytics processing, use the "Analytics" toggle in the App's Settings screen, or see Section 10.</p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">12. Payments & Financial Information</h2>
-          <p class="text-gray-700 mb-4">The App does not currently process any in-app payments. Any financial arrangements between Creators and Restaurants are currently conducted off-platform and are not subject to this Privacy Policy.</p>
-          <p class="text-gray-700">We plan to introduce subscription plans for both Creators and Restaurants within the App in the near future. When this feature is live, we will update this Privacy Policy to reflect how payment information is collected and processed, and we will obtain your renewed explicit consent where required.</p>
+          <h2 class="text-2xl font-semibold mb-4">14. Payments &amp; Financial Information</h2>
+          <p class="text-gray-700 mb-4">The App does not currently process any in-app payments, and we do not collect any payment card or billing information. Any financial arrangements between Creators and Restaurants are currently conducted off-platform and are not subject to this Privacy Policy.</p>
+          <p class="text-gray-700">We plan to introduce paid subscription plans ("Pro") for both Creators and Restaurants. Pro status can currently be earned only through our referral programme or granted by us. When paid subscriptions launch, payment processing will be handled by a third-party payment provider, and we will update this Privacy Policy to reflect how payment information is collected and processed before that feature goes live, obtaining your renewed explicit consent where required.</p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">13. Data Security & Breach Notification</h2>
+          <h2 class="text-2xl font-semibold mb-4">15. Data Security &amp; Breach Notification</h2>
           <p class="text-gray-700 mb-4">We implement appropriate technical and organisational measures to protect your personal data from unauthorised access, disclosure, alteration, or destruction. These measures include:</p>
           <ul class="text-gray-700 mb-4">
             <li>Encryption of data in transit using industry-standard TLS/SSL protocols</li>
-            <li>Access controls limiting data access to authorised personnel only</li>
+            <li>Access controls limiting data access to authorised personnel only, including row-level security rules restricting which users can read which records</li>
             <li>Regular security assessments of our cloud infrastructure</li>
           </ul>
           <p class="text-gray-700 mb-4">However, no method of electronic storage or transmission is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
 
-          <h3 class="font-semibold mb-2">13.1 Data Breach Notification</h3>
+          <h3 class="font-semibold mb-2">15.1 Data Breach Notification</h3>
           <p class="text-gray-700 mb-4">The Personal Data Protection (Amendment) Act 2024 introduced mandatory data breach notification obligations under the PDPA. In the event of a personal data breach, we will:</p>
           <ul class="text-gray-700 mb-4">
             <li>Notify the Personal Data Protection Commissioner as soon as practicable, and in any event within 72 hours of becoming aware of the breach, in accordance with the PDPA and the Commissioner's applicable guidelines; and</li>
@@ -397,17 +460,17 @@
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">14. Third-Party Links & Social Media</h2>
+          <h2 class="text-2xl font-semibold mb-4">16. Third-Party Links &amp; Social Media</h2>
           <p class="text-gray-700">The App may contain links to third-party websites, social media platforms, or services (e.g. Instagram, TikTok). We are not responsible for the privacy practices of these third parties. We encourage you to review their respective privacy policies before sharing any personal data with them.</p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">15. Children's Privacy</h2>
+          <h2 class="text-2xl font-semibold mb-4">17. Children's Privacy</h2>
           <p class="text-gray-700">Share Eat is strictly intended for users aged 18 and above. We do not knowingly collect personal data from individuals under the age of 18. If you believe a minor has registered on the App, please contact us immediately at hello@shareeat.io and we will take prompt action to deactivate the account and delete the relevant data.</p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">16. Changes to This Privacy Policy</h2>
+          <h2 class="text-2xl font-semibold mb-4">18. Changes to This Privacy Policy</h2>
           <p class="text-gray-700 mb-4">We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or App features. When we make material changes, we will:</p>
           <ul class="text-gray-700 mb-4">
             <li>Update the "Effective Date" and version number at the top of this document</li>
@@ -419,23 +482,23 @@
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">17. Governing Law</h2>
+          <h2 class="text-2xl font-semibold mb-4">19. Governing Law</h2>
           <p class="text-gray-700">This Privacy Policy is governed by and construed in accordance with the laws of Malaysia, including the Personal Data Protection Act 2010 as amended by the Personal Data Protection (Amendment) Act 2024. Any disputes arising in connection with this Privacy Policy shall be subject to the exclusive jurisdiction of the courts of Malaysia.</p>
         </section>
 
         <section>
-          <h2 class="text-2xl font-semibold mb-4">18. Contact Us & Data Protection Officer</h2>
-          <p class="text-gray-700 mb-4">If you have any questions, concerns, or requests relating to this Privacy Policy or the handling of your personal data, please contact our Privacy & Data Team:</p>
+          <h2 class="text-2xl font-semibold mb-4">20. Contact Us &amp; Data Protection Officer</h2>
+          <p class="text-gray-700 mb-4">If you have any questions, concerns, or requests relating to this Privacy Policy or the handling of your personal data, please contact our Privacy &amp; Data Team:</p>
           <div class="bg-gray-50 rounded p-4 mb-4">
             <p class="font-semibold">Share Eat Sdn. Bhd.</p>
-            <p class="text-gray-700">Privacy & Data Team</p>
+            <p class="text-gray-700">Privacy &amp; Data Team</p>
             <p class="text-gray-700">Email: <a href="mailto:hello@shareeat.io" class="text-yellow-600">hello@shareeat.io</a></p>
             <p class="text-gray-700">Malaysia</p>
           </div>
           <p class="text-gray-700 mb-4"><strong>Data Protection Officer (DPO)</strong></p>
           <p class="text-gray-700 mb-4">Share Eat has designated a Data Protection Officer (DPO), appointed in accordance with the requirements of the Personal Data Protection (Amendment) Act 2024, responsible for overseeing our compliance with the PDPA and this Privacy Policy. You may direct any data protection enquiries directly to our DPO at <a href="mailto:hello@shareeat.io" class="text-yellow-600">hello@shareeat.io</a>. Please include "DPO – Privacy Enquiry" in your subject line for prompt handling.</p>
           <p class="text-gray-700 mb-4">We aim to respond to all privacy-related enquiries within 21 calendar days.</p>
-          <p class="text-gray-700 mt-8"><em>This Privacy Policy (Version 2.2) is effective as of 25 June 2026 and supersedes all previous versions.</em></p>
+          <p class="text-gray-700 mt-8"><em>This Privacy Policy (Version 3.0) is effective as of 15 July 2026 and supersedes all previous versions.</em></p>
           <p class="text-gray-700"><strong>Share Eat Sdn. Bhd. © 2026. All rights reserved.</strong></p>
         </section>
       </div>
