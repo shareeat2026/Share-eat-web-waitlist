@@ -58,7 +58,7 @@
       <div class="code-chip" id="code-chip"></div>
       <a class="btn" id="store-link" href="https://apps.apple.com/app/id6779893847">Download on the App Store</a>
       <a class="btn btn-ghost" id="open-app" href="#">Already have the app? Open it</a>
-      <p class="hint">Taking you to the App Store&hellip; Enter the code above during sign up if it isn&rsquo;t filled in for you.</p>
+      <p class="hint" id="ref-hint">Taking you to the App Store&hellip; Enter the code above during sign up if it isn&rsquo;t filled in for you.</p>
     </div>
     <div id="notfound" style="display:none">
       <h1>Page not found</h1>
@@ -75,6 +75,21 @@
         document.getElementById('referral').style.display = 'block';
         document.getElementById('code-chip').textContent = code;
         document.getElementById('open-app').setAttribute('href', 'shareeat://ref/' + encodeURIComponent(code));
+        // Copy the code so the app can offer to paste it after install (the
+        // App Store passes nothing through an install). Clipboard writes need
+        // a user gesture, so hook every tap; also try on load for browsers
+        // that allow it.
+        var copyCode = function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(code).then(function () {
+              document.getElementById('ref-hint').textContent =
+                'Code copied! Paste it during sign up if it isn’t filled in for you.';
+            }, function () {});
+          }
+        };
+        copyCode();
+        document.getElementById('store-link').addEventListener('click', copyCode);
+        document.getElementById('code-chip').addEventListener('click', copyCode);
         // Auto-continue to the App Store. Once the app ships the applinks
         // entitlement, iOS opens the app directly and this page never loads.
         setTimeout(function () { window.location.replace(STORE_URL); }, 2500);
