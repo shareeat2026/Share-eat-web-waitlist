@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/Share Eat Icon.svg">
+  <title>Share Eat! You're invited</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f5; --ink: #1a1714; --ink-soft: #5c554d;
+      --primary: #f5c842; --primary-deep: #e0a90a;
+      --tomato: #e8543b; --line: rgba(26,23,20,0.08); --card: #ffffff;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --shadow-md: 0 14px 40px rgba(26,23,20,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--ink); font-family: var(--font-body);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 22px;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 22px;
+      box-shadow: var(--shadow-md); max-width: 440px; width: 100%;
+      padding: 40px 32px; text-align: center;
+    }
+    .logo { height: 44px; width: auto; margin: 0 auto 22px; display: block; }
+    h1 { font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
+    p { color: var(--ink-soft); font-size: 15px; margin-bottom: 6px; }
+    .code-chip {
+      display: inline-block; margin: 14px 0 22px; padding: 8px 18px; border-radius: 999px;
+      background: rgba(245,200,66,0.18); color: #8a6500; font-weight: 700;
+      font-size: 15px; letter-spacing: 0.08em;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+      font-size: 15px; font-weight: 700; padding: 16px 30px; border: none; border-radius: 14px;
+      cursor: pointer; text-decoration: none; margin-bottom: 12px;
+      background: linear-gradient(180deg, #ffd454, var(--primary) 60%, var(--primary-deep));
+      color: #2a2000; box-shadow: 0 10px 26px rgba(224,169,10,0.40), inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    .btn-ghost { background: rgba(26,23,20,0.04); color: var(--ink); border: 1px solid var(--line); box-shadow: none; }
+    .hint { font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="/Share Eat Icon.svg" alt="Share Eat">
+    <div id="referral" style="display:none">
+      <h1>You&rsquo;re invited to Share&nbsp;Eat!</h1>
+      <p>Your invite code is</p>
+      <div class="code-chip" id="code-chip"></div>
+      <a class="btn" id="store-link" href="https://apps.apple.com/app/id6779893847">Download on the App Store</a>
+      <a class="btn btn-ghost" id="open-app" href="#">Already have the app? Open it</a>
+      <p class="hint">Taking you to the App Store&hellip; Enter the code above during sign up if it isn&rsquo;t filled in for you.</p>
+    </div>
+    <div id="notfound" style="display:none">
+      <h1>Page not found</h1>
+      <p>The page you&rsquo;re looking for doesn&rsquo;t exist.</p>
+      <a class="btn" href="/">Back to shareeat.io</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var STORE_URL = 'https://apps.apple.com/app/id6779893847';
+      var match = window.location.pathname.match(/^\/ref\/([A-Za-z0-9_-]{1,32})\/?$/i);
+      if (match) {
+        var code = match[1].toUpperCase();
+        document.getElementById('referral').style.display = 'block';
+        document.getElementById('code-chip').textContent = code;
+        document.getElementById('open-app').setAttribute('href', 'shareeat://ref/' + encodeURIComponent(code));
+        // Auto-continue to the App Store. Once the app ships the applinks
+        // entitlement, iOS opens the app directly and this page never loads.
+        setTimeout(function () { window.location.replace(STORE_URL); }, 2500);
+      } else {
+        document.getElementById('notfound').style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+</html>

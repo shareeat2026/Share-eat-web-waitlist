@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "AFGDKUJ6XU.com.tryshareeat.app",
+        "appIDs": ["AFGDKUJ6XU.com.tryshareeat.app"],
+        "paths": ["/ref/*"],
+        "components": [{ "/": "/ref/*" }]
+      }
+    ]
+  }
+}
