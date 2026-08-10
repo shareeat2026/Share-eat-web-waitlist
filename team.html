@@ -71,6 +71,27 @@
     .tile .n { font-family: var(--font-display); font-size: 1.9rem; font-weight: 900; color: var(--primary-deep); line-height: 1; }
     .tile .l { color: var(--ink-soft); font-size: 0.82rem; margin-top: 6px; }
 
+    /* ── Free-tier usage ──────────────────────────────────────────────── */
+    .usage { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow-sm); margin-bottom: 34px; }
+    .usage-head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+    .usage-head h2 { font-size: 1.15rem; }
+    .usage-head a { font-size: 12.5px; font-weight: 700; color: var(--primary-ink); }
+    .usage-head a:hover { text-decoration: underline; }
+    .meters { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .meter .m-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 0.86rem; }
+    .meter .m-label { color: var(--ink-soft); }
+    .meter .m-val { font-weight: 700; font-variant-numeric: tabular-nums; }
+    .meter .bar { height: 8px; border-radius: 999px; background: rgba(26,23,20,0.07); margin-top: 8px; overflow: hidden; }
+    .meter .bar i { display: block; height: 100%; border-radius: 999px; transition: width .4s ease; }
+    .meter .m-sub { font-size: 0.78rem; color: var(--ink-soft); margin-top: 6px; }
+    .meter .m-sub .sep { opacity: .4; }
+    .lvl-ok i    { background: var(--green); }
+    .lvl-warn i  { background: var(--primary-deep); }
+    .lvl-alert i { background: var(--tomato); }
+    .lvl-warn  .m-val { color: var(--primary-ink); }
+    .lvl-alert .m-val { color: var(--tomato); }
+    .usage-note { color: var(--ink-soft); font-size: 0.8rem; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+
     /* ── Tabs + filter ────────────────────────────────────────────────── */
     .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
     .tabs { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; min-width: 0; }
@@ -159,6 +180,8 @@
     </div>
 
     <div class="tiles" id="tiles"></div>
+
+    <div class="usage" id="usage" style="display:none"></div>
 
     <div class="toolbar">
       <div class="tabs" id="tabs"></div>
@@ -284,6 +307,90 @@
     }).join('');
   }
 
+  // ── Free-tier usage ───────────────────────────────────────────────
+  //
+  // Only the three metrics Postgres can see. Egress (5 GB) and edge function
+  // invocations (500k) are metered by the platform with no SQL surface, so
+  // they are called out in the footnote rather than silently omitted — an
+  // all-green card that quietly ignores two of five quotas is worse than no
+  // card at all.
+  //
+  // Storage and MAU quotas are ORGANISATION-wide, so dev
+  // (httcpcnpzwmdqidpokrj) eats the same pool these bars measure against.
+  // Their real headroom is smaller than shown; only the database bar is a
+  // complete picture of its own limit.
+
+  var USAGE_WARN = 0.75;   // amber
+  var USAGE_ALERT = 0.90;  // red — act now
+
+  function fmtBytes(n) {
+    n = Number(n) || 0;
+    if (n < 1024) return n + ' B';
+    var units = ['KB', 'MB', 'GB'];
+    var v = n / 1024;
+    for (var i = 0; i < units.length; i++) {
+      if (v < 1024 || i === units.length - 1) {
+        return (v < 10 ? v.toFixed(1) : Math.round(v)) + ' ' + units[i];
+      }
+      v = v / 1024;
+    }
+  }
+
+  function fmtCount(n) { return (Number(n) || 0).toLocaleString('en-GB'); }
+
+  function meterHtml(label, used, limit, fmt, sub) {
+    var pct = limit > 0 ? used / limit : 0;
+    var lvl = pct >= USAGE_ALERT ? 'lvl-alert' : (pct >= USAGE_WARN ? 'lvl-warn' : 'lvl-ok');
+    var shown = Math.round(pct * 100);
+    // Never render a zero-width bar for a non-zero value — "0%" plus an empty
+    // track reads as "no data", which is the one thing this must not imply.
+    var width = Math.max(used > 0 ? 1.5 : 0, Math.min(100, pct * 100));
+    return '<div class="meter ' + lvl + '">' +
+             '<div class="m-top">' +
+               '<span class="m-label">' + esc(label) + '</span>' +
+               '<span class="m-val">' + esc(shown) + '%</span>' +
+             '</div>' +
+             '<div class="bar"><i style="width:' + width + '%"></i></div>' +
+             '<div class="m-sub">' + esc(fmt(used)) + ' of ' + esc(fmt(limit)) +
+               (sub ? ' <span class="sep">·</span> ' + esc(sub) : '') +
+             '</div>' +
+           '</div>';
+  }
+
+  function renderUsage() {
+    var u = data.usage;
+    if (!u) { $('usage').style.display = 'none'; return; }
+
+    var meters =
+      meterHtml('Database', u.db_bytes, u.db_limit_bytes, fmtBytes, 'this project') +
+      meterHtml('File storage', u.storage_bytes, u.storage_limit_bytes, fmtBytes, 'org-wide limit') +
+      meterHtml('Active users (30d)', u.mau_30d, u.mau_limit, fmtCount,
+                fmtCount(u.auth_users_total) + ' total');
+
+    var worst = Math.max(
+      u.db_limit_bytes ? u.db_bytes / u.db_limit_bytes : 0,
+      u.storage_limit_bytes ? u.storage_bytes / u.storage_limit_bytes : 0,
+      u.mau_limit ? u.mau_30d / u.mau_limit : 0
+    );
+    var headline = worst >= USAGE_ALERT
+      ? '⚠️ Over 90% on a quota — upgrade or clear space now'
+      : (worst >= USAGE_WARN ? '⚠️ Approaching a limit' : 'Free tier');
+
+    $('usage').innerHTML =
+      '<div class="usage-head">' +
+        '<h2>' + esc(headline) + '</h2>' +
+        '<a href="https://supabase.com/dashboard/project/kmzgbfxczonfjkrzyadm" target="_blank" rel="noopener">Supabase dashboard →</a>' +
+      '</div>' +
+      '<div class="meters">' + meters + '</div>' +
+      '<p class="usage-note">' +
+        'Egress (5 GB) and edge function invocations (500k) are not shown — Postgres cannot see them. ' +
+        'Check those on the Supabase dashboard. Storage and active users are counted across the whole ' +
+        'organisation, so the dev project spends the same allowance: real headroom is lower than these bars. ' +
+        'Active users is a floor, not the billed figure — Supabase also counts token refreshes.' +
+      '</p>';
+    $('usage').style.display = 'block';
+  }
+
   function renderTabs() {
     $('tabs').innerHTML = TABS.map(function (t) {
       var n = (data[t.key] || []).length;
@@ -395,6 +502,7 @@
     var when = data.generated_at ? new Date(data.generated_at) : new Date();
     $('stamp').textContent = 'Updated ' + when.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
     renderTiles();
+    renderUsage();
     renderTabs();
     renderList();
     show('dash');
