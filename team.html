@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/Share Eat Icon.svg">
+  <title>Share Eat! Ops</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f5; --ink: #1a1714; --ink-soft: #5c554d;
+      --primary: #f5c842; --primary-deep: #e0a90a; --primary-ink: #8a6500;
+      --tomato: #e8543b; --line: rgba(26,23,20,0.08); --card: #ffffff;
+      --green: #2f8f5b;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --shadow-sm: 0 4px 18px rgba(26,23,20,0.04);
+      --shadow-md: 0 14px 40px rgba(26,23,20,0.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-body); font-size: 14px; font-weight: 700; padding: 12px 22px; border: none; border-radius: 13px; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease; white-space: nowrap; }
+    .btn-primary { background: linear-gradient(180deg, #ffd454, var(--primary) 60%, var(--primary-deep)); color: #2a2000; box-shadow: 0 10px 26px rgba(224,169,10,0.40), inset 0 1px 0 rgba(255,255,255,0.5); }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-ghost { background: rgba(26,23,20,0.04); color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { background: rgba(26,23,20,0.07); }
+    .btn-sm { padding: 8px 14px; font-size: 13px; border-radius: 11px; }
+    .btn:disabled { opacity: .5; cursor: default; transform: none; }
+
+    /* ── Gate ─────────────────────────────────────────────────────────── */
+    #gate { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 22px; }
+    #gate .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-md); max-width: 400px; width: 100%; padding: 40px 32px; text-align: center; }
+    #gate .logo { height: 44px; width: auto; margin: 0 auto 20px; display: block; }
+    #gate h1 { font-size: 26px; margin-bottom: 6px; }
+    #gate .sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 24px; }
+    #gate input { width: 100%; font-family: var(--font-body); font-size: 15px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 13px; background: #fdfcfa; color: var(--ink); margin-bottom: 12px; }
+    #gate input:focus { outline: none; border-color: var(--primary-deep); box-shadow: 0 0 0 3px rgba(245,200,66,0.22); }
+    #gate .btn { width: 100%; padding: 15px 22px; font-size: 15px; }
+    .err { color: var(--tomato); font-size: 13.5px; font-weight: 600; margin-top: 14px; min-height: 20px; }
+
+    /* ── Loading ──────────────────────────────────────────────────────── */
+    #loading { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: var(--ink-soft); font-size: 15px; }
+    .spinner { width: 34px; height: 34px; border: 3px solid rgba(224,169,10,0.22); border-top-color: var(--primary-deep); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Dashboard chrome ─────────────────────────────────────────────── */
+    .nav-wrap { position: sticky; top: 0; z-index: 50; background: rgba(250,249,245,0.88); backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--line); }
+    nav { height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    .brand img { height: 26px; width: auto; }
+    .badge-ops { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 999px; background: rgba(232,84,59,0.10); color: var(--tomato); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .stamp { font-size: 12.5px; color: var(--ink-soft); white-space: nowrap; }
+    @media (max-width: 640px){ .stamp { display: none; } }
+
+    .head { padding: 34px 0 22px; }
+    .head h1 { font-size: clamp(1.9rem, 4.4vw, 2.5rem); }
+    .head p { color: var(--ink-soft); font-size: 1rem; margin-top: 6px; }
+
+    /* ── Overview tiles ───────────────────────────────────────────────── */
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 34px; }
+    .tile { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 16px; box-shadow: var(--shadow-sm); }
+    .tile .n { font-family: var(--font-display); font-size: 1.9rem; font-weight: 900; color: var(--primary-deep); line-height: 1; }
+    .tile .l { color: var(--ink-soft); font-size: 0.82rem; margin-top: 6px; }
+
+    /* ── Tabs + filter ────────────────────────────────────────────────── */
+    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; min-width: 0; }
+    .tab { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 13.5px; font-weight: 700; color: var(--ink-soft); cursor: pointer; font-family: var(--font-body); transition: all .18s ease; }
+    .tab:hover { border-color: rgba(224,169,10,0.4); }
+    .tab.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .tab .c { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: rgba(26,23,20,0.07); font-size: 11.5px; font-weight: 800; color: var(--ink); }
+    .tab.on .c { background: rgba(255,255,255,0.18); color: #fff; }
+    .search { font-family: var(--font-body); font-size: 14px; padding: 11px 15px; border: 1px solid var(--line); border-radius: 13px; background: var(--card); color: var(--ink); width: 220px; }
+    .search:focus { outline: none; border-color: var(--primary-deep); box-shadow: 0 0 0 3px rgba(245,200,66,0.18); }
+
+    /* ── List ─────────────────────────────────────────────────────────── */
+    .list-note { color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 16px; }
+    .rows { display: flex; flex-direction: column; gap: 10px; padding-bottom: 70px; }
+    .row { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 18px; }
+    .row-main { flex: 1; min-width: 0; }
+    .row-name { font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .row-meta { color: var(--ink-soft); font-size: 0.86rem; margin-top: 4px; word-break: break-word; }
+    .row-meta .sep { opacity: .4; margin: 0 7px; }
+    .row-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .chip { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; }
+    .chip-draft { background: rgba(232,84,59,0.11); color: var(--tomato); }
+    .chip-wait { background: rgba(224,169,10,0.16); color: var(--primary-ink); }
+    .chip-new { background: rgba(47,143,91,0.12); color: var(--green); }
+    .chip-grey { background: rgba(26,23,20,0.06); color: var(--ink-soft); }
+    .wa { background: #25d366; color: #fff; box-shadow: 0 6px 16px rgba(37,211,102,0.30); }
+    .wa:hover { transform: translateY(-2px); }
+    .nophone { font-size: 12.5px; color: var(--ink-soft); font-style: italic; padding-right: 4px; }
+    .empty { background: var(--card); border: 1px dashed var(--line); border-radius: var(--radius); padding: 54px 24px; text-align: center; color: var(--ink-soft); }
+    .empty .e { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+    @media (max-width: 700px){
+      .row { flex-direction: column; align-items: stretch; gap: 14px; }
+      .row-actions { justify-content: flex-start; flex-wrap: wrap; }
+      .search { width: 100%; }
+    }
+
+    .toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(12px); background: var(--ink); color: #fff; font-size: 13.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; z-index: 90; }
+    .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ── Password gate ──────────────────────────────────────────────────── -->
+<div id="gate" style="display:none">
+  <div class="card">
+    <img class="logo" src="/Share Eat Icon.svg" alt="Share Eat">
+    <h1>Team access</h1>
+    <p class="sub">Internal ops dashboard</p>
+    <form id="gate-form" autocomplete="off">
+      <input id="pw" type="password" placeholder="Team password" autocomplete="current-password" spellcheck="false">
+      <button class="btn btn-primary" type="submit" id="unlock">Unlock</button>
+    </form>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<!-- ── Loading ────────────────────────────────────────────────────────── -->
+<div id="loading" style="display:none">
+  <div class="spinner"></div>
+  <div>Loading dashboard&hellip;</div>
+</div>
+
+<!-- ── Dashboard ──────────────────────────────────────────────────────── -->
+<div id="dash" style="display:none">
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <img src="/Share Eat Icon.svg" alt="Share Eat">
+          <span class="badge-ops">Ops</span>
+        </div>
+        <div class="nav-right">
+          <span class="stamp" id="stamp"></span>
+          <button class="btn btn-ghost btn-sm" id="refresh">Refresh</button>
+          <button class="btn btn-ghost btn-sm" id="lock">Lock</button>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="head">
+      <h1>Follow-up lists</h1>
+      <p>Accounts that signed up but stalled. Demo and deactivated accounts excluded.</p>
+    </div>
+
+    <div class="tiles" id="tiles"></div>
+
+    <div class="toolbar">
+      <div class="tabs" id="tabs"></div>
+      <input class="search" id="search" type="search" placeholder="Search name, email, phone…">
+      <button class="btn btn-ghost btn-sm" id="copy-emails">Copy emails</button>
+    </div>
+
+    <p class="list-note" id="list-note"></p>
+    <div class="rows" id="rows"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  var FN_URL = 'https://kmzgbfxczonfjkrzyadm.supabase.co/functions/v1/admin-dashboard';
+  var KEY_STORE = 'se_ops_key';
+
+  // Password lives in sessionStorage, never localStorage: a refresh shouldn't
+  // re-prompt, but closing the tab must drop it (these are shared machines).
+  var secret = sessionStorage.getItem(KEY_STORE) || '';
+  var data = null;
+  var activeTab = 'restaurants_no_campaign';
+
+  var TABS = [
+    {
+      key: 'restaurants_no_campaign',
+      label: 'No campaign',
+      note: 'Restaurants that signed up but have never published a campaign. Drafts do not count as published — a “draft only” badge means they started one and stopped.'
+    },
+    {
+      key: 'restaurants_no_approvals',
+      label: 'No approvals',
+      note: 'Restaurants with a published campaign that have never approved a creator. If applicants are waiting, they are the warmest possible nudge.'
+    },
+    {
+      key: 'creators_no_applications',
+      label: 'Creators idle',
+      note: 'Creators that have never applied to a campaign, in any state.'
+    }
+  ];
+
+  /* ── helpers ──────────────────────────────────────────────────────── */
+
+  function $(id) { return document.getElementById(id); }
+
+  function esc(v) {
+    if (v === null || v === undefined) return '';
+    return String(v)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function show(which) {
+    ['gate', 'loading', 'dash'].forEach(function (id) {
+      $(id).style.display = id === which ? (id === 'dash' ? 'block' : 'flex') : 'none';
+    });
+  }
+
+  var toastTimer;
+  function toast(msg) {
+    var t = $('toast');
+    t.textContent = msg;
+    t.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('on'); }, 1900);
+  }
+
+  function copy(text, msg) {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(function () { toast(msg); }, function () {});
+  }
+
+  // Malaysian numbers are stored however the user typed them. wa.me wants bare
+  // international digits: 0123456789 → 60123456789, +60… / 0060… → 60….
+  function waDigits(phone) {
+    if (!phone) return null;
+    var raw = String(phone).trim();
+    var hadPlus = raw.charAt(0) === '+';
+    var d = raw.replace(/\D/g, '');
+    if (!d) return null;
+    if (d.slice(0, 2) === '00') d = d.slice(2);
+    else if (!hadPlus && d.charAt(0) === '0') d = '60' + d.slice(1);
+    return d.length >= 8 ? d : null;
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function ago(iso) {
+    if (!iso) return '';
+    var days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+    if (days <= 0) return 'today';
+    if (days === 1) return '1 day ago';
+    if (days < 30) return days + ' days ago';
+    var months = Math.floor(days / 30);
+    return months === 1 ? '1 month ago' : months + ' months ago';
+  }
+
+  function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
+
+  /* ── rendering ────────────────────────────────────────────────────── */
+
+  function renderTiles() {
+    var o = data.overview || {};
+    var tiles = [
+      [o.restaurants, 'Restaurants'],
+      [o.creators, 'Creators'],
+      [o.campaigns_published, 'Campaigns live'],
+      [(o.campaigns_by_status && o.campaigns_by_status.draft) || 0, 'Drafts'],
+      [o.applications_pending, 'Applications pending'],
+      [o.applications_approved, 'Applications approved']
+    ];
+    $('tiles').innerHTML = tiles.map(function (t) {
+      return '<div class="tile"><div class="n">' + esc(t[0] || 0) + '</div>' +
+             '<div class="l">' + esc(t[1]) + '</div></div>';
+    }).join('');
+  }
+
+  function renderTabs() {
+    $('tabs').innerHTML = TABS.map(function (t) {
+      var n = (data[t.key] || []).length;
+      return '<button class="tab' + (t.key === activeTab ? ' on' : '') + '" data-key="' + t.key + '">' +
+             esc(t.label) + '<span class="c">' + n + '</span></button>';
+    }).join('');
+    Array.prototype.forEach.call($('tabs').querySelectorAll('.tab'), function (btn) {
+      btn.addEventListener('click', function () {
+        activeTab = btn.getAttribute('data-key');
+        $('search').value = '';
+        renderTabs();
+        renderList();
+      });
+    });
+  }
+
+  function currentRows() {
+    var rows = (data[activeTab] || []).slice();
+    var q = $('search').value.trim().toLowerCase();
+    if (!q) return rows;
+    return rows.filter(function (r) {
+      return [r.business_name, r.display_name, r.email, r.phone_number,
+              r.location_label, r.instagram_handle, r.tiktok_handle]
+        .filter(Boolean).join(' ').toLowerCase().indexOf(q) > -1;
+    });
+  }
+
+  function rowHtml(r) {
+    var isCreator = activeTab === 'creators_no_applications';
+    var name = (!isCreator && r.business_name) || r.display_name || 'Unnamed';
+
+    var chips = '';
+    if (r.has_role_profile === false) {
+      chips += '<span class="chip chip-grey">Onboarding incomplete</span>';
+    }
+    if (r.draft_count > 0) {
+      chips += '<span class="chip chip-draft">' + plural(r.draft_count, 'draft', 'drafts') + '</span>';
+    }
+    if (r.pending_applications_count > 0) {
+      chips += '<span class="chip chip-wait">' + plural(r.pending_applications_count, 'applicant', 'applicants') + ' waiting</span>';
+    }
+    if (r.pending_invites_count > 0) {
+      chips += '<span class="chip chip-wait">' + plural(r.pending_invites_count, 'invite', 'invites') + ' pending</span>';
+    }
+    if (r.created_at && Date.now() - new Date(r.created_at).getTime() < 3 * 86400000) {
+      chips += '<span class="chip chip-new">New</span>';
+    }
+
+    var bits = [];
+    bits.push('Joined ' + esc(fmtDate(r.created_at)) + ' · ' + esc(ago(r.created_at)));
+    if (r.campaign_count) {
+      bits.push(esc(plural(r.campaign_count, 'campaign', 'campaigns')) +
+                (r.active_count ? ' (' + esc(r.active_count) + ' active)' : ''));
+    }
+    if (r.location_label) bits.push(esc(r.location_label));
+    if (!isCreator && r.cuisine_type) bits.push(esc(r.cuisine_type));
+    if (isCreator) {
+      var handles = [];
+      if (r.instagram_handle) handles.push('IG @' + esc(r.instagram_handle));
+      if (r.tiktok_handle) handles.push('TT @' + esc(r.tiktok_handle));
+      if (r.rednote_handle) handles.push('RED ' + esc(r.rednote_handle));
+      if (handles.length) bits.push(handles.join(' · '));
+      if (r.follower_count) bits.push(esc(r.follower_count) + ' followers');
+    }
+    if (r.email) bits.push(esc(r.email));
+
+    var digits = waDigits(r.phone_number);
+    var actions = '';
+    if (digits) {
+      var greet = 'Hi ' + String(name).split(' ')[0] + ', this is Share Eat 👋';
+      actions += '<a class="btn btn-sm wa" target="_blank" rel="noopener" href="https://wa.me/' +
+                 esc(digits) + '?text=' + encodeURIComponent(greet) + '">WhatsApp</a>';
+    } else {
+      actions += '<span class="nophone">No phone</span>';
+    }
+    if (r.email) {
+      actions += '<button class="btn btn-ghost btn-sm" data-copy="' + esc(r.email) + '">Copy email</button>';
+    }
+
+    return '<div class="row">' +
+             '<div class="row-main">' +
+               '<div class="row-name">' + esc(name) + chips + '</div>' +
+               '<div class="row-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
+             '</div>' +
+             '<div class="row-actions">' + actions + '</div>' +
+           '</div>';
+  }
+
+  function renderList() {
+    var tab = TABS.filter(function (t) { return t.key === activeTab; })[0];
+    $('list-note').textContent = tab.note;
+
+    var rows = currentRows();
+    if (!rows.length) {
+      var all = (data[activeTab] || []).length;
+      $('rows').innerHTML = '<div class="empty"><span class="e">' + (all ? '🔍' : '🎉') + '</span>' +
+        (all ? 'No matches for that search.' : 'Nobody in this list right now.') + '</div>';
+      return;
+    }
+    $('rows').innerHTML = rows.map(rowHtml).join('');
+    Array.prototype.forEach.call($('rows').querySelectorAll('[data-copy]'), function (btn) {
+      btn.addEventListener('click', function () {
+        copy(btn.getAttribute('data-copy'), 'Email copied');
+      });
+    });
+  }
+
+  function render() {
+    var when = data.generated_at ? new Date(data.generated_at) : new Date();
+    $('stamp').textContent = 'Updated ' + when.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    renderTiles();
+    renderTabs();
+    renderList();
+    show('dash');
+  }
+
+  /* ── data ─────────────────────────────────────────────────────────── */
+
+  function load() {
+    show('loading');
+    fetch(FN_URL, { headers: { 'x-admin-secret': secret } })
+      .then(function (res) {
+        if (res.status === 401) {
+          var e = new Error('Wrong password.');
+          e.unauthorized = true;
+          throw e;
+        }
+        if (!res.ok) throw new Error('Server error (' + res.status + '). Try again in a moment.');
+        return res.json();
+      })
+      .then(function (json) {
+        data = json;
+        sessionStorage.setItem(KEY_STORE, secret);
+        render();
+      })
+      .catch(function (err) {
+        if (err.unauthorized) {
+          secret = '';
+          sessionStorage.removeItem(KEY_STORE);
+        }
+        openGate(err.message === 'Failed to fetch' ? 'Could not reach the server.' : err.message);
+      });
+  }
+
+  function openGate(message) {
+    show('gate');
+    $('gate-err').textContent = message || '';
+    $('pw').value = '';
+    $('pw').focus();
+  }
+
+  /* ── wiring ───────────────────────────────────────────────────────── */
+
+  $('gate-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var value = $('pw').value.trim();
+    if (!value) return;
+    secret = value;
+    load();
+  });
+
+  $('refresh').addEventListener('click', load);
+
+  $('lock').addEventListener('click', function () {
+    secret = '';
+    data = null;
+    sessionStorage.removeItem(KEY_STORE);
+    openGate('');
+  });
+
+  $('search').addEventListener('input', renderList);
+
+  $('copy-emails').addEventListener('click', function () {
+    var emails = currentRows().map(function (r) { return r.email; }).filter(Boolean);
+    if (!emails.length) return toast('No emails in this list');
+    copy(emails.join(', '), plural(emails.length, 'email', 'emails') + ' copied');
+  });
+
+  if (secret) load();
+  else openGate('');
+})();
+</script>
+</body>
+</html>
