@@ -152,15 +152,16 @@
 </head>
 <body>
 
-<!-- ── Password gate ──────────────────────────────────────────────────── -->
+<!-- ── Sign-in gate ───────────────────────────────────────────────────── -->
 <div id="gate" style="display:none">
   <div class="card">
     <img class="logo" src="/Share Eat Icon.svg" alt="Share Eat">
     <h1>Team access</h1>
     <p class="sub">Internal ops dashboard</p>
-    <form id="gate-form" autocomplete="off">
-      <input id="pw" type="password" placeholder="Team password" autocomplete="current-password" spellcheck="false">
-      <button class="btn btn-primary" type="submit" id="unlock">Unlock</button>
+    <form id="gate-form">
+      <input id="email" type="email" placeholder="Email" autocomplete="username" spellcheck="false" autocapitalize="none">
+      <input id="pw" type="password" placeholder="Password" autocomplete="current-password" spellcheck="false">
+      <button class="btn btn-primary" type="submit" id="unlock">Sign in</button>
     </form>
     <div class="err" id="gate-err"></div>
   </div>
@@ -213,16 +214,30 @@
 
 <div class="toast" id="toast"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.105.4/dist/umd/supabase.js"></script>
 <script>
 (function () {
   'use strict';
 
-  var FN_URL = 'https://kmzgbfxczonfjkrzyadm.supabase.co/functions/v1/admin-dashboard';
-  var KEY_STORE = 'se_ops_key';
+  var SUPABASE_URL = 'https://kmzgbfxczonfjkrzyadm.supabase.co';
+  // Publishable key, safe in page source by design — it grants nothing on its
+  // own. What protects this data is the admin_users allow-list the edge
+  // function checks server-side, not the secrecy of this string.
+  var SUPABASE_KEY = 'sb_publishable_lOjXIhD1uWa6nAxmEYUMWg_hDcohWjh';
+  var FN_URL = SUPABASE_URL + '/functions/v1/admin-dashboard';
 
-  // Password lives in sessionStorage, never localStorage: a refresh shouldn't
+  // Session lives in sessionStorage, never localStorage: a refresh shouldn't
   // re-prompt, but closing the tab must drop it (these are shared machines).
-  var secret = sessionStorage.getItem(KEY_STORE) || '';
+  var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: false,
+      storage: window.sessionStorage,
+      storageKey: 'se_ops_session'
+    }
+  });
+
   var data = null;
   var activeTab = 'restaurants_no_campaign';
 
@@ -529,54 +544,89 @@
 
   function load() {
     show('loading');
-    fetch(FN_URL, { headers: { 'x-admin-secret': secret } })
+    // getSession refreshes an expired access token on the way through, so a
+    // tab left open overnight recovers instead of bouncing to the gate.
+    sb.auth.getSession()
       .then(function (res) {
-        if (res.status === 401) {
-          var e = new Error('Wrong password.');
-          e.unauthorized = true;
-          throw e;
-        }
+        var session = res.data && res.data.session;
+        if (!session) throw signedOut('');
+        return fetch(FN_URL, {
+          headers: {
+            Authorization: 'Bearer ' + session.access_token,
+            apikey: SUPABASE_KEY
+          }
+        });
+      })
+      .then(function (res) {
+        if (res.status === 401) throw signedOut('Session expired. Sign in again.');
+        // Authenticated, but not on the ops allow-list — a normal Share Eat
+        // account. Sign out anyway: there is no use for a session on this page.
+        if (res.status === 403) throw signedOut('This account is not an ops admin.');
+        if (res.status === 429) throw new Error('Too many requests. Wait a minute and try again.');
         if (!res.ok) throw new Error('Server error (' + res.status + '). Try again in a moment.');
         return res.json();
       })
       .then(function (json) {
         data = json;
-        sessionStorage.setItem(KEY_STORE, secret);
         render();
       })
       .catch(function (err) {
-        if (err.unauthorized) {
-          secret = '';
-          sessionStorage.removeItem(KEY_STORE);
+        var message = err.message === 'Failed to fetch' ? 'Could not reach the server.' : err.message;
+        if (err.signedOut) {
+          sb.auth.signOut().then(function () { openGate(message); }, function () { openGate(message); });
+          return;
         }
-        openGate(err.message === 'Failed to fetch' ? 'Could not reach the server.' : err.message);
+        openGate(message);
       });
+  }
+
+  function signedOut(message) {
+    var e = new Error(message);
+    e.signedOut = true;
+    return e;
   }
 
   function openGate(message) {
     show('gate');
     $('gate-err').textContent = message || '';
     $('pw').value = '';
-    $('pw').focus();
+    ($('email').value ? $('pw') : $('email')).focus();
   }
 
   /* ── wiring ───────────────────────────────────────────────────────── */
 
   $('gate-form').addEventListener('submit', function (ev) {
     ev.preventDefault();
-    var value = $('pw').value.trim();
-    if (!value) return;
-    secret = value;
-    load();
+    var email = $('email').value.trim();
+    var password = $('pw').value;
+    if (!email || !password) return;
+
+    var btn = $('unlock');
+    btn.disabled = true;
+    btn.textContent = 'Signing in…';
+    $('gate-err').textContent = '';
+
+    function done() { btn.disabled = false; btn.textContent = 'Sign in'; }
+
+    sb.auth.signInWithPassword({ email: email, password: password })
+      .then(function (res) {
+        done();
+        // Supabase answers wrong-email and wrong-password identically. Keep it
+        // that way — the gate must not confirm which addresses have accounts.
+        if (res.error) return openGate('Wrong email or password.');
+        load();
+      })
+      .catch(function () {
+        done();
+        openGate('Could not reach the server.');
+      });
   });
 
   $('refresh').addEventListener('click', load);
 
   $('lock').addEventListener('click', function () {
-    secret = '';
     data = null;
-    sessionStorage.removeItem(KEY_STORE);
-    openGate('');
+    sb.auth.signOut().then(function () { openGate(''); }, function () { openGate(''); });
   });
 
   $('search').addEventListener('input', renderList);
@@ -587,8 +637,10 @@
     copy(emails.join(', '), plural(emails.length, 'email', 'emails') + ' copied');
   });
 
-  if (secret) load();
-  else openGate('');
+  sb.auth.getSession().then(function (res) {
+    if (res.data && res.data.session) load();
+    else openGate('');
+  }, function () { openGate(''); });
 })();
 </script>
 </body>
