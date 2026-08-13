@@ -353,6 +353,11 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .fbrand em{font-style:normal;color:var(--gold);opacity:.8}
 .fbrand span{display:flex;align-items:center;justify-content:center;gap:6px;font-size:.6rem;letter-spacing:.08em;margin-top:7px;opacity:.9}
 .fbrand span .se-word{height:15px}
+.fshare{margin-top:18px}
+.fshare-k{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,248,241,.4);margin-bottom:10px}
+.fshare img{display:none;width:100%;max-width:250px;margin:0 auto;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid rgba(255,248,241,.14)}
+.fshare img.on{display:block;animation:pop .35s cubic-bezier(.2,.9,.3,1.3)}
+.fshare-note{font-size:.72rem;color:rgba(255,248,241,.45);margin-top:9px;line-height:1.5}
 .fcta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,248,241,.13)}
 .fcta-logo{height:24px;display:block;margin:0 auto 10px}
 .fcta-h{font-weight:800;font-size:.95rem;color:var(--gold)}
@@ -757,9 +762,15 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
           <div class="flog" id="fLog"></div>
           <div class="fsummary" id="fSummary"></div>
           <div class="fbest" id="fBest"></div>
+          <div class="fshare" id="fShare">
+            <div class="fshare-k" id="fShareK">Drawing your card…</div>
+            <img id="fShareImg" alt="Your Harga Challenge result card">
+            <div class="fshare-note" id="fShareNote"></div>
+          </div>
           <div class="ractions">
-            <button class="playbtn sm" onclick="startChallenge()">Play again →</button>
-            <button class="sharebtn" onclick="shareResult()" id="shareBtn">Share my result</button>
+            <button class="playbtn sm" onclick="shareResult()" id="shareBtn">Share my result</button>
+            <button class="sharebtn" onclick="saveResultImage()" id="saveBtn">Save image</button>
+            <button class="sharebtn" onclick="startChallenge()">Play again →</button>
           </div>
           <div class="fcta">
             <svg class="se-word fcta-logo" role="img" aria-label="Share Eat!"><use href="#seword"/></svg>
@@ -1547,6 +1558,7 @@ function finishChallenge(){
   document.getElementById('shareBtn').textContent = 'Share my result';
   document.getElementById('finalZone').classList.add('show');
   updateScoreLine();
+  prepareShareImage();
 }
 let lastResult = null;
 
@@ -1654,6 +1666,34 @@ async function buildShareImage(){
   return new Promise(res=>c.toBlob(res,'image/jpeg',0.92));
 }
 
+let shareBlob = null, shareURL = null;
+async function prepareShareImage(){
+  const box = document.getElementById('fShare'), img = document.getElementById('fShareImg');
+  const k = document.getElementById('fShareK'), note = document.getElementById('fShareNote');
+  if(shareURL){ URL.revokeObjectURL(shareURL); shareURL = null; }
+  shareBlob = null; img.classList.remove('on'); img.removeAttribute('src');
+  k.textContent = 'Drawing your card…'; note.textContent = '';
+  try{
+    const blob = await buildShareImage();
+    if(!blob) throw new Error('no blob');
+    shareBlob = blob;
+    shareURL = URL.createObjectURL(blob);
+    img.src = shareURL; img.classList.add('on');
+    k.textContent = 'Your shareable card';
+    note.innerHTML = 'Long-press the image to save it, or use the buttons below.';
+  }catch(e){
+    k.textContent = 'Your result';
+    note.textContent = 'Could not draw the image on this browser, so sharing will send text instead.';
+  }
+}
+async function saveResultImage(){
+  const btn = document.getElementById('saveBtn');
+  if(!shareBlob){ btn.textContent = 'No image to save'; setTimeout(()=>btn.textContent='Save image',2200); return; }
+  const a = document.createElement('a');
+  a.href = shareURL; a.download = 'harga-challenge.jpg';
+  document.body.appendChild(a); a.click(); a.remove();
+  btn.textContent = 'Saved'; setTimeout(()=>btn.textContent='Save image',2200);
+}
 async function shareResult(){
   if(!lastResult) return;
   const lines = lastResult.log.map(r=>`${r.e} ${r.st} ${r.name}: guessed RM${r.guess.toFixed(2)}, real RM${r.val.toFixed(2)} ${r.hit?'✓':'✗'}`);
