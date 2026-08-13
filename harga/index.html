@@ -174,8 +174,25 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .gap-row .g .k b{display:block;font-weight:800;color:var(--ink-soft);font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
 .gap-row .g.lo .v{color:var(--leaf)}
 .gap-row .g.hi .v{color:var(--chili)}
-.gap-meter{height:14px;border-radius:7px;background:linear-gradient(90deg,#BCE3C4,var(--gold),var(--chili));margin:18px 0 6px;position:relative}
-.gap-meter .dot{position:absolute;top:-5px;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--ink);transform:translateX(-50%)}
+.paycheck{margin:22px 0 4px;padding-top:20px;border-top:1px solid var(--line)}
+.pc-q{text-align:center;font-weight:700;font-size:.95rem;color:var(--ink-soft)}
+.pc-q b{color:var(--ink)}
+.pc-q small{display:block;font-weight:600;font-size:.72rem;color:var(--ink-mute);margin-top:3px}
+.pc-val{text-align:center;font-weight:800;font-size:2.1rem;letter-spacing:-.02em;line-height:1.15;margin:6px 0 12px}
+.pc-scale{position:relative}
+.pc-scale input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:16px;border-radius:8px;background:linear-gradient(90deg,#BCE3C4,var(--gold),var(--chili));outline:none;cursor:grab;display:block;margin:0}
+.pc-scale input[type=range]:active{cursor:grabbing}
+.pc-scale input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid var(--ink);box-shadow:0 3px 10px rgba(31,27,18,.28);cursor:grab}
+.pc-scale input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid var(--ink);box-shadow:0 3px 10px rgba(31,27,18,.28);cursor:grab}
+.pc-scale input[type=range]:focus-visible{box-shadow:0 0 0 3px var(--gold-deep)}
+.pc-med{position:absolute;top:-7px;transform:translateX(-50%);pointer-events:none;text-align:center}
+.pc-med span{display:block;width:2px;height:30px;background:rgba(31,27,18,.42);margin:0 auto;border-radius:1px}
+.pc-med small{display:block;font-size:.62rem;font-weight:700;color:var(--ink-mute);white-space:nowrap;margin-top:3px}
+.pc-ends{display:flex;justify-content:space-between;font-size:.7rem;color:var(--ink-mute);font-weight:600;margin-top:26px}
+.pc-out{text-align:center;font-size:.95rem;font-weight:700;line-height:1.55;margin-top:12px;min-height:48px}
+.pc-out b{color:var(--chili)}
+.pc-out .pc-ok b{color:var(--leaf)}
+.pc-out small{display:block;font-weight:600;font-size:.78rem;color:var(--ink-mute);margin-top:3px}
 .gap-punch{text-align:center;font-weight:700;margin-top:16px;font-size:1.02rem}
 .gap-punch b{color:var(--chili)}
 .plates-row{text-align:center;font-size:1.3rem;letter-spacing:2px;margin-top:6px}
@@ -594,6 +611,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .gap-row .g .v{font-size:1.32rem;margin-bottom:0;white-space:nowrap}
   .gap-row .g .k{font-size:.72rem;line-height:1.4;max-width:none;margin:0;text-align:left}
   .gap-row .g .k b{font-size:.64rem;letter-spacing:.05em;margin-bottom:2px}
+  .pc-val{font-size:1.75rem}
+  .pc-q{font-size:.88rem}
+  .pc-out{font-size:.88rem}
+  .pc-med small{font-size:.58rem}
   .ab-row .p{font-size:1rem}
   .ab-row.first .p{font-size:1.25rem}
 }
@@ -768,7 +789,16 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
         <div class="g"><div class="v">RM11.87</div><div class="k"><b>National median</b>across all 15 states</div></div>
         <div class="g hi"><div class="v">RM40.00</div><div class="k"><b>Priciest</b>Set 7 Udang, Putrajaya &amp; Melaka</div></div>
       </div>
-      <div class="gap-meter"><div class="dot" style="left:19%"></div></div>
+      <div class="paycheck">
+        <div class="pc-q">What did <b>you</b> last pay for nasi lemak?<small>Drag to find out where you sit</small></div>
+        <div class="pc-val" id="pcVal">RM12.00</div>
+        <div class="pc-scale">
+          <input type="range" id="pcSlider" min="5" max="26" step="0.5" value="12" aria-label="What you last paid for nasi lemak" oninput="runPayCheck()">
+          <div class="pc-med" id="pcMed"><span></span><small>national median</small></div>
+        </div>
+        <div class="pc-ends"><span>RM5</span><span>RM26</span></div>
+        <div class="pc-out" id="pcOut"></div>
+      </div>
       <div class="gap-punch">For the price of ONE RM40.00 nasi lemak, you could buy <b>7.5 plates</b> of the cheapest one we found.</div>
       <div class="plates-row">🍛🍛🍛🍛🍛🍛🍛<span style="opacity:.35">½</span></div>
       <div class="gap-factlet" id="gapFactlet"></div>
@@ -1227,6 +1257,35 @@ function renderValue(){
   });
   el.innerHTML = `<div class="v-row head"><span></span><span>State</span><span class="num" title="Median nasi lemak"><span class="hfull">Nasi lemak</span><span class="habbr">🍛 NL</span></span><span class="num" title="Median ayam gepuk"><span class="hfull">Ayam gepuk</span><span class="habbr">🍗 AG</span></span><span class="score">Score</span></div>` +
     DATA.value.map((v,i)=>`<div class="v-row ${i<3?'top':''}"><span class="rk">${ranks[i].rank===1&&!ranks[i].tied?'🏆':ranks[i].rank+(ranks[i].tied?'=':'')}</span><span class="st"><img class="flag sm" src="${DATA.flags[v.s]||''}" alt="">${v.s}</span><span class="num">RM${v.nl.toFixed(2)}</span><span class="num">RM${v.ag.toFixed(2)}</span><span class="score">${v.score}</span></div>`).join('');
+}
+
+/* what did you pay? -> your percentile against the 150 standard plates */
+let NL_SORTED = null;
+function runPayCheck(){
+  const sl = document.getElementById('pcSlider'); if(!sl) return;
+  if(!NL_SORTED) NL_SORTED = DATA.rows.filter(r=>r.d==='nl').map(r=>r.p).sort((a,b)=>a-b);
+  const n = NL_SORTED.length;
+  const v = parseFloat(sl.value);
+  document.getElementById('pcVal').textContent = 'RM'+v.toFixed(2);
+  const below = NL_SORTED.filter(p=>p<v).length;
+  const pct = Math.round(below/n*100);
+  const med = DATA.nl ? null : null;
+  const out = document.getElementById('pcOut');
+  let line, note;
+  if(pct === 0){ line = `<span class="pc-ok"><b>Nothing</b> we found is cheaper than that.</span>`; note = 'You are eating at prices most of Malaysia has stopped seeing. Please share the address.'; }
+  else if(pct === 100){ line = `<b>Every single plate</b> we found costs less than yours.`; note = 'That is above the priciest standard nasi lemak in our whole dataset.'; }
+  else if(pct <= 10){ line = `<span class="pc-ok">Only <b>${pct}%</b> of the plates we found cost less than yours.</span>`; note = 'You are eating at Malaysian prices most people have stopped seeing.'; }
+  else if(pct < 45){ line = `<span class="pc-ok"><b>${pct}%</b> of the plates we found cost less than yours.</span>`; note = 'Comfortably under the national median. Keep that place to yourself.'; }
+  else if(pct <= 55){ line = `<b>${pct}%</b> of the plates we found cost less than yours.`; note = 'Dead average. You are paying exactly what Malaysia pays.'; }
+  else if(pct <= 85){ line = `<b>${pct}%</b> of the plates we found cost less than yours.`; note = 'Above the median. Convenience has a price and you are paying it.'; }
+  else { line = `<b>${pct}%</b> of the plates we found cost less than yours.`; note = 'Top of the range. We hope the sambal was worth it.'; }
+  out.innerHTML = line + `<small>${note} · based on ${n} nasi lemak ayam prices</small>`;
+}
+function placePayMedian(){
+  const sl = document.getElementById('pcSlider'), m = document.getElementById('pcMed');
+  if(!sl || !m) return;
+  const lo = +sl.min, hi = +sl.max, med = 11.87;
+  m.style.left = Math.min(94, Math.max(6, (med-lo)/(hi-lo)*100)) + '%';
 }
 
 /* the one insight worth keeping from the old spending widget */
@@ -1709,7 +1768,7 @@ window.addEventListener('scroll', updateScrollBar, {passive:true});
 
 document.addEventListener('DOMContentLoaded',()=>{
   renderMap(); renderRank(); renderAbsurd(); renderClubs(); renderValue();
-  updateScoreLine(); renderGapFactlet();
+  updateScoreLine(); renderGapFactlet(); placePayMedian(); runPayCheck();
   document.querySelectorAll('[data-count]').forEach(countUp);
   document.querySelectorAll('.reveal-sec').forEach(el=>io.observe(el));
   updateScrollBar();
