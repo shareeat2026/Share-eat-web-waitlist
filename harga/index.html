@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Share Eat! Index | RM40 for nasi lemak?!</title>
-<meta name="description" content="RM40 for nasi lemak?! The Share Eat! Index tracks what Malaysia's favourite plates and drinks really cost. 619 hand-collected price points across all 15 states and federal territories.">
-<meta property="og:title" content="RM40 for nasi lemak?! | The Share Eat! Index">
+<title>The Harga Index | RM40 for nasi lemak?!</title>
+<meta name="description" content="RM40 for nasi lemak?! The Harga Index tracks what Malaysia's favourite plates and drinks really cost. 619 hand-collected price points across all 15 states and federal territories.">
+<meta property="og:title" content="RM40 for nasi lemak?! | The Harga Index">
 <meta property="og:description" content="We priced nasi lemak, ayam gepuk, kopi ais and matcha in every Malaysian state. 619 receipts. Some results were shocking.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://shareeat.io/harga/og-image.png">
@@ -458,7 +458,6 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 .drift.d6{left:93%;animation-delay:-15s;font-size:16px}
 @keyframes rise{0%{transform:translateY(105vh) rotate(0deg)}100%{transform:translateY(-15vh) rotate(340deg)}}
 .scroll-bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--chili));z-index:70;transition:width .1s linear}
-.proto{position:fixed;top:12px;right:12px;background:var(--chili);color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;padding:5px 10px;border-radius:999px;z-index:60;text-transform:uppercase}
 .reveal-sec{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease}
 .reveal-sec.in{opacity:1;transform:none}
 .geo path.st:focus-visible,.geo .badge:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
@@ -524,7 +523,6 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   nav .links{display:none}
   .burger{display:flex}
   nav .brand{font-size:.8rem}
-  .proto{display:none}
   header .pill{font-size:9.5px;padding:5px 12px;letter-spacing:.06em}
   .floaties{display:none}
   .toggle button{font-size:.8rem;padding:8px 13px;gap:5px}
@@ -583,17 +581,16 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <span class="drift d4">🍵</span><span class="drift d5">🍗</span><span class="drift d6">🥚</span>
 </div>
 <div class="scroll-bar" id="scrollBar"></div>
-<span class="proto">Vol. 1 draft</span>
 <div class="map-tip" id="tip"></div>
 
 <nav><div class="navbar">
-  <span class="brand">THE <em>SHARE EAT!</em> INDEX</span>
+  <span class="brand">THE <em>HARGA</em> INDEX</span>
   <div class="links" id="navLinks"><a href="#map">The Map</a><a href="#absurd">Priciest</a><a href="#challenge">Challenge</a><a href="#data">Data</a><a href="about.html">Our Story</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="drawer-scrim" id="scrim" onclick="toggleMenu(false)"></div>
 <aside class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer-head"><span class="brand">THE <em>SHARE EAT!</em> INDEX</span><button class="dclose" aria-label="Close menu" onclick="toggleMenu(false)">&times;</button></div>
+  <div class="drawer-head"><span class="brand">THE <em>HARGA</em> INDEX</span><button class="dclose" aria-label="Close menu" onclick="toggleMenu(false)">&times;</button></div>
   <a href="#gap" onclick="return goSection(event,'gap')">The Price Gap</a>
   <a href="#map" onclick="return goSection(event,'map')">The Sedap Map</a>
   <a href="#ranking" onclick="return goSection(event,'ranking')">The State Battle</a>
@@ -619,7 +616,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <span class="pill chili">We investigated the nasi lemak economy</span>
     <h1><span class="shock">RM40.00</span> for<br>nasi lemak?!</h1>
     <p class="herosub">Yes, really. We went through delivery menus in <b>every Malaysian state</b> and found plates from <b>RM5.30</b> all the way to <b>RM40.00</b>. Some results were questionable. Some were shocking. All of them are below.</p>
-    <p class="byline">The Share Eat! Index Vol. 1 · 619 hand-collected price points across 4 dishes · updated 13 August 2026</p>
+    <p class="byline">The Harga Index Vol. 1, by Share Eat! · 619 hand-collected price points across 4 dishes · updated 13 August 2026</p>
 
     <div class="stats">
       <div class="stat"><div class="e">🍛</div><div class="n">RM<em data-count="11.87">0</em></div><div class="l">median nasi lemak ayam<br>150 restaurants</div></div>
@@ -883,7 +880,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
       <p>Malaysia has thousands of great restaurants. But being great doesn't guarantee being discovered.</p>
       <p>At the same time, food creators are expected to constantly create, often spending their own money just to find the next restaurant, shoot the next video and keep their audience fed with something new.</p>
       <p>We think there's a better way. Restaurants have something worth sharing. Creators have people worth sharing it with. Share Eat! brings them together.</p>
-      <p>And because we're obsessed with Malaysian food, we're starting by understanding it. That's why we built the Share Eat! Index.</p>
+      <p>And because we're obsessed with Malaysian food, we're starting by understanding it. That's why we built the Harga Index.</p>
       <p class="own">Because great food deserves to be discovered.<br>And <em>discovery shouldn't be expensive.</em></p>
     </div>
     <div class="doors">
@@ -903,7 +900,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 
 <footer>
   <div class="wrap">
-    The Share Eat! Index is published by Share Eat! for entertainment and mild economic enlightenment.<br>
+    The Harga Index is published by <b>Share Eat!</b> for entertainment and mild economic enlightenment.<br>
     Data: public delivery menus, collected by hand. The full dataset (CSV) ships with every release. · <a href="about.html">Our story</a> · © 2026 Share Eat!
   </div>
 </footer>
@@ -1471,7 +1468,7 @@ let lastResult = null;
 function shareResult(){
   if(!lastResult) return;
   const lines = lastResult.log.map(r=>`${r.e} ${r.st} ${r.name}: guessed RM${r.guess.toFixed(2)}, real RM${r.val.toFixed(2)} ${r.hit?'✓':'✗'}`);
-  const t = `🍽️ The Harga Challenge (The Share Eat! Index)\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you can beat that? shareeat.io/harga`;
+  const t = `🍽️ The Harga Challenge · The Harga Index\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you can beat that? shareeat.io/harga`;
   const btn = document.getElementById('shareBtn');
   const done = (msg)=>{ btn.textContent = msg; setTimeout(()=>btn.textContent='Share my result', 2600); };
   if(navigator.share){ navigator.share({text:t}).then(()=>done('Shared')).catch(()=>{}); return; }
