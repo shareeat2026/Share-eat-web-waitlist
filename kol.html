@@ -323,7 +323,16 @@
     .nav-index { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--ink-soft); padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; transition: background-color .2s ease, color .2s ease; white-space: nowrap; text-decoration: none; }
     .nav-index:hover { background: rgba(26,23,20,0.05); color: var(--ink); }
     .nav-index .nav-index-dot { width: 6px; height: 6px; border-radius: 50%; background: #F5C842; flex: 0 0 auto; }
-    @media (max-width: 640px){ .nav-index { padding: 7px 11px; font-size: 12px; gap: 5px; } .nav-index .nav-index-long { display: none; } }
+    .harga-strip { display: none; }
+    @media (max-width: 640px){
+      .nav-index { display: none; }
+      .harga-strip { display: flex; align-items: center; justify-content: center; gap: 7px;
+        padding: 9px 14px; background: #1F1B12; color: #FFF8F1; font-size: 12px; font-weight: 700;
+        letter-spacing: .01em; text-decoration: none; text-align: center; line-height: 1.35; }
+      .harga-strip .hs-dot { width: 6px; height: 6px; border-radius: 50%; background: #F5C842; flex: 0 0 auto; }
+      .harga-strip b { color: #F5C842; font-weight: 800; }
+      .harga-strip .hs-go { color: #F5C842; font-weight: 800; }
+    }
 </style>
   <!-- Meta Pixel Code -->
   <script>
@@ -346,12 +355,13 @@
 <body>
 
   <!-- ============ NAV ============ -->
+  <a class="harga-strip" href="/harga/"><span class="hs-dot"></span><span><b>The Harga Index</b> · what Malaysia really charges</span><span class="hs-go">→</span></a>
   <div class="nav-wrap" id="navWrap">
     <div class="container">
       <nav>
         <a class="logo" href="#top"><img src="Share Eat Typography.svg" alt="Share Eat!"></a>
         <div class="nav-right">
-          <a href="/harga/" class="nav-index"><span class="nav-index-dot"></span><span class="nav-index-long">The </span>Index</a>
+          <a href="/harga/" class="nav-index"><span class="nav-index-dot"></span><span class="nav-index-long">The </span>Harga<span class="nav-index-tail"> Index</span></a>
           <span class="nav-badge"><span class="dot"></span> Phase 1 · Now Open</span>
           <a href="#waitlist" class="btn btn-primary nav-cta">Join the Waitlist</a>
         </div>
