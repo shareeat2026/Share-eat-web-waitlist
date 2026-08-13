@@ -265,7 +265,12 @@
       .pain-box, .preview-band, .waitlist-band { padding: 32px 22px; }
       .benefits { grid-template-columns: 1fr; }
     }
-  </style>
+  
+    .nav-index { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--ink-soft); padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; transition: background-color .2s ease, color .2s ease; white-space: nowrap; text-decoration: none; }
+    .nav-index:hover { background: rgba(26,23,20,0.05); color: var(--ink); }
+    .nav-index .nav-index-dot { width: 6px; height: 6px; border-radius: 50%; background: #F5C842; flex: 0 0 auto; }
+    @media (max-width: 640px){ .nav-index { padding: 7px 11px; font-size: 12px; gap: 5px; } .nav-index .nav-index-long { display: none; } }
+</style>
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -292,6 +297,7 @@
       <nav>
         <a class="logo" href="#top"><img src="Share Eat Typography.svg" alt="Share Eat!"></a>
         <div class="nav-right">
+          <a href="/harga/" class="nav-index"><span class="nav-index-dot"></span><span class="nav-index-long">The </span>Index</a>
           <span class="nav-badge"><span class="dot"></span> Live on the App Store</span>
           <a href="https://wa.me/60147113585?text=Hi%20Share%20Eat!%20I%20run%20an%20F%26B%20spot%20in%20the%20Klang%20Valley.%20Can%20I%20ask%20a%20few%20questions%20about%20how%20paying%20creators%20in%20food%20works%3F" class="btn btn-primary nav-cta" onclick="try{fbq('track','Contact')}catch(e){}">WhatsApp Us</a>
         </div>
