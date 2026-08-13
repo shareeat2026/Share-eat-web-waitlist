@@ -40,6 +40,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,248,241,.92);backdrop-f
 nav .navbar{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 nav .brand{font-weight:800;font-size:.95rem;letter-spacing:.04em}
 nav .brand em{font-style:normal;color:var(--gold-deep)}
+nav .brand .by{font-weight:700;font-size:.72rem;letter-spacing:.02em;color:var(--ink-mute);margin-left:8px;padding-left:9px;border-left:1px solid var(--line)}
+.drawer-head .brand .by{color:rgba(255,248,241,.5);border-left-color:rgba(255,248,241,.2)}
 nav .links{display:flex;gap:16px;font-size:.85rem;font-weight:700}
 nav .links a{text-decoration:none;opacity:.8}
 nav .links a:hover{opacity:1;color:var(--gold-ink)}
@@ -90,6 +92,28 @@ h1 .swing{display:inline-block;animation:swing 5s ease-in-out infinite;transform
 .floaties{position:absolute;inset:0;pointer-events:none;z-index:-1}
 .floaties span{position:absolute;font-size:26px;opacity:.5;animation:floaty 9s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-22px) rotate(8deg)}}
+.hero-cta-wrap{margin:26px 0 4px;display:flex;flex-direction:column;align-items:center;gap:9px}
+.hero-cta{display:inline-block;background:var(--ink);color:var(--gold);font-weight:800;font-size:1.02rem;padding:16px 30px;border-radius:16px;text-decoration:none;box-shadow:0 8px 24px rgba(31,27,18,.18);transition:transform .16s,box-shadow .16s}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(31,27,18,.24)}
+.hero-cta-note{font-size:.76rem;color:var(--ink-mute);font-weight:600}
+.playbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px calc(11px + env(safe-area-inset-bottom));background:var(--ink);color:#FFF8F1;box-shadow:0 -6px 22px rgba(31,27,18,.22);transform:translateY(110%);transition:transform .28s cubic-bezier(.3,.9,.3,1)}
+.playbar.on{transform:translateY(0)}
+.playbar .pb-t{font-weight:800;font-size:.85rem;line-height:1.3}
+.playbar .pb-t small{display:block;font-weight:600;font-size:.7rem;opacity:.55;margin-top:1px}
+.playbar a{background:var(--gold);color:var(--ink);font-weight:800;font-size:.85rem;padding:10px 17px;border-radius:12px;text-decoration:none;white-space:nowrap;flex:0 0 auto}
+.nudge{max-width:760px;margin:26px auto 0;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 20px;border:1.5px dashed var(--gold-deep);border-radius:18px;background:var(--gold-soft)}
+.nudge .n-t{font-weight:800;font-size:.95rem;color:var(--ink)}
+.nudge .n-t small{display:block;font-weight:600;font-size:.78rem;color:var(--ink-soft);margin-top:2px}
+.nudge a{background:var(--ink);color:var(--gold);font-weight:800;font-size:.85rem;padding:11px 18px;border-radius:12px;text-decoration:none;white-space:nowrap;flex:0 0 auto}
+.se-band{max-width:760px;margin:30px auto 0;background:linear-gradient(135deg,#fff,#FFFBF0);border:1px solid var(--line);border-radius:22px;padding:24px 26px;box-shadow:var(--sh-sm);text-align:center}
+.se-band .sb-k{font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-ink)}
+.se-band .sb-h{font-weight:800;font-size:1.12rem;margin-top:6px;line-height:1.35}
+.se-band .sb-p{font-size:.87rem;color:var(--ink-soft);margin-top:7px;line-height:1.6;max-width:520px;margin-inline:auto}
+.se-band .sb-a{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.se-band .sb-a a{font-weight:800;font-size:.86rem;padding:12px 20px;border-radius:13px;text-decoration:none;transition:transform .15s}
+.se-band .sb-a a:hover{transform:translateY(-2px)}
+.se-band .sb-a .biz{background:var(--ink);color:var(--gold)}
+.se-band .sb-a .cre{background:var(--gold);color:var(--ink)}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:32px 0 8px}
 .stat .e{font-size:1.3rem;margin-bottom:2px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 16px;box-shadow:var(--sh-sm);text-align:center;transition:transform .25s}
@@ -112,6 +136,13 @@ h1 .swing{display:inline-block;animation:swing 5s ease-in-out infinite;transform
 /* sections */
 section{padding:48px 0 8px}
 section[id]{scroll-margin-top:70px}
+.fold{border-top:1px solid var(--line);margin-top:6px}
+.fold-btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:none;border:none;font:inherit;font-weight:800;font-size:.92rem;color:var(--gold-ink);cursor:pointer;padding:18px 10px}
+.fold-btn:hover{color:var(--ink)}
+.fold-btn .fb-i{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:2px solid currentColor;font-size:.8rem;line-height:1;transition:transform .25s}
+.fold-btn.open .fb-i{transform:rotate(45deg)}
+.fold-body{display:none}
+.fold-body.open{display:block;animation:fadeUp .35s ease both}
 .sec-pill{text-align:center;margin-bottom:10px}
 h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;text-align:center;margin-bottom:6px}
 .mbr{display:none}
@@ -141,6 +172,8 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .gap-punch{text-align:center;font-weight:700;margin-top:16px;font-size:1.02rem}
 .gap-punch b{color:var(--chili)}
 .plates-row{text-align:center;font-size:1.3rem;letter-spacing:2px;margin-top:6px}
+.gap-factlet{text-align:center;font-size:.85rem;color:var(--ink-soft);margin-top:14px;padding-top:14px;border-top:1px solid var(--line);line-height:1.55}
+.gap-factlet b{color:var(--ink)}
 
 /* toggle + map (unchanged core) */
 .toggle{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 26px}
@@ -266,43 +299,12 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .v-row.top{background:linear-gradient(90deg,#F0F8F1,transparent);border-radius:10px}
 
 /* the two games */
-.playgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.playgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;max-width:760px;margin:0 auto}
 .play{background:var(--ink);color:#fff;border-radius:24px;padding:30px 26px;box-shadow:var(--sh-md);text-align:center;display:flex;flex-direction:column;min-width:0;min-height:540px}
 .play h3{font-weight:800;font-size:1.15rem;margin-bottom:4px;color:var(--gold)}
 .play p{font-size:.83rem;opacity:.75;margin-bottom:14px}
 .play .lead{font-size:.85rem;line-height:1.55;opacity:.72;margin-bottom:18px}
-.ppstates{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
-.ppstates::-webkit-scrollbar{height:6px}
-.ppstates::-webkit-scrollbar-track{background:rgba(255,248,241,.07);border-radius:3px}
-.ppstates::-webkit-scrollbar-thumb{background:rgba(245,200,66,.45);border-radius:3px}
-.ppcard{flex:0 0 auto;scroll-snap-align:center;min-width:88px;border:2px solid rgba(255,248,241,.2);background:rgba(255,248,241,.06);border-radius:14px;padding:10px 12px;color:#FFF8F1;font:inherit;cursor:pointer;text-align:center;transition:background .15s,border-color .15s,color .15s}
-.ppcard:hover{border-color:var(--gold)}
-.ppcard.on{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-.ppcard img{display:block;width:24px;height:12px;border-radius:2px;margin:0 auto 5px;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
-.ppcard .ab{display:block;font-weight:800;font-size:.9rem;line-height:1.1}
-.ppcard .nm{display:block;font-size:.6rem;opacity:.62;white-space:nowrap;margin-top:2px}
-.ppcard.on .nm{opacity:.7}
-.ppswipe{font-size:.66rem;opacity:.42;letter-spacing:.04em;margin:0 0 6px}
-.ppgrid{margin-top:14px;display:flex;flex-direction:column;gap:8px;text-align:left}
-.ppempty{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;margin-top:14px;padding:26px 20px;border:1.5px dashed rgba(255,248,241,.16);border-radius:18px;font-size:.85rem;line-height:1.55;opacity:.55}
-.ppempty .ppe{font-size:1.7rem;opacity:.85}
-.ppempty.gone{display:none}
-.pprow{animation:fadeUp .34s ease both}
-.pprow{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 12px;border-radius:12px;background:rgba(255,248,241,.06);font-size:.85rem}
-.pprow .pe{font-size:1.05rem;text-align:center;line-height:1}
-.pprow .pl{font-weight:700}
-.pprow .pl small{display:block;font-size:.67rem;opacity:.58;font-weight:500;margin-top:1px}
-.pprow .pc{font-weight:800;color:var(--gold);white-space:nowrap;font-size:.92rem}
-.pprow.zero{background:rgba(232,84,59,.12)}
-.pprow.zero .pc{color:#FF9E88}
-.ppfoot{margin-top:auto;padding-top:14px;font-size:.79rem;opacity:.78;line-height:1.55}
 .ppfoot b{color:var(--gold)}
-.budgets{display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}
-.budgets button{font:inherit;font-weight:800;padding:8px 16px;border-radius:999px;border:2px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;transition:all .15s}
-.budgets button.on,.budgets button:hover{background:var(--gold);color:var(--ink)}
-.play .out{margin-top:16px;font-size:.95rem;font-weight:600}
-.play .out b{color:var(--gold)}
-.play .plateline{font-size:1.3rem;margin-top:4px;line-height:1.5;word-break:break-all}
 .playbtn{font:inherit;font-weight:800;font-size:1rem;padding:12px 26px;border-radius:14px;border:none;background:var(--gold);color:var(--ink);cursor:pointer;box-shadow:var(--sh-sm);transition:transform .15s;margin:4px auto 0}
 .playbtn:hover{transform:scale(1.04)}
 .playbtn.sm{font-size:.85rem;padding:9px 20px}
@@ -323,6 +325,16 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .rd.miss{background:rgba(232,84,59,.8)}
 .final{display:none;text-align:center}
 .final.show{display:block;animation:pop .35s cubic-bezier(.2,.9,.3,1.3)}
+.fbrand{font-size:.66rem;font-weight:800;letter-spacing:.11em;color:rgba(255,248,241,.42);margin-bottom:16px}
+.fbrand em{font-style:normal;color:var(--gold);opacity:.8}
+.fbrand span{display:block;font-size:.6rem;letter-spacing:.08em;margin-top:3px;opacity:.75}
+.fcta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,248,241,.13)}
+.fcta-h{font-weight:800;font-size:.95rem;color:var(--gold)}
+.fcta-p{font-size:.8rem;opacity:.6;line-height:1.6;margin-top:6px;max-width:400px;margin-inline:auto}
+.fcta-a{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.fcta-a a{font-weight:800;font-size:.82rem;padding:11px 17px;border-radius:12px;text-decoration:none}
+.fcta-a .biz{background:var(--gold);color:var(--ink)}
+.fcta-a .cre{background:transparent;color:var(--gold);border:2px solid var(--gold)}
 .fscore{font-weight:800;font-size:3.4rem;color:var(--gold);line-height:1;letter-spacing:-.03em}
 .fscore small{font-size:1.15rem;opacity:.5;letter-spacing:0}
 .frank{font-weight:800;font-size:1.2rem;margin-top:6px}
@@ -472,6 +484,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .herosub{font-size:.94rem;line-height:1.62;padding:0 2px}
   .byline{font-size:.73rem;line-height:1.5;margin-top:12px}
   .tagline{font-size:.8rem;margin-top:12px}
+  .hero-cta{font-size:.94rem;padding:15px 20px;width:100%;text-align:center}
+  .hero-cta-wrap{margin:22px 0 2px}
+  .nudge{flex-direction:column;align-items:stretch;text-align:center;gap:12px;padding:16px}
+  .nudge a{text-align:center}
+  .se-band{padding:22px 18px;border-radius:20px}
+  .se-band .sb-a{flex-direction:column}
+  .se-band .sb-a a{width:100%;text-align:center}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0 6px}
   .stat{padding:15px 10px;border-radius:15px}
   .stat .e{font-size:1.05rem}
@@ -487,8 +506,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .why h3{font-size:1.08rem}
   .why p{font-size:.88rem;line-height:1.62}
   .mbr{display:inline}
-  .doors,.clubs,.playgrid{grid-template-columns:minmax(0,1fr)}
+  .doors,.clubs{grid-template-columns:minmax(0,1fr)}
   .play{padding:24px 16px;min-height:500px}
+  .fcta-a{flex-direction:column}
+  .fcta-a a{width:100%;text-align:center}
   .flog .fr{padding:9px 10px;gap:7px;font-size:.74rem}
   .flog .fr .fw small{font-size:.65rem}
   .fsummary{font-size:.83rem}
@@ -496,13 +517,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .gbox .amt{font-size:1.5rem}
   .guess-zone.locked .gbox.mine .amt{font-size:1.2rem}
   .guess-zone.locked .gpair{gap:8px}
-  .ppempty{padding:22px 14px;font-size:.8rem}
-  .budgets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
-  .budgets button{padding:8px 4px;font-size:.86rem}
-  .ppcard{min-width:80px;padding:9px 10px}
-  .pprow{grid-template-columns:22px minmax(0,1fr) auto;gap:8px;padding:8px 10px;font-size:.8rem}
-  .pprow .pc{font-size:.85rem}
-  .row{grid-template-columns:24px 1fr 62px;grid-template-areas:"rk st val" "bar bar bar";gap:4px 8px;padding:9px 0;min-height:0}
+              .row{grid-template-columns:24px 1fr 62px;grid-template-areas:"rk st val" "bar bar bar";gap:4px 8px;padding:9px 0;min-height:0}
   .row .rk{grid-area:rk}
   .row .state{grid-area:st;font-size:.86rem}
   .row .val{grid-area:val}
@@ -522,7 +537,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   nav .brand{font-size:.74rem;white-space:nowrap;flex-shrink:0}
   nav .links{display:none}
   .burger{display:flex}
-  nav .brand{font-size:.8rem}
+  nav .brand{font-size:.76rem}
+  nav .brand .by{font-size:.62rem;margin-left:6px;padding-left:7px}
   header .pill{font-size:9.5px;padding:5px 12px;letter-spacing:.06em}
   .floaties{display:none}
   .toggle button{font-size:.8rem;padding:8px 13px;gap:5px}
@@ -584,13 +600,18 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 <div class="map-tip" id="tip"></div>
 
 <nav><div class="navbar">
-  <span class="brand">THE <em>HARGA</em> INDEX</span>
-  <div class="links" id="navLinks"><a href="#map">The Map</a><a href="#absurd">Priciest</a><a href="#challenge">Challenge</a><a href="#data">Data</a><a href="about.html">Our Story</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
+  <span class="brand">THE <em>HARGA</em> INDEX<span class="by">by Share Eat!</span></span>
+  <div class="links" id="navLinks"><a href="#challenge">Challenge</a><a href="#map">The Map</a><a href="#absurd">Priciest</a><a href="#data">Data</a><a href="about.html">Our Story</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div></nav>
+<div class="playbar" id="playbar" aria-hidden="true">
+  <span class="pb-t" id="pbText">The Harga Challenge<small>5 rounds · by Share Eat!</small></span>
+  <a href="#challenge" onclick="return goSection(event,'challenge')">Play →</a>
+</div>
 <div class="drawer-scrim" id="scrim" onclick="toggleMenu(false)"></div>
 <aside class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer-head"><span class="brand">THE <em>HARGA</em> INDEX</span><button class="dclose" aria-label="Close menu" onclick="toggleMenu(false)">&times;</button></div>
+  <div class="drawer-head"><span class="brand">THE <em>HARGA</em> INDEX<span class="by">by Share Eat!</span></span><button class="dclose" aria-label="Close menu" onclick="toggleMenu(false)">&times;</button></div>
+  <a class="dplay" href="#challenge" onclick="return goSection(event,'challenge')"><span class="dp-t">The Harga Challenge</span><span class="dp-s">5 rounds. Do you know what Malaysia charges?</span><span class="dp-go">▸</span></a>
   <a href="#gap" onclick="return goSection(event,'gap')">The Price Gap</a>
   <a href="#map" onclick="return goSection(event,'map')">The Sedap Map</a>
   <a href="#ranking" onclick="return goSection(event,'ranking')">The State Battle</a>
@@ -598,7 +619,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <a href="#clubs" onclick="return goSection(event,'clubs')">The RM10 Line</a>
   <a href="#value" onclick="return goSection(event,'value')">Food Value Index</a>
   <a href="#data" onclick="return goSection(event,'data')">The Receipts</a>
-  <a class="dplay" href="#challenge" onclick="return goSection(event,'challenge')"><span class="dp-t">The Harga Challenge</span><span class="dp-s">5 rounds. Do you know what Malaysia charges?</span><span class="dp-go">▸</span></a>
+
   <a class="dstory" href="about.html">Our Story <span class="dgo">→</span></a>
   <a class="dstory dhome" href="https://shareeat.io/">Back to Share Eat! <span class="dgo">↗</span></a>
   <div class="drawer-foot">Discovery shouldn't be expensive.</div>
@@ -617,6 +638,11 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <h1><span class="shock">RM40.00</span> for<br>nasi lemak?!</h1>
     <p class="herosub">Yes, really. We went through delivery menus in <b>every Malaysian state</b> and found plates from <b>RM5.30</b> all the way to <b>RM40.00</b>. Some results were questionable. Some were shocking. All of them are below.</p>
     <p class="byline">The Harga Index Vol. 1, by Share Eat! · 619 hand-collected price points across 4 dishes · updated 13 August 2026</p>
+
+    <div class="hero-cta-wrap">
+      <a class="hero-cta" href="#challenge" onclick="return goSection(event,'challenge')">Think you know? Take the 5-round challenge →</a>
+      <span class="hero-cta-note">Takes a minute. The data is underneath, but no peeking first.</span>
+    </div>
 
     <div class="stats">
       <div class="stat"><div class="e">🍛</div><div class="n">RM<em data-count="11.87">0</em></div><div class="l">median nasi lemak ayam<br>150 restaurants</div></div>
@@ -648,6 +674,78 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   </div>
 </header>
 
+<section id="challenge">
+  <div class="wrap">
+    <div class="sec-pill"><span class="pill gold">The Harga Challenge</span></div>
+    <h2>Think you know what Malaysia charges?</h2>
+    <p class="sec-sub">Before you look at any of the data below: five real prices, straight from our receipts. Get close enough on each one and you score the round.</p>
+    <div class="playgrid reveal-sec">
+      <div class="play" id="guessGame">
+        <h3><span class="emo-i">🍽️</span>Teka Harga</h3>
+        <p class="lead">Five rounds, five real prices from the data. Land within 20% of the real price and you score the round.</p>
+        <div class="scoreline" id="scoreLine"></div>
+        <div class="rounds" id="rounds" aria-label="Challenge progress"></div>
+        <button class="playbtn" id="dealBtn" onclick="startChallenge()">Start the challenge →</button>
+        <div class="gbody">
+        <div class="gempty" id="gEmpty">
+          <div class="get-grid">
+            <div class="get"><span class="e">🍛</span><span class="q">RM ?</span></div>
+            <div class="get"><span class="e">🍗</span><span class="q">RM ?</span></div>
+            <div class="get"><span class="e">☕</span><span class="q">RM ?</span></div>
+            <div class="get"><span class="e">🍵</span><span class="q">RM ?</span></div>
+          </div>
+          <p>Four dishes, 15 states, 619 real prices.<br>The cheapest plate we found was <b>RM5.30</b>. The priciest was <b>RM40.00</b>.<br>Five rounds. Good luck.</p>
+        </div>
+        <div class="guess-zone" id="guessZone">
+          <div class="q" id="guessQ"></div>
+          <div class="gpair">
+            <div class="gbox mine"><div class="lbl">your guess</div><div class="amt" id="gval">RM15.00</div></div>
+            <div class="gbox real"><div class="lbl">the real price</div><div class="amt" id="actualP">RM0.00</div></div>
+          </div>
+          <div class="tune">
+            <button class="tbtn minus" onclick="nudgeGuess(-0.5)" aria-label="Guess 50 sen lower"></button>
+            <input type="range" id="guessSlider" min="2" max="45" step="0.5" value="15" aria-label="Your guess" oninput="syncGuess()">
+            <button class="tbtn plus" onclick="nudgeGuess(0.5)" aria-label="Guess 50 sen higher"></button>
+          </div>
+          <div class="grange"><span id="gmin">RM2.00</span><span id="gmax">RM45.00</span></div>
+          <button class="playbtn sm" onclick="revealGuess()">Lock in my guess</button>
+        </div>
+        <div class="reveal" id="revealZone">
+          <div class="rwhere" id="whereP"></div>
+          <div class="verdict" id="verdict"></div>
+          <div class="quip" id="quipP"></div>
+          <div class="ractions">
+            <button class="playbtn sm" id="nextBtn" onclick="nextRound()">Next round →</button>
+          </div>
+        </div>
+        <div class="final" id="finalZone">
+          <div class="fbrand">THE <em>HARGA</em> INDEX<span>by Share Eat!</span></div>
+          <div class="fscore" id="fScore">0<small>/5</small></div>
+          <div class="frank" id="fRank"></div>
+          <div class="fsub" id="fSub"></div>
+          <div class="flog" id="fLog"></div>
+          <div class="fsummary" id="fSummary"></div>
+          <div class="fbest" id="fBest"></div>
+          <div class="ractions">
+            <button class="playbtn sm" onclick="startChallenge()">Play again →</button>
+            <button class="sharebtn" onclick="shareResult()" id="shareBtn">Share my result</button>
+          </div>
+          <div class="fcta">
+            <div class="fcta-h">Now the part that pays for the data</div>
+            <div class="fcta-p">Share Eat! connects Malaysian restaurants with food creators. Restaurants get discovered without an ad budget, creators stop paying for every meal they film.</div>
+            <div class="fcta-a">
+              <a class="biz" href="https://shareeat.io/restaurant.html">Own a restaurant? →</a>
+              <a class="cre" href="https://shareeat.io/kol.html">Are you a food creator? →</a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="gap">
   <div class="wrap">
     <div class="sec-pill"><span class="pill gold">The Price Gap</span></div>
@@ -662,6 +760,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
       <div class="gap-meter"><div class="dot" style="left:19%"></div></div>
       <div class="gap-punch">For the price of ONE RM40.00 nasi lemak, you could buy <b>7.5 plates</b> of the cheapest one we found.</div>
       <div class="plates-row">🍛🍛🍛🍛🍛🍛🍛<span style="opacity:.35">½</span></div>
+      <div class="gap-factlet" id="gapFactlet"></div>
     </div>
   </div>
 </section>
@@ -704,6 +803,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
       <div class="map-legend"><span>murah</span><span class="grad"></span><span>mahal</span><span style="margin-left:8px">🟩 best value in class</span><span style="margin-left:8px;opacity:.6">map: simplemaps.com</span></div>
     </div>
     <div class="spot" id="spot"></div>
+    <div class="nudge reveal-sec">
+      <div class="n-t">Think you can beat that?<small>Five real prices. Most people get two.</small></div>
+      <a href="#challenge" onclick="return goSection(event,'challenge')">Play the challenge →</a>
+    </div>
   </div>
 </section>
 
@@ -712,10 +815,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <div class="sec-pill"><span class="pill gold">The State Battle</span></div>
     <h2 id="rankTitle">Which state charges the most?</h2>
     <p class="sec-sub" id="rankSub"></p>
+    <div class="fold"><button class="fold-btn" id="fb_ranking" onclick="toggleFold('ranking')" aria-expanded="false" aria-controls="fold_ranking"><span class="fb-i">+</span><span class="fb-l" data-open="Show the full state ranking" data-close="Hide the ranking">Show the full state ranking</span></button></div>
+    <div class="fold-body" id="fold_ranking">
     <div class="chart reveal-sec" id="rankChart"></div>
     <div style="text-align:center"><button class="showmore" id="rankMore" onclick="toggleRank()"></button></div>
     <div class="callout" id="rankCallout"></div>
   </div>
+    </div>
 </section>
 
 <section id="absurd">
@@ -734,9 +840,16 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <div class="sec-pill"><span class="pill gold">The RM10 Line</span></div>
     <h2>What can still be had for under RM10?</h2>
     <p class="sec-sub">We checked every single price we collected against the RM10 note. The results are not evenly distributed.</p>
+    <div class="fold"><button class="fold-btn" id="fb_clubs" onclick="toggleFold('clubs')" aria-expanded="false" aria-controls="fold_clubs"><span class="fb-i">+</span><span class="fb-l" data-open="Show what survives under RM10" data-close="Hide this">Show what survives under RM10</span></button></div>
+    <div class="fold-body" id="fold_clubs">
     <div class="tenline reveal-sec" id="tenline"></div>
     <div class="callout" id="tenCallout"></div>
   </div>
+    <div class="nudge reveal-sec">
+      <div class="n-t">Think you can beat that?<small>Five real prices. Most people get two.</small></div>
+      <a href="#challenge" onclick="return goSection(event,'challenge')">Play the challenge →</a>
+    </div>
+    </div>
 </section>
 
 <section id="value">
@@ -744,88 +857,21 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <div class="sec-pill"><span class="pill gold">The Food Value Index</span></div>
     <h2>Which state gets the most food for their money?</h2>
     <p class="sec-sub">Combined ranking across the two food dishes (nasi lemak + ayam gepuk). Cheaper plates, higher score. Fight it out in the comments.</p>
+    <div class="fold"><button class="fold-btn" id="fb_value" onclick="toggleFold('value')" aria-expanded="false" aria-controls="fold_value"><span class="fb-i">+</span><span class="fb-l" data-open="Show the value ranking" data-close="Hide the value ranking">Show the value ranking</span></button></div>
+    <div class="fold-body" id="fold_value">
     <div class="vtable reveal-sec" id="valueTable"></div>
     <p style="text-align:center;font-size:.75rem;color:var(--ink-mute);margin-top:10px">v1 is price-based (median nasi lemak + median ayam gepuk). Ratings and delivery fees join the formula in Vol. 2.</p>
   </div>
-</section>
-
-<section id="challenge">
-  <div class="wrap">
-    <div class="sec-pill"><span class="pill gold">The Harga Challenge</span></div>
-    <h2>Think you know what Malaysia charges?</h2>
-    <p class="sec-sub">Five real prices, straight from the data. Get close enough on each one and you score. Then find out how far your money actually goes.</p>
-    <div class="playgrid reveal-sec">
-      <div class="play" id="guessGame">
-        <h3><span class="emo-i">🍽️</span>Teka Harga</h3>
-        <p class="lead">Five rounds, five real prices from the data. Land within 20% of the real price and you score the round.</p>
-        <div class="scoreline" id="scoreLine"></div>
-        <div class="rounds" id="rounds" aria-label="Challenge progress"></div>
-        <button class="playbtn" id="dealBtn" onclick="startChallenge()">Start the challenge →</button>
-        <div class="gbody">
-        <div class="gempty" id="gEmpty">
-          <div class="get-grid">
-            <div class="get"><span class="e">🍛</span><span class="q">RM ?</span></div>
-            <div class="get"><span class="e">🍗</span><span class="q">RM ?</span></div>
-            <div class="get"><span class="e">☕</span><span class="q">RM ?</span></div>
-            <div class="get"><span class="e">🍵</span><span class="q">RM ?</span></div>
-          </div>
-          <p>Four dishes, 15 states, 619 real prices.<br>The cheapest plate we found was <b>RM5.30</b>. The priciest was <b>RM40.00</b>.<br>Five rounds. Good luck.</p>
-        </div>
-        <div class="guess-zone" id="guessZone">
-          <div class="q" id="guessQ"></div>
-          <div class="gpair">
-            <div class="gbox mine"><div class="lbl">your guess</div><div class="amt" id="gval">RM15.00</div></div>
-            <div class="gbox real"><div class="lbl">the real price</div><div class="amt" id="actualP">RM0.00</div></div>
-          </div>
-          <div class="tune">
-            <button class="tbtn minus" onclick="nudgeGuess(-0.5)" aria-label="Guess 50 sen lower"></button>
-            <input type="range" id="guessSlider" min="2" max="45" step="0.5" value="15" aria-label="Your guess" oninput="syncGuess()">
-            <button class="tbtn plus" onclick="nudgeGuess(0.5)" aria-label="Guess 50 sen higher"></button>
-          </div>
-          <div class="grange"><span id="gmin">RM2.00</span><span id="gmax">RM45.00</span></div>
-          <button class="playbtn sm" onclick="revealGuess()">Lock in my guess</button>
-        </div>
-        <div class="reveal" id="revealZone">
-          <div class="rwhere" id="whereP"></div>
-          <div class="verdict" id="verdict"></div>
-          <div class="quip" id="quipP"></div>
-          <div class="ractions">
-            <button class="playbtn sm" id="nextBtn" onclick="nextRound()">Next round →</button>
-          </div>
-        </div>
-        <div class="final" id="finalZone">
-          <div class="fscore" id="fScore">0<small>/5</small></div>
-          <div class="frank" id="fRank"></div>
-          <div class="fsub" id="fSub"></div>
-          <div class="flog" id="fLog"></div>
-          <div class="fsummary" id="fSummary"></div>
-          <div class="fbest" id="fBest"></div>
-          <div class="ractions">
-            <button class="playbtn sm" onclick="startChallenge()">Play again →</button>
-            <button class="sharebtn" onclick="shareResult()" id="shareBtn">Share my result</button>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div class="play">
-        <h3><span class="emo-i">💸</span>The Purchasing Power Machine</h3>
-        <p class="lead">Pick your state and your budget. We tell you how far it actually goes.</p>
-        <div class="ppstates" id="ppStates" aria-label="Pick a state"></div>
-        <div class="ppswipe">swipe for all 15 states →</div>
-        <div class="budgets">
-          <button data-b="10" onclick="setBudget(10)">RM10</button>
-          <button data-b="20" class="on" onclick="setBudget(20)">RM20</button>
-          <button data-b="50" onclick="setBudget(50)">RM50</button>
-          <button data-b="100" onclick="setBudget(100)">RM100</button>
-        </div>
-        <div class="out" id="ppOut"></div>
-        <div class="ppgrid" id="ppGrid"></div>
-        <div class="ppempty" id="ppEmpty"><span class="ppe">🛒</span><span>Pick a state above and we will spend your RM20 for you, across all four indexes.</span></div>
-        <div class="ppfoot" id="ppFoot"></div>
+    <div class="se-band reveal-sec">
+      <div class="sb-k">Who makes this</div>
+      <div class="sb-h">The Harga Index is built by <b>Share Eat!</b></div>
+      <div class="sb-p">We connect Malaysian restaurants with food creators, so restaurants get discovered without an ad budget and creators stop paying for every meal they film. Counting prices is how we started understanding the problem.</div>
+      <div class="sb-a">
+        <a class="biz" href="https://shareeat.io/restaurant.html">Own a restaurant? →</a>
+        <a class="cre" href="https://shareeat.io/kol.html">Are you a food creator? →</a>
       </div>
     </div>
-  </div>
+    </div>
 </section>
 
 <section id="data">
@@ -833,6 +879,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <div class="sec-pill"><span class="pill gold">The Receipts</span></div>
     <h2>Explore the raw data</h2>
     <p class="sec-sub">Every price here comes straight from a public delivery menu, collected by hand on 11 to 13 August 2026. Search it, filter it, fact-check us.</p>
+    <div class="fold"><button class="fold-btn" id="fb_data" onclick="toggleFold('data')" aria-expanded="false" aria-controls="fold_data"><span class="fb-i">+</span><span class="fb-l" data-open="Open the receipts, all 619 prices" data-close="Close the receipts">Open the receipts, all 619 prices</span></button></div>
+    <div class="fold-body" id="fold_data">
     <div class="explorer reveal-sec">
       <div class="controls">
         <button class="chip on" data-f="all" onclick="setFilter('all')">All</button>
@@ -860,6 +908,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
       <a href="https://wa.me/60147113585?text=Hi%20Share%20Eat!%20I%20found%20a%20nasi%20lemak%20price%20for%20the%20Index.%20Here%20are%20the%20details%3A">Submit to the Index on WhatsApp</a>
     </div>
   </div>
+    </div>
 </section>
 
 <section id="method">
@@ -1108,6 +1157,22 @@ function setDish(d){
 
 /* absurdity leaderboard */
 let rankOpen = false;
+function toggleFold(id){
+  const btn = document.getElementById('fb_'+id), body = document.getElementById('fold_'+id);
+  const open = !body.classList.contains('open');
+  body.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', String(open));
+  const l = btn.querySelector('.fb-l');
+  l.textContent = open ? l.dataset.close : l.dataset.open;
+  if(open){
+    body.querySelectorAll('.reveal-sec').forEach(e=>e.classList.add('in'));
+    if(id==='data' && !tableBuilt){ tableBuilt = true; initTable(); renderTable(); }
+    if(id==='ranking') requestAnimationFrame(()=>setTimeout(()=>body.querySelectorAll('.bar').forEach(b=>b.style.width=b.dataset.w),60));
+    if(id==='clubs')   requestAnimationFrame(()=>setTimeout(()=>body.querySelectorAll('.tl-fill').forEach(b=>b.style.width=b.dataset.w),60));
+  }
+}
+let tableBuilt = false;
 function toggleRank(){ rankOpen = !rankOpen; renderRank(); if(!rankOpen) scrollToEl(document.getElementById('ranking')); }
 let absurdOpen = false;
 function renderAbsurd(){
@@ -1153,66 +1218,15 @@ function renderValue(){
     DATA.value.map((v,i)=>`<div class="v-row ${i<3?'top':''}"><span class="rk">${ranks[i].rank===1&&!ranks[i].tied?'🏆':ranks[i].rank+(ranks[i].tied?'=':'')}</span><span class="st"><img class="flag sm" src="${DATA.flags[v.s]||''}" alt="">${v.s}</span><span class="num">RM${v.nl.toFixed(2)}</span><span class="num">RM${v.ag.toFixed(2)}</span><span class="score">${v.score}</span></div>`).join('');
 }
 
-/* purchasing power */
-let budget = 20, ppState = null;
-function setBudget(b){
-  budget = b;
-  document.querySelectorAll('.budgets button').forEach(x=>x.classList.toggle('on', +x.dataset.b===b));
-  runPower();
-}
-function initPower(){
-  const wrap = document.getElementById('ppStates');
-  const states = Object.keys(DATA.nl).sort();
-  wrap.innerHTML = states.map(st=>{
-    const short = st.length>12 ? st.slice(0,10)+'…' : st;
-    return `<button class="ppcard" data-s="${st}" onclick="pickPPState(this)"><img src="${DATA.flags[st]||''}" alt=""><span class="ab">${AB[st]||st}</span><span class="nm">${short}</span></button>`;
-  }).join('');
-}
-function pickPPState(btn){
-  ppState = btn.dataset.s;
-  const wrap = document.getElementById('ppStates');
-  wrap.querySelectorAll('.ppcard').forEach(c=>c.classList.toggle('on', c===btn));
-  /* centre the chosen card without ever scrolling the page */
-  wrap.scrollTo({left: btn.offsetLeft - wrap.clientWidth/2 + btn.offsetWidth/2, behavior:'smooth'});
-  runPower();
-}
-const PP_ITEMS = [
-  {k:'nl', e:'🍛', label:'nasi lemak ayam', one:'plate', many:'plates'},
-  {k:'ag', e:'🍗', label:'ayam gepuk set',  one:'set',   many:'sets'},
-  {k:'kp', e:'☕',       label:'iced kopi',        one:'cup',   many:'cups'},
-  {k:'mt', e:'🍵', label:'iced matcha',      one:'cup',   many:'cups'}
-];
-function runPower(){
-  const st = ppState;
-  const out = document.getElementById('ppOut'), grid = document.getElementById('ppGrid'),
-        foot = document.getElementById('ppFoot'), empty = document.getElementById('ppEmpty');
-  if(!st){
-    out.innerHTML=''; grid.innerHTML=''; foot.innerHTML='';
-    empty.classList.remove('gone');
-    empty.querySelector('span:last-child').textContent = `Pick a state above and we will spend your RM${budget} for you, across all four indexes.`;
-    return;
-  }
-  empty.classList.add('gone');
-  out.innerHTML = `In <b>${st}</b>, RM${budget} buys you:`;
-  grid.innerHTML = PP_ITEMS.map((it,i)=>{
-    const d = DATA[it.k][st];
-    if(!d) return '';
-    const n = Math.floor(budget/d.med);
-    const left = budget - n*d.med;
-    const cnt = n ? `${n} ${n===1?it.one:it.many}` : 'not even one';
-    const sub = n ? `median RM${d.med.toFixed(2)} · RM${left.toFixed(2)} left over`
-                  : `median RM${d.med.toFixed(2)} · you are RM${(d.med-budget).toFixed(2)} short`;
-    return `<div class="pprow ${n?'':'zero'}" style="animation-delay:${i*55}ms"><span class="pe">${it.e}</span><span class="pl">${it.label}<small>${sub}</small></span><span class="pc">${cnt}</span></div>`;
-  }).join('');
+/* the one insight worth keeping from the old spending widget */
+function renderGapFactlet(){
+  const el = document.getElementById('gapFactlet');
+  if(!el) return;
   const all = Object.keys(DATA.nl);
-  const cheapest = all.reduce((a,b)=>DATA.nl[a].med<=DATA.nl[b].med?a:b);
-  const dearest  = all.reduce((a,b)=>DATA.nl[a].med>=DATA.nl[b].med?a:b);
-  const here = Math.floor(budget/DATA.nl[st].med), there = Math.floor(budget/DATA.nl[cheapest].med);
-  let line;
-  if(st===cheapest){ const d=Math.floor(budget/DATA.nl[dearest].med); line = `Nowhere in Malaysia stretches RM${budget} further on nasi lemak than <b>${st}</b>. In <b>${dearest}</b> the same money gets you ${d===0?'none at all':d+' plate'+(d===1?'':'s')}.`; }
-  else if(there>here) line = `The same RM${budget} in <b>${cheapest}</b> would get you <b>${there} plate${there===1?'':'s'}</b> of nasi lemak, ${there-here} more than here.`;
-  else line = `That is the same haul you would get in <b>${cheapest}</b>, the cheapest state we found. Not bad.`;
-  foot.innerHTML = line;
+  const cheap = all.reduce((a,b)=>DATA.nl[a].med<=DATA.nl[b].med?a:b);
+  const dear  = all.reduce((a,b)=>DATA.nl[a].med>=DATA.nl[b].med?a:b);
+  const c = Math.floor(20/DATA.nl[cheap].med), d = Math.floor(20/DATA.nl[dear].med);
+  el.innerHTML = `Put it another way: <b>RM20</b> buys you <b>${c} plate${c===1?'':'s'}</b> of nasi lemak in ${cheap} and <b>${d}</b> in ${dear}. Same note, same country.`;
 }
 
 /* the harga challenge */
@@ -1547,20 +1561,39 @@ function goSection(e, id){
   if(!el) return false;
   setTimeout(()=>{
     el.querySelectorAll('.reveal-sec').forEach(s=>s.classList.add('in'));
+    const fb = document.getElementById('fb_'+id);
+    if(fb && !document.getElementById('fold_'+id).classList.contains('open')) toggleFold(id);
     scrollToEl(el);
     history.replaceState(null,'','#'+id);
   }, 240);
   return false;
 }
+function updatePlaybar(){
+  const bar = document.getElementById('playbar');
+  if(!bar) return;
+  if(!window.matchMedia('(max-width:680px)').matches){ bar.classList.remove('on'); bar.style.display='none'; return; }
+  const sec = document.getElementById('challenge');
+  const r = sec.getBoundingClientRect();
+  const past = r.bottom < 80;                       /* scrolled clear of the game */
+  const atFoot = (window.innerHeight + window.pageYOffset) > (document.body.scrollHeight - 240);
+  const show = past && !atFoot;
+  bar.style.display = 'flex';
+  bar.classList.toggle('on', show);
+  bar.setAttribute('aria-hidden', String(!show));
+  const t = document.getElementById('pbText');
+  if(bestScore !== null) t.innerHTML = `Your best: ${bestScore}/${ROUNDS}<small>Think you can do better?</small>`;
+}
 function updateScrollBar(){
   const h = document.documentElement.scrollHeight - window.innerHeight;
   document.getElementById('scrollBar').style.width = h>0 ? (window.pageYOffset/h*100)+'%' : '0';
 }
+window.addEventListener('scroll', updatePlaybar, {passive:true});
+window.addEventListener('resize', updatePlaybar);
 window.addEventListener('scroll', updateScrollBar, {passive:true});
 
 document.addEventListener('DOMContentLoaded',()=>{
   renderMap(); renderRank(); renderAbsurd(); renderClubs(); renderValue();
-  initPower(); updateScoreLine(); initTable(); renderTable();
+  updateScoreLine(); renderGapFactlet();
   document.querySelectorAll('[data-count]').forEach(countUp);
   document.querySelectorAll('.reveal-sec').forEach(el=>io.observe(el));
   updateScrollBar();
