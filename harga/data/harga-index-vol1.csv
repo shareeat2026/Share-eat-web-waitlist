@@ -1,0 +1,620 @@
+dish,tier,restaurant,city,state,item_name,price_rm_original,source,collected
+nasi_lemak,biasa,Nasi Lemak Kanda,Kuala Lumpur,Kuala Lumpur,Nasi Lemak Biasa,3.90,foodpanda.my/restaurant/svf8,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Kanda,Kuala Lumpur,Kuala Lumpur,Nasi Lemak Ayam Berempah,11.50,foodpanda.my/restaurant/svf8,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Buluh,Kuala Lumpur,Kuala Lumpur,Set B Ayam Goreng,17.50,foodpanda.my/restaurant/dkbi,2026-08-11
+nasi_lemak,other,Nasi Lemak Buluh,Kuala Lumpur,Kuala Lumpur,Set E Sambal Telur,11.50,foodpanda.my/restaurant/dkbi,2026-08-11
+ayam_gepuk,set,Restoran Ayam Gepuk Pak Gendut,Kuala Lumpur,Kuala Lumpur,Set A Jogja Original,20.00,foodpanda.my/restaurant/cyud,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Ayam Dara,Shah Alam,Selangor,Nasi Lemak Ayam Crispy,12.90,foodpanda.my/restaurant/yvia,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Pak Ayub,Shah Alam,Selangor,Nasi Lemak + Ayam Goreng,11.90,foodpanda.my/restaurant/v0wx,2026-08-11
+nasi_lemak,ayam,Ali Nasi Lemak (PJ),Petaling Jaya,Selangor,Nasi Lemak Ayam Goreng,15.87,foodpanda.my/restaurant/gahm,2026-08-11
+nasi_lemak,ayam,Ai Nasi Lemak Ayam Berempah,Petaling Jaya,Selangor,Nasi Lemak Ayam Berempah,11.50,foodpanda.my/restaurant/n4qr,2026-08-11
+nasi_lemak,ayam,YK Lemak (Paramount),Petaling Jaya,Selangor,Curry Chicken Nasi Lemak,16.90,foodpanda.my/restaurant/vmr8,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Ali (Seksyen 17),Shah Alam,Selangor,Nasi Lemak Ayam Goreng,17.00,foodpanda.my/restaurant/le4m,2026-08-11
+nasi_lemak,ayam,Oh My Nasi Lemak (Jaya One),Petaling Jaya,Selangor,Nasi Lemak Masak Ayam Kicap,19.90,foodpanda.my/restaurant/x667,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Intan Payung,Shah Alam,Selangor,NL Berlauk Ayam Goreng Berempah,7.70,foodpanda.my/restaurant/rpsj,2026-08-11
+ayam_gepuk,set,Ole Ayam Gepuk,Shah Alam,Selangor,Set A (nasi ayam kubis timun),18.00,foodpanda.my/restaurant/pgu1,2026-08-11
+ayam_gepuk,set,Ayam Gepuk SSS,Shah Alam,Selangor,Set Ayam A,19.44,foodpanda.my/ms/restaurant/f4yd,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Artisan (Seksyen 13),Shah Alam,Selangor,Klasik Value Meal Set A,16.50,foodpanda.my/restaurant/am7p,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Panazz,Shah Alam,Selangor,Ayam Gepuk Set A,18.90,foodpanda.my/restaurant/pu0u,2026-08-11
+nasi_lemak,ayam,Penang Famous Nasi Lemak,George Town,Penang,A2 NL Chicken Ikan Bilis Egg,17.60,foodpanda.my/restaurant/b8e4,2026-08-11
+nasi_lemak,ayam,Foo House Pandan Nasi Lemak,George Town,Penang,Fried Chicken Nasi Lemak,17.00,foodpanda.my/restaurant/jdei,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Ayam Berempah,George Town,Penang,NL Pandan Ayam Berempah,16.90,foodpanda.my/ms/restaurant/xkyg,2026-08-11
+nasi_lemak,ayam,Spice & Spicy Nasi Lemak,George Town,Penang,Fried Chicken NL,21.30,foodpanda.my/restaurant/rxj2,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Liverpool Cafe,George Town,Penang,Nasi Lemak Ayam,11.00,foodpanda.my/restaurant/o2ei,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Madura Asli Indonesia,George Town,Penang,Set A Level 2,22.90,foodpanda.my/restaurant/qbx4,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Original,Bayan Lepas,Penang,Set A,14.50,foodpanda.my/restaurant/ssr4,2026-08-11
+nasi_lemak,ayam,NL Nasi Kukus Ayam Dara Berempah,Johor Bahru,Johor,NL Ayam Berempah,17.00,foodpanda.my/restaurant/ma5j,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Kura,Johor Bahru,Johor,NL Kukus Single Ayam Goreng Berempah,16.90,foodpanda.my/restaurant/bxse,2026-08-11
+nasi_lemak,ayam,Nasi Lemak CIQ,Johor Bahru,Johor,NL Ayam Goreng,9.60,foodpanda.my/restaurant/r0x0,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Dora,Johor Bahru,Johor,NL Ayam Crispy,13.90,foodpanda.my/restaurant/nu6n,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Papa Jon JB,Johor Bahru,Johor,Ayam Ori Gepuk Set A,16.00,foodpanda.my/restaurant/sa0w,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Dapoq Campoq,Johor Bahru,Johor,Nasi Ayam Gepuk Madani,12.90,foodpanda.my/restaurant/su3u,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Dapor Gobok,Johor Bahru,Johor,Ayam Gepok Bajet,14.00,foodpanda.my/restaurant/i86x,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Nong Chik),Johor Bahru,Johor,Tak Kisah Set,19.90,foodpanda.my/restaurant/ha5r,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Top Global (Larkin),Johor Bahru,Johor,Set A,18.00,foodpanda.my/restaurant/ejc5,2026-08-11
+nasi_lemak,ayam,Fei Fei Pandan Nasi Lemak,Ipoh,Perak,NL Pandan Ayam Goreng Kunyit,17.00,foodpanda.my/restaurant/psbv,2026-08-11
+nasi_lemak,ayam,Tg Nasi Lemak Berlauk,Ipoh,Perak,NL Ayam Berempah,11.00,foodpanda.my/restaurant/e9mz,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Top Global (Ipoh),Ipoh,Perak,Set A,18.00,foodpanda.my/restaurant/pa1z,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Melepuk,Ipoh,Perak,Ayam Gepuk set,13.00,foodpanda.my/restaurant/tkz5,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Ipoh),Ipoh,Perak,Tak Kisah Set,19.90,foodpanda.my/restaurant/s63d,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Kak Mah,Kok Lanas,Kelantan,NL Ayam Crispy,7.20,foodpanda.my/restaurant/cvxo,2026-08-11
+nasi_lemak,ayam,Nasi Lemak International,Kota Bharu,Kelantan,NL Ayam Berempah,9.30,foodpanda.my/restaurant/q2tm,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Dusun Muda,Kota Bharu,Kelantan,Nasi Lemak Ayam,9.90,foodpanda.my/restaurant/p7dl,2026-08-11
+nasi_lemak,ayam,Ajihs Nasi Lemak & Thai Food,Kota Bharu,Kelantan,Nasi Lemak Ayam,11.84,foodpanda.my/restaurant/lllx,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Top Global (KB),Kota Bharu,Kelantan,Set A,18.00,foodpanda.my/restaurant/vpzw,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Papa Jon (KB),Kota Bharu,Kelantan,Ayam Original Gepuk Set A,19.75,foodpanda.my/restaurant/xksz,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Haji Ali,Alor Setar,Kedah,Nasi Ayam Goreng Haji Ali,12.30,foodpanda.my/restaurant/g9lb,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Sultan,Alor Setar,Kedah,Ayam Gepuk Set A,17.50,foodpanda.my/ms/restaurant/wn2c,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Jln Putra),Alor Setar,Kedah,Nasi Ayam Gepuk Pak Raden,21.30,foodpanda.my/ms/restaurant/qcp9,2026-08-11
+ayam_gepuk,set,Ayam Gepuk SSS (KT),Kuala Terengganu,Terengganu,Set C Isi Goreng,16.80,foodpanda.my/ms/restaurant/rws4,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (KT),Kuala Terengganu,Terengganu,Tak Kisah Set,19.90,foodpanda.my/ms/restaurant/qak8,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Dah Sunik,Kuala Terengganu,Terengganu,Nasi Lemak Ayam,14.35,foodpanda.my/restaurant/bmyg,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Top Global (Kuantan),Kuantan,Pahang,Set A,18.00,foodpanda.my/restaurant/ry81,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Ori (Tun Ismail),Kuantan,Pahang,Set B Nasi Ayam Gepuk Ori,18.90,foodpanda.my/restaurant/v7xo,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Place,Kuantan,Pahang,NL Ayam Goreng Berempah,10.00,foodpanda.my/restaurant/p2ho,2026-08-11
+nasi_lemak,ayam,Warung NL Kuarters JKR,Seremban,Negeri Sembilan,Nasi Lemak Ayam Goreng,12.00,foodpanda.my/restaurant/xgrv,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Artisan (Senawang),Seremban,Negeri Sembilan,Klasik Set A,18.90,foodpanda.my/restaurant/ewp6,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Top Global (Seremban),Seremban,Negeri Sembilan,Set A,18.00,foodpanda.my/restaurant/o74p,2026-08-11
+ayam_gepuk,set,Ayam Gepuk OG,Seremban,Negeri Sembilan,Ayam Gepuk Set A,13.90,foodpanda.my/restaurant/ri4k,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Papa Jon (Alamesra),Kota Kinabalu,Sabah,Ayam Original Gepuk Set A,19.75,foodpanda.my/restaurant/faoc,2026-08-11
+ayam_gepuk,set,Ayam Gepuk AG (Karamunsing),Kota Kinabalu,Sabah,Set Ayam A,17.90,foodpanda.my/restaurant/rxpy,2026-08-11
+nasi_lemak,ayam,RK Nasi Lemak,Kuching,Sarawak,R12 NL Ayam Goreng,16.80,foodpanda.my/restaurant/kug4,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Corner 33,Kuching,Sarawak,NL Ayam Goreng,10.00,foodpanda.my/restaurant/ygtz,2026-08-11
+ayam_gepuk,set,Gepuk Street by Emmabella,Kuching,Sarawak,Nasi Ayam Gepok,23.00,foodpanda.my/restaurant/ulw1,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Cyber,Kota Kinabalu,Sabah,NL Ayam Goreng,14.30,foodpanda.my/restaurant/hk4r,2026-08-11
+nasi_lemak,ayam,NL Opah vs Raja Ayam Penyet,Kota Kinabalu,Sabah,NL Ayam Berempah,14.80,foodpanda.my/restaurant/y8xx,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Antok,Melaka,Melaka,Set A,20.90,foodpanda.my/restaurant/bd2u,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Papa Jon Melaka,Melaka,Melaka,Ayam Gepuk Ori Set A,15.80,foodpanda.my/ms/restaurant/ax8y,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Jelatek,Kuala Lumpur,Kuala Lumpur,NL Ayam Goreng,11.00,foodpanda.my/restaurant/yed9,2026-08-11
+nasi_lemak,ayam,NL Saleha (Sri Rampai),Kuala Lumpur,Kuala Lumpur,NL Ayam Goreng Quarter,17.50,foodpanda.my/restaurant/m9sa,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Humairah,Kuala Lumpur,Kuala Lumpur,NL Ayam Sambal,8.00,foodpanda.my/restaurant/tsrc,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Kak Ayu,Kuala Lumpur,Kuala Lumpur,NL Ayam Goreng Tepung,10.00,foodpanda.my/restaurant/sr4w,2026-08-11
+nasi_lemak,ayam,NL Panas Daun Pisang,Kuala Lumpur,Kuala Lumpur,NL Ayam Goreng,15.50,foodpanda.my/restaurant/bnqs,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Mata Biru,Setapak,Kuala Lumpur,NLMB Ayam Ketok Jingkrak,17.80,foodpanda.my/restaurant/njkq,2026-08-11
+ayam_gepuk,set,Ayam Gepuk LEPAKING,Kuala Lumpur,Kuala Lumpur,Set A Ayam Mas Bumbu,16.90,foodpanda.my/restaurant/xcan,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Hut (KLCC),Kuala Lumpur,Kuala Lumpur,G01 Nasi Ayam Gepuk,20.90,foodpanda.my/restaurant/ajd4,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Kriuk (Setiawangsa),Kuala Lumpur,Kuala Lumpur,Set A,18.00,foodpanda.my/restaurant/tm85,2026-08-11
+ayam_gepuk,set,Ayam Gepuk (Cheras),Kuala Lumpur,Kuala Lumpur,Ala Carte Set Classic,16.70,foodpanda.my/restaurant/kdun,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Foodtruck),Kuala Lumpur,Kuala Lumpur,Tak Kisah Set,19.90,foodpanda.my/restaurant/l5jw,2026-08-11
+nasi_lemak,ayam,NL Berlauk Ketagih,Melaka,Melaka,NL Ayam Rendang,8.10,foodpanda.my/restaurant/uis2,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Mak Ucuk 2,Melaka,Melaka,NL Ayam Goreng,9.00,foodpanda.my/restaurant/omjp,2026-08-11
+nasi_lemak,ayam,NL Kak Mas (Pantai Klebang),Melaka,Melaka,NL Ayam Berempah,11.60,foodpanda.my/restaurant/a2mz,2026-08-11
+nasi_lemak,ayam,Gerai Nasi Lemak Wak Diri,Kangar,Perlis,NL Ayam Krispi,10.30,foodpanda.my/restaurant/mzic,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Kangar),Kangar,Perlis,Nasi Ayam Gepuk Pak Raden,19.30,foodpanda.my/ms/restaurant/d7om,2026-08-11
+ayam_gepuk,set,Ayam Gepuk AG (Kangar Jaya),Kangar,Perlis,Set Ayam A,17.90,foodpanda.my/restaurant/i7u3,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Top Global (Kangar),Kangar,Perlis,Set A,18.00,foodpanda.my/ms/restaurant/unrh,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Top Global (Putrajaya),Putrajaya,Putrajaya,Set A,18.00,foodpanda.my/restaurant/pg3j,2026-08-11
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Ayer 8),Putrajaya,Putrajaya,Tak Kisah Set,19.90,foodpanda.my/restaurant/d47n,2026-08-11
+nasi_lemak,ayam,NL Royale Kedah (Putrajaya),Putrajaya,Putrajaya,Set Basic Ayam Goreng,13.50,foodpanda.my/restaurant/l2yj,2026-08-11
+nasi_lemak,ayam,Nasilemak 3 Rasa,Putrajaya,Putrajaya,NL Ayam Goreng,9.20,foodpanda.my/restaurant/j1r5,2026-08-11
+nasi_lemak,ayam,NL Masjid Rafeah Taman Uda,Alor Setar,Kedah,NL Ayam Goyeng,7.50,foodpanda.my/restaurant/ihhm,2026-08-11
+nasi_lemak,ayam,NL Royale Original 1967,Kota Setar,Kedah,Nasi Lemak Ayam,9.60,foodpanda.my/restaurant/q1xp,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Donia,Kuala Terengganu,Terengganu,Nasi Lemak Ayam,10.10,foodpanda.my/restaurant/n7z0,2026-08-11
+nasi_lemak,ayam,NL Mek Sha Kitchen,Kuala Terengganu,Terengganu,Nasi Lemak Ayam,7.40,foodpanda.my/restaurant/xntx,2026-08-11
+nasi_lemak,ayam,Nasi Lemak Malam (Jelebu),Seremban,Negeri Sembilan,NL Ayam Goreng Berempah,13.40,foodpanda.my/ms/restaurant/ea5a,2026-08-11
+nasi_lemak,ayam,NL Kambing Mengamuk,Kuantan,Pahang,NL Ayam Crispy,10.00,foodpanda.my/ms/restaurant/p06y,2026-08-11
+nasi_lemak,ayam,Warung Che Pa,Kuantan,Pahang,Nasi Lemak Ayam,7.99,foodpanda.my/ms/restaurant/vbcg,2026-08-11
+nasi_lemak,ayam,Botak Nasi Lemak,Subang Jaya,Selangor,NL Ayam Goreng,15.50,foodpanda.my/restaurant/n3m0,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Limoka,Subang Jaya,Selangor,NL Kukus Ayam Merah,18.90,foodpanda.my/restaurant/w24k,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Bunjut,Subang Jaya,Selangor,Nasi Lemak Ayam,7.20,foodpanda.my/restaurant/lo8d,2026-08-12
+nasi_lemak,ayam,NL Ayam Goreng Crunchy (Cheras),Kuala Lumpur,Kuala Lumpur,NL Ayam Goreng,10.50,foodpanda.my/restaurant/rkam,2026-08-12
+nasi_lemak,ayam,Nona Nasi Lemak (Bukit Cheras),Kuala Lumpur,Kuala Lumpur,NL Ayam Goreng Berempah,13.00,foodpanda.my/ms/restaurant/gt9e,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Artisan (Subang Bestari),Shah Alam,Selangor,Ayam Gepuk Crispy Set A,15.10,foodpanda.my/ms/restaurant/d96l,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Top Global (Subang Impian),Shah Alam,Selangor,Set A,19.08,foodpanda.my/ms/restaurant/m6p2,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Yeop,Subang Jaya,Selangor,Yeop Set A,14.90,foodpanda.my/ms/restaurant/hzzq,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Ganas,Shah Alam,Selangor,Set A,17.60,foodpanda.my/ms/restaurant/adhe,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Top Global (TTDI),Petaling Jaya,Selangor,Set A,18.00,foodpanda.my/restaurant/mvqd,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gendut (Dsara Perdana),Petaling Jaya,Selangor,Set A Asyik,15.90,foodpanda.my/restaurant/c048,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Tok Mat (Wangsa Maju),Kuala Lumpur,Kuala Lumpur,Tok Mat Ala Carte A,17.70,foodpanda.my/ms/restaurant/nact,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Bangsar),Kuala Lumpur,Kuala Lumpur,Tak Kisah Set,19.90,foodpanda.my/restaurant/omvt,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Semboyan (Sentul),Kuala Lumpur,Kuala Lumpur,Combo Set A,10.90,foodpanda.my/ms/restaurant/ri7m,2026-08-12
+ayam_gepuk,set,Ayam Gepuk 2BK (Sentul),Kuala Lumpur,Kuala Lumpur,Ayam Gepuk Kubis Goreng,19.90,foodpanda.my/ms/restaurant/pwul,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Macet (Setapak),Kuala Lumpur,Kuala Lumpur,Ayam Gepuk Set A,17.00,foodpanda.my/ms/restaurant/c2nn,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Tradisional (Sentul),Kuala Lumpur,Kuala Lumpur,Set A,18.60,foodpanda.my/ms/restaurant/seob,2026-08-12
+nasi_lemak,ayam,NL Ayam Berempah (Bayan Lepas),Bayan Lepas,Penang,Set NL Ayam Seketul,13.90,foodpanda.my/ms/restaurant/sfw4,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Merdeka,Bukit Mertajam,Penang,NL Kukus Ayam Goreng Berempah,10.20,foodpanda.my/restaurant/zd5s,2026-08-12
+nasi_lemak,ayam,Uncle Sam Nasi Lemak,Bukit Mertajam,Penang,Chicken Nasi Lemak,11.80,foodpanda.my/restaurant/pc7t,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Teacher,Bukit Mertajam,Penang,NL Ayam Goreng Berempah,14.30,foodpanda.my/ms/restaurant/v6tc,2026-08-12
+nasi_lemak,ayam,Restoran Nasi Lemak (Skudai),Skudai,Johor,NL Ayam Goreng,8.70,foodpanda.my/restaurant/kpwl,2026-08-12
+nasi_lemak,ayam,Nasi Lemak 4 Pagi,Skudai,Johor,NL with Ayam Goreng,13.00,foodpanda.my/restaurant/n1u1,2026-08-12
+nasi_lemak,ayam,23 Melaka NL (PJ988),Johor Bahru,Johor,NL Ayam Goreng,14.80,foodpanda.my/restaurant/lf6v,2026-08-12
+nasi_lemak,ayam,23 Melaka NL (Wang Shun),Bukit Indah,Johor,NL Ayam Goreng,14.80,foodpanda.my/restaurant/e5t9,2026-08-12
+nasi_lemak,ayam,Nasi Kukus Nonie,Skudai,Johor,NL Ayam Quarter,13.90,foodpanda.my/restaurant/msxe,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Ayam (UTM),Skudai,Johor,Nasi Lemak Ayam,9.00,foodpanda.my/restaurant/cupp,2026-08-12
+nasi_lemak,ayam,NL 2 Pagi D'Tepeng,Taiping,Perak,NL Ayam Goreng Berempah,10.00,foodpanda.my/restaurant/f0vu,2026-08-12
+nasi_lemak,ayam,NL Warung Cik Mah @ Pak Dollah,Ipoh,Perak,NL Ayam Goreng,11.90,foodpanda.my/restaurant/ez63,2026-08-12
+nasi_lemak,ayam,Warung Dapur Mak,Ipoh,Perak,NL Ayam Goreng,14.00,foodpanda.my/restaurant/lfwd,2026-08-12
+nasi_lemak,ayam,NL dan Satay Pondok,Teluk Intan,Perak,NL Basmathi Ayam Goreng Berempah,9.50,foodpanda.my/ms/restaurant/jshw,2026-08-12
+nasi_lemak,ayam,Nasi Lemak NYIRU,Sitiawan,Perak,NL Ayam Crispy,10.50,foodpanda.my/ms/restaurant/twx2,2026-08-12
+nasi_lemak,ayam,NL Yoep Teluk Intan,Teluk Intan,Perak,NL Ayam Goreng,11.50,foodpanda.my/restaurant/f92v,2026-08-12
+nasi_lemak,ayam,Uda Nasi Lemak Station,Teluk Intan,Perak,NL + Ayam Goreng Crispy,9.50,foodpanda.my/restaurant/qxwm,2026-08-12
+nasi_lemak,ayam,Chacha Nasi Lemak & Tongsui,George Town,Penang,NL Goreng Special Ayam,20.40,foodpanda.my/ms/restaurant/rrxl,2026-08-12
+nasi_lemak,ayam,NL Berlauk Klebang,Ipoh,Perak,NL Ayam Goreng Berempah,14.30,foodpanda.my/restaurant/q7tb,2026-08-12
+nasi_lemak,ayam,NL Malam Resipi Orang Lama,Sungai Petani,Kedah,NL Ayam Goreng,7.50,foodpanda.my/restaurant/xp84,2026-08-12
+nasi_lemak,ayam,AMB Nasi Lemak,Pasir Puteh,Kelantan,Nasi Lemak Ayam,11.48,foodpanda.my/ms/restaurant/z1pe,2026-08-12
+nasi_lemak,ayam,NL AGB Abg Kapal,George Town,Penang,NL & Ayam Goreng Berempah,10.00,foodpanda.my/ms/restaurant/bcai,2026-08-12
+nasi_lemak,ayam,Mad Zahad NL Ayam Berempah,Jitra,Kedah,Set A Ayam Berempah,10.10,foodpanda.my/ms/restaurant/h14x,2026-08-12
+nasi_lemak,ayam,NL AGB D'Lunas,Kulim,Kedah,NL Ayam Berempah,9.10,foodpanda.my/restaurant/vf3q,2026-08-12
+nasi_lemak,ayam,NL Daun Pisang (Kubang Kerian),Kota Bharu,Kelantan,NL Ayam Goreng Cincang,9.30,foodpanda.my/restaurant/vp5c,2026-08-12
+nasi_lemak,ayam,NL Ngossek Bonda,Kota Bharu,Kelantan,Nasi Lemak Ayam,10.36,foodpanda.my/ms/restaurant/i1x9,2026-08-12
+nasi_lemak,ayam,NL Kukus Corner,Pekan,Pahang,NL Kukus Ayam,8.80,foodpanda.my/restaurant/s8lc,2026-08-12
+nasi_lemak,ayam,NL Kampung Baru,Temerloh,Pahang,Set NL Ayam Goreng (incl Teh O),11.50,foodpanda.my/restaurant/a4jm,2026-08-12
+nasi_lemak,ayam,NL Mama Marissa,Wakaf Bharu,Kelantan,NL Ayam Crispy,10.50,foodpanda.my/restaurant/wmgi,2026-08-12
+nasi_lemak,ayam,NL Kukus Pak Syed,Alor Setar,Kedah,NL Ayam Biasa Bilis Kacang,7.00,foodpanda.my/restaurant/q0sz,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Ong,Alor Setar,Kedah,Fried Chicken Set,14.50,foodpanda.my/restaurant/xh8b,2026-08-12
+nasi_lemak,ayam,NL Usyair,Alor Setar,Kedah,Set Ayam Goreng,8.50,foodpanda.my/restaurant/ob8l,2026-08-12
+nasi_lemak,ayam,11 Satu-satu Cafe,Alor Setar,Kedah,Nasi Lemak Ayam,5.60,foodpanda.my/restaurant/chep,2026-08-12
+nasi_lemak,ayam,Amy Nasi Berlauk,Kota Bharu,Kelantan,NL Ayam Goreng,9.90,foodpanda.my/restaurant/fhzk,2026-08-12
+nasi_lemak,ayam,NL Bersinar (Jln Kuala Krai),Kota Bharu,Kelantan,NL Telur Sambal Bilis Ayam,11.60,foodpanda.my/ms/restaurant/u7kb,2026-08-12
+nasi_lemak,ayam,Beranda Lemak & Salai,Kuantan,Pahang,Set NL Ayam Berempah,21.20,foodpanda.my/ms/restaurant/l7rh,2026-08-12
+nasi_lemak,ayam,Yusma Biz Enterprise,Kuantan,Pahang,NL Ayam Goreng Crispy,11.90,foodpanda.my/restaurant/kxko,2026-08-12
+nasi_lemak,ayam,Restoran DSH Batu Burok,Kuala Terengganu,Terengganu,NL KL Ayam Masak Merah,12.25,foodpanda.my/restaurant/ga0a,2026-08-12
+nasi_lemak,ayam,Jasminun Cafe,Kemaman,Terengganu,Nasi Lemak Ayam,13.76,foodpanda.my/ms/restaurant/ni9f,2026-08-12
+nasi_lemak,ayam,NL Pandan Ram's (Mentakab),Temerloh,Pahang,NL Ayam Goreng,9.80,foodpanda.my/ms/restaurant/lt6r,2026-08-12
+nasi_lemak,ayam,NL @ 168 Foodcourt,Port Dickson,Negeri Sembilan,NL + Ayam Goreng,11.00,foodpanda.my/restaurant/z2ra,2026-08-12
+nasi_lemak,ayam,NL Pisang Goreng,Nilai,Negeri Sembilan,NL Telur + Ayam Goreng Cincang,12.00,foodpanda.my/restaurant/hkh0,2026-08-12
+nasi_lemak,ayam,NL Sungai Putat,Melaka,Melaka,NL + Ayam Goreng Berempah,14.30,foodpanda.my/ms/restaurant/ynxw,2026-08-12
+nasi_lemak,ayam,NL Bamboo (Lintas),Kota Kinabalu,Sabah,NL Ayam Goreng,16.90,foodpanda.my/restaurant/q7qe,2026-08-12
+nasi_lemak,ayam,NL Hebat Taman Public Likas,Kota Kinabalu,Sabah,NL Ayam Goreng,9.00,foodpanda.my/ms/restaurant/x131,2026-08-12
+nasi_lemak,ayam,NL Ganja @ Satok,Kuching,Sarawak,Signature NL Ganja Ayam,10.40,foodpanda.my/restaurant/qm0p,2026-08-12
+nasi_lemak,ayam,NL Bamboo (Tawau),Tawau,Sabah,NL Ayam Goreng,16.90,foodpanda.my/restaurant/viru,2026-08-12
+nasi_lemak,ayam,Crowd99 Cafe,Sandakan,Sabah,NL Ayam Paha Goreng Berempah,25.70,foodpanda.my/restaurant/p2zj,2026-08-12
+nasi_lemak,ayam,NL Bamboo (Miri),Miri,Sarawak,NL Ayam Pop,14.90,foodpanda.my/ms/restaurant/diya,2026-08-12
+nasi_lemak,ayam,Manalagi NL (68 Kopitiam),Miri,Sarawak,Nasi Lemak Wing,12.50,foodpanda.my/restaurant/r0dm,2026-08-12
+nasi_lemak,ayam,NL Berlauk 2 (Sibu),Sibu,Sarawak,NL Ayam Goreng Small,9.90,foodpanda.my/ms/restaurant/js8u,2026-08-12
+nasi_lemak,ayam,NL Ketagih (Putrajaya),Putrajaya,Putrajaya,NL Ayam Goreng Lit-Lit,12.80,foodpanda.my/ms/restaurant/zfz8,2026-08-12
+nasi_lemak,ayam,NL MY (Presint Diplomatik),Putrajaya,Putrajaya,NL Pandan Ayam Goreng Berempah,12.90,foodpanda.my/restaurant/nquv,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Faizah,Kangar,Perlis,NL Ayam Masak Merah,8.50,foodpanda.my/restaurant/br1t,2026-08-12
+nasi_lemak,ayam,Acu Corner NL Kukus (Seremban 2),Seremban,Negeri Sembilan,NL Kukus Ayam Goreng Berempah,12.00,foodpanda.my/restaurant/n9jw,2026-08-12
+nasi_lemak,ayam,Kafe N.9,Seremban,Negeri Sembilan,NL Ayam Berempah,22.90,foodpanda.my/ms/restaurant/sxl2,2026-08-12
+nasi_lemak,ayam,Warung Kak Ina NL Kukus,Kuantan,Pahang,NL Kukus Ayam Berempah,10.30,foodpanda.my/restaurant/w3pu,2026-08-12
+nasi_lemak,ayam,Warung NL Kita,Batu Pahat,Johor,Nasi Lemak Ayam,11.50,foodpanda.my/ms/restaurant/x7sm,2026-08-12
+nasi_lemak,ayam,Restoran KRS Ampangan,Seremban,Negeri Sembilan,NL Ayam Goreng,12.00,foodpanda.my/ms/restaurant/tl74,2026-08-12
+nasi_lemak,ayam,Santai N9,Senawang,Negeri Sembilan,NL Ayam Goreng,10.50,foodpanda.my/ms/restaurant/oxfs,2026-08-12
+nasi_lemak,ayam,Warung White Land,Kuantan,Pahang,NL Ayam Goreng,8.90,foodpanda.my/ms/restaurant/bpy2,2026-08-12
+nasi_lemak,ayam,NL Ayam Berempah Ina Dan Zaly,Kuala Lumpur,Kuala Lumpur,NL Ayam Goreng,9.50,foodpanda.my/ms/restaurant/upxc,2026-08-12
+nasi_lemak,ayam,Warung NL Singgah Rasa,Kota Kinabalu,Sabah,NL Set Rendang Ayam,12.00,foodpanda.my/restaurant/z2gj,2026-08-12
+nasi_lemak,ayam,Food Drive Thru,Kuala Terengganu,Terengganu,NL Ayam Crispy,5.30,foodpanda.my/ms/restaurant/jlux,2026-08-12
+ayam_gepuk,set,NL Ayam Sekor (gepuk set),Kuala Terengganu,Terengganu,Gepuk Set A,16.00,foodpanda.my/ms/restaurant/zhii,2026-08-12
+nasi_lemak,ayam,NL Papadom (Da'wang Cafe),Kuching,Sarawak,NL Chicken Wing,14.00,foodpanda.my/restaurant/hf1c,2026-08-12
+nasi_lemak,ayam,NL Harum Manis (Petron Senawang),Seremban,Negeri Sembilan,Nasi Lemak Ayam Goreng,8.60,foodpanda.my/restaurant/aun0,2026-08-12
+nasi_lemak,ayam,KK Nasi Lemak Corner,Seremban,Negeri Sembilan,Nasi Lemak Ayam Goreng,14.00,foodpanda.my/restaurant/kqxg,2026-08-12
+nasi_lemak,ayam,Nasi Lemak Sedaap (Likas),Kota Kinabalu,Sabah,Nasi Lemak Isi Ayam Goreng,11.80,foodpanda.my/restaurant/r2bn,2026-08-12
+nasi_lemak,ayam,Pak Nas NL (Harbour Mall),Sandakan,Sabah,Nasi Lemak Ayam,18.60,foodpanda.my/restaurant/m4a0,2026-08-12
+nasi_lemak,ayam,Chewan NL Berlauk (Beaufort Sentral),Beaufort,Sabah,Nasi Lemak Ayam Goreng,13.00,foodpanda.my/restaurant/qklc,2026-08-12
+nasi_lemak,ayam,Xin Xin NL (Gala Corner),Kuching,Sarawak,Nasi Lemak Fried Chicken Regular,14.90,foodpanda.my/restaurant/cxtv,2026-08-12
+nasi_lemak,ayam,NL 66 Cafe,Kuching,Sarawak,Nasi Lemak Ayam Goreng,12.00,foodpanda.my/restaurant/smxd,2026-08-12
+nasi_lemak,ayam,NL FoodLove Cafe,Kuching,Sarawak,Nasi Lemak Ayam Goreng,15.00,foodpanda.my/restaurant/fsvq,2026-08-12
+nasi_lemak,ayam,NL Kukus Kak Dah CD,Kuala Terengganu,Terengganu,Nasi Lemak Ayam,11.50,foodpanda.my/restaurant/f9eq,2026-08-12
+nasi_lemak,ayam,NL Redang (Dungun),Dungun,Terengganu,Nasi Lemak Ayam,11.80,foodpanda.my/restaurant/mk3f,2026-08-12
+nasi_lemak,ayam,NL Berlauk (Kuala Kemaman),Kemaman,Terengganu,Nasi Lemak Ayam,9.86,foodpanda.my/restaurant/su63,2026-08-12
+nasi_lemak,ayam,Nasi Berlauk Cik Ra (Jerteh),Besut,Terengganu,Nasi Lemak Ayam Goreng Berempah,8.80,foodpanda.my/restaurant/w1qi,2026-08-12
+nasi_lemak,ayam,NL Ujong Pasir 2,Melaka,Melaka,Nasi Lemak Ayam Goreng,14.80,foodpanda.my/restaurant/r5vl,2026-08-12
+nasi_lemak,ayam,NL Royale Kedah (Melaka),Melaka,Melaka,Set 1 Ayam,18.30,foodpanda.my/restaurant/drud,2026-08-12
+nasi_lemak,ayam,NL Kampung (Pulau Sebang),Alor Gajah,Melaka,Nasi Lemak Ayam Goreng Telur,13.70,foodpanda.my/restaurant/rfcc,2026-08-12
+nasi_lemak,ayam,Zaki NL Kukus (Krubong),Melaka,Melaka,Nasi Lemak Ayam Berempah,11.00,foodpanda.my/restaurant/kg2h,2026-08-12
+nasi_lemak,ayam,Kak Ana NL & Sup (Krubong),Melaka,Melaka,Nasi Lemak Ayam Rempah,12.00,foodpanda.my/restaurant/h89q,2026-08-12
+nasi_lemak,ayam,Family Food Corner NL Kukus (Melaka Raya),Melaka,Melaka,Nasi Lemak Ayam Goreng,17.50,foodpanda.my/restaurant/d4y5,2026-08-12
+nasi_lemak,ayam,EduCafe @KPT (Presint 5),Putrajaya,Putrajaya,Nasi Lemak Ayam Goreng,13.00,foodpanda.my/restaurant/t21c,2026-08-12
+nasi_lemak,ayam,Usma Enterprise (Presint 15),Putrajaya,Putrajaya,Nasi Lemak Kangkung Ayam Crispy,12.90,foodpanda.my/restaurant/fv1z,2026-08-12
+nasi_lemak,ayam,Darussalam (Presint 16),Putrajaya,Putrajaya,Nasi Lemak Ayam Goreng,8.90,foodpanda.my/restaurant/t9vd,2026-08-12
+nasi_lemak,ayam,Ali Maju Kafe (Presint 2),Putrajaya,Putrajaya,Nasi Lemak Ayam,13.80,foodpanda.my/restaurant/e8om,2026-08-12
+nasi_lemak,ayam,NL Basmathi Selera Johor,Kangar,Perlis,Nasi Lemak Basmathi Ayam Goreng,12.90,foodpanda.my/restaurant/u1ia,2026-08-12
+nasi_lemak,ayam,Umay Cafe (Behor Janggus),Kangar,Perlis,Nasi Lemak Ayam Goreng,6.00,foodpanda.my/restaurant/pgjy,2026-08-12
+nasi_lemak,ayam,Kanteen Kopitiam (Bukit Kayangan),Kangar,Perlis,Nasi Lemak Ayam,15.00,foodpanda.my/restaurant/e7q0,2026-08-12
+nasi_lemak,ayam,NAM Nasi Lemak (Arau),Arau,Perlis,Nasi Lemak Ayam Goreng Berempah,9.90,foodpanda.my/restaurant/vlx2,2026-08-12
+nasi_lemak,ayam,Dapur Wani NL Kukus (Kangar Jaya),Kangar,Perlis,Nasi Lemak Ayam Berempah,15.00,foodpanda.my/restaurant/rlba,2026-08-12
+nasi_lemak,ayam,Bossku House,Kangar,Perlis,Nasi Lemak Ayam Berempah,8.00,foodpanda.my/restaurant/o6ex,2026-08-12
+ayam_gepuk,set,AG Nasi Bungkus (Batu Pahat),Batu Pahat,Johor,Set Ayam Gepuk,16.80,foodpanda.my/restaurant/k4tw,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Masbro (Batu Pahat),Batu Pahat,Johor,Set Regular Single,17.00,foodpanda.my/restaurant/tkes,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Oasis (Taman Universiti),Skudai,Johor,Ayam Gepuk Set A,18.00,foodpanda.my/restaurant/ixug,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Bang Ujang (Kg Melayu),Johor Bahru,Johor,Set A,18.70,foodpanda.my/restaurant/emtc,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Batu Pahat),Batu Pahat,Johor,Cili Bara Tak Kisah,22.90,foodpanda.my/restaurant/dnnr,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gendut (Seri Iskandar),Seri Iskandar,Perak,Set A,17.01,foodpanda.my/restaurant/b52i,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Ipoh),Ipoh,Perak,Nasi Ayam Gepuk Pak Raden,23.30,foodpanda.my/restaurant/vxcl,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Kamunting,Taiping,Perak,Ayam Gepuk Ori Normal,13.50,foodpanda.my/restaurant/ttk5,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak An (Simpang Pulai),Ipoh,Perak,Set Asli,15.90,foodpanda.my/restaurant/yvlx,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Ude (Ipoh),Ipoh,Perak,Nasi Ayam Gepuk,14.99,foodpanda.my/restaurant/d5u7,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Next Level (Ipoh Garden),Ipoh,Perak,Set Jimat,14.30,foodpanda.my/restaurant/wmhg,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Artisan (Kampar),Kampar,Perak,Klasik A,15.80,foodpanda.my/restaurant/hz2i,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Meraung (Bahau),Bahau,Negeri Sembilan,Set A,17.90,foodpanda.my/restaurant/dt13,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Tok Mat (Senawang),Seremban,Negeri Sembilan,Tok Mat Combo A,20.00,foodpanda.my/restaurant/vrt4,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Tok Mat (Betaria),Seremban,Negeri Sembilan,Tok Mat Combo A,20.00,foodpanda.my/restaurant/zrcr,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Top Global (Nilai),Nilai,Negeri Sembilan,Set A,18.00,foodpanda.my/restaurant/flfk,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Iso (Sendayan),Seremban,Negeri Sembilan,Set Nasi Ayam Gepuk A,17.70,foodpanda.my/restaurant/am32,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Bahau),Bahau,Negeri Sembilan,Tak Kisah,19.90,foodpanda.my/restaurant/uejx,2026-08-12
+ayam_gepuk,set,Ayam Gepuk MexBunga (Kuala Pilah),Kuala Pilah,Negeri Sembilan,Nasi Ayam Gepuk Pilah,24.20,foodpanda.my/restaurant/dexm,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Haus (BM),Bukit Mertajam,Penang,Nasi Ayam Gepuk Set A,17.90,foodpanda.my/restaurant/felf,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Bayan Baru),Bayan Lepas,Penang,Nasi Ayam Gepuk Pak Raden,23.30,foodpanda.my/restaurant/yy4q,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Bertam),Kepala Batas,Penang,Tak Kisah,19.90,foodpanda.my/restaurant/dn4i,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Top Global (Perda),Bukit Mertajam,Penang,Set A,18.00,foodpanda.my/restaurant/aics,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Original (Seberang Jaya),Butterworth,Penang,Set A,14.50,foodpanda.my/restaurant/hmpd,2026-08-12
+ayam_gepuk,set,Gepuk Geng (Sungai Dua),Gelugor,Penang,Gepuk Ori,14.90,foodpanda.my/restaurant/mfb2,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Butterworth),Butterworth,Penang,Nasi Ayam Gepuk Pak Raden,23.30,foodpanda.my/restaurant/xdjn,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Seberang Jaya),Perai,Penang,Tak Kisah,19.90,foodpanda.my/restaurant/e4xt,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Sungai Petani),Sungai Petani,Kedah,Nasi Ayam Gepuk Pak Raden,23.30,foodpanda.my/restaurant/e9kc,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Alor Setar),Alor Setar,Kedah,Tak Kisah,19.90,foodpanda.my/restaurant/jscv,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Top Global (Sungai Petani),Sungai Petani,Kedah,Set A,18.00,foodpanda.my/restaurant/ouc0,2026-08-12
+ayam_gepuk,set,Ayam Gepuk AG (Jitra),Jitra,Kedah,Set Ayam A,17.90,foodpanda.my/restaurant/h22c,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Utaqa (SP),Sungai Petani,Kedah,Ayam Gepuk Set A,19.24,foodpanda.my/restaurant/h7v4,2026-08-12
+ayam_gepuk,set,Ayam Gepuk AG (Amanjaya),Sungai Petani,Kedah,Set Ayam A,17.90,foodpanda.my/restaurant/v5c9,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Jln Sultanah),Alor Setar,Kedah,Nasi Ayam Gepuk Pak Raden,21.30,foodpanda.my/restaurant/t2mp,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Legendz (Kulim),Kulim,Kedah,Set A,15.60,foodpanda.my/restaurant/odpm,2026-08-12
+ayam_gepuk,set,Ayam Gepuk AG (Tanah Merah),Tanah Merah,Kelantan,Set Ayam A,17.90,foodpanda.my/restaurant/ml5z,2026-08-12
+ayam_gepuk,set,Ayam Gepuk AG (Pasir Mas),Pasir Mas,Kelantan,Set Ayam A,17.90,foodpanda.my/restaurant/bg22,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Kota Bharu),Kota Bharu,Kelantan,Tak Kisah,19.90,foodpanda.my/restaurant/vzk3,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gendut (Pasir Mas),Pasir Mas,Kelantan,Original Set A,17.50,foodpanda.my/restaurant/vzkm,2026-08-12
+ayam_gepuk,set,WK Nasi Lemak Ayam Gepuk,Tanah Merah,Kelantan,Nasi Ayam Gepuk,18.00,foodpanda.my/restaurant/q10s,2026-08-12
+ayam_gepuk,set,Ayam Gepuk AW (Pekan Pasir Mas),Pasir Mas,Kelantan,Ayam Gepuk Set A,18.00,foodpanda.my/restaurant/ah55,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Abang Long (Kg Chempaka),Kota Bharu,Kelantan,Set A,18.00,foodpanda.my/restaurant/k2tc,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Kubang Kerian),Kota Bharu,Kelantan,Nasi Ayam Gepuk Pak Raden,23.30,foodpanda.my/restaurant/txya,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Kuantan),Kuantan,Pahang,Tak Kisah,19.90,foodpanda.my/restaurant/ucwp,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Temerloh),Temerloh,Pahang,Tak Kisah,19.90,foodpanda.my/restaurant/cqx3,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Sambal Sado (Tg Lumpur),Kuantan,Pahang,Set Ayam Gepuk Ori,17.80,foodpanda.my/restaurant/kal1,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Jerantut),Jerantut,Pahang,Tak Kisah,19.90,foodpanda.my/restaurant/ic1z,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Beratur (Tun Ismail),Kuantan,Pahang,Set A,16.80,foodpanda.my/restaurant/qadi,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Bentong (Medan Kg Baru),Bentong,Pahang,Ayam Gepuk Set,16.50,foodpanda.my/restaurant/wprm,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Bangsawan (Bandar Jengka),Maran,Pahang,Ayam Gepuk Set A,8.50,foodpanda.my/restaurant/sg7e,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Pi (Pekan),Pekan,Pahang,Set A,16.90,foodpanda.my/restaurant/b8eu,2026-08-12
+ayam_gepuk,set,Restoran Cobek (MITC Ayer Keroh),Ayer Keroh,Melaka,Ayam Gepuk Set A,15.50,foodpanda.my/restaurant/n46o,2026-08-12
+ayam_gepuk,set,Nasi Gepuk Cik Murni (Ayer Keroh),Ayer Keroh,Melaka,Nasi Gepuk Ayam Berempah,13.50,foodpanda.my/restaurant/twkz,2026-08-12
+ayam_gepuk,set,Nasi Ayam Gepuk Tok Lan (KUIM),Kuala Sungai Baru,Melaka,Ayam Gepuk Toklan,18.60,foodpanda.my/restaurant/nwzw,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Wak Jo (Alor Gajah),Alor Gajah,Melaka,Set A Ayam Original,25.30,foodpanda.my/restaurant/uv8p,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Budget (Bukit Rambai),Melaka,Melaka,Nasi Ayam Gepuk Sambal Merah,13.00,foodpanda.my/restaurant/xd46,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Paya Rumput),Melaka,Melaka,Tak Kisah,19.90,foodpanda.my/restaurant/nbf0,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Gebetan (Masjid Tanah),Masjid Tanah,Melaka,Ayam Gepuk,16.90,foodpanda.my/restaurant/c3wt,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Bonda Western,Melaka,Melaka,Set A Ayam Gepuk Crispy,13.00,foodpanda.my/restaurant/gwa9,2026-08-12
+ayam_gepuk,set,AG Ibuk Bapak (Dungun),Dungun,Terengganu,Set B Ayam Gepuk Crispy,17.40,foodpanda.my/restaurant/p61x,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Dungun),Dungun,Terengganu,Tak Kisah,19.90,foodpanda.my/restaurant/hb02,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Top Global (KT),Kuala Terengganu,Terengganu,Set A,18.00,foodpanda.my/restaurant/stv1,2026-08-12
+ayam_gepuk,set,AG Ibuk Bapak (KT 2),Kuala Terengganu,Terengganu,Set A Ayam Gepuk Ori,18.90,foodpanda.my/restaurant/uvz7,2026-08-12
+ayam_gepuk,set,Ayam Gepuk AG (Kemaman),Kemaman,Terengganu,Set Ayam A,17.90,foodpanda.my/restaurant/fr9d,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Paka),Dungun,Terengganu,Tak Kisah,19.90,foodpanda.my/restaurant/po3d,2026-08-12
+ayam_gepuk,set,Dapo Penyek (Chendering),Kuala Terengganu,Terengganu,Nasi Putih Ayam Gepuk,17.90,foodpanda.my/restaurant/z3z7,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Ray (Karamunsing),Kota Kinabalu,Sabah,Ayam Gepuk Set A,13.90,foodpanda.my/restaurant/pyn5,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Bahru (Alamesra),Kota Kinabalu,Sabah,Set A Large,15.40,foodpanda.my/restaurant/f7qs,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Papa Jon (Tawau),Tawau,Sabah,Ayam Original Gepuk Set B,16.80,foodpanda.my/restaurant/nk2w,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Naili,Kota Kinabalu,Sabah,Set A,15.70,foodpanda.my/restaurant/yw1n,2026-08-12
+ayam_gepuk,set,Ayam Gepuk SYI,Kota Kinabalu,Sabah,Nasi Ayam Gepuk SYI,15.00,foodpanda.my/restaurant/u8oz,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Jowo Kelate (Alamesra),Kota Kinabalu,Sabah,Set A,17.06,foodpanda.my/restaurant/v71e,2026-08-12
+ayam_gepuk,set,Ayam Penyet (Harbour Mall),Sandakan,Sabah,Ayam Penyet Set,13.50,foodpanda.my/restaurant/fq3x,2026-08-12
+ayam_gepuk,set,TZ Ayam Penyet (K Avenue),Putatan,Sabah,Nasi Ayam Penyet Original,14.50,foodpanda.my/restaurant/v21h,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Madness (Petra Jaya),Kuching,Sarawak,Ayam Gepuk Biasa,24.50,foodpanda.my/restaurant/bso4,2026-08-12
+ayam_gepuk,set,Uncle Gepuk (Metrocity Matang),Kuching,Sarawak,Nasi Ayam Gepuk,22.20,foodpanda.my/restaurant/ysup,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Society (Samariang),Kuching,Sarawak,Set A,22.10,foodpanda.my/restaurant/lu9r,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Gendut (62 Street),Bintulu,Sarawak,Ayam Gepuk Set A,16.00,foodpanda.my/restaurant/ke96,2026-08-12
+ayam_gepuk,set,Food 7 Station (Kota Sentosa),Kuching,Sarawak,Nasi Ayam Gepuk,23.70,foodpanda.my/restaurant/gh38,2026-08-12
+ayam_gepuk,set,Gepuk Street (Saujana),Kuching,Sarawak,Nasi Ayam Gepok,23.00,foodpanda.my/restaurant/cdmw,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Tok Was (Marina),Miri,Sarawak,Ayam Gepuk Ori Set A,21.60,foodpanda.my/restaurant/xhuz,2026-08-12
+ayam_gepuk,set,Ayam Geprek Berapi (Wireless Walk),Miri,Sarawak,Nasi Ayam Geprek,21.00,foodpanda.my/restaurant/ftj1,2026-08-12
+ayam_gepuk,set,Nasi Ayam Tempayan Selera Pantai Timur,Sibu,Sarawak,Nasi Ayam Gepuk,14.00,foodpanda.my/restaurant/q33q,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Raden (Arau),Arau,Perlis,Nasi Ayam Gepuk Pak Raden,19.30,foodpanda.my/restaurant/y4iw,2026-08-12
+ayam_gepuk,set,Restoran Ayam Gepuk Sultan (Kangar Jaya),Kangar,Perlis,Ayam Gepuk Set A,19.61,foodpanda.my/restaurant/itbe,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Arau),Arau,Perlis,Tak Kisah,19.90,foodpanda.my/restaurant/lpw6,2026-08-12
+ayam_gepuk,set,Ayam Geprek Sultan (Kuala Perlis),Kuala Perlis,Perlis,Nasi Ayam Geprek Sambal Terasi,11.90,foodpanda.my/restaurant/vis5,2026-08-12
+ayam_gepuk,set,Lepak Corner Station (Kangar),Kangar,Perlis,Set Ayam Penyet,20.00,foodpanda.my/restaurant/l3ho,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Jemy (Mata Ayer),Kangar,Perlis,Set Ayam Gepuk Padu,16.00,foodpanda.my/restaurant/rxub,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Madura (Mak Andiaq),Kangar,Perlis,Set A,18.00,foodpanda.my/restaurant/wnj2,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Express (Presint 15),Putrajaya,Putrajaya,Express A,16.80,foodpanda.my/restaurant/pc5i,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Tok Mat (Putrajaya),Putrajaya,Putrajaya,Tok Mat Ala Carte A,17.70,foodpanda.my/restaurant/ypa4,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Pak Gembus (Nadi 15),Putrajaya,Putrajaya,Tak Kisah,19.90,foodpanda.my/restaurant/gq59,2026-08-12
+ayam_gepuk,set,Geprek Xpress Tok Abah (Presint 16),Putrajaya,Putrajaya,Set Nasi Ayam Sambal Gepuk,15.90,foodpanda.my/restaurant/wnrx,2026-08-12
+ayam_gepuk,set,Ayam Penyet AP (Presint 8),Putrajaya,Putrajaya,Set Ayam Gepuk,20.90,foodpanda.my/restaurant/xe9h,2026-08-12
+ayam_gepuk,set,Pak Thohid (Medan Selera P9),Putrajaya,Putrajaya,Set Ayam Geprek Original,11.90,foodpanda.my/restaurant/zqp0,2026-08-12
+ayam_gepuk,set,Ayam Gepuk Jogja Pak Ery (Putrajaya),Putrajaya,Putrajaya,Ayam Gepuk Jogja Set A,17.50,foodpanda.my/restaurant/xym5,2026-08-12
+ayam_gepuk,set,Ayam Penyet 2 Sambal (Warisan P16),Putrajaya,Putrajaya,Set Ayam Gepuk Meronta,19.90,foodpanda.my/restaurant/j4qe,2026-08-12
+nasi_lemak,premium,NL Royale Kedah (Putrajaya),Putrajaya,Putrajaya,Set 7 Udang,40.00,foodpanda.my/restaurant/l2yj,2026-08-13
+nasi_lemak,premium,Family Food Corner NL Kukus (Melaka Raya),Melaka,Melaka,Nasi Lemak Sambal Udang Petai,22.80,foodpanda.my/restaurant/d4y5,2026-08-13
+nasi_lemak,premium,Dome Cafe (Subang Parade),Subang Jaya,Selangor,Nasi Lemak Malaysiana,39.90,foodpanda.my/restaurant/y67f,2026-08-13
+nasi_lemak,premium,NL Royale Kedah (Gombak),Kuala Lumpur,Kuala Lumpur,Set 6 Sotong,35.50,foodpanda.my/restaurant/hpn1,2026-08-13
+nasi_lemak,premium,NL Kambing Mengamuk,Kuantan,Pahang,Nasi Lemak Sotong Bakar,35.00,foodpanda.my/restaurant/p06y,2026-08-13
+nasi_lemak,premium,Spice & Spicy Nasi Lemak,George Town,Penang,Curry Mutton Nasi Lemak,33.30,foodpanda.my/restaurant/rxj2,2026-08-13
+nasi_lemak,premium,Fei Fei Pandan Nasi Lemak (Bercham),Ipoh,Perak,NL Pandan 3 Mixed Chicken,30.00,foodpanda.my/restaurant/psbv,2026-08-13
+nasi_lemak,premium,NL Chill Out Corner (Maju Jaya),Johor Bahru,Johor,NL Basmathi Sambal Sotong Petai,25.50,foodpanda.my/restaurant/nvzh,2026-08-13
+nasi_lemak,premium,Sesuap (Seremban),Seremban,Negeri Sembilan,Nasi Lemak Sotong Crispy,22.10,foodpanda.my/restaurant/ndyf,2026-08-13
+nasi_lemak,premium,NL FoodLove Cafe,Kuching,Sarawak,NL Sotong Sambal Petai,22.00,foodpanda.my/restaurant/fsvq,2026-08-13
+nasi_lemak,premium,NL Royale Jalil (Alor Setar),Alor Setar,Kedah,Set Nasi Lemak Perut,20.90,foodpanda.my/restaurant/kvle,2026-08-13
+nasi_lemak,premium,Nasi Lemak & Co (Fajar Centre),Lahad Datu,Sabah,Nasi Lemak Kari Ayam,20.54,foodpanda.my/restaurant/j4z6,2026-08-13
+nasi_lemak,premium,NL Redang (Dungun),Dungun,Terengganu,Nasi Lemak Ayam Kerang,17.20,foodpanda.my/restaurant/mk3f,2026-08-13
+nasi_lemak,premium,Kanteen Kopitiam (Bukit Kayangan),Kangar,Perlis,Nasi Lemak Sambal Sotong,15.00,foodpanda.my/restaurant/e7q0,2026-08-13
+nasi_lemak,premium,Ajihs NL & Thai Food,Kota Bharu,Kelantan,Nasi Lemak Ayam,11.84,foodpanda.my/restaurant/lllx,2026-08-13
+kopi,iced,ZUS Coffee (Sri Petaling),Kuala Lumpur,Kuala Lumpur,Iced Americano,7.90,foodpanda.my/restaurant/ugk0,2026-08-13
+matcha,iced,ZUS Coffee (Sri Petaling),Kuala Lumpur,Kuala Lumpur,Iced Matcha Latte,13.20,foodpanda.my/restaurant/ugk0,2026-08-13
+kopi,iced,Pa'din Kopi Ais Ikat Tepi (Sri Permaisuri),Kuala Lumpur,Kuala Lumpur,Kopi Normal (Ais),7.00,foodpanda.my/restaurant/seos,2026-08-13
+kopi,iced,Gigi Coffee (KL Gateway),Kuala Lumpur,Kuala Lumpur,Americano (Cold),7.00,foodpanda.my/restaurant/s7mj,2026-08-13
+matcha,iced,Gigi Coffee (KL Gateway),Kuala Lumpur,Kuala Lumpur,Cold Matcha Latte,14.00,foodpanda.my/restaurant/s7mj,2026-08-13
+kopi,iced,Bask Bear Coffee (TRX MRT),Kuala Lumpur,Kuala Lumpur,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/ahux,2026-08-13
+matcha,iced,Bask Bear Coffee (TRX MRT),Kuala Lumpur,Kuala Lumpur,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/ahux,2026-08-13
+kopi,iced,Tealive (Pavilion KL),Kuala Lumpur,Kuala Lumpur,Spanish Latte Regular (Iced),10.40,foodpanda.my/restaurant/h2vl,2026-08-13
+matcha,iced,Tealive (Pavilion KL),Kuala Lumpur,Kuala Lumpur,Rich Matcha Latte,14.40,foodpanda.my/restaurant/h2vl,2026-08-13
+kopi,iced,Taka Patisserie (Desa Setapak),Kuala Lumpur,Kuala Lumpur,Ice Americano,11.90,foodpanda.my/restaurant/pqf4,2026-08-13
+matcha,iced,Taka Patisserie (Desa Setapak),Kuala Lumpur,Kuala Lumpur,Iced Matcha Peanut,16.00,foodpanda.my/restaurant/pqf4,2026-08-13
+kopi,iced,Coffee Bean & Tea Leaf (KLCC),Kuala Lumpur,Kuala Lumpur,Vanilla Dry Iced Americano,18.80,foodpanda.my/restaurant/j5oc,2026-08-13
+matcha,iced,Coffee Bean & Tea Leaf (KLCC),Kuala Lumpur,Kuala Lumpur,Iced Matcha Strawberry,19.50,foodpanda.my/restaurant/j5oc,2026-08-13
+kopi,iced,QT Cafe,Kuala Lumpur,Kuala Lumpur,Ice Americano,12.90,foodpanda.my/restaurant/mv4e,2026-08-13
+matcha,iced,QT Cafe,Kuala Lumpur,Kuala Lumpur,Ice Matcha Latte,15.90,foodpanda.my/restaurant/mv4e,2026-08-13
+kopi,iced,Warung King (Kepong),Kuala Lumpur,Kuala Lumpur,Kopi O Ais,3.00,foodpanda.my/restaurant/q2gr,2026-08-13
+kopi,iced,Kenangan Coffee (Suria KLCC),Kuala Lumpur,Kuala Lumpur,Iced Americano,8.90,foodpanda.my/restaurant/nz29,2026-08-13
+matcha,iced,Kenangan Coffee (Suria KLCC),Kuala Lumpur,Kuala Lumpur,Iced Matcha Latte,13.90,foodpanda.my/restaurant/nz29,2026-08-13
+matcha,iced,Kenangan Coffee (Pavilion KL),Kuala Lumpur,Kuala Lumpur,Matcha Frappe,17.90,foodpanda.my/restaurant/jafp,2026-08-13
+matcha,iced,Gigi Coffee (Pavilion KL),Kuala Lumpur,Kuala Lumpur,Cold Matcha Latte,14.00,foodpanda.my/restaurant/s5km,2026-08-13
+kopi,iced,ZUS Coffee (PJ New Town),Petaling Jaya,Selangor,Iced Americano,7.90,foodpanda.my/restaurant/xv23,2026-08-13
+matcha,iced,ZUS Coffee (PJ New Town),Petaling Jaya,Selangor,Iced Matcha Latte,13.20,foodpanda.my/restaurant/xv23,2026-08-13
+matcha,iced,The Matcha by Elya (USJ 23),Subang Jaya,Selangor,Iced Matcha Latte,13.00,foodpanda.my/restaurant/tlde,2026-08-13
+kopi,iced,Ipoh Ais Kopi (Main Place),Subang Jaya,Selangor,White Coffee (Cold),6.50,foodpanda.my/restaurant/zj1z,2026-08-13
+matcha,iced,Ipoh Ais Kopi (Main Place),Subang Jaya,Selangor,Japanese Matcha Milk Tea Ice,9.00,foodpanda.my/restaurant/zj1z,2026-08-13
+kopi,iced,MCC Matcha Coffee & Crumbs,Subang Jaya,Selangor,Iced Americano,9.20,foodpanda.my/restaurant/aiem,2026-08-13
+matcha,iced,MCC Matcha Coffee & Crumbs,Subang Jaya,Selangor,Iced Signature Matcha O,13.20,foodpanda.my/restaurant/aiem,2026-08-13
+kopi,iced,Matcha House (Shah Alam),Shah Alam,Selangor,Iced Classic Americano,10.90,foodpanda.my/restaurant/ppcm,2026-08-13
+matcha,iced,Matcha House (Shah Alam),Shah Alam,Selangor,Classic Matcha Latte (Iced),16.90,foodpanda.my/restaurant/ppcm,2026-08-13
+kopi,iced,Koppiku (AEON Shah Alam),Shah Alam,Selangor,Kreamy Latte Ice,8.96,foodpanda.my/restaurant/e9x6,2026-08-13
+kopi,iced,Tealive (The Curve),Petaling Jaya,Selangor,Americano Bold (Iced),8.40,foodpanda.my/restaurant/o8zu,2026-08-13
+matcha,iced,Tealive (The Curve),Petaling Jaya,Selangor,Rich Matcha Latte,14.40,foodpanda.my/restaurant/o8zu,2026-08-13
+kopi,iced,Kenangan Coffee (AEON Shah Alam),Shah Alam,Selangor,Iced Americano,10.90,foodpanda.my/restaurant/z84x,2026-08-13
+matcha,iced,Kenangan Coffee (AEON Shah Alam),Shah Alam,Selangor,Iced Matcha Latte,15.90,foodpanda.my/restaurant/z84x,2026-08-13
+kopi,iced,First Cup Coffee (Summit USJ),Subang Jaya,Selangor,Americano (Ice),10.90,foodpanda.my/restaurant/irib,2026-08-13
+matcha,iced,First Cup Coffee (Summit USJ),Subang Jaya,Selangor,Matcha Latte (Ice),16.90,foodpanda.my/restaurant/irib,2026-08-13
+kopi,iced,Nety Coffee (Puncak Alam),Shah Alam,Selangor,Iced Americano,12.50,foodpanda.my/restaurant/nl11,2026-08-13
+matcha,iced,Nety Coffee (Puncak Alam),Shah Alam,Selangor,Iced Matcha Latte,17.50,foodpanda.my/restaurant/nl11,2026-08-13
+kopi,iced,Ipoh Ais Kopi (Atria),Petaling Jaya,Selangor,Iced White Coffee,6.50,foodpanda.my/restaurant/h6al,2026-08-13
+matcha,iced,Ipoh Ais Kopi (Atria),Petaling Jaya,Selangor,Japanese Matcha Milk Tea Ice,9.00,foodpanda.my/restaurant/h6al,2026-08-13
+kopi,iced,ZUS Coffee (Jelutong),George Town,Penang,Iced Americano,7.90,foodpanda.my/restaurant/nt41,2026-08-13
+matcha,iced,ZUS Coffee (Jelutong),George Town,Penang,Iced Matcha Latte,13.20,foodpanda.my/restaurant/nt41,2026-08-13
+kopi,iced,Daily Coffee (Bayan Baru),Bayan Lepas,Penang,Signature Coffee Frappe,14.90,foodpanda.my/restaurant/ny02,2026-08-13
+matcha,iced,Daily Coffee (Bayan Baru),Bayan Lepas,Penang,Matcha Frappe,16.90,foodpanda.my/restaurant/ny02,2026-08-13
+kopi,iced,Oo White Coffee (Juru Sentral),Bukit Mertajam,Penang,White Coffee (Iced),7.55,foodpanda.my/restaurant/ksiu,2026-08-13
+kopi,iced,Coffee Bean & Tea Leaf (Summerton),Bayan Lepas,Penang,Iced Americano,9.00,foodpanda.my/restaurant/t5dh,2026-08-13
+matcha,iced,Coffee Bean & Tea Leaf (Summerton),Bayan Lepas,Penang,Iced Matcha Hazelnut Oat Latte,22.90,foodpanda.my/restaurant/t5dh,2026-08-13
+kopi,iced,Kenangan Coffee (AEON BM),Bukit Mertajam,Penang,Iced Americano,8.90,foodpanda.my/restaurant/cnob,2026-08-13
+matcha,iced,Kenangan Coffee (AEON BM),Bukit Mertajam,Penang,Iced Matcha Latte,13.90,foodpanda.my/restaurant/cnob,2026-08-13
+kopi,iced,Tealive (Gurney Paragon),George Town,Penang,Americano Bold (Iced),8.40,foodpanda.my/restaurant/p4tr,2026-08-13
+matcha,iced,Tealive (Gurney Paragon),George Town,Penang,Rich Matcha Latte,14.40,foodpanda.my/restaurant/p4tr,2026-08-13
+kopi,iced,Liang Kee Nanyang Kopitiam,George Town,Penang,Nanyang Kopi O (Iced),5.60,foodpanda.my/restaurant/j959,2026-08-13
+matcha,iced,Fabulous Cafe (Jit Sin),Bukit Mertajam,Penang,Japan Matcha Snowshake,8.10,foodpanda.my/restaurant/gfmx,2026-08-13
+kopi,iced,Fabulous Cafe (Jit Sin),Bukit Mertajam,Penang,Latte Coffee (Iced),9.50,foodpanda.my/restaurant/gfmx,2026-08-13
+matcha,iced,Cool Place (Bayan Lepas),Bayan Lepas,Penang,Matcha Latte (Iced),14.00,foodpanda.my/restaurant/dgou,2026-08-13
+kopi,iced,Cool Place (Bayan Lepas),Bayan Lepas,Penang,Kopi Ais,3.00,foodpanda.my/restaurant/dgou,2026-08-13
+kopi,iced,ZUS Coffee (Alma BM),Bukit Mertajam,Penang,Iced Americano,7.90,foodpanda.my/restaurant/ut4t,2026-08-13
+matcha,iced,ZUS Coffee (Alma BM),Bukit Mertajam,Penang,Iced Matcha Latte,13.20,foodpanda.my/restaurant/ut4t,2026-08-13
+matcha,iced,ZUS Coffee (Bayan Lepas GT2),Bayan Lepas,Penang,Iced Matcha Latte,13.20,foodpanda.my/restaurant/gyp2,2026-08-13
+matcha,iced,Bask Bear Coffee (Queensbay),Bayan Lepas,Penang,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/ywfi,2026-08-13
+kopi,iced,Rasa Nanyang Kopitiam (Dato Onn),Johor Bahru,Johor,Kopi O Ice,6.50,foodpanda.my/restaurant/wy9u,2026-08-13
+matcha,iced,Pasta Matcha (Senai),Senai,Johor,Ice Matcha Latte,9.00,foodpanda.my/restaurant/s726,2026-08-13
+kopi,iced,Pasta Matcha (Senai),Senai,Johor,Ice Americano,6.00,foodpanda.my/restaurant/s726,2026-08-13
+kopi,iced,ZUS Coffee (Taman Daya),Johor Bahru,Johor,Iced Americano,7.90,foodpanda.my/restaurant/zfzj,2026-08-13
+matcha,iced,ZUS Coffee (Taman Daya),Johor Bahru,Johor,Iced Matcha Latte,13.20,foodpanda.my/restaurant/zfzj,2026-08-13
+kopi,iced,Kenangan Coffee (GPO JB),Johor Bahru,Johor,Iced Americano,9.90,foodpanda.my/restaurant/xckf,2026-08-13
+matcha,iced,Kenangan Coffee (GPO JB),Johor Bahru,Johor,Iced Matcha Latte,14.90,foodpanda.my/restaurant/xckf,2026-08-13
+kopi,iced,Tealive (Paradigm Mall JB),Skudai,Johor,Americano Bold (Iced),8.40,foodpanda.my/restaurant/z6ge,2026-08-13
+matcha,iced,Tealive (Paradigm Mall JB),Skudai,Johor,Rich Matcha Latte,14.40,foodpanda.my/restaurant/z6ge,2026-08-13
+kopi,iced,Kluang Kopi Tarik (Batu Pahat),Batu Pahat,Johor,Kopi O Tarik (Iced),3.90,foodpanda.my/restaurant/q4dj,2026-08-13
+kopi,iced,Coffee Bean & Tea Leaf (Batu Pahat),Batu Pahat,Johor,Iced Americano,9.00,foodpanda.my/restaurant/t1ld,2026-08-13
+matcha,iced,Coffee Bean & Tea Leaf (Batu Pahat),Batu Pahat,Johor,Matcha Green Ice Blended,20.50,foodpanda.my/restaurant/t1ld,2026-08-13
+kopi,iced,ZUS Coffee (Impian Emas),Skudai,Johor,Iced Americano,7.90,foodpanda.my/restaurant/rh57,2026-08-13
+matcha,iced,ZUS Coffee (Impian Emas),Skudai,Johor,Iced Matcha Latte,13.20,foodpanda.my/restaurant/rh57,2026-08-13
+matcha,iced,Gong Cha (Mount Austin),Johor Bahru,Johor,Matcha Milk Tea Red Adzuki (Iced),15.00,foodpanda.my/restaurant/n3lk,2026-08-13
+matcha,iced,Ichigo by Tea Cottage (Iskandar Puteri),Johor Bahru,Johor,Kaede Matcha Latte (Iced),22.90,foodpanda.my/restaurant/hg3s,2026-08-13
+kopi,iced,Kenangan Coffee (Southkey),Johor Bahru,Johor,Iced Americano,10.90,foodpanda.my/restaurant/qzjs,2026-08-13
+kopi,iced,ZUS Coffee (Bandar Baru Uda),Johor Bahru,Johor,Iced Americano,7.90,foodpanda.my/restaurant/s053,2026-08-13
+matcha,iced,Dagan Rengit Coffee (BP Mall),Batu Pahat,Johor,Iced Matcha Latte,14.90,foodpanda.my/restaurant/sc1r,2026-08-13
+matcha,iced,Tealive (Lotus Kluang),Kluang,Johor,Rich Matcha Latte,14.40,foodpanda.my/restaurant/shxl,2026-08-13
+kopi,iced,ZUS Coffee (Ipoh Parade),Ipoh,Perak,Iced Americano,7.90,foodpanda.my/restaurant/vpzh,2026-08-13
+matcha,iced,ZUS Coffee (Ipoh Parade),Ipoh,Perak,Iced Matcha Latte,13.20,foodpanda.my/restaurant/vpzh,2026-08-13
+kopi,iced,Tealive (Ipoh Parade),Ipoh,Perak,Americano Bold (Iced),8.40,foodpanda.my/restaurant/s1xp,2026-08-13
+matcha,iced,Tealive (Ipoh Parade),Ipoh,Perak,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/s1xp,2026-08-13
+kopi,iced,Kopi Ais Kaw Kaw (Chemor),Ipoh,Perak,Kopi O Ais Cup,4.50,foodpanda.my/restaurant/ktej,2026-08-13
+kopi,iced,Kenangan Coffee (Taiping Sentral),Taiping,Perak,Iced Americano,8.90,foodpanda.my/restaurant/jidw,2026-08-13
+matcha,iced,Kenangan Coffee (Taiping Sentral),Taiping,Perak,Iced Matcha Latte,13.90,foodpanda.my/restaurant/jidw,2026-08-13
+kopi,iced,Cream Coffee Co (Fair Park),Ipoh,Perak,Iced Malaysiano,13.00,foodpanda.my/restaurant/i1o0,2026-08-13
+matcha,iced,Cream Coffee Co (Fair Park),Ipoh,Perak,Iced Matcha Tebu,21.00,foodpanda.my/restaurant/i1o0,2026-08-13
+matcha,iced,Tao Xiang Time House (Medan Ipoh),Ipoh,Perak,Iced Classic Matcha Milk,13.90,foodpanda.my/restaurant/atj5,2026-08-13
+kopi,iced,Tao Xiang Time House (Medan Ipoh),Ipoh,Perak,Iced Local Black Coffee,9.00,foodpanda.my/restaurant/atj5,2026-08-13
+matcha,iced,Ms Caffe (Arena Prima Meru),Ipoh,Perak,Matcha Latte (Iced),9.50,foodpanda.my/restaurant/f76l,2026-08-13
+kopi,iced,Ms Caffe (Arena Prima Meru),Ipoh,Perak,Americano (Iced),7.90,foodpanda.my/restaurant/f76l,2026-08-13
+kopi,iced,Bask Bear Coffee (Teluk Intan),Teluk Intan,Perak,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/szj1,2026-08-13
+matcha,iced,Bask Bear Coffee (Teluk Intan),Teluk Intan,Perak,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/szj1,2026-08-13
+matcha,iced,Tealive (Lotus Teluk Intan),Teluk Intan,Perak,Rich Matcha Latte,14.40,foodpanda.my/restaurant/yjyo,2026-08-13
+kopi,iced,ZUS Coffee (Bond Square),Ipoh,Perak,Iced Americano,7.90,foodpanda.my/restaurant/oco5,2026-08-13
+matcha,iced,ZUS Coffee (Bond Square),Ipoh,Perak,Iced Matcha Latte,13.20,foodpanda.my/restaurant/oco5,2026-08-13
+kopi,iced,ZUS Coffee (Kuala Kangsar),Kuala Kangsar,Perak,Iced Americano,7.90,foodpanda.my/restaurant/jx20,2026-08-13
+matcha,iced,ZUS Coffee (Kuala Kangsar),Kuala Kangsar,Perak,Iced Matcha Latte,13.20,foodpanda.my/restaurant/jx20,2026-08-13
+kopi,iced,ZUS Coffee (Changlun),Changlun,Kedah,Iced Americano,7.90,foodpanda.my/restaurant/l4ad,2026-08-13
+matcha,iced,ZUS Coffee (Changlun),Changlun,Kedah,Iced Matcha Latte,13.20,foodpanda.my/restaurant/l4ad,2026-08-13
+kopi,iced,ZUS Coffee (Medan Putra),Alor Setar,Kedah,Iced Americano,7.90,foodpanda.my/restaurant/vs55,2026-08-13
+matcha,iced,ZUS Coffee (Medan Putra),Alor Setar,Kedah,Iced Matcha Latte,13.20,foodpanda.my/restaurant/vs55,2026-08-13
+kopi,iced,Tealive (Sungai Petani),Sungai Petani,Kedah,Americano Bold (Iced),8.40,foodpanda.my/restaurant/s2fj,2026-08-13
+matcha,iced,Tealive (Sungai Petani),Sungai Petani,Kedah,Rich Matcha Latte,14.40,foodpanda.my/restaurant/s2fj,2026-08-13
+kopi,iced,Pa'din Kopi Ais (Taman Semarak),Kulim,Kedah,Kopi Normal (Ais),7.50,foodpanda.my/restaurant/f2d8,2026-08-13
+kopi,iced,ZUS Coffee (Bakar Arang SP),Sungai Petani,Kedah,Iced Americano,7.90,foodpanda.my/restaurant/rflj,2026-08-13
+matcha,iced,ZUS Coffee (Bakar Arang SP),Sungai Petani,Kedah,Iced Matcha Latte,13.20,foodpanda.my/restaurant/rflj,2026-08-13
+kopi,iced,Bask Bear Coffee (Simpang Kuala),Alor Setar,Kedah,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/ialc,2026-08-13
+matcha,iced,Bask Bear Coffee (Simpang Kuala),Alor Setar,Kedah,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/ialc,2026-08-13
+kopi,iced,OldTown White Coffee (Alor Setar),Alor Setar,Kedah,OldTown White Coffee (Cold),10.90,foodpanda.my/restaurant/otss,2026-08-13
+kopi,iced,Bask Bear Coffee (Pekan Jitra),Jitra,Kedah,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/iekt,2026-08-13
+matcha,iced,Bask Bear Coffee (Pekan Jitra),Jitra,Kedah,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/iekt,2026-08-13
+kopi,iced,Tealive (Tunku Ibrahim AS),Alor Setar,Kedah,Americano Bold (Iced),8.40,foodpanda.my/restaurant/s7ex,2026-08-13
+matcha,iced,Tealive (Tunku Ibrahim AS),Alor Setar,Kedah,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/s7ex,2026-08-13
+kopi,iced,Starbucks (Alor Setar DT),Alor Setar,Kedah,Iced Caffe Americano,10.49,foodpanda.my/restaurant/r2xm,2026-08-13
+matcha,iced,Starbucks (Alor Setar DT),Alor Setar,Kedah,Iced Green Tea Latte,18.02,foodpanda.my/restaurant/r2xm,2026-08-13
+matcha,iced,Tealive (Lotus SP),Sungai Petani,Kedah,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/rztb,2026-08-13
+matcha,iced,ZUS Coffee (Tuanku Haminah SP),Sungai Petani,Kedah,Iced Matcha Latte,13.20,foodpanda.my/restaurant/w9jq,2026-08-13
+kopi,iced,ZUS Coffee (KB Mall),Kota Bharu,Kelantan,Iced Americano,7.90,foodpanda.my/restaurant/tsbj,2026-08-13
+matcha,iced,ZUS Coffee (KB Mall),Kota Bharu,Kelantan,Iced Matcha Latte,13.20,foodpanda.my/restaurant/tsbj,2026-08-13
+kopi,iced,Kopi Ais Mamu (Melor),Kota Bharu,Kelantan,Kopi Ais Mamu Regular,7.50,foodpanda.my/restaurant/bnip,2026-08-13
+kopi,iced,Bask Bear Coffee (KB Mall),Kota Bharu,Kelantan,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/lfh8,2026-08-13
+matcha,iced,Bask Bear Coffee (KB Mall),Kota Bharu,Kelantan,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/lfh8,2026-08-13
+kopi,iced,Tealive (KB Mall),Kota Bharu,Kelantan,Americano Bold (Iced),8.40,foodpanda.my/restaurant/p2uq,2026-08-13
+matcha,iced,Tealive (KB Mall),Kota Bharu,Kelantan,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/p2uq,2026-08-13
+kopi,iced,So'Oh Good Cafe,Kota Bharu,Kelantan,Spanish Latte (Iced),10.90,foodpanda.my/restaurant/cqo0,2026-08-13
+matcha,iced,So'Oh Good Cafe,Kota Bharu,Kelantan,Matcha Cheesecake Frappe,16.90,foodpanda.my/restaurant/cqo0,2026-08-13
+kopi,iced,ZUS Coffee (AEON KB),Kota Bharu,Kelantan,Iced Americano,7.90,foodpanda.my/restaurant/od5n,2026-08-13
+matcha,iced,ZUS Coffee (AEON KB),Kota Bharu,Kelantan,Iced Matcha Latte,13.20,foodpanda.my/restaurant/od5n,2026-08-13
+kopi,iced,Tealive (Kubang Kerian),Kota Bharu,Kelantan,Americano Bold (Iced),8.40,foodpanda.my/restaurant/bxdp,2026-08-13
+matcha,iced,Tealive (Kubang Kerian),Kota Bharu,Kelantan,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/bxdp,2026-08-13
+kopi,iced,ZUS Coffee (Berek 12),Kota Bharu,Kelantan,Iced Americano,7.90,foodpanda.my/restaurant/sn8o,2026-08-13
+matcha,iced,ZUS Coffee (Berek 12),Kota Bharu,Kelantan,Iced Matcha Latte,13.20,foodpanda.my/restaurant/sn8o,2026-08-13
+kopi,iced,Kopi Ais Mamu (Berek 12),Kota Bharu,Kelantan,Americano Kopi O Ais,6.00,foodpanda.my/restaurant/lcnz,2026-08-13
+matcha,iced,Tealive (Wisma Yamud),Kota Bharu,Kelantan,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/r2cx,2026-08-13
+kopi,iced,Gigi Coffee (KB Mall),Kota Bharu,Kelantan,Americano (Cold),7.00,foodpanda.my/restaurant/by6j,2026-08-13
+matcha,iced,Gigi Coffee (KB Mall),Kota Bharu,Kelantan,Cold Matcha Latte,14.00,foodpanda.my/restaurant/by6j,2026-08-13
+matcha,iced,Sogno Coffee (Bandar KB),Kota Bharu,Kelantan,Matcha Frappe,17.60,foodpanda.my/restaurant/pzen,2026-08-13
+kopi,iced,ZUS Coffee (Jalan Beserah),Kuantan,Pahang,Iced Americano,7.90,foodpanda.my/restaurant/z1ol,2026-08-13
+kopi,iced,Bask Bear Coffee (Temerloh),Temerloh,Pahang,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/t26r,2026-08-13
+matcha,iced,Bask Bear Coffee (Temerloh),Temerloh,Pahang,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/t26r,2026-08-13
+kopi,iced,ZUS Coffee (East Coast Mall),Kuantan,Pahang,Iced Americano,7.90,foodpanda.my/restaurant/e16u,2026-08-13
+matcha,iced,ZUS Coffee (East Coast Mall),Kuantan,Pahang,Iced Matcha Latte,13.20,foodpanda.my/restaurant/e16u,2026-08-13
+kopi,iced,Tealive (Taman Tas),Kuantan,Pahang,Americano Bold (Iced),8.40,foodpanda.my/restaurant/s4gy,2026-08-13
+matcha,iced,Tealive (Taman Tas),Kuantan,Pahang,Rich Matcha Latte,14.40,foodpanda.my/restaurant/s4gy,2026-08-13
+kopi,iced,Kopi Saigon (Sungai Isap),Kuantan,Pahang,Kopi Hitam (Iced),9.75,foodpanda.my/restaurant/pqks,2026-08-13
+matcha,iced,Kopi Saigon (Sungai Isap),Kuantan,Pahang,Matcha Original (Iced),14.20,foodpanda.my/restaurant/pqks,2026-08-13
+kopi,iced,ZUS Coffee (Temerloh),Temerloh,Pahang,Iced Americano,7.90,foodpanda.my/restaurant/cor0,2026-08-13
+matcha,iced,ZUS Coffee (Temerloh),Temerloh,Pahang,Iced Matcha Latte,13.20,foodpanda.my/restaurant/cor0,2026-08-13
+kopi,iced,Tealive (Lotus Indera Mahkota),Kuantan,Pahang,Americano Bold (Iced),8.40,foodpanda.my/restaurant/lxhw,2026-08-13
+matcha,iced,Dr. Matcha Cafe (Indera Mahkota),Kuantan,Pahang,Iced Pure Matcha Tea,13.00,foodpanda.my/restaurant/vssb,2026-08-13
+kopi,iced,Dr. Matcha Cafe (Indera Mahkota),Kuantan,Pahang,Iced Latte,15.00,foodpanda.my/restaurant/vssb,2026-08-13
+matcha,iced,Gigi Coffee (Lotus Indera Mahkota),Kuantan,Pahang,Cold Matcha Latte,14.00,foodpanda.my/restaurant/gvsq,2026-08-13
+kopi,iced,Gigi Coffee (Lotus Indera Mahkota),Kuantan,Pahang,Americano (Cold),7.00,foodpanda.my/restaurant/gvsq,2026-08-13
+matcha,iced,Starbucks (Kuantan Indera Mahkota),Kuantan,Pahang,Iced Green Tea Latte,18.02,foodpanda.my/restaurant/b8rc,2026-08-13
+kopi,iced,Starbucks (Kuantan Indera Mahkota),Kuantan,Pahang,Iced Caffe Americano,10.49,foodpanda.my/restaurant/b8rc,2026-08-13
+matcha,iced,Bask Bear Coffee (Bentong),Bentong,Pahang,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/kcgm,2026-08-13
+matcha,iced,Sweet July Cafe (Bentong),Bentong,Pahang,Matcha Iced Blended,15.90,foodpanda.my/restaurant/cpec,2026-08-13
+kopi,iced,ZUS Coffee (Kampung Laut),Kuala Terengganu,Terengganu,Iced Americano,7.90,foodpanda.my/restaurant/iz6x,2026-08-13
+matcha,iced,ZUS Coffee (Kampung Laut),Kuala Terengganu,Terengganu,Iced Matcha Latte,13.20,foodpanda.my/restaurant/iz6x,2026-08-13
+kopi,iced,Bask Bear Coffee (KTCC Mall),Kuala Terengganu,Terengganu,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/viu4,2026-08-13
+matcha,iced,Bask Bear Coffee (KTCC Mall),Kuala Terengganu,Terengganu,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/viu4,2026-08-13
+kopi,iced,ZUS Coffee (Jalan Pejabat),Kuala Terengganu,Terengganu,Iced Americano,7.90,foodpanda.my/restaurant/z7b7,2026-08-13
+matcha,iced,ZUS Coffee (Jalan Pejabat),Kuala Terengganu,Terengganu,Iced Matcha Latte,13.20,foodpanda.my/restaurant/z7b7,2026-08-13
+kopi,iced,Tealive (Dataran Panji),Kuala Terengganu,Terengganu,Americano Bold (Iced),8.40,foodpanda.my/restaurant/q4bu,2026-08-13
+matcha,iced,Tealive (Dataran Panji),Kuala Terengganu,Terengganu,Rich Matcha Latte,14.40,foodpanda.my/restaurant/q4bu,2026-08-13
+kopi,iced,Bask Bear Coffee (Gong Badak),Kuala Terengganu,Terengganu,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/e7zh,2026-08-13
+matcha,iced,Bask Bear Coffee (Gong Badak),Kuala Terengganu,Terengganu,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/e7zh,2026-08-13
+kopi,iced,Kopi Saigon (Chendering),Kuala Terengganu,Terengganu,Kopi Hitam (Iced),9.75,foodpanda.my/restaurant/f7c5,2026-08-13
+matcha,iced,Kopi Saigon (Chendering),Kuala Terengganu,Terengganu,Matcha Original (Iced),16.30,foodpanda.my/restaurant/f7c5,2026-08-13
+kopi,iced,Moka Loka Cafe,Kuala Terengganu,Terengganu,Iced Orange Americano,14.00,foodpanda.my/restaurant/wqki,2026-08-13
+matcha,iced,Moka Loka Cafe,Kuala Terengganu,Terengganu,Iced Matcha Lemonade,14.00,foodpanda.my/restaurant/wqki,2026-08-13
+kopi,iced,ZUS Coffee (KTCC Mall),Kuala Terengganu,Terengganu,Iced Americano,7.90,foodpanda.my/restaurant/il6a,2026-08-13
+matcha,iced,ZUS Coffee (KTCC Mall),Kuala Terengganu,Terengganu,Iced Matcha Latte,13.20,foodpanda.my/restaurant/il6a,2026-08-13
+kopi,iced,Seketul Cafe (Batu Rakit),Kuala Terengganu,Terengganu,Kopi Kampung (Iced),7.90,foodpanda.my/restaurant/hl1h,2026-08-13
+matcha,iced,Seketul Cafe (Batu Rakit),Kuala Terengganu,Terengganu,Matcha Original Classic,8.90,foodpanda.my/restaurant/hl1h,2026-08-13
+kopi,iced,Chibana Cafe (Lorong Pandan),Kuala Terengganu,Terengganu,Iced Spanish Latte,16.00,foodpanda.my/restaurant/wr7m,2026-08-13
+matcha,iced,Chibana Cafe (Lorong Pandan),Kuala Terengganu,Terengganu,Lemonade Matcha (Iced),15.00,foodpanda.my/restaurant/wr7m,2026-08-13
+kopi,iced,ZUS Coffee (Centrio Seremban 2),Seremban,Negeri Sembilan,Iced Americano,7.90,foodpanda.my/restaurant/yx9b,2026-08-13
+matcha,iced,ZUS Coffee (Centrio Seremban 2),Seremban,Negeri Sembilan,Iced Matcha Latte,13.20,foodpanda.my/restaurant/yx9b,2026-08-13
+kopi,iced,Bask Bear Coffee (Centrio S2),Seremban,Negeri Sembilan,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/flcq,2026-08-13
+matcha,iced,Bask Bear Coffee (Centrio S2),Seremban,Negeri Sembilan,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/flcq,2026-08-13
+kopi,iced,Tealive (Bandar Prima Senawang),Seremban,Negeri Sembilan,Americano Bold (Iced),8.40,foodpanda.my/restaurant/s1bb,2026-08-13
+matcha,iced,Tealive (Bandar Prima Senawang),Seremban,Negeri Sembilan,Rich Matcha Latte,14.40,foodpanda.my/restaurant/s1bb,2026-08-13
+kopi,iced,ZUS Coffee (Palm Mall),Seremban,Negeri Sembilan,Iced Americano,7.90,foodpanda.my/restaurant/z2nt,2026-08-13
+matcha,iced,ZUS Coffee (Palm Mall),Seremban,Negeri Sembilan,Iced Matcha Latte,13.20,foodpanda.my/restaurant/z2nt,2026-08-13
+kopi,iced,Kopi Saigon (Seremban 2),Seremban,Negeri Sembilan,Kopi Hitam (Iced),9.75,foodpanda.my/restaurant/ukyg,2026-08-13
+matcha,iced,Kopi Saigon (Seremban 2),Seremban,Negeri Sembilan,Matcha Original (Iced),16.30,foodpanda.my/restaurant/ukyg,2026-08-13
+kopi,iced,KOKA Kopi Kampung (Rembau),Rembau,Negeri Sembilan,Kopi Kampung (Ais),7.00,foodpanda.my/restaurant/uxyq,2026-08-13
+matcha,iced,KOKA Kopi Kampung (Rembau),Rembau,Negeri Sembilan,Matcha Latte Ais,9.00,foodpanda.my/restaurant/uxyq,2026-08-13
+kopi,iced,Kenangan Coffee (Seremban Gateway),Seremban,Negeri Sembilan,Iced Americano,7.90,foodpanda.my/restaurant/wevg,2026-08-13
+matcha,iced,Kenangan Coffee (Seremban Gateway),Seremban,Negeri Sembilan,Iced Matcha Latte,12.90,foodpanda.my/restaurant/wevg,2026-08-13
+kopi,iced,Coffee Bean & Tea Leaf (Senawang),Seremban,Negeri Sembilan,Iced Americano,9.00,foodpanda.my/restaurant/cess,2026-08-13
+matcha,iced,Coffee Bean & Tea Leaf (Senawang),Seremban,Negeri Sembilan,Matcha Green Ice Blended,20.50,foodpanda.my/restaurant/cess,2026-08-13
+kopi,iced,Bask Bear Coffee (AEON Nilai),Nilai,Negeri Sembilan,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/tvoo,2026-08-13
+matcha,iced,Bask Bear Coffee (AEON Nilai),Nilai,Negeri Sembilan,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/tvoo,2026-08-13
+kopi,iced,ZUS Coffee (Sendayan Metropark),Seremban,Negeri Sembilan,Iced Americano,7.90,foodpanda.my/restaurant/dlba,2026-08-13
+matcha,iced,ZUS Coffee (Sendayan Metropark),Seremban,Negeri Sembilan,Iced Matcha Latte,13.20,foodpanda.my/restaurant/dlba,2026-08-13
+kopi,iced,ZUS Coffee (Bandar Utama Cheng),Melaka,Melaka,Iced Americano,7.90,foodpanda.my/restaurant/yhgj,2026-08-13
+matcha,iced,ZUS Coffee (Bandar Utama Cheng),Melaka,Melaka,Iced Matcha Latte,13.20,foodpanda.my/restaurant/yhgj,2026-08-13
+matcha,iced,Bloo Bunny & Coffee,Melaka,Melaka,Iced Matcha Latte,10.90,foodpanda.my/restaurant/iz1s,2026-08-13
+kopi,iced,Bloo Bunny & Coffee,Melaka,Melaka,Iced Americano,5.90,foodpanda.my/restaurant/iz1s,2026-08-13
+kopi,iced,ZUS Coffee (Dataran Pahlawan),Melaka,Melaka,Iced Americano,7.90,foodpanda.my/restaurant/w70y,2026-08-13
+matcha,iced,ZUS Coffee (Dataran Pahlawan),Melaka,Melaka,Iced Matcha Latte,13.20,foodpanda.my/restaurant/w70y,2026-08-13
+matcha,iced,ChaTraMue (MITC),Ayer Keroh,Melaka,Matcha Milk Tea (Iced),12.40,foodpanda.my/restaurant/wbt1,2026-08-13
+kopi,iced,ChaTraMue (MITC),Ayer Keroh,Melaka,Iced Americano,14.40,foodpanda.my/restaurant/wbt1,2026-08-13
+kopi,iced,ZUS Coffee (Ayer Keroh Heights),Ayer Keroh,Melaka,Iced Americano,7.90,foodpanda.my/restaurant/of2i,2026-08-13
+matcha,iced,ZUS Coffee (Ayer Keroh Heights),Ayer Keroh,Melaka,Iced Matcha Latte,13.20,foodpanda.my/restaurant/of2i,2026-08-13
+kopi,iced,Tealive (Melaka Raya),Melaka,Melaka,Americano Bold (Iced),7.40,foodpanda.my/restaurant/yx2j,2026-08-13
+matcha,iced,Tealive (Melaka Raya),Melaka,Melaka,Matcha Mousse Latte,13.40,foodpanda.my/restaurant/yx2j,2026-08-13
+kopi,iced,ZUS Coffee (Kipmall),Melaka,Melaka,Iced Americano,7.90,foodpanda.my/restaurant/jgyz,2026-08-13
+matcha,iced,ZUS Coffee (Kipmall),Melaka,Melaka,Iced Matcha Latte,13.20,foodpanda.my/restaurant/jgyz,2026-08-13
+kopi,iced,Tealive (Batu Berendam),Melaka,Melaka,Americano Bold (Iced),8.40,foodpanda.my/restaurant/hvtq,2026-08-13
+matcha,iced,Tealive (Batu Berendam),Melaka,Melaka,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/hvtq,2026-08-13
+kopi,iced,ZUS Coffee (MITC),Ayer Keroh,Melaka,Iced Americano,7.90,foodpanda.my/restaurant/n86i,2026-08-13
+matcha,iced,ZUS Coffee (MITC),Ayer Keroh,Melaka,Iced Matcha Latte,13.20,foodpanda.my/restaurant/n86i,2026-08-13
+kopi,iced,Warung Kasih Sayang (Alor Gajah),Alor Gajah,Melaka,Kopi O Ais,2.40,foodpanda.my/restaurant/cwa2,2026-08-13
+matcha,iced,Gigi Coffee (Krubong),Melaka,Melaka,Cold Matcha Latte,14.00,foodpanda.my/restaurant/am4z,2026-08-13
+kopi,iced,ZUS Coffee (City Mall KK),Kota Kinabalu,Sabah,Iced Americano,7.90,foodpanda.my/restaurant/xhul,2026-08-13
+matcha,iced,ZUS Coffee (City Mall KK),Kota Kinabalu,Sabah,Iced Matcha Latte,13.20,foodpanda.my/restaurant/xhul,2026-08-13
+kopi,iced,Tealive (City Mall KK),Kota Kinabalu,Sabah,Americano Bold (Iced),8.40,foodpanda.my/restaurant/s2xh,2026-08-13
+matcha,iced,Tealive (City Mall KK),Kota Kinabalu,Sabah,Rich Matcha Latte,14.40,foodpanda.my/restaurant/s2xh,2026-08-13
+kopi,iced,Bask Bear Coffee (Bandaran Berjaya),Kota Kinabalu,Sabah,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/uetq,2026-08-13
+matcha,iced,Bask Bear Coffee (Bandaran Berjaya),Kota Kinabalu,Sabah,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/uetq,2026-08-13
+kopi,iced,Tawau Kopitiam,Tawau,Sabah,Nescafe O (Iced),7.30,foodpanda.my/restaurant/l1qf,2026-08-13
+kopi,iced,Kenangan Coffee (Imago),Kota Kinabalu,Sabah,Iced Americano,8.90,foodpanda.my/restaurant/ehp0,2026-08-13
+matcha,iced,Kenangan Coffee (Imago),Kota Kinabalu,Sabah,Iced Matcha Latte,13.90,foodpanda.my/restaurant/ehp0,2026-08-13
+kopi,iced,Coffee Bean & Tea Leaf (Damai),Kota Kinabalu,Sabah,Iced Americano,11.15,foodpanda.my/restaurant/b2rn,2026-08-13
+matcha,iced,Coffee Bean & Tea Leaf (Damai),Kota Kinabalu,Sabah,Iced Matcha Green Tea Latte,16.95,foodpanda.my/restaurant/b2rn,2026-08-13
+kopi,iced,Eastside Coffee (Likas),Kota Kinabalu,Sabah,Iced Americano,9.30,foodpanda.my/restaurant/kgq9,2026-08-13
+matcha,iced,Eastside Coffee (Likas),Kota Kinabalu,Sabah,Iced Matcha Latte,17.90,foodpanda.my/restaurant/kgq9,2026-08-13
+matcha,iced,ZUS Coffee (Suria Sabah),Kota Kinabalu,Sabah,Iced Matcha Latte,13.20,foodpanda.my/restaurant/gm5n,2026-08-13
+kopi,iced,Tealive (Eden Centrepoint),Kota Kinabalu,Sabah,Bang Bang Coffee (Iced),12.40,foodpanda.my/restaurant/s1rm,2026-08-13
+matcha,iced,Tealive (Eden Centrepoint),Kota Kinabalu,Sabah,Rich Bang Bang Matcha,14.40,foodpanda.my/restaurant/s1rm,2026-08-13
+kopi,iced,Bask Bear Coffee (Aeropod),Kota Kinabalu,Sabah,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/iis9,2026-08-13
+matcha,iced,Bask Bear Coffee (Aeropod),Kota Kinabalu,Sabah,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/iis9,2026-08-13
+kopi,iced,Kopi Saigon (Sandakan),Sandakan,Sabah,Kopi Hitam (Iced),11.50,foodpanda.my/restaurant/fpz5,2026-08-13
+matcha,iced,Kopi Saigon (Sandakan),Sandakan,Sabah,Matcha Original (Iced),17.90,foodpanda.my/restaurant/fpz5,2026-08-13
+kopi,iced,ZUS Coffee (Vivacity),Kuching,Sarawak,Iced Americano,7.90,foodpanda.my/restaurant/nkys,2026-08-13
+matcha,iced,ZUS Coffee (Vivacity),Kuching,Sarawak,Iced Green Tea Latte,11.20,foodpanda.my/restaurant/nkys,2026-08-13
+kopi,iced,Bask Bear Coffee (Rock Road),Kuching,Sarawak,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/bb88,2026-08-13
+matcha,iced,Bask Bear Coffee (Rock Road),Kuching,Sarawak,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/bb88,2026-08-13
+kopi,iced,Tealive (Farley Mall),Kuching,Sarawak,Americano Bold (Iced),8.40,foodpanda.my/restaurant/tngi,2026-08-13
+kopi,iced,Bask Bear Coffee (Satok),Kuching,Sarawak,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/b7jt,2026-08-13
+matcha,iced,Bask Bear Coffee (Satok),Kuching,Sarawak,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/b7jt,2026-08-13
+kopi,iced,Kenangan Coffee (Plaza Merdeka),Kuching,Sarawak,Iced Americano,8.90,foodpanda.my/restaurant/pkl2,2026-08-13
+matcha,iced,Kenangan Coffee (Plaza Merdeka),Kuching,Sarawak,Iced Matcha Latte,13.90,foodpanda.my/restaurant/pkl2,2026-08-13
+kopi,iced,Kopi Rakyat (Sibu),Sibu,Sarawak,Rakyat Kopi O (Iced),7.90,foodpanda.my/restaurant/w8i4,2026-08-13
+matcha,iced,Kopi Rakyat (Sibu),Sibu,Sarawak,Matcha Latte (Iced),14.90,foodpanda.my/restaurant/w8i4,2026-08-13
+kopi,iced,Kopi Saigon (Emart Tudan),Miri,Sarawak,Kopi Hitam (Iced),11.50,foodpanda.my/restaurant/ss6z,2026-08-13
+matcha,iced,Kopi Saigon (Emart Tudan),Miri,Sarawak,Matcha Original (Iced),17.90,foodpanda.my/restaurant/ss6z,2026-08-13
+kopi,iced,Tealive (Samariang),Kuching,Sarawak,Americano Bold (Iced),8.40,foodpanda.my/restaurant/ltm7,2026-08-13
+matcha,iced,Tealive (Samariang),Kuching,Sarawak,Rich Matcha Latte,14.40,foodpanda.my/restaurant/ltm7,2026-08-13
+kopi,iced,ZUS Coffee (The Northbank),Kuching,Sarawak,Iced Americano,7.90,foodpanda.my/restaurant/jdv4,2026-08-13
+matcha,iced,ZUS Coffee (The Northbank),Kuching,Sarawak,Iced Green Tea Latte,11.20,foodpanda.my/restaurant/jdv4,2026-08-13
+kopi,iced,ZUS Coffee (Sego Precinct),Kuching,Sarawak,Iced Americano,7.90,foodpanda.my/restaurant/wors,2026-08-13
+matcha,iced,ZUS Coffee (Sego Precinct),Kuching,Sarawak,Iced Green Tea Latte,11.20,foodpanda.my/restaurant/wors,2026-08-13
+matcha,iced,Kopi Saigon (Sibu),Sibu,Sarawak,Matcha Original (Iced),17.90,foodpanda.my/restaurant/iv1t,2026-08-13
+kopi,iced,ZUS Coffee (Souq Putrajaya),Putrajaya,Putrajaya,Iced Americano,7.90,foodpanda.my/restaurant/tktx,2026-08-13
+matcha,iced,ZUS Coffee (Souq Putrajaya),Putrajaya,Putrajaya,Iced Matcha Latte,14.20,foodpanda.my/restaurant/tktx,2026-08-13
+kopi,iced,Bask Bear Coffee (Presint 15),Putrajaya,Putrajaya,Aren Aerocano (Iced),11.23,foodpanda.my/restaurant/e964,2026-08-13
+matcha,iced,Bask Bear Coffee (Presint 15),Putrajaya,Putrajaya,Japanese Fine Matcha Frappe,15.00,foodpanda.my/restaurant/e964,2026-08-13
+kopi,iced,Tealive (Presint 15),Putrajaya,Putrajaya,Americano Bold (Iced),8.40,foodpanda.my/restaurant/az4n,2026-08-13
+matcha,iced,Tealive (Presint 15),Putrajaya,Putrajaya,Rich Matcha Latte,14.40,foodpanda.my/restaurant/az4n,2026-08-13
+kopi,iced,ZUS Coffee (Suasana PjH),Putrajaya,Putrajaya,Iced Americano,7.90,foodpanda.my/restaurant/i1k1,2026-08-13
+matcha,iced,ZUS Coffee (Suasana PjH),Putrajaya,Putrajaya,Matcha Lemonade (Iced),11.20,foodpanda.my/restaurant/i1k1,2026-08-13
+kopi,iced,Bask Bear Coffee (Ayer 8),Putrajaya,Putrajaya,Aren Aerocano (Iced),11.90,foodpanda.my/restaurant/diri,2026-08-13
+matcha,iced,Bask Bear Coffee (Ayer 8),Putrajaya,Putrajaya,Japanese Fine Matcha Frappe,15.90,foodpanda.my/restaurant/diri,2026-08-13
+kopi,iced,ZUS Coffee (Presint 15),Putrajaya,Putrajaya,Iced Americano,7.90,foodpanda.my/restaurant/r8s2,2026-08-13
+matcha,iced,ZUS Coffee (Presint 15),Putrajaya,Putrajaya,Iced Matcha Latte,13.20,foodpanda.my/restaurant/r8s2,2026-08-13
+matcha,iced,Tealive (Ayer 8),Putrajaya,Putrajaya,Rich Matcha Latte,14.40,foodpanda.my/restaurant/v8my,2026-08-13
+kopi,iced,ZUS Coffee (Jabatan Peguam Negara),Putrajaya,Putrajaya,Iced Americano,7.90,foodpanda.my/restaurant/twpt,2026-08-13
+matcha,iced,ZUS Coffee (Jabatan Peguam Negara),Putrajaya,Putrajaya,Iced Matcha Latte,13.20,foodpanda.my/restaurant/twpt,2026-08-13
+kopi,iced,Tealive (Menara KPDNHEP),Putrajaya,Putrajaya,Americano Bold (Iced),8.40,foodpanda.my/restaurant/g1em,2026-08-13
+matcha,iced,Tealive (Menara KPDNHEP),Putrajaya,Putrajaya,Rich Matcha Latte,14.40,foodpanda.my/restaurant/g1em,2026-08-13
+kopi,iced,Kenangan Coffee (Presint 15),Putrajaya,Putrajaya,Iced Americano,7.90,foodpanda.my/restaurant/n3z9,2026-08-13
+matcha,iced,Kenangan Coffee (Presint 15),Putrajaya,Putrajaya,Iced Matcha Latte,12.90,foodpanda.my/restaurant/n3z9,2026-08-13
+kopi,iced,Gigi Coffee (Galeria PJH),Putrajaya,Putrajaya,Americano (Cold),7.00,foodpanda.my/restaurant/x1jr,2026-08-13
+kopi,iced,ZUS Coffee (Kangar Jaya),Kangar,Perlis,Iced Americano,7.90,foodpanda.my/restaurant/d3ex,2026-08-13
+matcha,iced,ZUS Coffee (Kangar Jaya),Kangar,Perlis,Iced Matcha Latte,13.20,foodpanda.my/restaurant/d3ex,2026-08-13
+kopi,iced,Tealive (Kangar),Kangar,Perlis,Americano Bold (Iced),8.40,foodpanda.my/restaurant/q5av,2026-08-13
+matcha,iced,Tealive (Kangar),Kangar,Perlis,Rich Matcha Latte,14.40,foodpanda.my/restaurant/q5av,2026-08-13
+kopi,iced,Tealive (Kangar Jaya),Kangar,Perlis,Americano Bold (Iced),8.40,foodpanda.my/restaurant/e092,2026-08-13
+matcha,iced,Tealive (Kangar Jaya),Kangar,Perlis,Rich Matcha Latte,14.40,foodpanda.my/restaurant/e092,2026-08-13
+kopi,iced,Kopi Matcha Tepi Jalan,Kangar,Perlis,Iced Latte,9.00,foodpanda.my/restaurant/yith,2026-08-13
+matcha,iced,Kopi Matcha Tepi Jalan,Kangar,Perlis,Matcha Latte (Iced),9.00,foodpanda.my/restaurant/yith,2026-08-13
+kopi,iced,Coffee Bean & Tea Leaf (Kangar Jaya),Kangar,Perlis,Iced Americano,9.00,foodpanda.my/restaurant/ukl3,2026-08-13
+matcha,iced,Coffee Bean & Tea Leaf (Kangar Jaya),Kangar,Perlis,Iced Matcha Strawberry,19.50,foodpanda.my/restaurant/ukl3,2026-08-13
+kopi,iced,Kopi Rakyat (Kangar Jaya Mall),Kangar,Perlis,Rakyat Kopi O (Iced),9.90,foodpanda.my/restaurant/rkks,2026-08-13
+matcha,iced,Kopi Rakyat (Kangar Jaya Mall),Kangar,Perlis,Matcha Latte (Iced),17.90,foodpanda.my/restaurant/rkks,2026-08-13
+kopi,iced,Kopi Saigon (Arau),Arau,Perlis,Kopi Hitam (Iced),8.25,foodpanda.my/restaurant/xm9o,2026-08-13
+matcha,iced,Kopi Saigon (Arau),Arau,Perlis,Matcha Original (Iced),13.20,foodpanda.my/restaurant/xm9o,2026-08-13
+kopi,iced,Kopi Saigon (Kangar),Kangar,Perlis,Kopi Hitam (Iced),9.75,foodpanda.my/restaurant/bdp9,2026-08-13
+matcha,iced,Kopi Saigon (Kangar),Kangar,Perlis,Matcha Original (Iced),16.30,foodpanda.my/restaurant/bdp9,2026-08-13
+kopi,iced,Tepi Jalan (Arau),Arau,Perlis,Kopi O Ais,3.50,foodpanda.my/restaurant/tb01,2026-08-13
+kopi,iced,Kopiud Cafe (Kaki Bukit),Kangar,Perlis,Kopi O Kamping (Iced),7.00,foodpanda.my/restaurant/sxu6,2026-08-13
+matcha,iced,Kopiud Cafe (Kaki Bukit),Kangar,Perlis,Clean Matcha (Iced),15.00,foodpanda.my/restaurant/sxu6,2026-08-13
+matcha,iced,Aisy Bites Cafe (Simpang Ampat),Kangar,Perlis,Matcha Vanilla (Iced),10.00,foodpanda.my/restaurant/yaco,2026-08-13
