@@ -101,53 +101,55 @@ nav{
   align-items:center;
   justify-content:space-between;
   gap:14px;
-  padding:11px max(18px,calc(50vw - 620px));
+  padding:9px max(18px,calc(50vw - 620px));
   background:rgba(255,248,241,.90);
   -webkit-backdrop-filter:saturate(180%) blur(10px);
   backdrop-filter:saturate(180%) blur(10px);
   border-bottom:1px solid var(--line);
 }
-nav .logo img{height:30px;width:auto;display:block}
-.nav-right{display:flex;align-items:center;gap:10px}
+nav .logo img{height:21px;width:auto;display:block}
+nav .logo{display:flex;align-items:center}
+.nav-right{display:flex;align-items:center;gap:8px}
 .nav-index{
   display:inline-flex;
   align-items:center;
   gap:7px;
-  padding:7px 13px;
+  padding:5px 11px;
   border-radius:999px;
-  border:1px solid rgba(224,169,10,.34);
-  background:rgba(245,200,66,.11);
+  border:1px solid rgba(224,169,10,.30);
+  background:rgba(245,200,66,.10);
   color:var(--primary-ink);
   font-weight:800;
-  font-size:.78rem;
-  letter-spacing:-.01em;
+  font-size:.72rem;
+  letter-spacing:-.005em;
   text-decoration:none;
   white-space:nowrap;
 }
 .nav-index:hover{background:rgba(245,200,66,.22)}
-.nav-index-dot{width:6px;height:6px;border-radius:50%;background:var(--primary-deep);flex:0 0 auto}
+.nav-index-dot{width:5px;height:5px;border-radius:50%;background:var(--primary-deep);flex:0 0 auto}
 .nav-badge{
   display:inline-flex;
   align-items:center;
   gap:7px;
-  padding:7px 13px;
+  padding:5px 11px;
   border-radius:999px;
-  background:rgba(232,84,59,.09);
+  background:rgba(232,84,59,.08);
   color:var(--tomato);
+  font-size:10px;
   white-space:nowrap;
 }
-.nav-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--tomato)}
-.nav-cta{padding:10px 18px;font-size:.85rem}
+.nav-badge .dot{width:5px;height:5px;border-radius:50%;background:var(--tomato)}
+.nav-cta{padding:8px 15px;font-size:.8rem;border-radius:11px}
 
 /* the old black strip above the nav is replaced by the tagline band */
 .harga-strip{display:none !important}
 
 @media(max-width:720px){
-  nav{padding:9px 16px}
-  nav .logo img{height:26px}
+  nav{padding:8px 16px}
+  nav .logo img{height:19px}
   .nav-right{gap:8px}
   .nav-index,.nav-badge{display:none}
-  .nav-cta{padding:9px 15px;font-size:.8rem;border-radius:12px}
+  .nav-cta{padding:8px 13px;font-size:.76rem;border-radius:11px}
 }
 
 /* ============================================================
@@ -289,7 +291,7 @@ body{padding-bottom:0}
   margin:0 auto 14px;
   color:var(--ink);
 }
-footer .logo img{height:26px}
+footer .logo img{height:22px}
 footer a{min-height:44px;display:inline-flex;align-items:center}
 
 /* tap targets */
