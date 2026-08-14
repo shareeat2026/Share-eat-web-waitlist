@@ -59,12 +59,12 @@ nav .links a.nav-home:hover{background:var(--gold-soft)}
 .drawer-scrim.on{opacity:1;pointer-events:auto}
 .drawer{position:fixed;top:0;right:0;height:100dvh;width:min(78vw,300px);background:var(--ink);color:#FFF8F1;z-index:59;transform:translateX(100%);transition:transform .32s cubic-bezier(.3,.9,.3,1);padding:16px 18px 24px;display:flex;flex-direction:column;gap:2px;box-shadow:-12px 0 40px rgba(31,27,18,.25);overflow-y:auto}
 .drawer.on{transform:translateX(0)}
-.drawer-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,248,241,.12)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,248,241,.12)}
 .drawer-head .brand{color:#FFF8F1;font-size:.68rem;font-weight:800;letter-spacing:.05em;line-height:1.3;display:block;white-space:nowrap}
-.drawer-head .brand .by{display:inline-flex;align-items:center;gap:5px;margin-left:8px;padding-left:9px;border-left:1px solid rgba(255,248,241,.22);font-size:.56rem;color:rgba(255,248,241,.5)}
+.drawer-head .brand .by{display:inline-flex;align-items:center;gap:5px;margin-left:8px;padding-left:9px;border-left:1px solid rgba(255,248,241,.22);font-size:.56rem;font-weight:500;letter-spacing:.02em;color:rgba(255,248,241,.5)}
 .drawer-head .brand .by .se-word{height:11px}
 .drawer-head .brand em{font-style:normal;color:var(--gold)}
-.dclose{flex:0 0 auto;background:transparent;border:none;color:#FFF8F1;font-size:1.7rem;line-height:1;cursor:pointer;padding:0 4px;opacity:.7;margin-top:-2px}
+.dclose{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:transparent;border:none;color:#FFF8F1;font-size:1.6rem;line-height:1;cursor:pointer;padding:0;opacity:.7;margin:0}
 .drawer a{display:block;padding:13px 10px;border-radius:12px;text-decoration:none;font-weight:700;font-size:.95rem;color:#FFF8F1;transition:background .15s}
 .drawer a:active,.drawer a:hover{background:rgba(245,200,66,.14);color:var(--gold)}
 .drawer a.dplay{margin:2px 0 6px;padding:15px 16px;background:linear-gradient(135deg,#FFE9A8,var(--gold));color:var(--ink);display:block;box-shadow:0 6px 18px rgba(245,200,66,.28);animation:dpulse 2.6s ease-in-out infinite}
@@ -72,8 +72,17 @@ nav .links a.nav-home:hover{background:var(--gold-soft)}
 .drawer a.dplay .dp-t{display:block;font-weight:800;font-size:1rem;line-height:1.3}
 .drawer a.dplay .dp-s{display:block;font-weight:600;font-size:.74rem;line-height:1.45;opacity:.72;margin-top:4px}
 @keyframes dpulse{0%,100%{box-shadow:0 6px 18px rgba(245,200,66,.28)}50%{box-shadow:0 6px 26px rgba(245,200,66,.55)}}
-.drawer a.dstory{margin-top:6px;border-top:1px solid rgba(255,248,241,.14);border-radius:0;padding-top:16px;font-size:.88rem;color:rgba(255,248,241,.75)}
+.drawer a.dstory{margin-top:6px;border-top:1px solid rgba(255,248,241,.14);border-radius:0;padding-top:16px;font-size:.82rem;white-space:nowrap;color:rgba(255,248,241,.75)}
+
+
 .drawer a.dstory.dhome{margin-top:0;border-top:none;padding-top:8px}
+.ddoors{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.drawer .ddoors a.dd{display:block;padding:12px 14px;border-radius:13px;font-weight:800;font-size:.86rem;line-height:1.25;text-decoration:none}
+.drawer .ddoors a.dd small{display:block;font-weight:600;font-size:.7rem;opacity:.68;margin-top:3px}
+.drawer .ddoors a.dd.biz{background:rgba(255,248,241,.09);color:#FFF8F1}
+.drawer .ddoors a.dd.biz:active,.drawer .ddoors a.dd.biz:hover{background:rgba(255,248,241,.16);color:#FFF8F1}
+.drawer .ddoors a.dd.cre{background:var(--gold);color:var(--ink)}
+.drawer .ddoors a.dd.cre:active,.drawer .ddoors a.dd.cre:hover{background:#FFD65C;color:var(--ink)}
 .drawer a.dstory .dgo{opacity:.6}
 @media (prefers-reduced-motion: reduce){.drawer a.dplay{animation:none}}
 .drawer-foot{margin-top:auto;padding-top:18px;font-size:.75rem;color:rgba(255,248,241,.45);font-weight:600}
@@ -361,15 +370,20 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .rd.miss{background:rgba(232,84,59,.8)}
 .final{display:none;text-align:center}
 .final.show{display:block;animation:pop .35s cubic-bezier(.2,.9,.3,1.3)}
-.fbrand{font-size:.66rem;font-weight:800;letter-spacing:.11em;color:rgba(255,248,241,.42);margin-bottom:16px}
-.fbrand em{font-style:normal;color:var(--gold);opacity:.8}
-.fbrand span{display:flex;align-items:center;justify-content:center;gap:6px;font-size:.6rem;letter-spacing:.08em;margin-top:7px;opacity:.9}
-.fbrand span .se-word{height:15px}
-.fshare{margin-top:18px}
+.fbrand{margin-bottom:16px}
+.fbrand b{display:block;font-size:.86rem;font-weight:800;letter-spacing:.13em;color:var(--gold)}
+.fbrand span{display:flex;align-items:center;justify-content:center;gap:5px;font-size:.55rem;font-weight:600;letter-spacing:.06em;margin-top:8px;color:rgba(255,248,241,.38)}
+.fbrand span .se-word{height:12px}
+.fshare{margin-top:18px;-webkit-user-select:none;user-select:none}
+.final{-webkit-user-select:none;user-select:none}
+.fshare img{-webkit-touch-callout:default;-webkit-user-select:none;user-select:none;pointer-events:auto}
 .fshare-k{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,248,241,.4);margin-bottom:10px}
 .fshare img{display:none;width:100%;max-width:250px;margin:0 auto;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid rgba(255,248,241,.14)}
 .fshare img.on{display:block;animation:pop .35s cubic-bezier(.2,.9,.3,1.3)}
-.fshare-note{font-size:.72rem;color:rgba(255,248,241,.45);margin-top:9px;line-height:1.5}
+.fshare-note{display:flex;align-items:center;justify-content:center;gap:9px;max-width:290px;margin:12px auto 0;padding:11px 14px;border-radius:14px;border:1.5px dashed rgba(245,200,66,.45);background:rgba(245,200,66,.09);font-size:.8rem;font-weight:700;color:var(--gold);line-height:1.4}
+.fshare-note .fn-i{font-size:1.1rem;line-height:1;animation:press 2.2s ease-in-out infinite}
+@keyframes press{0%,100%{transform:scale(1)}50%{transform:scale(.82)}}
+@media (prefers-reduced-motion: reduce){.fshare-note .fn-i{animation:none}}
 .fcta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,248,241,.13)}
 .fcta-logo{height:24px;display:block;margin:0 auto 10px}
 .fcta-h{font-weight:800;font-size:.95rem;color:var(--gold)}
@@ -673,7 +687,11 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <a href="#data" onclick="return goSection(event,'data')">The Receipts</a>
 
   <a class="dstory" href="about.html">Our Story <span class="dgo">→</span></a>
-  <a class="dstory dhome" href="https://shareeat.io/">Back to Share Eat! <span class="dgo">↗</span></a>
+  <a class="dstory dhome" href="https://shareeat.io/">Learn more about Share Eat! <span class="dgo">↗</span></a>
+  <div class="ddoors">
+    <a class="dd biz" href="https://wa.me/60147113585?text=Hi%20Share%20Eat!%20I%20run%20an%20F%26B%20spot.%20Can%20I%20ask%20about%20getting%20creators%20in%3F">Are you a restaurant?<small>Talk to us on WhatsApp</small></a>
+    <a class="dd cre" href="https://apps.apple.com/my/app/share-eat-food-creator-collab/id6779893847">Are you a creator?<small>Download the app</small></a>
+  </div>
   <div class="drawer-foot">Discovery shouldn't be expensive.</div>
 </aside>
 
@@ -758,7 +776,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
           </div>
         </div>
         <div class="final" id="finalZone">
-          <div class="fbrand">THE <em>HARGA</em> INDEX<span>by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></div>
+          <div class="fbrand"><b>THE HARGA CHALLENGE</b><span>by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></div>
           <div class="fscore" id="fScore">0<small>/5</small></div>
           <div class="frank" id="fRank"></div>
           <div class="fsub" id="fSub"></div>
@@ -772,7 +790,6 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
           </div>
           <div class="ractions">
             <button class="playbtn sm" onclick="shareResult()" id="shareBtn">Share my result</button>
-            <button class="sharebtn" onclick="saveResultImage()" id="saveBtn">Save image</button>
             <button class="sharebtn" onclick="startChallenge()">Play again →</button>
           </div>
           <div class="fcta">
@@ -1545,11 +1562,12 @@ function revealGuess(){
   closest = closest===null ? diff : Math.min(closest, diff);
   if(hit) chg.hits++;
   chg.log.push({e:round.dish.e, st:round.st, name:round.dish.name, guess, val:round.val, diff, hit});
-  document.getElementById('nextBtn').textContent = chg.n>=ROUNDS ? 'See my score →' : 'Next round →';
-  document.getElementById('nextBtn').setAttribute('onclick', chg.n>=ROUNDS ? 'finishChallenge()' : 'nextRound()');
+  paintRounds();
+  if(chg.n >= ROUNDS){ finishChallenge(); return; }   /* no extra tap between the last guess and the share card */
+  document.getElementById('nextBtn').textContent = 'Next round →';
+  document.getElementById('nextBtn').setAttribute('onclick', 'nextRound()');
   document.getElementById('guessZone').classList.add('locked');
   document.getElementById('revealZone').classList.add('show');
-  paintRounds();
 }
 function finishChallenge(){
   if(!chg) return;
@@ -1613,14 +1631,18 @@ async function buildShareImage(){
 
   x.textAlign='center'; x.textBaseline='alphabetic';
 
-  /* wordmark */
-  try{ const lg=await loadImg(SE_WORD_URI); const lw=300, lh=lw*130/792; x.drawImage(lg,(W-lw)/2,96,lw,lh); }catch(e){}
-
-  x.fillStyle='rgba(255,248,241,0.55)'; x.font=F(800,26);
-  x.letterSpacing='6px'; x.fillText('THE HARGA INDEX', W/2, 232); x.letterSpacing='0px';
-
-  x.fillStyle='rgba(255,248,241,0.5)'; x.font=F(700,34);
-  x.fillText('The Harga Challenge', W/2, 322);
+  /* the challenge is the headline; the brand signs it underneath */
+  x.fillStyle=GOLD; let ch=62;
+  x.font=F(800,ch);
+  while(x.measureText('THE HARGA CHALLENGE').width > W-P*2 && ch > 34){ ch -= 2; x.font=F(800,ch); }
+  x.fillText('THE HARGA CHALLENGE', W/2, 150);
+  x.fillStyle='rgba(255,248,241,0.40)'; x.font=F(700,25);
+  x.letterSpacing='5px'; x.fillText('THE HARGA INDEX', W/2, 202); x.letterSpacing='0px';
+  x.fillStyle='rgba(255,248,241,0.34)'; x.font=F(700,24);
+  const byW = x.measureText('by').width, lw = 150, lh = lw*130/792, gapx = 12;
+  const startX = (W - (byW + gapx + lw)) / 2;
+  x.textAlign='left'; x.fillText('by', startX, 268); x.textAlign='center';
+  try{ const lg=await loadImg(SE_WORD_URI); x.drawImage(lg, startX+byW+gapx, 268-lh+4, lw, lh); }catch(e){}
 
   /* score */
   const R = lastResult;
@@ -1629,15 +1651,15 @@ async function buildShareImage(){
   x.font=F(800,230); const wS=x.measureText(st).width;
   x.font=F(800,84);  const wU=x.measureText(sub).width;
   const x0=(W-(wS+wU))/2;
-  x.textAlign='left'; x.font=F(800,230); x.fillText(st,x0,540);
-  x.fillStyle='rgba(245,200,66,0.45)'; x.font=F(800,84); x.fillText(sub,x0+wS,540);
+  x.textAlign='left'; x.font=F(800,230); x.fillText(st,x0,558);
+  x.fillStyle='rgba(245,200,66,0.45)'; x.font=F(800,84); x.fillText(sub,x0+wS,558);
   x.textAlign='center';
 
-  x.fillStyle=CREAM; x.font=F(800,62); x.fillText(R.rank, W/2, 628);
+  x.fillStyle=CREAM; x.font=F(800,62); x.fillText(R.rank, W/2, 646);
 
   /* summary, wrapped */
   x.fillStyle='rgba(245,200,66,0.82)'; x.font=F(600,32);
-  let y=690;
+  let y=708;
   for(const ln of wrapText(x, R.summary, W-P*2-40)){ x.fillText(ln, W/2, y); y+=44; }
 
   /* the five rounds */
@@ -1683,33 +1705,28 @@ async function buildShareImage(){
   return new Promise(res=>c.toBlob(res,'image/jpeg',0.92));
 }
 
-let shareBlob = null, shareURL = null;
+let shareBlob = null;
+function blobToDataURL(blob){
+  return new Promise((ok,no)=>{ const r=new FileReader(); r.onload=()=>ok(r.result); r.onerror=no; r.readAsDataURL(blob); });
+}
 async function prepareShareImage(){
   const box = document.getElementById('fShare'), img = document.getElementById('fShareImg');
   const k = document.getElementById('fShareK'), note = document.getElementById('fShareNote');
-  if(shareURL){ URL.revokeObjectURL(shareURL); shareURL = null; }
   shareBlob = null; img.classList.remove('on'); img.removeAttribute('src');
   k.textContent = 'Drawing your card…'; note.textContent = '';
   try{
     const blob = await buildShareImage();
     if(!blob) throw new Error('no blob');
     shareBlob = blob;
-    shareURL = URL.createObjectURL(blob);
-    img.src = shareURL; img.classList.add('on');
+    /* a data URL, not a blob: URL: iOS shares a blob link as plain text */
+    img.src = await blobToDataURL(blob);
+    img.classList.add('on');
     k.textContent = 'Your shareable card';
-    note.innerHTML = 'Long-press the image to save it, or use the buttons below.';
+    note.innerHTML = '<span class="fn-i" aria-hidden="true">\uD83D\uDC46</span><span>Long-press the image, then <b>Save to Photos</b></span>';
   }catch(e){
     k.textContent = 'Your result';
     note.textContent = 'Could not draw the image on this browser, so sharing will send text instead.';
   }
-}
-async function saveResultImage(){
-  const btn = document.getElementById('saveBtn');
-  if(!shareBlob){ btn.textContent = 'No image to save'; setTimeout(()=>btn.textContent='Save image',2200); return; }
-  const a = document.createElement('a');
-  a.href = shareURL; a.download = 'harga-challenge.jpg';
-  document.body.appendChild(a); a.click(); a.remove();
-  btn.textContent = 'Saved'; setTimeout(()=>btn.textContent='Save image',2200);
 }
 async function shareResult(){
   if(!lastResult) return;
