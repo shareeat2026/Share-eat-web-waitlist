@@ -1353,12 +1353,12 @@ const GD = [
 ];
 const ROUNDS = 5;
 const RANKS = [
-  {min:5, t:'Pakar Harga',       s:'Are you secretly a hawker?'},
-  {min:4, t:'Hawker certified',  s:'You clearly still eat out.'},
-  {min:3, t:'Kaki makan',        s:'Respectable.'},
-  {min:2, t:'Getting warm',      s:'The menus have moved on a bit.'},
-  {min:1, t:'Delivery app brain',s:'Technically a score.'},
-  {min:0, t:'Long time no makan',s:'Beautifully consistent, at least.'}
+  {min:5, t:'Price Specialist',      s:'Do you run a restaurant?'},
+  {min:4, t:'Hawker Certified',      s:'You clearly still eat out.'},
+  {min:3, t:'Mamak Regular',         s:'Respectable. But objectively mid.'},
+  {min:2, t:'Home Cook',             s:'You cook at home, do you not?'},
+  {min:1, t:'Never Checks The Bill', s:'You tap, you pay, you never look.'},
+  {min:0, t:'Long Time No Makan',    s:'At least you were consistent.'}
 ];
 function rankFor(score){ return RANKS.find(r=>score>=r.min); }
 /* the second line: no data, pure personality */
@@ -1412,34 +1412,34 @@ const QUIPS = {
 };
 const SUMMARIES = [
   [ /* 0 */
-    'Zero out of five. Not one. There is a strange purity to that.',
-    'A clean sweep in the wrong direction. The only way from here is up.',
-    'Nothing landed. Somewhere a menu is quietly disagreeing with everything you believe.'
+    'Zero out of five. Not even one. Impressive, in a way.',
+    'Zero out of five. Bold guesses. All wrong.',
+    'Not one right. When did you last pay for your own food?'
   ],
   [ /* 1 */
     'One out of five. Technically a score. Legally, barely.',
-    'One correct. We are generously calling the other four a warm-up.',
-    'One landed. Somewhere in Malaysia those other prices are real. Just not here.'
+    'One right. We will generously call the other four a warm-up.',
+    'One right. The other four were pure imagination.'
   ],
   [ /* 2 */
     'Two out of five. You know what you like, you just do not know what it costs.',
-    'Two landed. Your taste is fine, your inflation model needs a patch.',
+    'Two out of five. You eat well. You just never look at the bill.',
     'Two out of five. The prices moved house and forgot to tell you.'
   ],
   [ /* 3 */
     'Three out of five. The exact score of someone who eats out on weekends only.',
-    'Three landed. Solidly mid, which in this economy is a compliment.',
-    'Three out of five. You know the food. The receipts are still catching up.'
+    'Three out of five. Solidly mid, which in this economy is a compliment.',
+    'Three out of five. Not bad. Not screenshot-worthy, but not bad.'
   ],
   [ /* 4 */
-    'Four out of five. One rogue plate from perfect, and we both know which one.',
-    'Four landed. Your wallet has clearly been paying attention.',
-    'Four out of five. That last round was personal.'
+    'Four out of five. So close. That one wrong plate will haunt you.',
+    'Four out of five. Your wallet has clearly been paying attention.',
+    'Four out of five. Go on, screenshot this one.'
   ],
   [ /* 5 */
     'Five out of five. We are legally obliged to ask where you work.',
     'A perfect run. Somewhere a hawker just nodded, slowly, with respect.',
-    'Five for five. Either you eat out constantly or you have read this index far too closely.'
+    'Five out of five. Almost nobody does this. Go screenshot it.'
   ]
 ];
 function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
@@ -1451,9 +1451,9 @@ function summaryFor(score, log){
   if(score <= 3 && overs === log.length)
     return 'Every single guess was too high. Good news: Malaysia is cheaper than you feared.';
   if(score <= 3 && unders === log.length)
-    return 'Every single guess was too low. You appear to be living in an older, cheaper Malaysia.';
+    return 'Every guess was too low. You are still living on 2019 prices.';
   if(score <= 2 && sharp)
-    return 'You nailed one to the sen and then completely lost the plot. We respect the range.';
+    return 'You got one exactly right, then completely lost it. Respect the range.';
   return pick(SUMMARIES[score]);
 }
 let lastQuip = '';
