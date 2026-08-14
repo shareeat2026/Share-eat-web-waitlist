@@ -44,10 +44,12 @@ Discuss when traffic justifies it.
 PostHog can record anonymized sessions of people playing the game. Not an investor
 metric, but the fastest way to find where players drop off. Adds script weight.
 
-## 8. Investor one-pager dashboard — medium effort
-A private page (or PostHog shared-dashboard link) with the headline numbers
-pre-formatted for the pitch deck: visits, plays, completion %, shares, k-factor,
-WhatsApp conversations started, app downloads clicked, geo split (Klang Valley %).
+## 8. Investor one-pager dashboard — SHIPPED 14 Aug 2026
+Live at `shareeat.io/investors/` (noindex, unlinked): headline tiles, 30-day
+visitors/plays trend, landing-to-share funnel, WhatsApp intents, score
+distribution. Refreshed daily by `.github/workflows/investor-stats.yml`, which
+needs the `POSTHOG_API_KEY` repo secret (a PostHog *personal* API key). Still
+possible later: geo split (Klang Valley %) once there is enough traffic.
 
 ## 9. Meta Pixel on the Harga pages — copy-paste
 Every page has the Pixel except `harga/index.html` and `harga/about.html`. If you
