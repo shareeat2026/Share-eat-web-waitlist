@@ -1,0 +1,4 @@
+{
+  "generated": null,
+  "note": "Populated daily by .github/workflows/investor-stats.yml once the POSTHOG_API_KEY repo secret is set."
+}
