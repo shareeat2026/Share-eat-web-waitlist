@@ -101,7 +101,8 @@ nav{
   align-items:center;
   justify-content:space-between;
   gap:14px;
-  padding:9px max(18px,calc(50vw - 620px));
+  padding:8px max(18px,calc(50vw - 620px));
+  line-height:1.25;
   background:rgba(255,248,241,.90);
   -webkit-backdrop-filter:saturate(180%) blur(10px);
   backdrop-filter:saturate(180%) blur(10px);
@@ -145,7 +146,7 @@ nav .logo{display:flex;align-items:center}
 .harga-strip{display:none !important}
 
 @media(max-width:720px){
-  nav{padding:8px 16px}
+  nav{padding:7px 16px}
   nav .logo img{height:19px}
   .nav-right{gap:8px}
   .nav-index,.nav-badge{display:none}
@@ -292,7 +293,7 @@ body{padding-bottom:0}
   color:var(--ink);
 }
 footer .logo img{height:22px}
-footer a{min-height:44px;display:inline-flex;align-items:center}
+footer .se-foot-nav a{min-height:44px}
 
-/* tap targets */
-nav a,footer a,.footer-grid a{min-height:36px}
+/* tap targets: phones only, so the desktop nav stays slim */
+@media(max-width:720px){nav a{min-height:34px;display:inline-flex;align-items:center}}
