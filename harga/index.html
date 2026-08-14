@@ -801,7 +801,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
           </div>
           <div class="ractions">
             <button class="playbtn sm" onclick="shareResult()" id="shareBtn">Share to friends on WhatsApp</button>
-            <button class="sharebtn" onclick="startChallenge()">Play again →</button>
+            <button class="sharebtn" onclick="playAgain()">Play again →</button>
           </div>
           <div class="fcta">
             <svg class="se-word fcta-logo" role="img" aria-label="Share Eat!"><use href="#seword"/></svg>
@@ -1247,6 +1247,7 @@ function renderRank(){
   document.getElementById('rankCallout').innerHTML = CALLOUTS[dish];
 }
 function setDish(d){
+  if(window.seTrack) seTrack('map_dish_selected', {dish:d});
   dish = d;
   document.querySelectorAll('.toggle button').forEach(b=>b.classList.toggle('on', b.dataset.dish===d));
   renderMap(); renderSpot(); renderRank();
@@ -1257,6 +1258,7 @@ let rankOpen = false;
 function toggleFold(id){
   const btn = document.getElementById('fb_'+id), body = document.getElementById('fold_'+id);
   const open = !body.classList.contains('open');
+  if(open && window.seTrack) seTrack('fold_opened', {fold:id});
   body.classList.toggle('open', open);
   btn.classList.toggle('open', open);
   btn.setAttribute('aria-expanded', String(open));
@@ -1509,6 +1511,10 @@ function paintRounds(){
   }
   el.innerHTML = html;
 }
+function playAgain(){
+  if(window.seTrack) seTrack('play_again_click');
+  startChallenge();
+}
 function startChallenge(){
   if(window.seTrack) seTrack('game_started');
   chg = {n:0, hits:0, log:[]};
@@ -1574,6 +1580,7 @@ function revealGuess(){
   closest = closest===null ? diff : Math.min(closest, diff);
   if(hit) chg.hits++;
   chg.log.push({e:round.dish.e, k:round.dish.k, st:round.st, name:round.dish.name, guess, val:round.val, diff, hit});
+  if(window.seTrack) seTrack('guess_made', {round:chg.n, dish:round.dish.k, state:round.st, stat:round.stat, guess, actual:round.val, off:+diff.toFixed(2), hit});
   paintRounds();
   if(chg.n >= ROUNDS){ finishChallenge(); return; }   /* no extra tap between the last guess and the share card */
   document.getElementById('nextBtn').textContent = 'Next round →';
@@ -1799,7 +1806,7 @@ async function buildShareImage(){
   y += blk[7]+gap[7];
   x.fillStyle=GOLD; x.font=F(800,48);
   x.shadowColor='rgba(0,0,0,0.55)'; x.shadowBlur=24; x.shadowOffsetY=5;
-  x.fillText('shareeat.io/harga', W/2, y+40);
+  x.fillText('shareeat.io/challenge', W/2, y+40);
   x.shadowColor='transparent'; x.shadowBlur=0; x.shadowOffsetY=0;
   y += blk[8]+gap[8];
   x.fillStyle='rgba(255,248,241,0.40)'; x.font=F(600,25);
@@ -1838,7 +1845,7 @@ async function shareResult(){
   if(!lastResult) return;
   if(window.seTrack) seTrack('share_result_click', {score:lastResult.score});
   const lines = lastResult.log.map(r=>`${r.e} ${r.st} ${r.name}: guessed RM${r.guess.toFixed(2)}, real RM${r.val.toFixed(2)} ${r.hit?'✓':'✗'}`);
-  const t = `🍽️ The Harga Challenge · The Harga Index\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you know Malaysian food prices? shareeat.io/harga`;
+  const t = `🍽️ The Harga Challenge · The Harga Index\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you know Malaysian food prices? shareeat.io/challenge`;
   const btn = document.getElementById('shareBtn');
   const done = (msg)=>{ btn.textContent = msg; setTimeout(()=>btn.textContent=SHARE_LABEL, 2600); };
   let blob = shareBlob;
@@ -1847,17 +1854,24 @@ async function shareResult(){
   if(blob && navigator.canShare){
     const file = new File([blob], 'harga-challenge.jpg', {type:'image/jpeg'});
     if(navigator.canShare({files:[file]})){
-      try{ await navigator.share({files:[file]}); done('Shared'); }catch(e){}
+      try{ await navigator.share({files:[file]}); done('Shared'); if(window.seTrack) seTrack('share_completed', {method:'image'}); }
+      catch(e){ if(window.seTrack) seTrack('share_cancelled', {method:'image'}); }
       return;
     }
   }
   if(blob && !navigator.share){
     const u = URL.createObjectURL(blob), a = document.createElement('a');
     a.href = u; a.download = 'harga-challenge.jpg'; a.click();
-    setTimeout(()=>URL.revokeObjectURL(u), 4000); done('Image saved'); return;
+    setTimeout(()=>URL.revokeObjectURL(u), 4000); done('Image saved');
+    if(window.seTrack) seTrack('share_completed', {method:'download'}); return;
   }
-  if(navigator.share){ navigator.share({text:t}).then(()=>done('Shared')).catch(()=>{}); return; }
-  navigator.clipboard.writeText(t).then(()=>done('Copied, paste it anywhere'))
+  if(navigator.share){
+    navigator.share({text:t})
+      .then(()=>{ done('Shared'); if(window.seTrack) seTrack('share_completed', {method:'text'}); })
+      .catch(()=>{ if(window.seTrack) seTrack('share_cancelled', {method:'text'}); });
+    return;
+  }
+  navigator.clipboard.writeText(t).then(()=>{ done('Copied, paste it anywhere'); if(window.seTrack) seTrack('share_completed', {method:'clipboard'}); })
     .catch(()=>done('Could not copy, sorry'));
 }
 
@@ -1917,6 +1931,7 @@ const io = new IntersectionObserver(es=>es.forEach(e=>{
 
 function toggleMenu(force){
   const open = force===undefined ? !document.getElementById('drawer').classList.contains('on') : force;
+  if(open && window.seTrack) seTrack('menu_opened');
   document.getElementById('drawer').classList.toggle('on', open);
   document.getElementById('scrim').classList.toggle('on', open);
   document.getElementById('burger').classList.toggle('on', open);
@@ -1968,6 +1983,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('[data-count]').forEach(countUp);
   document.querySelectorAll('.reveal-sec').forEach(el=>io.observe(el));
   updateScrollBar();
+  const pc = document.getElementById('pcSlider');
+  if(pc) pc.addEventListener('change', e=>{ if(window.seTrack) seTrack('price_check_used', {paid:parseFloat(e.target.value)}); });
+  const si = document.getElementById('fShareImg');
+  if(si) si.addEventListener('contextmenu', ()=>{ if(window.seTrack) seTrack('share_image_longpress'); });
 });
 </script>
 </body>

@@ -6,9 +6,12 @@
  * Until a real key is pasted, this file does nothing at all.
  *
  * What it tracks on every page, with no per-page wiring:
- *   $pageview            – every visit, automatic
- *   whatsapp_click       – any link to wa.me / api.whatsapp.com
+ *   $pageview            – every visit, automatic (UTM params captured too)
+ *   whatsapp_click       – any link to wa.me / api.whatsapp.com, with an
+ *                          `intent` guessed from the prefilled message
  *   app_download_click   – any link to the App Store or Play Store
+ *   scroll_depth         – 25 / 50 / 75 / 100% of the page, once each
+ *   js_error             – first 3 uncaught errors, for us developers
  * The Harga game pages additionally call seTrack() for game events.
  */
 (function () {
@@ -48,6 +51,7 @@
       link_text: (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80)
     };
     if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
+      props.intent = waIntent(href);
       window.seTrack('whatsapp_click', props);
     } else if (href.indexOf('apps.apple.com') !== -1) {
       props.store = 'app_store';
@@ -57,4 +61,49 @@
       window.seTrack('app_download_click', props);
     }
   }, true);
+
+  /* Which conversation a WhatsApp tap starts, read from the prefilled text.
+     Keyword order matters: the price-submission text also mentions the Index. */
+  function waIntent(href) {
+    var text = '';
+    try { text = decodeURIComponent((href.split('text=')[1] || '').split('&')[0]).toLowerCase(); } catch (e) {}
+    if (text.indexOf('price') !== -1 && text.indexOf('index') !== -1) return 'price_submission';
+    if (text.indexOf('campaign') !== -1) return 'campaign_enquiry';
+    if (text.indexOf('f%26b') !== -1 || text.indexOf('f&b') !== -1 || text.indexOf('restaurant') !== -1 || text.indexOf('creators in') !== -1) return 'restaurant_enquiry';
+    return 'general';
+  }
+
+  /* Scroll depth: 25/50/75/100, once per pageview. Short pages that need no
+     scrolling send nothing, so the numbers stay honest. */
+  var seenDepth = {};
+  var scrollQueued = false;
+  function checkDepth() {
+    scrollQueued = false;
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    if (max <= 0) return;
+    var pct = (window.pageYOffset || doc.scrollTop || 0) / max * 100;
+    [25, 50, 75, 100].forEach(function (mark) {
+      if (pct >= mark && !seenDepth[mark]) {
+        seenDepth[mark] = true;
+        window.seTrack('scroll_depth', { depth: mark, page: location.pathname });
+      }
+    });
+  }
+  window.addEventListener('scroll', function () {
+    if (!scrollQueued) { scrollQueued = true; setTimeout(checkDepth, 400); }
+  }, { passive: true });
+
+  /* Uncaught errors, capped so a render loop can't flood the quota. */
+  var errCount = 0;
+  window.addEventListener('error', function (e) {
+    if (errCount >= 3) return;
+    errCount++;
+    window.seTrack('js_error', {
+      message: String(e.message || '').slice(0, 200),
+      source: String(e.filename || '').slice(0, 120),
+      line: e.lineno || 0,
+      page: location.pathname
+    });
+  });
 })();
