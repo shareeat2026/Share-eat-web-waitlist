@@ -371,10 +371,12 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .final{display:none;text-align:center}
 .final.show{display:block;animation:pop .35s cubic-bezier(.2,.9,.3,1.3)}
 .fbrand{margin-bottom:16px}
+.play > .fbrand{margin-bottom:12px}
+.play > .fbrand b{font-size:1rem;letter-spacing:.12em}
 .fbrand b{display:block;font-size:.86rem;font-weight:800;letter-spacing:.13em;color:var(--gold)}
 .fbrand span{display:flex;align-items:center;justify-content:center;gap:5px;font-size:.55rem;font-weight:600;letter-spacing:.06em;margin-top:8px;color:rgba(255,248,241,.38)}
 .fbrand span .se-word{height:12px}
-.fshare{margin-top:18px;-webkit-user-select:none;user-select:none}
+.fshare{margin-top:40px;-webkit-user-select:none;user-select:none}
 .final{-webkit-user-select:none;user-select:none}
 .fshare img{-webkit-touch-callout:default;-webkit-user-select:none;user-select:none;pointer-events:auto}
 .fshare-k{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,248,241,.4);margin-bottom:10px}
@@ -410,8 +412,8 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .fpct{font-size:.78rem;font-weight:800;color:var(--gold);opacity:.9;margin-top:2px}
 .fbest{margin-top:14px;font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);opacity:.75}
 .rwhere{font-size:.78rem;opacity:.65;line-height:1.5;background:rgba(255,248,241,.05);border-radius:12px;padding:10px 14px;max-width:420px;margin:0 auto;text-wrap:balance}
-.ractions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-.ractions .playbtn{margin:0}
+.ractions{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:340px;margin:18px auto 0}
+.ractions .playbtn,.ractions .sharebtn{margin:0;width:100%;text-align:center;padding-inline:12px;white-space:nowrap;font-size:clamp(.64rem,3.1vw,.85rem)}
 .gbody{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
 .gempty{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:18px;padding:24px 20px;border:1.5px dashed rgba(255,248,241,.16);border-radius:18px}
 .gempty.gone{display:none}
@@ -427,6 +429,7 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 @keyframes qpulse{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 @media (prefers-reduced-motion: reduce){.get{animation:none}}
 .playbtn.gone{display:none}
+.play.done .lead{display:none}
 .guess-zone{margin-top:18px;display:none}
 .guess-zone.show{display:block;animation:pop .3s}
 .guess-zone .q{font-weight:700;font-size:1rem;line-height:1.5;margin-bottom:2px}
@@ -747,7 +750,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <p class="sec-sub">Before you look at the data below, see if you actually know what Malaysian food costs.</p>
     <div class="playgrid reveal-sec">
       <div class="play" id="guessGame">
-        <h3><span class="emo-i">🍽️</span>The Harga Challenge</h3>
+        <div class="fbrand"><b>THE HARGA CHALLENGE</b><span>by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></div>
         <p class="lead">We show you a real dish from a real state. You guess what it costs. Get close and you win the round.<br><b>Most people only get 2 out of 5.</b></p>
         <div class="scoreline" id="scoreLine"></div>
         <div class="rounds" id="rounds" aria-label="Challenge progress"></div>
@@ -785,7 +788,6 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
           </div>
         </div>
         <div class="final" id="finalZone">
-          <div class="fbrand"><b>THE HARGA CHALLENGE</b><span>by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></div>
           <div class="fscore" id="fScore">0<small>/5</small></div>
           <div class="fpct" id="fPct"></div>
           <div class="frank" id="fRank"></div>
@@ -800,7 +802,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
             <div class="fshare-aside" id="fShareAside"></div>
           </div>
           <div class="ractions">
-            <button class="playbtn sm" onclick="shareResult()" id="shareBtn">Share to friends on WhatsApp</button>
+            <button class="playbtn sm" onclick="copyChallengeLink(this)" id="shareBtn">Share this challenge with your friends</button>
+            <button class="playbtn sm" onclick="shareResult('ig',this)" id="shareBtnIg">Flex On IG Story</button>
             <button class="sharebtn" onclick="playAgain()">Play again →</button>
           </div>
           <div class="fcta">
@@ -1366,12 +1369,12 @@ const GD = [
 ];
 const ROUNDS = 5;
 const RANKS = [
-  {min:5, t:'Price Specialist',      s:'Do you run a restaurant?'},
-  {min:4, t:'Hawker Certified',      s:'You clearly still eat out.'},
-  {min:3, t:'Mamak Regular',         s:'Respectable. But objectively mid.'},
-  {min:2, t:'Home Cook',             s:'You cook at home, do you not?'},
-  {min:1, t:'Never Checks The Bill', s:'You tap, you pay, you never look.'},
-  {min:0, t:'Long Time No Makan',    s:'At least you were consistent.'}
+  {min:5, t:'Sifu Harga',      s:'You work in F&B one, confirm. You boss or waiter?'},
+  {min:4, t:'Steady La',       s:'Very rich ah, you eat outside every day?'},
+  {min:3, t:'Go Travel More',  s:'Other states different price bro, but actually not bad la, normal.'},
+  {min:2, t:'Are You A Chef?', s:'You cook at home one right?'},
+  {min:1, t:'Cincai Pay',      s:'Next time look at your receipt, your wallet might be leaking wei.'},
+  {min:0, t:'??? Umm...',      s:'But nevermind, at least you consistent la.'}
 ];
 function rankFor(score){ return RANKS.find(r=>score>=r.min); }
 /* the second line: no data, pure personality */
@@ -1424,51 +1427,17 @@ const QUIPS = {
   ]
 };
 const SUMMARIES = [
-  [ /* 0 */
-    'Zero out of five. Not even one. Impressive, in a way.',
-    'Zero out of five. Bold guesses. All wrong.',
-    'Not one right. When did you last pay for your own food?'
-  ],
-  [ /* 1 */
-    'One out of five. Technically a score. Legally, barely.',
-    'One right. We will generously call the other four a warm-up.',
-    'One right. The other four were pure imagination.'
-  ],
-  [ /* 2 */
-    'Two out of five. You know what you like, you just do not know what it costs.',
-    'Two out of five. You eat well. You just never look at the bill.',
-    'Two out of five. The prices moved house and forgot to tell you.'
-  ],
-  [ /* 3 */
-    'Three out of five. The exact score of someone who eats out on weekends only.',
-    'Three out of five. Solidly mid, which in this economy is a compliment.',
-    'Three out of five. Not bad. Not screenshot-worthy, but not bad.'
-  ],
-  [ /* 4 */
-    'Four out of five. So close. That one wrong plate will haunt you.',
-    'Four out of five. Your wallet has clearly been paying attention.',
-    'Four out of five. Go on, screenshot this one.'
-  ],
-  [ /* 5 */
-    'Five out of five. We are legally obliged to ask where you work.',
-    'A perfect run. Somewhere a hawker just nodded, slowly, with respect.',
-    'Five out of five. Almost nobody does this. Go screenshot it.'
-  ]
+  [ /* 0 */ 'When was the last time you paid for food ah?' ],
+  [ /* 1 */ 'One out of five. Technically got score la.' ],
+  [ /* 2 */ 'Two out of five. Maybe you score higher if Econsave got their own quiz.' ],
+  [ /* 3 */ 'Three out of five. Technically got people worse than you.' ],
+  [ /* 4 */ 'Only 1 wrong. You travel to other states every month or what.' ],
+  [ /* 5 */ 'Full Score. Actually damn power, you order Grab from other states ah?' ]
 ];
 function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
-function summaryFor(score, log){
-  const overs = log.filter(r=>r.guess > r.val).length;
-  const unders = log.filter(r=>r.guess < r.val).length;
-  const sharp = log.some(r=>r.diff <= 0.5);
-  /* a clear pattern is funnier than a generic line, so it wins */
-  if(score <= 3 && overs === log.length)
-    return 'Every single guess was too high. Good news: Malaysia is cheaper than you feared.';
-  if(score <= 3 && unders === log.length)
-    return 'Every guess was too low. You are still living on 2019 prices.';
-  if(score <= 2 && sharp)
-    return 'You got one exactly right, then completely lost it. Respect the range.';
-  return pick(SUMMARIES[score]);
-}
+/* The pattern lines are gone: the rank's own one liner does that job now, and
+   it is the line that rides on the shared image. */
+function summaryFor(score){ return pick(SUMMARIES[score]); }
 let lastQuip = '';
 function quipFor(hit, diff, tol, over){
   let pool;
@@ -1517,6 +1486,7 @@ function playAgain(){
 }
 function startChallenge(){
   if(window.seTrack) seTrack('game_started');
+  document.getElementById('guessGame').classList.remove('done');
   chg = {n:0, hits:0, log:[]};
   document.getElementById('gEmpty').classList.add('gone');
   document.getElementById('dealBtn').classList.add('gone');
@@ -1622,7 +1592,7 @@ function finishChallenge(){
   document.getElementById('fLog').innerHTML = chg.log.map(r=>
     `<div class="fr ${r.hit?'hit':'miss'}"><span class="fe">${r.e}</span><span class="fw"><b>${r.st} · ${r.name}</b><small>you RM${r.guess.toFixed(2)} → real RM${r.val.toFixed(2)}</small></span><span class="fm">${r.hit?'✓':'✗'} RM${r.diff.toFixed(2)} off</span></div>`
   ).join('');
-  const summary = summaryFor(score, chg.log);
+  const summary = summaryFor(score);
   document.getElementById('fSummary').textContent = summary;
   const pct = pctBetter(chg.log, score);
   document.getElementById('fPct').textContent = pct===null ? '' : `Better than ${pct}% of guesses`;
@@ -1636,7 +1606,9 @@ function finishChallenge(){
   document.getElementById('guessZone').classList.remove('show');
   document.getElementById('revealZone').classList.remove('show');
   document.getElementById('rounds').classList.remove('on');
-  document.getElementById('shareBtn').textContent = SHARE_LABEL;
+  document.getElementById('shareBtn').textContent = SHARE_LABELS.link;
+  document.getElementById('shareBtnIg').textContent = SHARE_LABELS.ig;
+  document.getElementById('guessGame').classList.add('done');
   document.getElementById('finalZone').classList.add('show');
   updateScoreLine();
   prepareShareImage();
@@ -1815,7 +1787,31 @@ async function buildShareImage(){
   return new Promise(res=>c.toBlob(res,'image/jpeg',0.95));
 }
 
-const SHARE_LABEL = 'Share to friends on WhatsApp';
+const CHALLENGE_URL = 'https://shareeat.io/challenge';
+const SHARE_LABELS = {link:'Share this challenge with your friends', ig:'Flex On IG Story'};
+/* One button hands over the link, the other hands over the picture. Copying is
+   deliberate: a link they paste themselves previews in WhatsApp, an image does
+   not. */
+async function copyChallengeLink(el){
+  if(window.seTrack) seTrack('share_link_copy', {score: lastResult ? lastResult.score : null});
+  const done = (m)=>{ el.textContent = m; setTimeout(()=>{ el.textContent = SHARE_LABELS.link; }, 2600); };
+  try{
+    await navigator.clipboard.writeText(CHALLENGE_URL);
+    done('Link copied. Paste it anywhere.');
+  }catch(e){
+    /* older iOS Safari refuses the async clipboard, so fall back to a selection */
+    const ta = document.createElement('textarea');
+    ta.value = CHALLENGE_URL;
+    ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta);
+    ta.select(); ta.setSelectionRange(0, ta.value.length);
+    let ok = false;
+    try{ ok = document.execCommand('copy'); }catch(e2){}
+    ta.remove();
+    done(ok ? 'Link copied. Paste it anywhere.' : 'shareeat.io/challenge');
+  }
+}
 let shareBlob = null;
 function blobToDataURL(blob){
   return new Promise((ok,no)=>{ const r=new FileReader(); r.onload=()=>ok(r.result); r.onerror=no; r.readAsDataURL(blob); });
@@ -1841,21 +1837,25 @@ async function prepareShareImage(){
     note.textContent = 'Could not draw the image on this browser, so sharing will send text instead.';
   }
 }
-async function shareResult(){
+/* Both buttons open the same OS share sheet, because the web cannot post to
+   Instagram directly. The labels exist so people know the sheet gets them
+   there, and so we can see which promise actually pulls. */
+async function shareResult(target, el){
   if(!lastResult) return;
-  if(window.seTrack) seTrack('share_result_click', {score:lastResult.score});
+  target = target || 'whatsapp';
+  if(window.seTrack) seTrack('share_result_click', {score:lastResult.score, target});
   const lines = lastResult.log.map(r=>`${r.e} ${r.st} ${r.name}: guessed RM${r.guess.toFixed(2)}, real RM${r.val.toFixed(2)} ${r.hit?'✓':'✗'}`);
   const t = `🍽️ The Harga Challenge · The Harga Index\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you know Malaysian food prices? shareeat.io/challenge`;
-  const btn = document.getElementById('shareBtn');
-  const done = (msg)=>{ btn.textContent = msg; setTimeout(()=>btn.textContent=SHARE_LABEL, 2600); };
+  const btn = el || document.getElementById('shareBtn');
+  const done = (msg)=>{ btn.textContent = msg; setTimeout(()=>{ btn.textContent = SHARE_LABELS[target]; }, 2600); };
   let blob = shareBlob;
   if(!blob){ try{ blob = await buildShareImage(); shareBlob = blob; }catch(e){} }
   /* files only: several targets drop the image when text rides along */
   if(blob && navigator.canShare){
     const file = new File([blob], 'harga-challenge.jpg', {type:'image/jpeg'});
     if(navigator.canShare({files:[file]})){
-      try{ await navigator.share({files:[file]}); done('Shared'); if(window.seTrack) seTrack('share_completed', {method:'image'}); }
-      catch(e){ if(window.seTrack) seTrack('share_cancelled', {method:'image'}); }
+      try{ await navigator.share({files:[file]}); done('Shared'); if(window.seTrack) seTrack('share_completed', {method:'image', target}); }
+      catch(e){ if(window.seTrack) seTrack('share_cancelled', {method:'image', target}); }
       return;
     }
   }
@@ -1863,15 +1863,15 @@ async function shareResult(){
     const u = URL.createObjectURL(blob), a = document.createElement('a');
     a.href = u; a.download = 'harga-challenge.jpg'; a.click();
     setTimeout(()=>URL.revokeObjectURL(u), 4000); done('Image saved');
-    if(window.seTrack) seTrack('share_completed', {method:'download'}); return;
+    if(window.seTrack) seTrack('share_completed', {method:'download', target}); return;
   }
   if(navigator.share){
     navigator.share({text:t})
-      .then(()=>{ done('Shared'); if(window.seTrack) seTrack('share_completed', {method:'text'}); })
-      .catch(()=>{ if(window.seTrack) seTrack('share_cancelled', {method:'text'}); });
+      .then(()=>{ done('Shared'); if(window.seTrack) seTrack('share_completed', {method:'text', target}); })
+      .catch(()=>{ if(window.seTrack) seTrack('share_cancelled', {method:'text', target}); });
     return;
   }
-  navigator.clipboard.writeText(t).then(()=>{ done('Copied, paste it anywhere'); if(window.seTrack) seTrack('share_completed', {method:'clipboard'}); })
+  navigator.clipboard.writeText(t).then(()=>{ done('Copied, paste it anywhere'); if(window.seTrack) seTrack('share_completed', {method:'clipboard', target}); })
     .catch(()=>done('Could not copy, sorry'));
 }
 
