@@ -1690,15 +1690,14 @@ async function buildShareImage(){
   while(x.measureText('THE HARGA CHALLENGE').width > W-P*2 && tf > 30){ tf -= 2; x.font=F(800,tf); }
   let rf=46; x.font=F(800,rf);
   while(x.measureText(R.rank).width > W-P*2 && rf > 28){ rf -= 2; x.font=F(800,rf); }
-  x.font=F(600,28); const sum = wrapBalanced(x, R.summary, W-P*2-60);
+  x.font=F(600,30); const sub = R.sub ? wrapBalanced(x, R.sub, W-P*2-60) : [];
   x.font=F(600,25); const tag = wrapBalanced(x,'Guess Malaysian food prices across different states', W-P*2-40);
   const pctLine = R.pct===null||R.pct===undefined ? '' : `Better than ${R.pct}% of guesses`;
-  const subLine = R.sub||'';
 
   const n=R.log.length, rowH=90, gapY=12, rowsH=n*rowH+(n-1)*gapY;
   /* the three footer lines share one baseline pitch, so the gaps read as equal */
-  const blk=[tf*1.15, 30, 126, pctLine?34:0, rf*1.15, subLine?32:0, sum.length*38, rowsH, 46, 54, tag.length*32];
-  let gap=[20, 46, pctLine?16:0, pctLine?20:24, 8, subLine?14:6, 44, 50, 23, 28];
+  const blk=[tf*1.15, 30, 126, pctLine?34:0, rf*1.15, sub.length*40, rowsH, 46, 54, tag.length*32];
+  let gap=[22, 50, pctLine?16:0, pctLine?24:28, 12, 56, 56, 23, 28];
   const add=a=>a.reduce((p,q)=>p+q,0);
   const band=SAFE_BOT-SAFE_TOP, bs=add(blk);
   let gs=add(gap);
@@ -1743,17 +1742,10 @@ async function buildShareImage(){
   x.fillStyle=CREAM; x.font=F(800,rf); x.fillText(R.rank, W/2, y+rf*0.82);
   y += blk[4]+gap[4];
 
-  /* the rank's own line */
-  if(subLine){
-    x.fillStyle='rgba(255,248,241,0.46)'; x.font=F(600,26);
-    x.fillText(clampText(x, subLine, W-P*2-40), W/2, y+25);
-  }
+  /* the rank's own line, doing the summary's job */
+  x.fillStyle='rgba(245,200,66,0.82)'; x.font=F(600,30);
+  let sy=y+29; for(const ln of sub){ x.fillText(ln, W/2, sy); sy += 40; }
   y += blk[5]+gap[5];
-
-  /* summary */
-  x.fillStyle='rgba(245,200,66,0.80)'; x.font=F(600,28);
-  let sy=y+27; for(const ln of sum){ x.fillText(ln, W/2, sy); sy += 38; }
-  y += blk[6]+gap[6];
 
   /* the five rounds: dish, what you said, what it really was, right or wrong */
   const cx=W-P-56;
@@ -1789,24 +1781,24 @@ async function buildShareImage(){
     x.textAlign='center';
     ry += rowH + gapY;
   }
-  const rowsEnd = y + blk[7];
-  y += blk[7]+gap[7];
+  const rowsEnd = y + blk[6];
+  y += blk[6]+gap[6];
 
   /* footer, all of it above the Instagram reply bar */
   x.strokeStyle='rgba(255,248,241,0.10)'; x.lineWidth=2;
-  const dy=Math.round(rowsEnd+gap[7]/2);
+  const dy=Math.round(rowsEnd+gap[6]/2);
   x.beginPath(); x.moveTo(P+40,dy); x.lineTo(W-P-40,dy); x.stroke();
 
   x.fillStyle=CREAM; x.font=F(800,40);
   x.letterSpacing='2px';
   let hf=40; while(x.measureText('THINK YOU KNOW MALAYSIAN PRICES?').width > W-P*2 && hf > 26){ hf -= 2; x.font=F(800,hf); }
   x.fillText('THINK YOU KNOW MALAYSIAN PRICES?', W/2, y+33); x.letterSpacing='0px';
-  y += blk[8]+gap[8];
+  y += blk[7]+gap[7];
   x.fillStyle=GOLD; x.font=F(800,48);
   x.shadowColor='rgba(0,0,0,0.55)'; x.shadowBlur=24; x.shadowOffsetY=5;
   x.fillText('shareeat.io/harga', W/2, y+40);
   x.shadowColor='transparent'; x.shadowBlur=0; x.shadowOffsetY=0;
-  y += blk[9]+gap[9];
+  y += blk[8]+gap[8];
   x.fillStyle='rgba(255,248,241,0.40)'; x.font=F(600,25);
   let ty=y+24; for(const ln of tag){ x.fillText(ln, W/2, ty); ty += 32; }
 
@@ -1832,7 +1824,7 @@ async function prepareShareImage(){
     img.src = await blobToDataURL(blob);
     img.classList.add('on');
     k.textContent = 'Your shareable card';
-    note.innerHTML = '<span class="fn-i" aria-hidden="true">\uD83D\uDC46</span><span>Long-press the image, <b>Save to Photos</b> to share</span>';
+    note.innerHTML = '<span class="fn-i" aria-hidden="true">\uD83D\uDC46</span><span>Long-press the image<br>to <b>Save or Share</b></span>';
     document.getElementById('fShareAside').textContent = 'Just in case you want to flex your food knowledge on IG Story.';
   }catch(e){
     k.textContent = 'Your result';
