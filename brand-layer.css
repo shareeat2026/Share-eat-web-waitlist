@@ -101,7 +101,8 @@ nav{
   align-items:center;
   justify-content:space-between;
   gap:14px;
-  padding:8px max(18px,calc(50vw - 620px));
+  padding-block:8px;
+  padding-inline:max(18px,calc(50vw - 620px));
   line-height:1.25;
   background:rgba(255,248,241,.90);
   -webkit-backdrop-filter:saturate(180%) blur(10px);
@@ -109,8 +110,8 @@ nav{
   border-bottom:1px solid var(--line);
 }
 nav .logo img{height:21px;width:auto;display:block}
-nav .logo{display:flex;align-items:center}
-.nav-right{display:flex;align-items:center;gap:8px}
+nav .logo{display:flex;align-items:center;min-height:0;padding:0}
+.nav-right{display:flex;align-items:center;gap:8px;min-height:0}
 .nav-index{
   display:inline-flex;
   align-items:center;
@@ -146,7 +147,7 @@ nav .logo{display:flex;align-items:center}
 .harga-strip{display:none !important}
 
 @media(max-width:720px){
-  nav{padding:7px 16px}
+  nav{padding-block:7px;padding-inline:16px}
   nav .logo img{height:19px}
   .nav-right{gap:8px}
   .nav-index,.nav-badge{display:none}
