@@ -252,6 +252,13 @@ body.nv-open{overflow:hidden}
    Doubles as the Harga Index entry point on phones.
    ============================================================ */
 .se-band{
+  /* The hero is pulled up underneath this band so its glow can reach
+     the pill (see HERO GLOW below). The hero comes later in the
+     document, so without a stacking order of its own the band would
+     sit under the hero's container and the pill would stop taking
+     clicks. */
+  position:relative;
+  z-index:1;
   width:auto;
   max-width:none;
   margin-left:calc(50% - 50vw);
