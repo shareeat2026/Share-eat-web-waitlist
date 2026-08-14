@@ -231,8 +231,13 @@ body.nv-open{overflow:hidden}
 @media(max-width:720px){
   nav{padding-block:7px;padding-inline:16px}
   nav .logo img{height:19px}
-  .nav-right{display:none}
-  .nv-burger{display:flex}
+  /* only swap to the drawer once the script has actually built it, so a
+     failed script leaves working links rather than an empty bar */
+  .nv-ready .nav-right{display:none}
+  .nv-ready .nv-burger{display:flex}
+  .nav-right{gap:10px 14px;flex-wrap:wrap;justify-content:flex-end}
+  .nav-right .nv-link{font-size:.78rem}
+  .nav-right .nv-btn{padding:8px 13px;font-size:.78rem}
 }
 
 /* ============================================================

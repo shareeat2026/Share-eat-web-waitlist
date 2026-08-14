@@ -40,6 +40,7 @@
 
     drawer.innerHTML = '<div class="nv-scrim"></div><div class="nv-panel">' + head + links + tail + '</div>';
     document.body.appendChild(drawer);
+    document.documentElement.classList.add('nv-ready');
 
     function open(){
       drawer.classList.add('on');
