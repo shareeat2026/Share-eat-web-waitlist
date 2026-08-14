@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How we counted | The Harga Index</title>
+<meta name="description" content="Methodology and full dataset for The Harga Index: 619 hand-collected Malaysian food prices, where each came from, and what the numbers cannot tell you.">
+<link rel="canonical" href="https://shareeat.io/harga/method/">
+<meta property="og:title" content="How we counted | The Harga Index">
+<meta property="og:description" content="Methodology and full dataset for The Harga Index: 619 hand-collected Malaysian food prices, where each came from, and what the numbers cannot tell you.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shareeat.io/harga/method/">
+<meta property="og:image" content="https://shareeat.io/harga/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script defer src="/analytics.js"></script>
+<style>
+:root{
+  --cream:#FFF8F1; --ink:#1F1B12; --ink-soft:#4E4634; --ink-mute:#6E6753;
+  --gold:#F5C842; --gold-deep:#E0A90A; --gold-ink:#8A6500; --gold-soft:#FDF3C8;
+  --chili:#E8543B; --leaf:#3E7C4F;
+  --card:#FFFFFF; --line:rgba(31,27,18,0.08);
+  --sh-sm:0 4px 14px rgba(31,27,18,.05); --sh-md:0 10px 30px rgba(31,27,18,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+.pill{display:inline-block;padding:7px 16px;border-radius:999px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.pill.dark{background:var(--ink);color:#fff}
+.pill.gold{background:var(--gold);color:var(--ink)}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,248,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .navbar{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+nav .brand{font-weight:800;font-size:.95rem;letter-spacing:.04em}
+nav .brand em{font-style:normal;color:var(--gold-deep)}
+nav .links{display:flex;gap:16px;font-size:.85rem;font-weight:700}
+nav .links a{text-decoration:none;opacity:.8}
+nav .links a:hover{opacity:1;color:var(--gold-ink)}
+nav .links a.nav-home{opacity:1;font-weight:800;color:var(--gold-ink);border:1.5px solid rgba(224,169,10,.35);border-radius:999px;padding:5px 12px}
+header{padding:64px 0 44px;text-align:center;position:relative;overflow:hidden}
+header::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(42% 60% at 88% 0%, rgba(245,200,66,.35), transparent 65%),
+  radial-gradient(38% 52% at 4% 62%, rgba(245,200,66,.16), transparent 62%);
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 62%,rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 62%,rgba(0,0,0,0) 100%)}
+h1{font-weight:800;font-size:clamp(2.2rem,6.5vw,3.8rem);letter-spacing:-.03em;line-height:1.05;margin:16px 0 12px}
+h1 em{font-style:normal;color:var(--gold-deep)}
+.herosub{color:var(--ink-soft);font-size:1.05rem;max-width:560px;margin:0 auto}
+section{padding:34px 0 6px}
+h2{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:12px}
+h2 .emo{margin-right:6px}
+p{color:var(--ink-soft);margin-bottom:14px;font-size:1rem}
+p b{color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 32px;box-shadow:var(--sh-sm);margin-bottom:20px}
+.cost{background:var(--ink);color:#FFF8F1;border-radius:22px;padding:28px 32px;box-shadow:var(--sh-md);margin:20px 0}
+.cost .sum{font-weight:800;font-size:1.6rem;color:var(--gold)}
+.cost p{color:rgba(255,248,241,.85)}
+.flow{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:18px 0;text-align:center}
+.flow .node{background:var(--gold-soft);border-radius:16px;padding:16px 12px;font-weight:700;font-size:.9rem}
+.flow .arrow{font-size:1.4rem;font-weight:800;color:var(--gold-deep)}
+.manif{background:linear-gradient(135deg,#fff,#FFFBF0);border:1px solid var(--line);border-radius:26px;padding:40px 36px;box-shadow:var(--sh-md);text-align:center;margin:26px 0}
+.manif .pill{margin-bottom:22px}
+.manif h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:18px;margin-top:4px}
+.manif p{max-width:560px;margin:0 auto 14px}
+.manif .own{font-weight:800;font-size:1.3rem;color:var(--ink);margin-top:22px}
+.manif .own em{font-style:normal;color:var(--gold-deep)}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0 30px}
+.door{border-radius:22px;padding:28px 24px;text-align:center;box-shadow:var(--sh-md);transition:transform .25s}
+.door:hover{transform:translateY(-4px)}
+.door.biz{background:var(--ink);color:#fff}
+.door.creator{background:linear-gradient(150deg,#FFE9A8,var(--gold))}
+.door h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
+.door p{font-size:.88rem;opacity:.85;margin-bottom:14px;color:inherit}
+.btn{display:inline-block;padding:12px 24px;border-radius:12px;font-weight:800;font-size:.9rem;text-decoration:none;box-shadow:var(--sh-sm);transition:transform .15s}
+.btn:hover{transform:scale(1.04)}
+.door.biz .btn{background:var(--gold);color:var(--ink)}
+.door.creator .btn{background:var(--ink);color:#fff}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:var(--ink-mute);font-size:.8rem}
+.backlink{text-align:center;margin:10px 0 30px}
+.backlink a{font-weight:800;color:var(--gold-ink);text-decoration:none}
+@media (prefers-reduced-motion: reduce){.door,.btn{transition:none}}
+@media(max-width:680px){
+  nav .navbar{padding:8px 14px}
+  nav .brand{font-size:.74rem;white-space:nowrap}
+  nav .links{font-size:.78rem;white-space:nowrap}
+  .doors{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .flow .arrow{transform:rotate(90deg)}
+  .card{padding:22px 20px}
+  .manif{padding:28px 20px}
+  .cost{padding:20px 22px}
+  .cost .sum{font-size:1.15rem}
+}
+
+/* the two-link nav overflowed at 390px: centre it, let it breathe */
+nav .links{align-items:center;line-height:1}
+@media(max-width:680px){
+  nav .navbar{flex-wrap:wrap;justify-content:center;gap:6px 12px;padding:8px 12px}
+  nav .brand{font-size:.72rem}
+  nav .links{font-size:.72rem;gap:10px}
+  nav .links a.nav-home{padding:4px 10px}
+  }
+
+.wrap{max-width:760px}
+.lede{font-size:1.02rem;line-height:1.7;color:var(--ink-soft);margin:0 0 26px;text-wrap:pretty}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 28px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.fact b{display:block;font-size:1.5rem;font-weight:800;color:var(--num);line-height:1.1}
+.fact span{display:block;font-size:.76rem;color:var(--ink-mute);margin-top:4px;line-height:1.4}
+.card h3{font-weight:800;font-size:1rem;margin:22px 0 6px}
+.card h3:first-child{margin-top:0}
+.card ul{margin:8px 0 0;padding-left:20px}
+.card li{margin-bottom:7px;line-height:1.6}
+table.dt{width:100%;border-collapse:collapse;margin-top:10px;font-size:.86rem}
+table.dt th,table.dt td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.dt th{font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute)}
+table.dt td code{font-size:.82rem}
+code{background:rgba(31,27,18,.06);padding:2px 6px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem}
+.cite{background:var(--ink);color:var(--cream);border-radius:16px;padding:18px 20px;margin-top:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;line-height:1.65;word-break:break-word}
+.dl{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:var(--ink);font-weight:800;font-size:.92rem;padding:14px 22px;border-radius:14px;text-decoration:none;border:1px solid rgba(31,27,18,.1);box-shadow:0 6px 18px rgba(224,169,10,.25)}
+.dl:hover{background:var(--gold-deep)}
+.dl small{display:block;font-weight:600;font-size:.72rem;opacity:.7}
+.limits{background:var(--gold-soft);border:1px solid rgba(224,169,10,.3)}
+.meta-line{font-size:.78rem;color:var(--ink-mute);margin-top:26px;line-height:1.6}
+.numlist{counter-reset:n;list-style:none;padding:0;margin:0}
+.numlist li{counter-increment:n;position:relative;padding-left:36px;margin-bottom:14px;line-height:1.6}
+.numlist li::before{content:counter(n);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--gold-soft);color:var(--gold-ink);font-weight:800;font-size:.76rem;display:flex;align-items:center;justify-content:center}
+.q{font-size:1.06rem;line-height:1.65;font-weight:600;color:var(--ink);border-left:3px solid var(--gold);padding-left:16px;margin:0}
+.q cite{display:block;font-size:.8rem;font-weight:700;font-style:normal;color:var(--ink-mute);margin-top:10px}
+header h1{white-space:nowrap;font-size:clamp(2rem,8.2vw,3.6rem)}
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:14px}
+.logo-c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.logo-c .box{background:var(--ink);border-radius:12px;padding:20px 16px;display:flex;align-items:center;justify-content:center;min-height:104px}
+.logo-c .box img{max-width:100%;max-height:66px;height:auto;display:block}
+.logo-c b{display:block;font-size:.86rem;font-weight:800;margin-top:12px}
+.logo-c span{display:block;font-size:.74rem;color:var(--ink-mute);margin-top:3px}
+.logo-c .gets{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.logo-c .gets a{font-size:.74rem;font-weight:800;text-decoration:none;color:var(--gold-ink);border:1.5px solid rgba(224,169,10,.4);border-radius:999px;padding:5px 12px}
+.logo-c .gets a:hover{background:var(--gold-soft)}
+/* the two-link nav overflowed at 390px: centre it, let it breathe */
+nav .links{align-items:center;line-height:1}
+@media(max-width:680px){
+  nav .navbar{flex-wrap:wrap;justify-content:center;gap:6px 12px;padding:8px 12px}
+  nav .brand{font-size:.72rem}
+  nav .links{font-size:.72rem;gap:10px}
+  nav .links a.nav-home{padding:4px 10px}
+  table.dt{font-size:.8rem}
+  table.dt th,table.dt td{padding:7px 6px}
+  .cite{font-size:.74rem;padding:14px 15px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+<nav><div class="navbar">
+  <span class="brand">THE <em>HARGA</em> INDEX</span>
+  <div class="links"><a href="/harga/">← Back to the Index</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
+</div></nav>
+<header>
+  <div class="wrap">
+    <span class="pill dark">Methodology</span>
+    <h1>How we <em>counted.</em></h1>
+    <p class="herosub">619 prices, 480 restaurants, 15 states. Every source, every limit, and the raw data.</p>
+  </div>
+</header>
+
+<section><div class="wrap">
+
+  <p class="lede">The Harga Index is a hand-collected snapshot of what four everyday Malaysian
+  items cost, listed state by state. This page is the working: where every number came from,
+  how it was chosen, and what it cannot tell you. The full dataset is free to download.</p>
+
+  <div class="facts">
+    <div class="fact"><b>619</b><span>prices recorded</span></div>
+    <div class="fact"><b>480</b><span>restaurants and cafes</span></div>
+    <div class="fact"><b>73</b><span>towns and cities</span></div>
+    <div class="fact"><b>15</b><span>states and federal territories</span></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="emo">📋</span>Where the prices come from</h2>
+    <p>Every price was read off a <b>public delivery-platform listing</b> on foodpanda.my
+    between <b>11 and 13 August 2026</b>. No login, no account, no private data. If you open
+    the source link on any row of the dataset you land on the same public page we read.</p>
+    <p>We record the <b>original listed price</b>, before any promotion or platform discount.
+    That is the only figure that stays comparable across states and across weeks.</p>
+
+    <h3>How each item is defined</h3>
+    <table class="dt">
+      <tr><th>Item</th><th>What counts</th><th>Prices</th></tr>
+      <tr><td><b>Nasi lemak</b></td><td>Nasi lemak served with fried or spiced chicken, the most commonly ordered version</td><td>152</td></tr>
+      <tr><td><b>Ayam gepuk</b></td><td>The basic set: smashed fried chicken with rice</td><td>152</td></tr>
+      <tr><td><b>Iced kopi</b></td><td>The cheapest iced local coffee on that outlet's menu</td><td>150</td></tr>
+      <tr><td><b>Iced matcha</b></td><td>The cheapest iced matcha drink on that outlet's menu</td><td>150</td></tr>
+      <tr><td><b>Priciest nasi lemak</b></td><td>The single most expensive nasi lemak of any kind we could find in that state</td><td>15</td></tr>
+    </table>
+
+    <h3>How many places per state</h3>
+    <p>We aimed for <b>ten listings per item per state</b>, taken from the platform's own
+    results for that item in the state's largest one or two cities. Most states landed on
+    exactly ten; a few reached eleven or twelve.</p>
+    <p>Two came in lower. Nasi lemak in <b>Perlis</b> and <b>Putrajaya</b> stopped at eight,
+    because eight is all the platform had. We searched from several angles and swept the city
+    listings; those two are a complete count of what exists there, not a sample that ran short.</p>
+
+    <h3>The priciest tier</h3>
+    <p>Finding the most expensive nasi lemak in a state needs a different method than sampling.
+    We searched deliberately for premium versions (prawn, squid, lamb, wagyu, rendang and cafe
+    interpretations) and re-read the menus we already had, looking for the highest-priced nasi
+    lemak of any description. One row per state, fifteen in total.</p>
+    <p>These are <b>premium sets, and we say so</b>: the RM40.00 top of the table is a
+    <b>Set 7 Udang</b>, a prawn set. It is not a plain nasi lemak and we have never presented
+    it as one.</p>
+  </div>
+
+  <div class="card limits">
+    <h2><span class="emo">⚖️</span>What this data cannot tell you</h2>
+    <p>Every dataset has edges. Here are ours, stated plainly, so you can judge how far to
+    push the numbers.</p>
+    <ul>
+      <li><b>Delivery prices are not counter prices.</b> Restaurants commonly list higher on
+      delivery platforms than they charge in store. Treat these as delivery-menu prices, which
+      is what they are, and expect the same dish to cost less if you walk in.</li>
+      <li><b>Only restaurants on the platform are visible.</b> A warung with no delivery
+      listing does not appear here, however good or cheap it is. This is a census of a
+      platform, not of Malaysia.</li>
+      <li><b>Ayam gepuk skews toward chains</b>, because chains are what the platform mostly
+      carries for that dish. Where a state ran out of ayam gepuk listings entirely, we counted
+      the closest equivalent smashed-fried-chicken sets to complete the ten. That affects ten
+      rows out of 152.</li>
+      <li><b>Drinks are the cheapest option on each menu</b>, not a like-for-like size or
+      recipe. A kopitiam kopi ais and a cafe iced latte are different products; the comparison
+      is about what the cheapest iced coffee costs you, not about the coffee itself.</li>
+      <li><b>It is a three-day snapshot.</b> Menus change. Every row carries the date it was
+      read so you can see exactly how old a number is.</li>
+      <li><b>Medians, not averages.</b> Every state figure is a median, so one unusual listing
+      cannot drag a state up or down.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="emo">🔍</span>How we kept it honest</h2>
+    <ol class="numlist">
+      <li><b>No row without a source.</b> Every price carries the restaurant page it came from
+      and the date it was read. Nothing was estimated, remembered or filled in.</li>
+      <li><b>No row without a fetch.</b> A price is only recorded after opening that exact
+      restaurant page. During collection one row was added without one; it was caught, re-read
+      and corrected before publication.</li>
+      <li><b>Duplicates checked by source, not by name.</b> The same restaurant can appear
+      under two display names, so matching is done on the source page.</li>
+      <li><b>Pages we could not read were skipped, not guessed.</b> A handful of listings would
+      not render for us. They are absent rather than approximated.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2><span class="emo">📊</span>The data</h2>
+    <p>The complete dataset, one row per price, free to download and free to use.</p>
+    <p><a class="dl" href="/harga/data/harga-index-vol1.csv" download>Download the CSV
+    <small>619 rows · 22 KB</small></a></p>
+
+    <h3>What the columns mean</h3>
+    <table class="dt">
+      <tr><th>Column</th><th>Meaning</th></tr>
+      <tr><td><code>dish</code></td><td><code>nasi_lemak</code>, <code>ayam_gepuk</code>, <code>kopi</code> or <code>matcha</code></td></tr>
+      <tr><td><code>tier</code></td><td>Which version of the dish. <code>ayam</code> is the headline nasi lemak tier, <code>premium</code> the priciest-in-state row, <code>set</code> the basic ayam gepuk, <code>iced</code> the drinks</td></tr>
+      <tr><td><code>restaurant</code></td><td>Outlet name as listed</td></tr>
+      <tr><td><code>city</code>, <code>state</code></td><td>Where the outlet is</td></tr>
+      <tr><td><code>item_name</code></td><td>The menu item, exactly as the restaurant writes it</td></tr>
+      <tr><td><code>price_rm_original</code></td><td>Listed price in ringgit, before any discount</td></tr>
+      <tr><td><code>source</code></td><td>The public page the price was read from</td></tr>
+      <tr><td><code>collected</code></td><td>Date it was read</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2><span class="emo">📎</span>Using and citing this</h2>
+    <p>The dataset and the findings are free to use, including commercially and by news
+    organisations, as long as you credit The Harga Index by Share Eat! and link back. Charts
+    and images from the Index are free to republish on the same terms.</p>
+    <p>If you are writing about it, this is the citation:</p>
+    <div class="cite">The Harga Index, Volume 1 (Share Eat!, August 2026).<br>
+    619 hand-collected food prices across 15 Malaysian states and federal territories.<br>
+    https://shareeat.io/harga/</div>
+    <p class="meta-line"><b>Volume 1</b> · collected 11–13 August 2026 · published August 2026.
+    This page and the CSV link are permanent; if a figure is ever corrected, the correction is
+    noted here rather than quietly changed.<br>
+    Found a price that looks wrong? Tell us and we will check the source page and correct it:
+    <a href="https://wa.me/60147113585?text=Hi%20Share%20Eat!%20I%20think%20a%20price%20in%20The%20Harga%20Index%20needs%20checking%3A">WhatsApp 014-711 3585</a>.</p>
+  </div>
+
+  <div class="backlink"><a href="/harga/">← Back to the Harga Index</a></div>
+</div></section>
+
+<footer><div class="wrap">Share Eat! · Discovery shouldn't be expensive. © 2026 Share Eat!</div></footer>
+</body>
+</html>
