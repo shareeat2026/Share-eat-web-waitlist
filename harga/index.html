@@ -101,7 +101,7 @@ h1 .swing{display:inline-block;animation:swing 5s ease-in-out infinite;transform
 @keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
 .herosub{color:var(--ink-soft);font-size:.95rem;line-height:1.65;max-width:560px;margin:0 auto}
 .herosub b{color:var(--ink)}
-.byline{color:var(--ink-mute);font-size:.74rem;line-height:1.5;margin-top:12px}
+.byline{color:var(--ink-mute);font-size:.64rem;line-height:1.55;margin-top:12px;opacity:.9}
 .floaties{position:absolute;inset:0;pointer-events:none;z-index:-1}
 .floaties span{position:absolute;font-size:26px;opacity:.5;animation:floaty 9s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-22px) rotate(8deg)}}
@@ -286,13 +286,13 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .co-list .ce{font-size:1rem;line-height:1.4;text-align:center}
 
 /* absurdity leaderboard */
-.absurd{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 26px;box-shadow:var(--sh-sm)}
+.absurd{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px 26px 20px;box-shadow:var(--sh-sm)}
 .ab-row{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
 .ab-row:first-child{padding-top:0}
 .ab-row:last-child{border-bottom:none;padding-bottom:0}
 .ab-row .rk{font-weight:800;text-align:center;font-size:1.05rem}
-.ab-row .who .item{font-weight:800;font-size:.95rem}
-.ab-row .who .rest{font-size:.78rem;color:var(--ink-mute)}
+.ab-row .who .item{font-weight:800;font-size:.95rem;line-height:1.3;display:inline-block}
+.ab-row .who .rest{font-size:.78rem;color:var(--ink-mute);line-height:1.35;display:inline-block;margin-top:3px}
 .ab-row .p{font-weight:800;font-size:1.15rem;white-space:nowrap}
 .ab-row.first{background:linear-gradient(135deg,#FFF3EF,#FFE9E3);border-radius:14px;padding:13px 14px;margin:0 -14px 4px;border-bottom:none}
 .ab-row.first .p{color:var(--chili);font-size:1.5rem}
@@ -381,10 +381,11 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .fshare img{display:none;width:100%;max-width:250px;margin:0 auto;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);border:1px solid rgba(255,248,241,.14)}
 .fshare img.on{display:block;animation:pop .35s cubic-bezier(.2,.9,.3,1.3)}
 .fshare-note{display:flex;align-items:center;justify-content:center;gap:9px;max-width:290px;text-wrap:balance;margin:12px auto 0;padding:11px 14px;border-radius:14px;border:1.5px dashed rgba(245,200,66,.45);background:rgba(245,200,66,.09);font-size:.8rem;font-weight:700;color:var(--gold);line-height:1.4}
+.fshare-aside{max-width:300px;margin:9px auto 0;font-size:.72rem;line-height:1.45;color:rgba(255,248,241,.42);text-wrap:balance}
 .fshare-note .fn-i{font-size:1.1rem;line-height:1;animation:press 2.2s ease-in-out infinite}
 @keyframes press{0%,100%{transform:scale(1)}50%{transform:scale(.82)}}
 @media (prefers-reduced-motion: reduce){.fshare-note .fn-i{animation:none}}
-.fcta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,248,241,.13)}
+.fcta{margin-top:40px;padding-top:36px;border-top:1px solid rgba(255,248,241,.13)}
 .fcta-logo{height:24px;display:block;margin:0 auto 10px}
 .fcta-h{font-weight:800;font-size:.95rem;color:var(--gold)}
 .fcta-p{font-size:.8rem;opacity:.6;line-height:1.6;margin-top:6px;max-width:400px;margin-inline:auto;text-wrap:balance}
@@ -406,6 +407,7 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .flog .fr .fm{font-weight:800;white-space:nowrap}
 .flog .fr.hit .fm{color:var(--gold)}
 .flog .fr.miss .fm{color:#FF9E88}
+.fpct{font-size:.78rem;font-weight:800;color:var(--gold);opacity:.9;margin-top:2px}
 .fbest{margin-top:14px;font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);opacity:.75}
 .rwhere{font-size:.78rem;opacity:.65;line-height:1.5;background:rgba(255,248,241,.05);border-radius:12px;padding:10px 14px;max-width:420px;margin:0 auto;text-wrap:balance}
 .ractions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
@@ -540,12 +542,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   header{padding:30px 0 30px}
   h1{font-size:clamp(1.95rem,9.4vw,2.6rem);line-height:1.06;margin:12px 0 12px}
   .herosub{font-size:.88rem;line-height:1.62;padding:0 2px}
-  .byline{font-size:.68rem;line-height:1.5;margin-top:12px}
+  .byline{font-size:.6rem;line-height:1.55;margin-top:12px}
   .tagline{font-size:.8rem;margin-top:12px}
   .hero-cta{padding:14px 20px 16px;width:100%;text-align:center}
   .hero-cta .hc-l2{font-size:1.02rem}
   .hero-cta-wrap{margin:22px 0 2px}
   .nudge{flex-direction:column;align-items:stretch;text-align:center;gap:12px;padding:16px}
+  .nudge-map{display:none}
   .nudge a{text-align:center}
   .se-band{padding:22px 18px;border-radius:20px}
   .se-band .sb-a{flex-direction:column}
@@ -650,7 +653,12 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .pc-out{font-size:1.05rem}
   .pc-out small{font-size:.76rem}
   .pc-med small{font-size:.58rem}
+  .ab-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px;padding:10px 0}
+  .ab-row .rk{font-size:.92rem}
+  .ab-row .who .item{font-size:.86rem}
+  .ab-row .who .rest{font-size:.72rem}
   .ab-row .p{font-size:1rem}
+  .ab-row.first{padding:12px;margin:0 -12px 4px}
   .ab-row.first .p{font-size:1.25rem}
 }
 </style>
@@ -704,7 +712,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <span style="left:46%;top:6%;animation-delay:-7s">🐟</span>
   </div>
   <div class="wrap">
-    <span class="pill chili">We investigated the nasi lemak economy</span>
+    <span class="pill chili">We investigated the Malaysian food economy</span>
     <h1><span class="shock">RM40.00</span> for<br>nasi lemak?!</h1>
     <p class="herosub">Yes, really. We went through delivery menus in <b>every Malaysian state</b> and found plates from <b>RM5.30</b> all the way to <b>RM40.00</b>. Some results were questionable. Some were shocking. All of them are below.</p>
     <p class="byline">The Harga Index Vol. 1, by Share Eat! · 619 hand-collected price points across 4 dishes · updated 13 August 2026</p>
@@ -778,6 +786,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
         <div class="final" id="finalZone">
           <div class="fbrand"><b>THE HARGA CHALLENGE</b><span>by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></div>
           <div class="fscore" id="fScore">0<small>/5</small></div>
+          <div class="fpct" id="fPct"></div>
           <div class="frank" id="fRank"></div>
           <div class="fsub" id="fSub"></div>
           <div class="flog" id="fLog"></div>
@@ -787,9 +796,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
             <div class="fshare-k" id="fShareK">Drawing your card…</div>
             <img id="fShareImg" alt="Your Harga Challenge result card">
             <div class="fshare-note" id="fShareNote"></div>
+            <div class="fshare-aside" id="fShareAside"></div>
           </div>
           <div class="ractions">
-            <button class="playbtn sm" onclick="shareResult()" id="shareBtn">Share my result</button>
+            <button class="playbtn sm" onclick="shareResult()" id="shareBtn">Share to friends on WhatsApp</button>
             <button class="sharebtn" onclick="startChallenge()">Play again →</button>
           </div>
           <div class="fcta">
@@ -873,7 +883,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
       <div class="map-legend"><span>murah</span><span class="grad"></span><span>mahal</span><span style="margin-left:8px">🟩 best value in class</span><span style="margin-left:8px;opacity:.6">map: simplemaps.com</span></div>
     </div>
     <div class="spot" id="spot"></div>
-    <div class="nudge reveal-sec">
+    <div class="nudge nudge-map reveal-sec">
       <div class="n-t">Think you know Malaysian Food Prices?<small>Most people only get 2 right</small></div>
       <a href="#challenge" onclick="return goSection(event,'challenge')">Play The Harga Challenge →</a>
     </div>
@@ -1561,13 +1571,37 @@ function revealGuess(){
   document.getElementById('quipP').textContent = quipFor(hit, diff, tol, guess > round.val);
   closest = closest===null ? diff : Math.min(closest, diff);
   if(hit) chg.hits++;
-  chg.log.push({e:round.dish.e, st:round.st, name:round.dish.name, guess, val:round.val, diff, hit});
+  chg.log.push({e:round.dish.e, k:round.dish.k, st:round.st, name:round.dish.name, guess, val:round.val, diff, hit});
   paintRounds();
   if(chg.n >= ROUNDS){ finishChallenge(); return; }   /* no extra tap between the last guess and the share card */
   document.getElementById('nextBtn').textContent = 'Next round →';
   document.getElementById('nextBtn').setAttribute('onclick', 'nextRound()');
   document.getElementById('guessZone').classList.add('locked');
   document.getElementById('revealZone').classList.add('show');
+}
+/* How hard were these five rounds? For each one, take every price we hold for
+   that dish nationally and ask what share of them fall inside the margin. That
+   is the chance a person who knows Malaysian prices in general, but not this
+   state, lands the round. Combine the five (Poisson binomial) into the full
+   score distribution, then read the score's percentile off it. */
+function pctBetter(log, score){
+  const rows = DATA.rows||[];
+  if(!rows.length || !log.length) return null;
+  const ps = log.map(r=>{
+    const pool = rows.filter(x=>x.d===r.k);
+    if(pool.length < 8) return 0.3;
+    const tol = toleranceFor(r.val);
+    return pool.filter(x=>Math.abs(x.p-r.val) <= tol).length / pool.length;
+  });
+  let dist=[1];
+  for(const p of ps){
+    const nx=new Array(dist.length+1).fill(0);
+    for(let i=0;i<dist.length;i++){ nx[i]+=dist[i]*(1-p); nx[i+1]+=dist[i]*p; }
+    dist=nx;
+  }
+  let below=0; for(let i=0;i<score;i++) below+=dist[i];
+  const pct = (below + (dist[score]||0)/2) * 100;
+  return Math.max(1, Math.min(99, Math.round(pct)));
 }
 function finishChallenge(){
   if(!chg) return;
@@ -1581,16 +1615,18 @@ function finishChallenge(){
   ).join('');
   const summary = summaryFor(score, chg.log);
   document.getElementById('fSummary').textContent = summary;
+  const pct = pctBetter(chg.log, score);
+  document.getElementById('fPct').textContent = pct===null ? '' : `Better than ${pct}% of guesses`;
   document.getElementById('fBest').textContent = beatBest && bestScore!==null
     ? `New best this session, up from ${bestScore}/${ROUNDS}`
     : (bestScore!==null ? `Your best this session: ${bestScore}/${ROUNDS}` : '');
   if(beatBest) bestScore = score;
-  lastResult = {score, rank:rank.t, closest, summary, log:chg.log.slice()};
+  lastResult = {score, rank:rank.t, sub:rank.s, pct, closest, summary, log:chg.log.slice()};
   chg = null; round = null;
   document.getElementById('guessZone').classList.remove('show');
   document.getElementById('revealZone').classList.remove('show');
   document.getElementById('rounds').classList.remove('on');
-  document.getElementById('shareBtn').textContent = 'Share my result';
+  document.getElementById('shareBtn').textContent = SHARE_LABEL;
   document.getElementById('finalZone').classList.add('show');
   updateScoreLine();
   prepareShareImage();
@@ -1628,7 +1664,10 @@ function wrapBalanced(x, text, maxW){
   return best;
 }
 async function buildShareImage(){
-  const W=1080, H=1920, P=84;
+  /* 1080x1920 for Stories. Instagram covers the top ~250px and the bottom
+     ~310px, so the whole stack is measured first and then centred inside
+     SAFE_TOP..SAFE_BOT. That keeps the spacing even instead of top heavy. */
+  const W=1080, H=1920, P=84, SAFE_TOP=270, SAFE_BOT=1610;
   const c=document.createElement('canvas'); c.width=W; c.height=H;
   const x=c.getContext('2d');
   try{ await document.fonts.ready; }catch(e){}
@@ -1636,91 +1675,145 @@ async function buildShareImage(){
   const INK='#1F1B12', CREAM='#FFF8F1', GOLD='#F5C842', CHILI='#FF9E88';
 
   x.fillStyle=INK; x.fillRect(0,0,W,H);
-  let g=x.createRadialGradient(W*0.86,0,0,W*0.86,0,W*0.9);
-  g.addColorStop(0,'rgba(245,200,66,0.15)'); g.addColorStop(1,'rgba(245,200,66,0)');
+  let g=x.createRadialGradient(W*0.84,SAFE_TOP+80,0,W*0.84,SAFE_TOP+80,W*0.95);
+  g.addColorStop(0,'rgba(245,200,66,0.14)'); g.addColorStop(1,'rgba(245,200,66,0)');
   x.fillStyle=g; x.fillRect(0,0,W,H);
-  g=x.createRadialGradient(W*0.1,H,0,W*0.1,H,W*0.8);
-  g.addColorStop(0,'rgba(245,200,66,0.09)'); g.addColorStop(1,'rgba(245,200,66,0)');
+  g=x.createRadialGradient(W*0.12,SAFE_BOT-90,0,W*0.12,SAFE_BOT-90,W*0.85);
+  g.addColorStop(0,'rgba(245,200,66,0.08)'); g.addColorStop(1,'rgba(245,200,66,0)');
   x.fillStyle=g; x.fillRect(0,0,W,H);
 
   x.textAlign='center'; x.textBaseline='alphabetic';
+  const R = lastResult;
 
-  /* the challenge is the headline; the brand signs it underneath */
-  x.fillStyle=GOLD; let ch=62;
-  x.font=F(800,ch);
-  while(x.measureText('THE HARGA CHALLENGE').width > W-P*2 && ch > 34){ ch -= 2; x.font=F(800,ch); }
-  x.fillText('THE HARGA CHALLENGE', W/2, 150);
-  x.fillStyle='rgba(255,248,241,0.40)'; x.font=F(700,25);
-  x.letterSpacing='5px'; x.fillText('THE HARGA INDEX', W/2, 202); x.letterSpacing='0px';
-  x.fillStyle='rgba(255,248,241,0.34)'; x.font=F(700,24);
-  const byW = x.measureText('by').width, lw = 150, lh = lw*130/792, gapx = 12;
-  const startX = (W - (byW + gapx + lw)) / 2;
-  x.textAlign='left'; x.fillText('by', startX, 268); x.textAlign='center';
-  try{ const lg=await loadImg(SE_WORD_URI); x.drawImage(lg, startX+byW+gapx, 268-lh+4, lw, lh); }catch(e){}
+  /* measure pass */
+  let tf=52; x.font=F(800,tf);
+  while(x.measureText('THE HARGA CHALLENGE').width > W-P*2 && tf > 30){ tf -= 2; x.font=F(800,tf); }
+  let rf=46; x.font=F(800,rf);
+  while(x.measureText(R.rank).width > W-P*2 && rf > 28){ rf -= 2; x.font=F(800,rf); }
+  x.font=F(600,28); const sum = wrapBalanced(x, R.summary, W-P*2-60);
+  x.font=F(600,25); const tag = wrapBalanced(x,'Guess Malaysian food prices across different states', W-P*2-40);
+  const pctLine = R.pct===null||R.pct===undefined ? '' : `Better than ${R.pct}% of guesses`;
+  const subLine = R.sub||'';
+
+  const n=R.log.length, rowH=90, gapY=12, rowsH=n*rowH+(n-1)*gapY;
+  /* the three footer lines share one baseline pitch, so the gaps read as equal */
+  const blk=[tf*1.15, 30, 126, pctLine?34:0, rf*1.15, subLine?32:0, sum.length*38, rowsH, 46, 54, tag.length*32];
+  let gap=[20, 46, pctLine?16:0, pctLine?20:24, 8, subLine?14:6, 44, 50, 23, 28];
+  const add=a=>a.reduce((p,q)=>p+q,0);
+  const band=SAFE_BOT-SAFE_TOP, bs=add(blk);
+  let gs=add(gap);
+  if(bs+gs>band){ const k=Math.max(0.5,(band-bs)/gs); gap=gap.map(v=>v*k); gs=add(gap); }
+  let y = SAFE_TOP + Math.max(0,(band-bs-gs)/2);
+
+  /* title */
+  x.fillStyle=GOLD; x.font=F(800,tf); x.letterSpacing='1px';
+  x.shadowColor='rgba(0,0,0,0.55)'; x.shadowBlur=26; x.shadowOffsetY=6;
+  x.fillText('THE HARGA CHALLENGE', W/2, y+tf*0.82);
+  x.shadowColor='transparent'; x.shadowBlur=0; x.shadowOffsetY=0;
+  x.letterSpacing='0px';
+  y += blk[0]+gap[0];
+
+  /* by Share Eat! */
+  x.fillStyle='rgba(255,248,241,0.36)'; x.font=F(700,23);
+  const byW=x.measureText('by').width, lw=126, lh=lw*130/792, gapx=11;
+  const sx=(W-(byW+gapx+lw))/2, byB=y+21;
+  x.textAlign='left'; x.fillText('by', sx, byB); x.textAlign='center';
+  try{ const lg=await loadImg(SE_WORD_URI); x.drawImage(lg, sx+byW+gapx, byB-lh+3, lw, lh); }catch(e){}
+  y += blk[1]+gap[1];
 
   /* score */
-  const R = lastResult;
-  x.fillStyle=GOLD; x.font=F(800,230);
-  const st=`${R.score}`, sub=`/${ROUNDS}`;
-  x.font=F(800,230); const wS=x.measureText(st).width;
-  x.font=F(800,84);  const wU=x.measureText(sub).width;
-  const x0=(W-(wS+wU))/2;
-  x.textAlign='left'; x.font=F(800,230); x.fillText(st,x0,558);
-  x.fillStyle='rgba(245,200,66,0.45)'; x.font=F(800,84); x.fillText(sub,x0+wS,558);
+  const sN=`${R.score}`, sD=`/${ROUNDS}`;
+  x.font=F(800,150); const wS=x.measureText(sN).width;
+  x.font=F(800,58);  const wU=x.measureText(sD).width;
+  const x0=(W-(wS+wU))/2, sB=y+110;
+  x.textAlign='left';
+  x.fillStyle=GOLD; x.font=F(800,150); x.fillText(sN,x0,sB);
+  x.fillStyle='rgba(245,200,66,0.42)'; x.font=F(800,58); x.fillText(sD,x0+wS,sB);
   x.textAlign='center';
+  y += blk[2]+gap[2];
 
-  x.fillStyle=CREAM; let rf=62; x.font=F(800,rf);
-  while(x.measureText(R.rank).width > W-P*2 && rf > 34){ rf -= 2; x.font=F(800,rf); }
-  x.fillText(R.rank, W/2, 646);
-
-  /* summary, wrapped */
-  x.fillStyle='rgba(245,200,66,0.82)'; x.font=F(600,32);
-  let y=708;
-  for(const ln of wrapBalanced(x, R.summary, W-P*2-40)){ x.fillText(ln, W/2, y); y+=44; }
-
-  /* the five rounds */
-  y = Math.max(y+34, 800);
-  const rowH=142, gapY=16;
-  for(const r of R.log){
-    x.fillStyle = r.hit ? 'rgba(245,200,66,0.10)' : 'rgba(255,255,255,0.05)';
-    rrect(x,P,y,W-P*2,rowH,26); x.fill();
-    if(r.hit){ x.strokeStyle='rgba(245,200,66,0.35)'; x.lineWidth=2; rrect(x,P,y,W-P*2,rowH,26); x.stroke(); }
-    let fx = P+34;
-    try{ const fl=await loadImg(DATA.flags[r.st]); x.drawImage(fl,fx,y+34,54,27); }catch(e){}
-    const priceTxt = `RM${r.diff.toFixed(2)} off`;
-    const cx = W-P-56;
-    x.font=F(800,30); const priceW = x.measureText(priceTxt).width;
-    const labelMax = (cx-52-priceW) - (fx+70) - 30;   /* never reach the price column */
-    x.textAlign='left'; x.fillStyle=CREAM; x.font=F(700,34);
-    x.fillText(clampText(x, `${r.st} · ${r.name}`, labelMax), fx+70, y+58);
-    x.fillStyle='rgba(255,248,241,0.45)'; x.font=F(600,28);
-    x.fillText(clampText(x, `you RM${r.guess.toFixed(2)} → real RM${r.val.toFixed(2)}`, labelMax), fx+70, y+102);
-    /* tick or cross, drawn */
-    const cy=y+rowH/2;
-    x.strokeStyle = r.hit ? GOLD : CHILI; x.lineWidth=7; x.lineCap='round';
-    x.beginPath();
-    if(r.hit){ x.moveTo(cx-18,cy+2); x.lineTo(cx-5,cy+16); x.lineTo(cx+19,cy-15); }
-    else { x.moveTo(cx-15,cy-15); x.lineTo(cx+15,cy+15); x.moveTo(cx+15,cy-15); x.lineTo(cx-15,cy+15); }
-    x.stroke();
-    x.textAlign='right'; x.fillStyle = r.hit ? GOLD : CHILI; x.font=F(800,30);
-    x.fillText(`RM${r.diff.toFixed(2)} off`, cx-52, y+rowH/2+11);
-    x.textAlign='center';
-    y += rowH + gapY;
+  /* how you did against the odds */
+  if(pctLine){
+    x.fillStyle='rgba(245,200,66,0.72)'; x.font=F(800,26);
+    x.letterSpacing='1px'; x.fillText(pctLine, W/2, y+25); x.letterSpacing='0px';
   }
+  y += blk[3]+gap[3];
 
-  /* footer */
-  x.strokeStyle='rgba(255,248,241,0.12)'; x.lineWidth=2;
-  x.beginPath(); x.moveTo(P,H-268); x.lineTo(W-P,H-268); x.stroke();
-  x.fillStyle='rgba(255,248,241,0.5)'; x.font=F(600,34);
-  x.fillText('Five real prices from Malaysian menus.', W/2, H-198);
-  x.fillStyle=GOLD; x.font=F(800,46);
-  x.fillText('shareeat.io/harga', W/2, H-134);
-  x.fillStyle='rgba(255,248,241,0.32)'; x.font=F(700,26);
-  x.letterSpacing='3px'; x.fillText('THINK YOU CAN BEAT IT?', W/2, H-76); x.letterSpacing='0px';
+  /* rank */
+  x.fillStyle=CREAM; x.font=F(800,rf); x.fillText(R.rank, W/2, y+rf*0.82);
+  y += blk[4]+gap[4];
 
-  return new Promise(res=>c.toBlob(res,'image/jpeg',0.92));
+  /* the rank's own line */
+  if(subLine){
+    x.fillStyle='rgba(255,248,241,0.46)'; x.font=F(600,26);
+    x.fillText(clampText(x, subLine, W-P*2-40), W/2, y+25);
+  }
+  y += blk[5]+gap[5];
+
+  /* summary */
+  x.fillStyle='rgba(245,200,66,0.80)'; x.font=F(600,28);
+  let sy=y+27; for(const ln of sum){ x.fillText(ln, W/2, sy); sy += 38; }
+  y += blk[6]+gap[6];
+
+  /* the five rounds: dish, what you said, what it really was, right or wrong */
+  const cx=W-P-56;
+  let ry=y;
+  for(const r of R.log){
+    x.fillStyle = r.hit ? 'rgba(245,200,66,0.09)' : 'rgba(255,255,255,0.045)';
+    rrect(x,P,ry,W-P*2,rowH,22); x.fill();
+    if(r.hit){ x.strokeStyle='rgba(245,200,66,0.30)'; x.lineWidth=2; rrect(x,P,ry,W-P*2,rowH,22); x.stroke(); }
+    const fx = P+30;
+    try{ const fl=await loadImg(DATA.flags[r.st]); x.drawImage(fl,fx,ry+32,50,25); }catch(e){}
+    const labelMax = (cx-42) - (fx+64) - 22;
+    x.textAlign='left'; x.fillStyle=CREAM; x.font=F(700,27);
+    x.fillText(clampText(x, `${r.st} · ${r.name}`, labelMax), fx+64, ry+39);
+    x.font=F(600,23);
+    const said = `You said RM${r.guess.toFixed(2)}`, real = `Real RM${r.val.toFixed(2)}`;
+    const off = `RM${Math.abs(r.val-r.guess).toFixed(2)} off`;
+    let lx = fx+64;
+    x.fillStyle='rgba(255,248,241,0.38)'; x.fillText(said, lx, ry+70);
+    lx += x.measureText(said + '  ').width;
+    x.fillStyle = r.hit ? 'rgba(245,200,66,0.85)' : CHILI;
+    x.fillText(real, lx, ry+70);
+    lx += x.measureText(real + '  ').width;
+    x.fillStyle='rgba(255,248,241,0.30)';
+    if(lx + x.measureText(off).width <= fx+64+labelMax) x.fillText(off, lx, ry+70);
+    /* one verdict mark, no second number to decode */
+    const cy=ry+rowH/2;
+    x.strokeStyle = r.hit ? GOLD : CHILI; x.lineWidth=4;
+    x.beginPath(); x.arc(cx,cy,23,0,Math.PI*2); x.stroke();
+    x.lineWidth=5; x.lineCap='round'; x.beginPath();
+    if(r.hit){ x.moveTo(cx-11,cy+1); x.lineTo(cx-3,cy+10); x.lineTo(cx+12,cy-9); }
+    else { x.moveTo(cx-9,cy-9); x.lineTo(cx+9,cy+9); x.moveTo(cx+9,cy-9); x.lineTo(cx-9,cy+9); }
+    x.stroke();
+    x.textAlign='center';
+    ry += rowH + gapY;
+  }
+  const rowsEnd = y + blk[7];
+  y += blk[7]+gap[7];
+
+  /* footer, all of it above the Instagram reply bar */
+  x.strokeStyle='rgba(255,248,241,0.10)'; x.lineWidth=2;
+  const dy=Math.round(rowsEnd+gap[7]/2);
+  x.beginPath(); x.moveTo(P+40,dy); x.lineTo(W-P-40,dy); x.stroke();
+
+  x.fillStyle=CREAM; x.font=F(800,40);
+  x.letterSpacing='2px';
+  let hf=40; while(x.measureText('THINK YOU KNOW MALAYSIAN PRICES?').width > W-P*2 && hf > 26){ hf -= 2; x.font=F(800,hf); }
+  x.fillText('THINK YOU KNOW MALAYSIAN PRICES?', W/2, y+33); x.letterSpacing='0px';
+  y += blk[8]+gap[8];
+  x.fillStyle=GOLD; x.font=F(800,48);
+  x.shadowColor='rgba(0,0,0,0.55)'; x.shadowBlur=24; x.shadowOffsetY=5;
+  x.fillText('shareeat.io/harga', W/2, y+40);
+  x.shadowColor='transparent'; x.shadowBlur=0; x.shadowOffsetY=0;
+  y += blk[9]+gap[9];
+  x.fillStyle='rgba(255,248,241,0.40)'; x.font=F(600,25);
+  let ty=y+24; for(const ln of tag){ x.fillText(ln, W/2, ty); ty += 32; }
+
+  return new Promise(res=>c.toBlob(res,'image/jpeg',0.95));
 }
 
+const SHARE_LABEL = 'Share to friends on WhatsApp';
 let shareBlob = null;
 function blobToDataURL(blob){
   return new Promise((ok,no)=>{ const r=new FileReader(); r.onload=()=>ok(r.result); r.onerror=no; r.readAsDataURL(blob); });
@@ -1730,6 +1823,7 @@ async function prepareShareImage(){
   const k = document.getElementById('fShareK'), note = document.getElementById('fShareNote');
   shareBlob = null; img.classList.remove('on'); img.removeAttribute('src');
   k.textContent = 'Drawing your card…'; note.textContent = '';
+  document.getElementById('fShareAside').textContent = '';
   try{
     const blob = await buildShareImage();
     if(!blob) throw new Error('no blob');
@@ -1738,7 +1832,8 @@ async function prepareShareImage(){
     img.src = await blobToDataURL(blob);
     img.classList.add('on');
     k.textContent = 'Your shareable card';
-    note.innerHTML = '<span class="fn-i" aria-hidden="true">\uD83D\uDC46</span><span>Long-press the image, then <b>Save to Photos</b></span>';
+    note.innerHTML = '<span class="fn-i" aria-hidden="true">\uD83D\uDC46</span><span>Long-press the image, <b>Save to Photos</b> to share</span>';
+    document.getElementById('fShareAside').textContent = 'Just in case you want to flex your food knowledge on IG Story.';
   }catch(e){
     k.textContent = 'Your result';
     note.textContent = 'Could not draw the image on this browser, so sharing will send text instead.';
@@ -1747,9 +1842,24 @@ async function prepareShareImage(){
 async function shareResult(){
   if(!lastResult) return;
   const lines = lastResult.log.map(r=>`${r.e} ${r.st} ${r.name}: guessed RM${r.guess.toFixed(2)}, real RM${r.val.toFixed(2)} ${r.hit?'✓':'✗'}`);
-  const t = `🍽️ The Harga Challenge · The Harga Index\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you can beat that? shareeat.io/harga`;
+  const t = `🍽️ The Harga Challenge · The Harga Index\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you know Malaysian food prices? shareeat.io/harga`;
   const btn = document.getElementById('shareBtn');
-  const done = (msg)=>{ btn.textContent = msg; setTimeout(()=>btn.textContent='Share my result', 2600); };
+  const done = (msg)=>{ btn.textContent = msg; setTimeout(()=>btn.textContent=SHARE_LABEL, 2600); };
+  let blob = shareBlob;
+  if(!blob){ try{ blob = await buildShareImage(); shareBlob = blob; }catch(e){} }
+  /* files only: several targets drop the image when text rides along */
+  if(blob && navigator.canShare){
+    const file = new File([blob], 'harga-challenge.jpg', {type:'image/jpeg'});
+    if(navigator.canShare({files:[file]})){
+      try{ await navigator.share({files:[file]}); done('Shared'); }catch(e){}
+      return;
+    }
+  }
+  if(blob && !navigator.share){
+    const u = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = u; a.download = 'harga-challenge.jpg'; a.click();
+    setTimeout(()=>URL.revokeObjectURL(u), 4000); done('Image saved'); return;
+  }
   if(navigator.share){ navigator.share({text:t}).then(()=>done('Shared')).catch(()=>{}); return; }
   navigator.clipboard.writeText(t).then(()=>done('Copied, paste it anywhere'))
     .catch(()=>done('Could not copy, sorry'));
