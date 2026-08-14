@@ -395,22 +395,51 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .fcta-a a{font-weight:800;font-size:.82rem;padding:11px 17px;border-radius:12px;text-decoration:none}
 .fcta-a .biz{background:var(--gold);color:var(--ink)}
 .fcta-a .cre{background:transparent;color:var(--gold);border:2px solid var(--gold)}
-.fscore{font-weight:800;font-size:3.4rem;color:var(--gold);line-height:1;letter-spacing:-.03em}
+/* The result lives inside one frame; everything else sits outside it. Gold now
+   means exactly two things: your score, and a round you won. */
+.fverdict{
+  position:relative;
+  max-width:400px;
+  margin:22px auto 0;
+  padding:30px 22px 24px;
+  border-radius:26px;
+  border:1px solid rgba(245,200,66,.30);
+  background:
+    radial-gradient(130% 110% at 50% 0%, rgba(245,200,66,.16), rgba(245,200,66,.04) 55%, rgba(245,200,66,0) 100%),
+    rgba(255,248,241,.03);
+  box-shadow:0 18px 46px rgba(0,0,0,.34), 0 0 70px rgba(245,200,66,.07);
+}
+.fverdict::after{
+  content:"";position:absolute;left:22px;right:22px;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(245,200,66,.45),transparent);
+}
+.fscore{font-weight:800;font-size:3.9rem;color:var(--gold);line-height:1;letter-spacing:-.03em;text-shadow:0 6px 26px rgba(245,200,66,.30)}
 .fscore small{font-size:1.15rem;opacity:.5;letter-spacing:0}
-.frank{font-weight:800;font-size:1.2rem;margin-top:6px}
-.fsub{font-size:.82rem;opacity:.6;margin-top:6px;line-height:1.55;max-width:340px;margin-inline:auto;text-wrap:balance}
-.flog{display:flex;flex-direction:column;gap:6px;margin:18px auto 0;max-width:400px;text-align:left}
-.flog .fr{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:9px;align-items:center;padding:8px 12px;border-radius:11px;background:rgba(255,248,241,.055);font-size:.77rem}
+.frank{font-weight:800;font-size:1.45rem;letter-spacing:-.02em;margin-top:12px}
+.fsub{font-size:.84rem;opacity:.62;margin-top:8px;line-height:1.55;max-width:320px;margin-inline:auto;text-wrap:balance}
+.flog-h{margin:26px auto 10px;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,248,241,.34)}
+.flog{display:flex;flex-direction:column;gap:6px;margin:0 auto;max-width:400px;text-align:left}
+.flog .fr{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:9px;align-items:center;padding:8px 12px;border-radius:11px;background:rgba(255,248,241,.045);font-size:.72rem}
 .flog .fr .fe{text-align:center;line-height:1}
 .flog .fr .fw{min-width:0}
-.flog .fr .fw b{display:block;font-weight:600;opacity:.85;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.flog .fr .fw small{display:block;font-size:.68rem;opacity:.5;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fsummary{margin:16px auto 0;max-width:400px;font-size:.88rem;font-weight:600;color:var(--gold);opacity:.85;line-height:1.55;text-wrap:balance}
+.flog .fr .fw b{display:block;font-weight:600;opacity:.78;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.flog .fr .fw small{display:block;font-size:.66rem;opacity:.42;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ffoot{margin:22px auto 0;max-width:400px}
+.fsummary{margin:0 auto;font-size:.78rem;font-weight:600;color:rgba(255,248,241,.5);line-height:1.5;text-wrap:balance}
 .flog .fr .fm{font-weight:800;white-space:nowrap}
 .flog .fr.hit .fm{color:var(--gold)}
+.flog .fr .fm{font-size:.78rem}
 .flog .fr.miss .fm{color:#FF9E88}
-.fpct{font-size:.78rem;font-weight:800;color:var(--gold);opacity:.9;margin-top:2px}
-.fbest{margin-top:14px;font-size:.68rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);opacity:.75}
+.fpct{
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  padding:5px 14px;border-radius:999px;
+  background:var(--gold);color:var(--ink);
+  font-size:.6rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  white-space:nowrap;box-shadow:0 6px 18px rgba(245,200,66,.28)
+}
+.fpct:empty{display:none}
+.fbest{margin-top:8px;font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,248,241,.32)}
+.fbest:empty{display:none}
 .rwhere{font-size:.78rem;opacity:.65;line-height:1.5;background:rgba(255,248,241,.05);border-radius:12px;padding:10px 14px;max-width:420px;margin:0 auto;text-wrap:balance}
 .ractions{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:340px;margin:18px auto 0}
 .ractions .playbtn,.ractions .sharebtn{margin:0;width:100%;text-align:center;padding-inline:12px;white-space:nowrap;font-size:clamp(.64rem,3.1vw,.85rem)}
@@ -429,7 +458,7 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 @keyframes qpulse{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 @media (prefers-reduced-motion: reduce){.get{animation:none}}
 .playbtn.gone{display:none}
-.play.done .lead{display:none}
+.play.done .lead,.play.done .scoreline{display:none}
 .guess-zone{margin-top:18px;display:none}
 .guess-zone.show{display:block;animation:pop .3s}
 .guess-zone .q{font-weight:700;font-size:1rem;line-height:1.5;margin-bottom:2px}
@@ -788,13 +817,18 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
           </div>
         </div>
         <div class="final" id="finalZone">
-          <div class="fscore" id="fScore">0<small>/5</small></div>
-          <div class="fpct" id="fPct"></div>
-          <div class="frank" id="fRank"></div>
-          <div class="fsub" id="fSub"></div>
+          <div class="fverdict">
+            <div class="fpct" id="fPct"></div>
+            <div class="fscore" id="fScore">0<small>/5</small></div>
+            <div class="frank" id="fRank"></div>
+            <div class="fsub" id="fSub"></div>
+          </div>
+          <div class="flog-h">Your five rounds</div>
           <div class="flog" id="fLog"></div>
-          <div class="fsummary" id="fSummary"></div>
-          <div class="fbest" id="fBest"></div>
+          <div class="ffoot">
+            <div class="fsummary" id="fSummary"></div>
+            <div class="fbest" id="fBest"></div>
+          </div>
           <div class="fshare" id="fShare">
             <div class="fshare-k" id="fShareK">Drawing your card…</div>
             <img id="fShareImg" alt="Your Harga Challenge result card">
@@ -1677,9 +1711,12 @@ async function buildShareImage(){
   const pctLine = R.pct===null||R.pct===undefined ? '' : `Better than ${R.pct}% of guesses`;
 
   const n=R.log.length, rowH=90, gapY=12, rowsH=n*rowH+(n-1)*gapY;
+  /* the verdict frame, sized to its contents: the same shape as the page */
+  const VP_T=46, VP_B=40, VG_1=18, VG_2=14;
+  const verdictH = VP_T + 126 + VG_1 + rf*1.15 + VG_2 + sub.length*40 + VP_B;
   /* the three footer lines share one baseline pitch, so the gaps read as equal */
-  const blk=[tf*1.15, 30, 126, pctLine?34:0, rf*1.15, sub.length*40, rowsH, 46, 54, tag.length*32];
-  let gap=[22, 50, pctLine?16:0, pctLine?24:28, 12, 56, 56, 23, 28];
+  const blk=[tf*1.15, 30, verdictH, rowsH, 46, 54, tag.length*32];
+  let gap=[22, 56, 60, 56, 23, 28];
   const add=a=>a.reduce((p,q)=>p+q,0);
   const band=SAFE_BOT-SAFE_TOP, bs=add(blk);
   let gs=add(gap);
@@ -1702,35 +1739,62 @@ async function buildShareImage(){
   try{ const lg=await loadImg(SE_WORD_URI); x.drawImage(lg, sx+byW+gapx, byB-lh+3, lw, lh); }catch(e){}
   y += blk[1]+gap[1];
 
+  /* ---- the verdict frame ---------------------------------------------- */
+  const fw=W-P*2, fx0=P, fy0=y, fh=blk[2];
+  x.save();
+  rrect(x,fx0,fy0,fw,fh,34);
+  x.save(); x.clip();
+  x.fillStyle='rgba(255,248,241,0.03)'; x.fillRect(fx0,fy0,fw,fh);
+  const vg=x.createRadialGradient(W/2,fy0,0,W/2,fy0,fw*0.95);
+  vg.addColorStop(0,'rgba(245,200,66,0.17)');
+  vg.addColorStop(0.55,'rgba(245,200,66,0.045)');
+  vg.addColorStop(1,'rgba(245,200,66,0)');
+  x.fillStyle=vg; x.fillRect(fx0,fy0,fw,fh);
+  x.restore();
+  x.strokeStyle='rgba(245,200,66,0.30)'; x.lineWidth=2;
+  rrect(x,fx0,fy0,fw,fh,34); x.stroke();
+  /* the hairline that closes the frame at the bottom */
+  const hg=x.createLinearGradient(fx0+70,0,fx0+fw-70,0);
+  hg.addColorStop(0,'rgba(245,200,66,0)');
+  hg.addColorStop(0.5,'rgba(245,200,66,0.5)');
+  hg.addColorStop(1,'rgba(245,200,66,0)');
+  x.strokeStyle=hg; x.lineWidth=2;
+  x.beginPath(); x.moveTo(fx0+70,fy0+fh); x.lineTo(fx0+fw-70,fy0+fh); x.stroke();
+  x.restore();
+
+  /* the percentile rides the top edge as a badge, not another gold line */
+  if(pctLine){
+    const bt=pctLine.toUpperCase();
+    x.font=F(800,22); x.letterSpacing='2px';
+    const bw=x.measureText(bt).width+56, bh=46, bx=(W-bw)/2, by=fy0-bh/2;
+    x.fillStyle=GOLD; rrect(x,bx,by,bw,bh,bh/2); x.fill();
+    x.fillStyle=INK; x.fillText(bt, W/2, by+bh/2+8);
+    x.letterSpacing='0px';
+  }
+
+  let vy = fy0 + VP_T;
   /* score */
   const sN=`${R.score}`, sD=`/${ROUNDS}`;
   x.font=F(800,150); const wS=x.measureText(sN).width;
   x.font=F(800,58);  const wU=x.measureText(sD).width;
-  const x0=(W-(wS+wU))/2, sB=y+110;
+  const x0=(W-(wS+wU))/2, sB=vy+110;
   x.textAlign='left';
   x.fillStyle=GOLD; x.font=F(800,150); x.fillText(sN,x0,sB);
   x.fillStyle='rgba(245,200,66,0.42)'; x.font=F(800,58); x.fillText(sD,x0+wS,sB);
   x.textAlign='center';
-  y += blk[2]+gap[2];
-
-  /* how you did against the odds */
-  if(pctLine){
-    x.fillStyle='rgba(245,200,66,0.72)'; x.font=F(800,26);
-    x.letterSpacing='1px'; x.fillText(pctLine, W/2, y+25); x.letterSpacing='0px';
-  }
-  y += blk[3]+gap[3];
+  vy += 126 + VG_1;
 
   /* rank */
-  x.fillStyle=CREAM; x.font=F(800,rf); x.fillText(R.rank, W/2, y+rf*0.82);
-  y += blk[4]+gap[4];
+  x.fillStyle=CREAM; x.font=F(800,rf); x.fillText(R.rank, W/2, vy+rf*0.82);
+  vy += rf*1.15 + VG_2;
 
   /* the rank's own line, doing the summary's job */
-  x.fillStyle='rgba(245,200,66,0.82)'; x.font=F(600,30);
-  let sy=y+29; for(const ln of sub){ x.fillText(ln, W/2, sy); sy += 40; }
-  y += blk[5]+gap[5];
+  x.fillStyle='rgba(255,248,241,0.62)'; x.font=F(600,30);
+  let sy=vy+29; for(const ln of sub){ x.fillText(ln, W/2, sy); sy += 40; }
+  y += blk[2]+gap[2];
 
   /* the five rounds: dish, what you said, what it really was, right or wrong */
-  const cx=W-P-56;
+  const cx=W-P-52;
   let ry=y;
   for(const r of R.log){
     x.fillStyle = r.hit ? 'rgba(245,200,66,0.09)' : 'rgba(255,255,255,0.045)';
@@ -1738,22 +1802,23 @@ async function buildShareImage(){
     if(r.hit){ x.strokeStyle='rgba(245,200,66,0.30)'; x.lineWidth=2; rrect(x,P,ry,W-P*2,rowH,22); x.stroke(); }
     const fx = P+30;
     try{ const fl=await loadImg(DATA.flags[r.st]); x.drawImage(fl,fx,ry+32,50,25); }catch(e){}
-    const labelMax = (cx-42) - (fx+64) - 22;
+    /* how far off you were sits with the tick, not buried at the end of a sentence */
+    const off = `RM${Math.abs(r.val-r.guess).toFixed(2)} off`;
+    x.font=F(800,26);
+    const offRight = cx - 44, offW = x.measureText(off).width;
+    const labelMax = (offRight - offW - 26) - (fx+64);
+    const cy=ry+rowH/2;
+    x.textAlign='right'; x.fillStyle = r.hit ? GOLD : CHILI;
+    x.fillText(off, offRight, cy+9);
     x.textAlign='left'; x.fillStyle=CREAM; x.font=F(700,27);
     x.fillText(clampText(x, `${r.st} · ${r.name}`, labelMax), fx+64, ry+39);
     x.font=F(600,23);
     const said = `You said RM${r.guess.toFixed(2)}`, real = `Real RM${r.val.toFixed(2)}`;
-    const off = `RM${Math.abs(r.val-r.guess).toFixed(2)} off`;
     let lx = fx+64;
     x.fillStyle='rgba(255,248,241,0.38)'; x.fillText(said, lx, ry+70);
     lx += x.measureText(said + '  ').width;
-    x.fillStyle = r.hit ? 'rgba(245,200,66,0.85)' : CHILI;
-    x.fillText(real, lx, ry+70);
-    lx += x.measureText(real + '  ').width;
-    x.fillStyle='rgba(255,248,241,0.30)';
-    if(lx + x.measureText(off).width <= fx+64+labelMax) x.fillText(off, lx, ry+70);
-    /* one verdict mark, no second number to decode */
-    const cy=ry+rowH/2;
+    x.fillStyle = r.hit ? 'rgba(245,200,66,0.85)' : 'rgba(255,158,136,0.95)';
+    x.fillText(clampText(x, real, labelMax - (lx - (fx+64))), lx, ry+70);
     x.strokeStyle = r.hit ? GOLD : CHILI; x.lineWidth=4;
     x.beginPath(); x.arc(cx,cy,23,0,Math.PI*2); x.stroke();
     x.lineWidth=5; x.lineCap='round'; x.beginPath();
@@ -1763,24 +1828,24 @@ async function buildShareImage(){
     x.textAlign='center';
     ry += rowH + gapY;
   }
-  const rowsEnd = y + blk[6];
-  y += blk[6]+gap[6];
+  const rowsEnd = y + blk[3];
+  y += blk[3]+gap[3];
 
   /* footer, all of it above the Instagram reply bar */
   x.strokeStyle='rgba(255,248,241,0.10)'; x.lineWidth=2;
-  const dy=Math.round(rowsEnd+gap[6]/2);
+  const dy=Math.round(rowsEnd+gap[3]/2);
   x.beginPath(); x.moveTo(P+40,dy); x.lineTo(W-P-40,dy); x.stroke();
 
   x.fillStyle=CREAM; x.font=F(800,40);
   x.letterSpacing='2px';
   let hf=40; while(x.measureText('THINK YOU KNOW MALAYSIAN PRICES?').width > W-P*2 && hf > 26){ hf -= 2; x.font=F(800,hf); }
   x.fillText('THINK YOU KNOW MALAYSIAN PRICES?', W/2, y+33); x.letterSpacing='0px';
-  y += blk[7]+gap[7];
+  y += blk[4]+gap[4];
   x.fillStyle=GOLD; x.font=F(800,48);
   x.shadowColor='rgba(0,0,0,0.55)'; x.shadowBlur=24; x.shadowOffsetY=5;
   x.fillText('shareeat.io/challenge', W/2, y+40);
   x.shadowColor='transparent'; x.shadowBlur=0; x.shadowOffsetY=0;
-  y += blk[8]+gap[8];
+  y += blk[5]+gap[5];
   x.fillStyle='rgba(255,248,241,0.40)'; x.font=F(600,25);
   let ty=y+24; for(const ln of tag){ x.fillText(ln, W/2, ty); ty += 32; }
 
@@ -1792,16 +1857,25 @@ const SHARE_LABELS = {link:'Share this challenge with your friends', ig:'Flex On
 /* One button hands over the link, the other hands over the picture. Copying is
    deliberate: a link they paste themselves previews in WhatsApp, an image does
    not. */
+/* What the preview cannot know: who sent it and how they did. Everything the
+   card already says stays out of here. Link last and alone, so WhatsApp parses
+   it cleanly. */
+function challengeShareText(){
+  if(!lastResult) return CHALLENGE_URL;
+  return 'I got ' + lastResult.score + '/' + ROUNDS + '. The website called me "' + lastResult.rank + '".\n'
+       + 'Try and see what they call you:\n'
+       + CHALLENGE_URL;
+}
 async function copyChallengeLink(el){
   if(window.seTrack) seTrack('share_link_copy', {score: lastResult ? lastResult.score : null});
   const done = (m)=>{ el.textContent = m; setTimeout(()=>{ el.textContent = SHARE_LABELS.link; }, 2600); };
   try{
-    await navigator.clipboard.writeText(CHALLENGE_URL);
-    done('Link copied. Paste it anywhere.');
+    await navigator.clipboard.writeText(challengeShareText());
+    done('Copied. Paste in any chat.');
   }catch(e){
     /* older iOS Safari refuses the async clipboard, so fall back to a selection */
     const ta = document.createElement('textarea');
-    ta.value = CHALLENGE_URL;
+    ta.value = challengeShareText();
     ta.setAttribute('readonly','');
     ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
     document.body.appendChild(ta);
@@ -1809,7 +1883,7 @@ async function copyChallengeLink(el){
     let ok = false;
     try{ ok = document.execCommand('copy'); }catch(e2){}
     ta.remove();
-    done(ok ? 'Link copied. Paste it anywhere.' : 'shareeat.io/challenge');
+    done(ok ? 'Copied. Paste in any chat.' : 'shareeat.io/challenge');
   }
 }
 let shareBlob = null;
@@ -1844,8 +1918,7 @@ async function shareResult(target, el){
   if(!lastResult) return;
   target = target || 'whatsapp';
   if(window.seTrack) seTrack('share_result_click', {score:lastResult.score, target});
-  const lines = lastResult.log.map(r=>`${r.e} ${r.st} ${r.name}: guessed RM${r.guess.toFixed(2)}, real RM${r.val.toFixed(2)} ${r.hit?'✓':'✗'}`);
-  const t = `🍽️ The Harga Challenge · The Harga Index\nI scored ${lastResult.score}/${ROUNDS} · ${lastResult.rank}\n${lastResult.summary}\n\n${lines.join('\n')}\n\nThink you know Malaysian food prices? shareeat.io/challenge`;
+  const t = challengeShareText();   /* same short line as the copy button */
   const btn = el || document.getElementById('shareBtn');
   const done = (msg)=>{ btn.textContent = msg; setTimeout(()=>{ btn.textContent = SHARE_LABELS[target]; }, 2600); };
   let blob = shareBlob;
