@@ -94,13 +94,21 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .cost{padding:20px 22px}
   .cost .sum{font-size:1.15rem}
 }
+
+/* the two-link nav overflowed at 390px: centre it, let it breathe */
+nav .links{align-items:center;line-height:1}
+@media(max-width:680px){
+  nav .navbar{flex-wrap:wrap;justify-content:center;gap:6px 12px;padding:8px 12px}
+  nav .brand{font-size:.72rem}
+  nav .links{font-size:.72rem;gap:10px}
+  nav .links a.nav-home{padding:4px 10px}
+  }
 </style>
-<script defer src="/analytics.js"></script>
 </head>
 <body>
 <nav><div class="navbar">
   <span class="brand">THE <em>HARGA</em> INDEX</span>
-  <div class="links"><a href="index.html">← Back to the Index</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
+  <div class="links"><a href="/harga/">← Back to the Index</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
 </div></nav>
 
 <header>
@@ -172,7 +180,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
         <a class="btn" href="https://apps.apple.com/my/app/share-eat-food-creator-collab/id6779893847">Get the app</a>
       </div>
     </div>
-    <div class="backlink"><a href="index.html">← Back to the Harga Index</a></div>
+    <div class="backlink"><a href="/harga/">← Back to the Harga Index</a></div>
   </div>
 </section>
 

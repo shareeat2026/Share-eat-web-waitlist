@@ -102,6 +102,14 @@ h1 .swing{display:inline-block;animation:swing 5s ease-in-out infinite;transform
 .herosub{color:var(--ink-soft);font-size:.95rem;line-height:1.65;max-width:560px;margin:0 auto}
 .herosub b{color:var(--ink)}
 .byline{color:var(--ink-mute);font-size:.64rem;line-height:1.55;margin-top:12px;opacity:.9}
+.byline a{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(110,103,83,.45)}
+.byline a:hover{color:var(--gold-ink)}
+.dataline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin:0 0 26px}
+.dl-btn{display:inline-flex;flex-direction:column;align-items:center;gap:1px;background:var(--ink);color:var(--gold);font-weight:800;font-size:.9rem;letter-spacing:-.01em;padding:12px 22px;border-radius:14px;text-decoration:none;box-shadow:var(--sh-sm)}
+.dl-btn small{font-weight:600;font-size:.68rem;color:rgba(255,248,241,.55);letter-spacing:.02em}
+.dl-btn:hover{background:#2A2418}
+.dl-ghost{display:inline-flex;align-items:center;font-weight:800;font-size:.88rem;color:var(--gold-ink);text-decoration:none;border-bottom:2px solid rgba(224,169,10,.4);padding-bottom:2px}
+.dl-ghost:hover{border-bottom-color:var(--gold-deep)}
 .floaties{position:absolute;inset:0;pointer-events:none;z-index:-1}
 .floaties span{position:absolute;font-size:26px;opacity:.5;animation:floaty 9s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-22px) rotate(8deg)}}
@@ -708,7 +716,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 
 <nav><div class="navbar">
   <span class="brand">THE <em>HARGA</em> INDEX<span class="by">by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></span>
-  <div class="links" id="navLinks"><a href="#challenge">Challenge</a><a href="#map">The Map</a><a href="#absurd">Priciest</a><a href="#data">Data</a><a href="about.html">Our Story</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
+  <div class="links" id="navLinks"><a href="#challenge">Challenge</a><a href="#map">The Map</a><a href="#absurd">Priciest</a><a href="#data">Data</a><a href="method/">Method</a><a href="about.html">Our Story</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="playbar" id="playbar" aria-hidden="true">
@@ -726,8 +734,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <a href="#clubs" onclick="return goSection(event,'clubs')">The RM10 Line</a>
   <a href="#value" onclick="return goSection(event,'value')">Food Value Index</a>
   <a href="#data" onclick="return goSection(event,'data')">The Receipts</a>
+  <a href="method/">How We Counted</a>
 
   <a class="dstory" href="about.html">Our Story <span class="dgo">→</span></a>
+  <a class="dstory" href="press/">For Press <span class="dgo">→</span></a>
   <a class="dstory dhome" href="https://shareeat.io/">Learn more about Share Eat! <span class="dgo">↗</span></a>
   <div class="ddoors">
     <a class="dd biz" href="https://wa.me/60147113585?text=Hi%20Share%20Eat!%20I%20run%20an%20F%26B%20spot.%20Can%20I%20ask%20about%20getting%20creators%20in%3F">Are you a restaurant?<small>Talk to us on WhatsApp</small></a>
@@ -748,7 +758,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <span class="pill chili">We investigated the Malaysian food economy</span>
     <h1><span class="shock">RM40.00</span> for<br>nasi lemak?!</h1>
     <p class="herosub">Yes, really. We went through delivery menus in <b>every Malaysian state</b> and found plates from <b>RM5.30</b> all the way to <b>RM40.00</b>. Some results were questionable. Some were shocking. All of them are below.</p>
-    <p class="byline">The Harga Index Vol. 1, by Share Eat! · 619 hand-collected price points across 4 dishes · updated 13 August 2026</p>
+    <p class="byline">The Harga Index Vol. 1, by Share Eat! · <a href="method/">619 hand-collected price points</a> across 4 dishes · updated 13 August 2026</p>
 
     <div class="hero-cta-wrap">
       <a class="hero-cta" href="#challenge" onclick="return goSection(event,'challenge')"><span class="hc-l1">Think you know Malaysian Food Prices?</span><span class="hc-l2">Play The Harga Challenge <span class="hc-go">→</span></span></a>
@@ -998,6 +1008,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <div class="sec-pill"><span class="pill gold">The Receipts</span></div>
     <h2>Explore the raw data</h2>
     <p class="sec-sub">Every price here comes straight from a public delivery menu, collected by hand on 11 to 13 August 2026. Search it, filter it, fact-check us.</p>
+    <div class="dataline">
+      <a class="dl-btn" href="data/harga-index-vol1.csv" download>Download the data<small>CSV · 619 rows</small></a>
+      <a class="dl-ghost" href="method/">How we counted →</a>
+    </div>
     <div class="fold"><button class="fold-btn" id="fb_data" onclick="toggleFold('data')" aria-expanded="false" aria-controls="fold_data"><span class="fb-i">+</span><span class="fb-l" data-open="Open the receipts, all 619 prices" data-close="Close the receipts">Open the receipts, all 619 prices</span></button></div>
     <div class="fold-body" id="fold_data">
     <div class="explorer reveal-sec">
@@ -1084,7 +1098,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 <footer>
   <div class="wrap">
     The Harga Index is published by <svg class="se-word se-logo" role="img" aria-label="Share Eat!"><use href="#seword"/></svg> for entertainment and mild economic enlightenment.<br>
-    Data: public delivery menus, collected by hand. The full dataset (CSV) ships with every release. · <a href="about.html">Our story</a> · © 2026 Share Eat!
+    Data: public delivery menus, collected by hand. <a href="data/harga-index-vol1.csv" download>Download the full dataset (CSV)</a>.<br>
+    <a href="method/">How we counted</a> · <a href="about.html">Our story</a> · <a href="press/">For press</a> · © 2026 Share Eat!
   </div>
 </footer>
 
