@@ -104,7 +104,8 @@ h1 .swing{display:inline-block;animation:swing 5s ease-in-out infinite;transform
 .byline{color:var(--ink-mute);font-size:.64rem;line-height:1.55;margin-top:12px;opacity:.9}
 .byline a{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(110,103,83,.45)}
 .byline a:hover{color:var(--gold-ink)}
-.dataline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin:0 0 26px}
+.dataline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin:0 0 16px}
+.datanote{max-width:44rem;margin:0 auto 26px;text-align:center;font-size:.78rem;line-height:1.6;color:var(--ink-mute)}
 .dl-btn{display:inline-flex;flex-direction:column;align-items:center;gap:1px;background:var(--ink);color:var(--gold);font-weight:800;font-size:.9rem;letter-spacing:-.01em;padding:12px 22px;border-radius:14px;text-decoration:none;box-shadow:var(--sh-sm)}
 .dl-btn small{font-weight:600;font-size:.68rem;color:rgba(255,248,241,.55);letter-spacing:.02em}
 .dl-btn:hover{background:#2A2418}
@@ -149,15 +150,16 @@ h1 .swing{display:inline-block;animation:swing 5s ease-in-out infinite;transform
 .stat .l{font-size:.8rem;color:var(--ink-soft);margin-top:6px;line-height:1.4}
 
 /* volumes strip */
-.vols{display:grid;justify-content:center;gap:8px}
-.volrow.live-row{grid-template-columns:repeat(2,minmax(0,1fr));max-width:470px;margin:24px auto 0}
+.volsblock{max-width:520px;margin:0 auto;text-align:center}
+.vols{display:grid;justify-content:stretch;gap:8px}
+.volrow.live-row{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;margin:24px 0 0}
 .live-row .vlbl{display:none}
 .vol .vlbl{margin-left:.3em}
-.volrow.soon-row{grid-template-columns:repeat(3,minmax(0,1fr));max-width:520px;margin:8px auto 0}
+.volrow.soon-row{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;margin:8px 0 0}
 .vol{display:flex;align-items:center;justify-content:center;padding:7px 12px;border-radius:999px;font-size:.72rem;font-weight:800;border:1.5px solid var(--ink);white-space:nowrap;min-width:0}
 .vol.live{background:var(--ink);color:var(--gold)}
 .vol.soon{opacity:.45;border-style:dashed}
-.tagline{color:var(--ink-mute);font-size:.85rem;font-weight:600;margin-top:10px}
+.tagline{color:var(--ink-mute);font-size:.85rem;font-weight:600;margin-top:10px;text-align:center}
 .vols-tag{font-size:.78rem;margin-top:14px}
 
 /* sections */
@@ -529,9 +531,6 @@ td.num{text-align:right;font-weight:800}
 .submit-strip a{display:inline-block;background:var(--ink);color:var(--gold);font-weight:800;font-size:.9rem;padding:11px 24px;border-radius:12px;text-decoration:none;box-shadow:var(--sh-sm)}
 
 /* methodology + manifesto */
-.method{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--sh-sm);font-size:.9rem;color:var(--ink-soft)}
-.method h3{color:var(--ink);font-size:1.02rem;margin-bottom:8px}
-.method p{margin-bottom:10px}
 .manifesto{max-width:720px;margin:0 auto;text-align:center;padding:20px 0 10px}
 .manifesto .pill{margin-bottom:22px}
 .manifesto h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-top:4px}
@@ -1007,11 +1006,12 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <div class="wrap">
     <div class="sec-pill"><span class="pill gold">The Receipts</span></div>
     <h2>Explore the raw data</h2>
-    <p class="sec-sub">Every price here comes straight from a public delivery menu, collected by hand on 11 to 13 August 2026. Search it, filter it, fact-check us.</p>
+    <p class="sec-sub">Every price here comes straight from a public delivery menu, collected by hand on 11 to 13 August 2026. Ten restaurants per dish per state, each one dated and published with its source. Search it, filter it, fact-check us.</p>
     <div class="dataline">
       <a class="dl-btn" href="data/harga-index-vol1.csv" download>Download the data<small>CSV · 619 rows</small></a>
       <a class="dl-ghost" href="method/">How we counted →</a>
     </div>
+    <p class="datanote">The "most expensive state" title changed hands four times as the sample grew. Small samples are confident liars, which is exactly why we kept counting to ten.</p>
     <div class="fold"><button class="fold-btn" id="fb_data" onclick="toggleFold('data')" aria-expanded="false" aria-controls="fold_data"><span class="fb-i">+</span><span class="fb-l" data-open="Open the receipts, all 619 prices" data-close="Close the receipts">Open the receipts, all 619 prices</span></button></div>
     <div class="fold-body" id="fold_data">
     <div class="explorer reveal-sec">
@@ -1044,7 +1044,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     </div>
 </section>
 
-<section id="method">
+<section id="vols">
   <div class="wrap">
     <div class="volsblock">
     <div class="vols volrow live-row">
@@ -1058,13 +1058,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
       <span class="vol soon"><span class="emo-i">🍜</span>Mee Goreng <span class="vlbl">Index</span></span>
       <span class="vol soon"><span class="emo-i">🫓</span>Roti Canai <span class="vlbl">Index</span></span>
     </div>
-    <p class="tagline vols-tag">We scrape Malaysia's menus so you don't have to.</p>
-    </div>
-
-    <div class="method reveal-sec">
-      <h3>Methodology (the serious part)</h3>
-      <p>The state rankings use the original listed price of the cheapest standard nasi lemak ayam (fried or spiced chicken variant) and the basic ayam gepuk set on public delivery-platform menus, collected by hand, dated, and published with sources. The T-20 Menu uses the highest-priced nasi lemak dish of any kind we could find on the same platforms. Delivery prices run above counter prices; we use one consistent basis so states compare fairly. Target sample: 10 restaurants per dish per state. Perlis and Putrajaya nasi lemak counts sit below 10 because we counted every listed vendor there. All of them. No prices are invented, estimated, or vibed.</p>
-      <p>Fun methodology fact: the "most expensive state" title changed hands four times as the sample grew. Small samples are confident liars, which is exactly why we kept counting to 10.</p>
+    <p class="tagline vols-tag">We scrape Malaysia's menus so you don't have&nbsp;to.</p>
     </div>
   </div>
 </section>
