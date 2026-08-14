@@ -89,6 +89,13 @@ p,li,.lead,.sub,.sec-intro{text-wrap:pretty}
    NAV  ·  one bar, not two. Translucent cream over blur,
    hairline base, compact on phones.
    ============================================================ */
+
+/* The old sticky wrapper is now empty — the nav lives outside it.
+   Left visible it collapses to a 1px translucent strip that draws
+   a faint line across the page right at the hero's top edge, and
+   still sticks over the content on scroll. */
+.nav-wrap{display:none}
+
 nav{
   position:sticky;
   top:0;
@@ -290,6 +297,48 @@ body.nv-open{overflow:hidden}
   .se-band-in{gap:8px;padding:7px 13px;flex-wrap:wrap;justify-content:center}
   .se-band-t{font-size:.8rem}
   .se-band-l{font-size:.72rem}
+}
+
+/* ------------------------------------------------------------
+   HERO GLOW  ·  it used to stop dead at the hero's top edge,
+   which drew a hard horizontal line immediately under the
+   floating tagline pill and made the pill look cut out.
+
+   The hero itself now starts 110px higher, so its glow layer
+   reaches up behind the band and the pill. The inner container
+   is padded back down by the same amount, so nothing moves —
+   only the painted area grows. The hero keeps its own clipping,
+   which its decorative blob still depends on.
+
+   The layer's top edge ends up inside the sticky nav, and a
+   short mask fades it out there, so it can never read as a
+   line. The gradients are re-anchored in pixels from the taller
+   layer's top, which puts each glow back where its page had it.
+   ------------------------------------------------------------ */
+.hero{margin-top:-110px}
+.hero > .container{padding-top:110px}
+.hero::before{
+  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 0, #000 40px);
+          mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 0, #000 40px);
+  /* home: glow rises from the centre of the hero's top edge */
+  background:
+    radial-gradient(52% 48% at 50% 124px, rgba(245,200,66,.26), transparent 64%),
+    radial-gradient(40% 40% at 88% 90%,   rgba(232,84,59,.08),  transparent 66%);
+}
+/* Creators and restaurants: two-column heroes, glow sits top right.
+   Marked up with a class, and matched again structurally so the
+   rule still lands if a page is rebuilt without it. Kept as two
+   rules on purpose — one selector list would drop both wherever
+   :has() is unsupported. */
+.hero.se-hero-split::before{
+  background:
+    radial-gradient(60% 60% at 85% 170px, rgba(245,200,66,.28), transparent 60%),
+    radial-gradient(50% 50% at 0%  91%,   rgba(232,84,59,.10),  transparent 60%);
+}
+.hero:has(.hero-grid)::before{
+  background:
+    radial-gradient(60% 60% at 85% 170px, rgba(245,200,66,.28), transparent 60%),
+    radial-gradient(50% 50% at 0%  91%,   rgba(232,84,59,.10),  transparent 60%);
 }
 
 /* ============================================================
