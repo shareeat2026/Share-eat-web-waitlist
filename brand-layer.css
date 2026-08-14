@@ -93,12 +93,20 @@ nav{
   position:sticky;
   top:0;
   z-index:60;
+  width:auto;
+  max-width:none;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:11px max(18px,calc(50vw - 620px));
   background:rgba(255,248,241,.90);
   -webkit-backdrop-filter:saturate(180%) blur(10px);
   backdrop-filter:saturate(180%) blur(10px);
   border-bottom:1px solid var(--line);
 }
-nav .nav-wrap,nav>.container{padding-top:11px;padding-bottom:11px}
 nav .logo img{height:30px;width:auto;display:block}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-index{
@@ -135,6 +143,7 @@ nav .logo img{height:30px;width:auto;display:block}
 .harga-strip{display:none !important}
 
 @media(max-width:720px){
+  nav{padding:9px 16px}
   nav .logo img{height:26px}
   .nav-right{gap:8px}
   .nav-index,.nav-badge{display:none}
@@ -146,6 +155,10 @@ nav .logo img{height:30px;width:auto;display:block}
    Doubles as the Harga Index entry point on phones.
    ============================================================ */
 .se-band{
+  width:auto;
+  max-width:none;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
   display:flex;
   align-items:center;
   justify-content:center;
