@@ -169,6 +169,7 @@ section.band::before{top:0}
 section.band::after{bottom:0}
 section[id]{scroll-margin-top:70px}
 .fold{display:flex;justify-content:center;margin-top:6px}
+.vtable-top{margin-bottom:18px}
 .rank-top{margin-bottom:20px}
 .fold-btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;background:var(--card);border:2px solid var(--line);border-radius:14px;font:inherit;font-weight:800;font-size:.9rem;color:var(--ink);cursor:pointer;padding:13px 22px;box-shadow:var(--sh-sm);transition:border-color .18s,transform .15s,box-shadow .18s}
 .fold-btn:hover{border-color:var(--gold-deep);transform:translateY(-1px);box-shadow:var(--sh-md)}
@@ -230,6 +231,20 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .toggle button{border:2px solid var(--ink);background:transparent;color:var(--ink);font:inherit;font-weight:800;font-size:.95rem;padding:10px 22px;border-radius:999px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px}
 .toggle button.on{background:var(--ink);color:var(--gold);transform:scale(1.05)}
 .toggle button:not(.on):hover{background:rgba(31,27,18,.06)}
+/* Second and third copies of the dish picker, inside the ranking and T-20
+   sections. Smaller so they read as a control for that section rather than
+   competing with the map's picker for attention. */
+.sub-toggle{margin:0 0 20px}
+.sub-toggle button{font-size:.85rem;padding:8px 16px;border-width:2px}
+.sub-toggle button.on{transform:none}
+/* Dead band: too wide for the phone rules below, too narrow to fit four
+   desktop-sized pills on one line, so the map picker broke 3+1. Same 2x2
+   grid, wider cells. */
+@media(min-width:681px) and (max-width:700px){
+  .toggle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:440px;margin-left:auto;margin-right:auto}
+  .toggle button{justify-content:center;white-space:nowrap}
+  .toggle button.on{transform:none}
+}
 .map-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 22px 20px;box-shadow:var(--sh-sm);position:relative}
 .geo{display:block;width:100%;max-width:1240px;margin:0 auto;overflow:visible}
 .geo path.st{stroke:#FFF8F1;stroke-width:1.2;cursor:pointer;transition:filter .2s, transform .2s;transform-box:fill-box;transform-origin:center}
@@ -313,7 +328,7 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 
 /* RM10 line */
 .tenline{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 26px;box-shadow:var(--sh-sm)}
-.tl-row{display:grid;grid-template-columns:150px minmax(0,1fr) 92px;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.tl-row{display:grid;grid-template-columns:186px minmax(0,1fr) 96px;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
 .tl-row:first-child{padding-top:0}
 .tl-row:last-of-type{border-bottom:none}
 .tl-row .who{font-weight:700;font-size:.92rem;line-height:1.25}
@@ -322,8 +337,10 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .tl-fill{height:100%;border-radius:8px;width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1);background:linear-gradient(90deg,#BCE3C4,var(--leaf))}
 .tl-row.warn .tl-fill{background:linear-gradient(90deg,#F7D368,var(--gold-deep))}
 .tl-row.dead .tl-fill{background:linear-gradient(90deg,#F3A28E,var(--chili))}
-.tl-row .pct{font-weight:800;font-size:1.15rem;text-align:right}
-.tl-row.dead .pct{color:var(--chili)}
+.tl-row .pct{text-align:right;line-height:1.15}
+.tl-row .pct .n{display:block;font-weight:800;font-size:1.3rem}
+.tl-row .pct small{display:block;font-weight:600;font-size:.68rem;color:var(--ink-mute);white-space:nowrap}
+.tl-row.dead .pct .n{color:var(--chili)}
 .tl-foot{margin-top:14px;font-size:.76rem;color:var(--ink-mute)}
 .clubs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .club{border-radius:22px;padding:26px;box-shadow:var(--sh-sm);border:1px solid var(--line)}
@@ -638,10 +655,11 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .row .val{grid-area:val}
   .row .bar-track{grid-area:bar;height:16px}
   .row .flag.sm{width:17px;height:9px;margin-right:6px}
-  .tl-row{grid-template-columns:1fr 62px;grid-template-areas:"who pct" "bar bar";gap:6px 8px}
+  .tl-row{grid-template-columns:1fr 86px;grid-template-areas:"who pct" "bar bar";gap:6px 8px}
   .tl-row .who{grid-area:who}
   .tl-row .tl-track{grid-area:bar;height:20px}
   .tl-row .pct{grid-area:pct}
+  .tl-row .pct .n{font-size:1.15rem}
   .vtable{padding:18px 14px}
   .v-row{grid-template-columns:22px minmax(0,1fr) 58px 58px 40px;gap:5px;font-size:.72rem}
   .v-row.head{font-size:.62rem;letter-spacing:.02em}
@@ -656,7 +674,14 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   nav .brand .by{font-size:.62rem;margin-left:6px;padding-left:7px}
   header .pill{font-size:9.5px;padding:5px 12px;letter-spacing:.06em}
   .floaties{display:none}
-  .toggle button{font-size:.8rem;padding:8px 13px;gap:5px}
+  /* Flex-wrap decided the row break from text width, so the four dishes could
+     land 3+1 and look broken. On phones this is an explicit 2x2 grid, so every
+     picker on the page reads the same and the buttons are equal width. */
+  .toggle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:340px;margin-left:auto;margin-right:auto}
+  .toggle button{font-size:.8rem;padding:8px 10px;gap:5px;justify-content:center;white-space:nowrap}
+  /* the 1.05 scale on the active pill breaks a fixed grid, nudging one cell
+     out of line and into the gap. Off on phones; the fill still marks it. */
+  .toggle button.on{transform:none}
   .geo{pointer-events:none}
   #mapLabels{display:none}
   .geo{max-height:190px}
@@ -732,7 +757,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 
 <nav><div class="navbar">
   <span class="brand">THE <em>HARGA</em> INDEX<span class="by">by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></span>
-  <div class="links" id="navLinks"><a href="#challenge">Challenge</a><a href="#map">The Map</a><a href="#absurd">Priciest</a><a href="#data">Data</a><a href="method/">Method</a><a href="about.html">Our Story</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
+  <div class="links" id="navLinks"><a href="#challenge">Challenge</a><a href="#map">The Map</a><a href="#absurd">Most Expensive</a><a href="#data">Data</a><a href="method/">Method</a><a href="about.html">Our Story</a><a href="https://shareeat.io/" class="nav-home">Share Eat! ↗</a></div>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="playbar" id="playbar" aria-hidden="true">
@@ -746,7 +771,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <a href="#gap" onclick="return goSection(event,'gap')">The Price Gap</a>
   <a href="#map" onclick="return goSection(event,'map')">The Sedap Map</a>
   <a href="#ranking" onclick="return goSection(event,'ranking')">The State Battle</a>
-  <a href="#absurd" onclick="return goSection(event,'absurd')">Priciest Finds</a>
+  <a href="#absurd" onclick="return goSection(event,'absurd')">Most Expensive Finds</a>
   <a href="#clubs" onclick="return goSection(event,'clubs')">The RM10 Line</a>
   <a href="#value" onclick="return goSection(event,'value')">Food Value Index</a>
   <a href="#data" onclick="return goSection(event,'data')">The Receipts</a>
@@ -773,11 +798,11 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <div class="wrap">
     <span class="pill chili">We investigated the Malaysian food economy</span>
     <h1><span class="shock">RM40.00</span> for<br>nasi lemak?!</h1>
-    <p class="herosub">Yes, really. We went through delivery menus in <b>every Malaysian state</b> and found plates from <b>RM5.30</b> all the way to <b>RM40.00</b>. Some results were questionable. Some were shocking. All of them are below.</p>
+    <p class="herosub">Yes, really. We went through delivery menus in <b>every Malaysian state</b> and found plates from <b>RM5.30</b> sampai <b>RM40.00</b>. Some were questionable. Some were memang shocking. All of them are below.</p>
     <p class="byline">The Harga Index Vol. 1, by Share Eat! · <a href="method/">619 hand-collected price points</a> across 4 dishes · updated 13 August 2026</p>
 
     <div class="hero-cta-wrap">
-      <a class="hero-cta" href="#challenge" onclick="return goSection(event,'challenge')"><span class="hc-l1">Think you know Malaysian Food Prices?</span><span class="hc-l2">Play The Harga Challenge <span class="hc-go">→</span></span></a>
+      <a class="hero-cta" href="#challenge" onclick="return goSection(event,'challenge')"><span class="hc-l1">Confirm you know the harga?</span><span class="hc-l2">Play The Harga Challenge <span class="hc-go">→</span></span></a>
     </div>
 
     <div class="stats">
@@ -802,7 +827,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <div class="wrap">
     <div class="sec-pill"><span class="pill gold">The Harga Challenge</span></div>
     <h2>Think you know what Malaysia charges?</h2>
-    <p class="sec-sub">Before you look at the data below, see if you actually know what Malaysian food costs.</p>
+    <p class="sec-sub">Before you scroll down and see the answers, test yourself first. Five plates, five guesses.</p>
     <div class="playgrid reveal-sec">
       <div class="play" id="guessGame">
         <div class="fbrand"><b>THE HARGA CHALLENGE</b><span>by <svg class="se-word" role="img" aria-label="Share Eat!"><use href="#seword"/></svg></span></div>
@@ -822,7 +847,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
             <div class="gspan-bar"><i class="gs-dot lo"></i><i class="gs-dot hi"></i></div>
             <div class="gspan-ends">
               <span class="gs-end"><b>RM5.30</b><small>cheapest we found</small></span>
-              <span class="gs-end r"><b>RM40.00</b><small>the priciest</small></span>
+              <span class="gs-end r"><b>RM40.00</b><small>the most expensive</small></span>
             </div>
           </div>
           <p>15 states · 619 real prices. Every answer is somewhere on that line.</p>
@@ -893,13 +918,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 <section id="gap" class="band">
   <div class="wrap">
     <div class="sec-pill"><span class="pill gold">The Price Gap</span></div>
-    <h2>Same plate.<br class="mbr">Same country.<br class="mbr">Different universe.</h2>
-    <p class="sec-sub">Every price is the original listed price on a public delivery menu, collected by hand.</p>
+    <h2>Same plate.<br class="mbr">Same country.<br class="mbr">Harga lain cerita.</h2>
+    <p class="sec-sub">Every price is exactly as listed on a public delivery menu. Collected by hand, no agak-agak.</p>
     <div class="gap-card reveal-sec">
       <div class="gap-row">
         <div class="g lo"><div class="v">RM5.30</div><div class="k"><b>Cheapest</b>nasi lemak ayam, Terengganu</div></div>
         <div class="g"><div class="v">RM11.87</div><div class="k"><b>National median</b>across all 15 states</div></div>
-        <div class="g hi"><div class="v">RM40.00</div><div class="k"><b>Priciest</b>Set 7 Udang, Putrajaya &amp; Melaka</div></div>
+        <div class="g hi"><div class="v">RM40.00</div><div class="k"><b>Most Expensive</b>Set 7 Udang, Putrajaya &amp; Melaka</div></div>
       </div>
       <div class="paycheck">
         <div class="pc-q">What did <b>you</b> last pay for nasi lemak?<small>Drag to find out where you sit</small></div>
@@ -920,7 +945,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   <div class="wrap wide">
     <div class="sec-pill"><span class="pill gold">The Sedap Map</span></div>
     <h2>Malaysia, priced by the plate</h2>
-    <p class="sec-sub">The real map, colored by the real prices. Darker gold means your wallet works harder.</p>
+    <p class="sec-sub">Real map, real prices. The darker the gold, the more your wallet kena.</p>
     <div class="toggle" role="tablist">
       <button class="on" data-dish="nl" onclick="setDish('nl')"><span class="temo">🍛</span>Nasi Lemak</button>
       <button data-dish="ag" onclick="setDish('ag')"><span class="temo">🍗</span>Ayam Gepuk</button>
@@ -955,7 +980,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     </div>
     <div class="spot" id="spot"></div>
     <div class="nudge nudge-map reveal-sec">
-      <div class="n-t">Think you know Malaysian Food Prices?<small>Most people only get 2 right</small></div>
+      <div class="n-t">Confirm you know the harga?<small>Most people only get 2 right</small></div>
       <a href="#challenge" onclick="return goSection(event,'challenge')">Play The Harga Challenge →</a>
     </div>
   </div>
@@ -966,6 +991,12 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <div class="sec-pill"><span class="pill gold">The State Battle</span></div>
     <h2 id="rankTitle">Which state charges the most?</h2>
     <p class="sec-sub" id="rankSub"></p>
+    <div class="toggle sub-toggle" role="tablist">
+      <button class="on" data-dish="nl" onclick="setDish('nl')"><span class="temo">🍛</span>Nasi Lemak</button>
+      <button data-dish="ag" onclick="setDish('ag')"><span class="temo">🍗</span>Ayam Gepuk</button>
+      <button data-dish="kp" onclick="setDish('kp')"><span class="temo">☕</span>Kopi Ais</button>
+      <button data-dish="mt" onclick="setDish('mt')"><span class="temo">🍵</span>Matcha</button>
+    </div>
     <div class="chart rank-top reveal-sec" id="rankTop"></div>
     <div class="fold"><button class="fold-btn" id="fb_ranking" onclick="toggleFold('ranking')" aria-expanded="false" aria-controls="fold_ranking"><span class="fb-i">+</span><span class="fb-l" data-open="Show the full state ranking" data-close="Hide the ranking">Show the full state ranking</span></button></div>
     <div class="fold-body" id="fold_ranking">
@@ -978,26 +1009,32 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 <section id="absurd">
   <div class="wrap">
     <div class="sec-pill"><span class="pill chili">The T-20 Menu</span></div>
-    <h2>The most expensive nasi lemak in every state</h2>
-    <p class="sec-sub">We hunted down the priciest nasi lemak dish on public delivery menus in each territory. The winners are... a lot.</p>
+    <h2 id="absurdTitle">The most expensive nasi lemak in every state</h2>
+    <p class="sec-sub" id="absurdSub">We hunted down the most expensive nasi lemak dish on public delivery menus in each territory. The winners are... a lot.</p>
+    <div class="toggle sub-toggle" role="tablist">
+      <button class="on" data-dish="nl" onclick="setDish('nl')"><span class="temo">🍛</span>Nasi Lemak</button>
+      <button data-dish="ag" onclick="setDish('ag')"><span class="temo">🍗</span>Ayam Gepuk</button>
+      <button data-dish="kp" onclick="setDish('kp')"><span class="temo">☕</span>Kopi Ais</button>
+      <button data-dish="mt" onclick="setDish('mt')"><span class="temo">🍵</span>Matcha</button>
+    </div>
     <div class="absurd reveal-sec" id="absurdList"></div>
     <div style="text-align:center"><button class="showmore" id="absurdMore" onclick="toggleAbsurd()">Show all 15 states ↓</button></div>
-    <div class="callout">Meanwhile in <b>Kelantan</b>, the most expensive nasi lemak we could find costs <b>RM11.84</b>. That is less than the national median. Kelantan is not playing the same game as everyone else.</div>
+    <div class="callout" id="absurdCallout"></div>
   </div>
 </section>
 
 <section id="clubs" class="band">
   <div class="wrap">
     <div class="sec-pill"><span class="pill gold">The RM10 Line</span></div>
-    <h2>What can still be had for under RM10?</h2>
-    <p class="sec-sub">We checked every single price we collected against the RM10 note. The results are not evenly distributed.</p>
-    <div class="fold"><button class="fold-btn" id="fb_clubs" onclick="toggleFold('clubs')" aria-expanded="false" aria-controls="fold_clubs"><span class="fb-i">+</span><span class="fb-l" data-open="Show what survives under RM10" data-close="Hide this">Show what survives under RM10</span></button></div>
+    <h2>How many of these still cost under RM10?</h2>
+    <p class="sec-sub">We held all 619 prices against one RM10 note. Kopi still boleh. The rest, sorry la.</p>
+    <div class="fold"><button class="fold-btn" id="fb_clubs" onclick="toggleFold('clubs')" aria-expanded="false" aria-controls="fold_clubs"><span class="fb-i">+</span><span class="fb-l" data-open="Show the count for each item" data-close="Hide this">Show the count for each item</span></button></div>
     <div class="fold-body" id="fold_clubs">
     <div class="tenline reveal-sec" id="tenline"></div>
     <div class="callout" id="tenCallout"></div>
   </div>
     <div class="nudge reveal-sec">
-      <div class="n-t">Think you know Malaysian Food Prices?<small>Most people only get 2 right</small></div>
+      <div class="n-t">Confirm you know the harga?<small>Most people only get 2 right</small></div>
       <a href="#challenge" onclick="return goSection(event,'challenge')">Play The Harga Challenge →</a>
     </div>
     </div>
@@ -1006,9 +1043,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
 <section id="value">
   <div class="wrap">
     <div class="sec-pill"><span class="pill gold">The Food Value Index</span></div>
-    <h2>Which state gets the most food for their money?</h2>
-    <p class="sec-sub">Combined ranking across the two food dishes (nasi lemak + ayam gepuk). Cheaper plates, higher score. Fight it out in the comments.</p>
-    <div class="fold"><button class="fold-btn" id="fb_value" onclick="toggleFold('value')" aria-expanded="false" aria-controls="fold_value"><span class="fb-i">+</span><span class="fb-l" data-open="Show the value ranking" data-close="Hide the value ranking">Show the value ranking</span></button></div>
+    <h2>Which state is most berbaloi? Don't gaduh ah.</h2>
+    <p class="sec-sub">Combined ranking across the two food dishes (nasi lemak + ayam gepuk). Cheaper plates, higher score.</p>
+    <div class="vtable vtable-top reveal-sec" id="valueTop"></div>
+    <div class="fold"><button class="fold-btn" id="fb_value" onclick="toggleFold('value')" aria-expanded="false" aria-controls="fold_value"><span class="fb-i">+</span><span class="fb-l" data-open="Show all 15 states" data-close="Hide the rest">Show all 15 states</span></button></div>
     <div class="fold-body" id="fold_value">
     <div class="vtable reveal-sec" id="valueTable"></div>
     <p style="text-align:center;font-size:.75rem;color:var(--ink-mute);margin-top:10px">v1 is price-based (median nasi lemak + median ayam gepuk). Ratings and delivery fees join the formula in Vol. 2.</p>
@@ -1044,7 +1082,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
         <button class="chip" data-f="ag" onclick="setFilter('ag')"><span class="temo">🍗</span>Ayam Gepuk</button>
         <button class="chip" data-f="kp" onclick="setFilter('kp')"><span class="temo">☕</span>Kopi</button>
         <button class="chip" data-f="mt" onclick="setFilter('mt')"><span class="temo">🍵</span>Matcha</button>
-        <button class="chip" data-f="max" onclick="setFilter('max')"><span class="temo">👑</span>Priciest Finds</button>
+        <button class="chip" data-f="max" onclick="setFilter('max')"><span class="temo">👑</span>Most Expensive Finds</button>
         <div class="cfind">
           <select id="fState" onchange="renderTable()"><option value="">All states</option></select>
           <input id="fSearch" placeholder="Search restaurant or item..." oninput="renderTable()">
@@ -1159,7 +1197,7 @@ function hookTip(el, st){
   el.onmousemove = e=>{
     const tip = document.getElementById('tip');
     const rk = ranked().indexOf(st)+1;
-    tip.innerHTML = `<b>${st}</b> · #${rk} priciest<br><span class="emo-i">${demoji()}</span>median <b>RM${s.med.toFixed(2)}</b> across ${s.n} places<br>range RM${s.min.toFixed(2)} to RM${s.max.toFixed(2)}`;
+    tip.innerHTML = `<b>${st}</b> · #${rk} most expensive<br><span class="emo-i">${demoji()}</span>median <b>RM${s.med.toFixed(2)}</b> across ${s.n} places<br>range RM${s.min.toFixed(2)} to RM${s.max.toFixed(2)}`;
     tip.style.opacity = 1;
     tip.style.left = Math.min(e.clientX+14, window.innerWidth-250)+'px';
     tip.style.top = (e.clientY+16)+'px';
@@ -1258,17 +1296,17 @@ function renderSpot(){
   if(!s){ el.classList.remove('show'); return; }
   const rk = ranked().indexOf(selState)+1, total = ranked().length;
   const tags = [];
-  if(rk===1) tags.push('👑 priciest in Malaysia');
+  if(rk===1) tags.push('👑 most expensive in Malaysia');
   if(rk===total) tags.push('🟩 best value in Malaysia');
   const pm = DATA.prem[selState];
   const maxline = (dish==='nl' && pm)
-    ? `<div class="maxline"><span class="emo-i">👑</span>Priciest nasi lemak found here: <b>RM${pm.p.toFixed(2)}</b> (${pm.i}, ${pm.r})</div>` : '';
+    ? `<div class="maxline"><span class="emo-i">👑</span>Most expensive nasi lemak found here: <b>RM${pm.p.toFixed(2)}</b> (${pm.i}, ${pm.r})</div>` : '';
   el.innerHTML = `
     <h3><img class="flag lg" src="${DATA.flags[selState]||''}" alt="${selState} flag"><span class="emo-i">${demoji()}</span>${selState} <span class="rankchip">#${rk} of ${total} by price</span> ${tags.map(t=>`<span class="rankchip">${t}</span>`).join(' ')}</h3>
     <div class="facts">
       <div class="fact"><div class="v">RM${s.med.toFixed(2)}</div><div class="k">median ${dlabel()}</div></div>
       <div class="fact"><div class="v">RM${s.min.toFixed(2)}</div><div class="k">cheapest found</div></div>
-      <div class="fact"><div class="v">RM${s.max.toFixed(2)}</div><div class="k">priciest standard found</div></div>
+      <div class="fact"><div class="v">RM${s.max.toFixed(2)}</div><div class="k">most expensive standard found</div></div>
       <div class="fact"><div class="v">${s.n}</div><div class="k">restaurants counted</div></div>
     </div>${maxline}`;
   el.classList.add('show');
@@ -1290,8 +1328,13 @@ function renderRank(){
      section answers its own headline before asking anyone to tap. */
   podium.innerHTML = full.slice(0,3).map((st,i)=>row(st,i)).join('');
   chart.innerHTML = full.slice(3).map((st,i)=>row(st,i+3)).join('');
+  /* Both halves, not just the podium. The fold body used to be widened only by
+     toggleFold(), so switching dish while the ranking was already expanded
+     re-rendered those rows at width:0 and left them stuck there. Setting the
+     width on a hidden element is harmless, so this does not need to know
+     whether the fold is open. */
   requestAnimationFrame(()=>setTimeout(()=>{
-    podium.querySelectorAll('.bar').forEach(b=>b.style.width=b.dataset.w);
+    [podium, chart].forEach(c=>c.querySelectorAll('.bar').forEach(b=>b.style.width=b.dataset.w));
   },80));
   const TITLES = {
     nl:'Which state charges the most for nasi lemak?',
@@ -1300,10 +1343,10 @@ function renderRank(){
     mt:'The matcha map of Malaysia'
   };
   const SUBS = {
-    nl:'Median price of a standard nasi lemak ayam on public delivery menus. Census complete: all 15 states and federal territories.',
-    ag:'Median price of the basic ayam gepuk set, rice included. Census complete: all 15 states and federal territories.',
-    kp:'Median price of the cheapest iced kopi per outlet (kopi ais, kopi O peng, iced americano, whatever they call it). Census complete: all 15 states and federal territories.',
-    mt:'Median price of the cheapest iced matcha per outlet. Census complete: all 15 states and federal territories.'
+    nl:'Median price of a standard nasi lemak ayam on public delivery menus. All 15 states and territories, satu pun tak tinggal.',
+    ag:'Median price of the basic gepuk set, rice included. All 15 states and territories, satu pun tak tinggal.',
+    kp:'Median price of the cheapest iced kopi per outlet. Kopi ais, kopi O peng, iced americano, apa-apa je. All 15 states and territories.',
+    mt:'Median price of the cheapest iced matcha per outlet. All 15 states and territories, satu pun tak tinggal.'
   };
   document.getElementById('rankTitle').textContent = TITLES[dish];
   document.getElementById('rankSub').textContent = SUBS[dish];
@@ -1312,7 +1355,7 @@ function renderRank(){
   const CALLOUTS = {
     nl: `Census findings: <b>${top} charges the most</b> (RM${s[top].med.toFixed(2)} median) while <b>${bot} feeds you for RM${s[bot].med.toFixed(2)}</b>, ${gp}% less. Same plate, same country. Geography is a sambal-flavored tax bracket.`,
     ag: `<b>${top} tops the gepuk table</b> at RM${s[top].med.toFixed(2)} while <b>${bot} smashes it for RM${s[bot].med.toFixed(2)}</b>, ${gp}% less. The green bar is the value champion. Respect.`,
-    kp: `<b>${top} pours Malaysia's priciest kopi</b> (RM${s[top].med.toFixed(2)} median). Meanwhile the national median iced kopi is RM8.40. Fun fact: a single kopi O ais can still be found for RM2.40. Civilization endures.`,
+    kp: `<b>${top} pours Malaysia's most expensive kopi</b> (RM${s[top].med.toFixed(2)} median). Meanwhile the national median iced kopi is RM8.40. Fun fact: a single kopi O ais can still be found for RM2.40. Civilization endures.`,
     mt: `<b>${top} sips the most expensive matcha</b> at RM${s[top].med.toFixed(2)} median. Nationally, iced matcha (RM14.40) costs MORE than an entire nasi lemak ayam (RM11.87). Malaysia, we need to talk.`
   };
   document.getElementById('rankCallout').innerHTML = CALLOUTS[dish];
@@ -1321,7 +1364,7 @@ function setDish(d){
   if(window.seTrack) seTrack('map_dish_selected', {dish:d});
   dish = d;
   document.querySelectorAll('.toggle button').forEach(b=>b.classList.toggle('on', b.dataset.dish===d));
-  renderMap(); renderSpot(); renderRank();
+  renderMap(); renderSpot(); renderRank(); renderAbsurd();
 }
 
 /* absurdity leaderboard */
@@ -1343,47 +1386,90 @@ function toggleFold(id){
 }
 let tableBuilt = false;
 let absurdOpen = false;
+
+/* The nasi lemak column was collected differently from the other three: for
+   nasi lemak we deliberately hunted the most expensive dish on each menu, while for
+   gepuk, kopi and matcha we recorded the cheapest option at each outlet. So
+   for those three this list is the most expensive entry-level item we came across,
+   not the most expensive thing on anyone's menu, and the subtitle says so. */
+const ABSURD_CACHE = {};
+function absurdFor(d){
+  if(d === 'nl') return DATA.absurd;
+  if(ABSURD_CACHE[d]) return ABSURD_CACHE[d];
+  const best = {};
+  DATA.rows.forEach(r=>{
+    if(r.d !== d) return;
+    if(!best[r.s] || r.p > best[r.s].p) best[r.s] = r;
+  });
+  return (ABSURD_CACHE[d] = Object.values(best).sort((a,b)=>b.p-a.p));
+}
+const ABSURD_TITLES = {
+  nl:'The most expensive nasi lemak in every state',
+  ag:'The most expensive ayam gepuk in every state',
+  kp:'The most expensive iced kopi in every state',
+  mt:'The most expensive iced matcha in every state'
+};
+const ABSURD_SUBS = {
+  nl:'We hunted down the most expensive nasi lemak dish on public delivery menus in each territory. The winners are... a lot.',
+  ag:'The most expensive ayam gepuk set we came across in each territory. We recorded the basic set at every outlet, so this is the most expensive basic set we found, not the most expensive thing on a gepuk menu.',
+  kp:'We recorded the cheapest iced coffee at each outlet, so this is the most expensive starting price in every territory. One person’s cheapest cup is another person’s lunch.',
+  mt:'We recorded the cheapest iced matcha at each outlet, so this is the most expensive starting price in every territory. Matcha memang takde bahagian murah.'
+};
 function renderAbsurd(){
   const el = document.getElementById('absurdList');
-  const list = absurdOpen ? DATA.absurd : DATA.absurd.slice(0,8);
+  const src = absurdFor(dish);
+  document.getElementById('absurdTitle').textContent = ABSURD_TITLES[dish];
+  document.getElementById('absurdSub').textContent = ABSURD_SUBS[dish];
+  const cheapest = src[src.length-1];
+  const co = document.getElementById('absurdCallout');
+  co.innerHTML = dish === 'nl'
+    ? `Meanwhile in <b>Kelantan</b>, the most expensive nasi lemak we could find costs <b>RM11.84</b>. That is less than the national median. Kelantan is not playing the same game as everyone else.`
+    : `At the other end, the most expensive one we found anywhere in <b>${cheapest.s}</b> was <b>RM${cheapest.p.toFixed(2)}</b> (${cheapest.i}). That is a whole state's ceiling. The top of this list, <b>RM${src[0].p.toFixed(2)}</b> in ${src[0].s}, is ${(src[0].p/cheapest.p).toFixed(1)}× more.`;
+  const list = absurdOpen ? src : src.slice(0,8);
   el.innerHTML = list.map((a,i)=>{
     const medal = i===0?'👑':(i===1?'🥈':(i===2?'🥉':i+1));
     return `<div class="ab-row ${i===0?'first':''}" style="animation-delay:${Math.min(i,8)*28}ms"><span class="rk">${medal}</span><span class="who"><span class="item"><img class="flag sm" src="${DATA.flags[a.s]||''}" alt="">${a.i} · ${a.s}</span><br><span class="rest">${a.r}, ${a.c}</span></span><span class="p">RM${a.p.toFixed(2)}</span></div>`;
   }).join('');
   const btn = document.getElementById('absurdMore');
-  btn.textContent = absurdOpen ? 'Show top 8 only ↑' : `Show all ${DATA.absurd.length} states ↓`;
+  btn.textContent = absurdOpen ? 'Show top 8 only ↑' : `Show all ${src.length} states ↓`;
 }
 function toggleAbsurd(){ absurdOpen = !absurdOpen; renderAbsurd(); if(!absurdOpen) scrollToEl(document.getElementById('absurd')); }
 
 /* clubs */
 function renderClubs(){
   const el = document.getElementById('tenline');
+  /* The count leads and the percentage supports it. "40 of 150" is a thing a
+     reader can picture; "27%" is a thing they have to convert first. */
   el.innerHTML = DATA.tenline.map(t=>{
     const cls = t.pct>=50 ? '' : (t.pct>=10 ? 'warn' : 'dead');
-    return `<div class="tl-row ${cls}"><span class="who"><span class="emo-i">${t.emoji}</span>${t.label}<small>${t.under} of ${t.n} we found · cheapest RM${t.cheapest.toFixed(2)}</small></span><div class="tl-track"><div class="tl-fill" data-w="${Math.max(t.pct,1.5)}%"></div></div><span class="pct">${t.pct}%</span></div>`;
-  }).join('') + `<div class="tl-foot">Share of every price we collected that still comes in under RM10.</div>`;
+    return `<div class="tl-row ${cls}"><span class="who"><span class="emo-i">${t.emoji}</span>${t.label}<small>cheapest we found: RM${t.cheapest.toFixed(2)}</small></span><div class="tl-track"><div class="tl-fill" data-w="${Math.max(t.pct,1.5)}%"></div></div><span class="pct"><span class="n">${t.under}</span><small>of ${t.n} · ${t.pct}%</small></span></div>`;
+  }).join('') + `<div class="tl-foot">Each row counts how many of that item's prices came in under RM10, out of every one we collected for it.</div>`;
   requestAnimationFrame(()=>setTimeout(()=>{
     el.querySelectorAll('.tl-fill').forEach(b=>b.style.width=b.dataset.w);
   },120));
   const kopi = DATA.tenline.find(t=>t.k==='kp'), gepuk = DATA.tenline.find(t=>t.k==='ag');
   const mt = DATA.tenline.find(t=>t.k==='mt');
   document.getElementById('tenCallout').innerHTML = `<ul class="co-list">`
-    + `<li><span class="ce">☕</span><span>Kopi is the last thing holding the line. <b>${kopi.pct}%</b> of every iced kopi we found is still under RM10, in all ${kopi.states} states.</span></li>`
-    + `<li><span class="ce">🍗</span><span>Ayam gepuk is <b>${gepuk.pct}%</b>. Exactly <b>one</b> set in the whole country, a RM8.50 hero in Bandar Jengka, Pahang.</span></li>`
+    + `<li><span class="ce">☕</span><span>Kopi is the last thing holding the line. <b>${kopi.under} of the ${kopi.n}</b> iced kopis we found are still under RM10, and every one of the ${kopi.states} states has at least one.</span></li>`
+    + `<li><span class="ce">🍗</span><span>Ayam gepuk has <b>one</b>. Out of ${gepuk.n} sets in the whole country, a single RM8.50 hero in Bandar Jengka, Pahang.</span></li>`
     + `<li><span class="ce">🍵</span><span>An under-RM10 iced matcha exists in only <b>${mt.states} of ${kopi.states}</b> states.</span></li>`
     + `</ul>`;
 }
 
 /* value index */
 function renderValue(){
-  const el = document.getElementById('valueTable');
   const ranks = DATA.value.map((v,i,arr)=>{
     const better = arr.filter(x=>x.score>v.score).length;
     const tied = arr.filter(x=>x.score===v.score).length>1;
     return {rank: better+1, tied};
   });
-  el.innerHTML = `<div class="v-row head"><span></span><span>State</span><span class="num" title="Median nasi lemak"><span class="hfull">Nasi lemak</span><span class="habbr">🍛 NL</span></span><span class="num" title="Median ayam gepuk"><span class="hfull">Ayam gepuk</span><span class="habbr">🍗 AG</span></span><span class="score">Score</span></div>` +
-    DATA.value.map((v,i)=>`<div class="v-row ${i<3?'top':''}"><span class="rk">${ranks[i].rank===1&&!ranks[i].tied?'🏆':ranks[i].rank+(ranks[i].tied?'=':'')}</span><span class="st"><img class="flag sm" src="${DATA.flags[v.s]||''}" alt="">${v.s}</span><span class="num">RM${v.nl.toFixed(2)}</span><span class="num">RM${v.ag.toFixed(2)}</span><span class="score">${v.score}</span></div>`).join('');
+  const head = `<div class="v-row head"><span></span><span>State</span><span class="num" title="Median nasi lemak"><span class="hfull">Nasi lemak</span><span class="habbr">🍛 NL</span></span><span class="num" title="Median ayam gepuk"><span class="hfull">Ayam gepuk</span><span class="habbr">🍗 AG</span></span><span class="score">Score</span></div>`;
+  const row = (v,i)=>`<div class="v-row ${i<3?'top':''}"><span class="rk">${ranks[i].rank===1&&!ranks[i].tied?'🏆':ranks[i].rank+(ranks[i].tied?'=':'')}</span><span class="st"><img class="flag sm" src="${DATA.flags[v.s]||''}" alt="">${v.s}</span><span class="num">RM${v.nl.toFixed(2)}</span><span class="num">RM${v.ag.toFixed(2)}</span><span class="score">${v.score}</span></div>`;
+  /* Podium above the fold so the section answers its own headline before it
+     asks for a tap, same as the State Battle. The header row is repeated in
+     the expanded half so the columns are still labelled after you scroll. */
+  document.getElementById('valueTop').innerHTML = head + DATA.value.slice(0,3).map((v,i)=>row(v,i)).join('');
+  document.getElementById('valueTable').innerHTML = head + DATA.value.slice(3).map((v,i)=>row(v,i+3)).join('');
 }
 
 /* what did you pay? -> your percentile against the 150 standard plates */
@@ -1400,7 +1486,7 @@ function runPayCheck(){
   const out = document.getElementById('pcOut');
   let line, note;
   if(pct === 0){ line = `<span class="pc-ok"><b>Nothing</b> we found is cheaper than that.</span>`; note = 'You are eating at prices most of Malaysia has stopped seeing. Please share the address.'; }
-  else if(pct === 100){ line = `<b>Every single plate</b> we found costs less than yours.`; note = 'That is above the priciest standard nasi lemak in our whole dataset.'; }
+  else if(pct === 100){ line = `<b>Every single plate</b> we found costs less than yours.`; note = 'That is above the most expensive standard nasi lemak in our whole dataset.'; }
   else if(pct <= 10){ line = `<span class="pc-ok">Only <b>${pct}%</b> of the plates we found cost less than yours.</span>`; note = 'You are eating at Malaysian prices most people have stopped seeing.'; }
   else if(pct < 45){ line = `<span class="pc-ok"><b>${pct}%</b> of the plates we found cost less than yours.</span>`; note = 'Comfortably under the national median. Keep that place to yourself.'; }
   else if(pct <= 55){ line = `<b>${pct}%</b> of the plates we found cost less than yours.`; note = 'Dead average. You are paying exactly what Malaysia pays.'; }
@@ -1575,7 +1661,7 @@ function nextRound(){
   const stats = [
     {key:'min', label:`the <b>cheapest</b> ${d.name} we found in`, val:data[st].min},
     {key:'med', label:`the <b>median</b> ${d.name} in`,            val:data[st].med},
-    {key:'max', label:`the <b>priciest</b> standard ${d.name} we found in`, val:data[st].max}
+    {key:'max', label:`the <b>most expensive</b> standard ${d.name} we found in`, val:data[st].max}
   ];
   const pick = stats[Math.floor(Math.random()*stats.length)];
   round = {st, dish:d, stat:pick.key, label:pick.label, val:pick.val};
