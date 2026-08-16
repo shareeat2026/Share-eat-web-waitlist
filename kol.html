@@ -160,6 +160,10 @@
       transform: rotate(2deg);
     }
     .phone.flat { transform: none; }
+    /* Real app screenshots inside the phone shell. The screenshots carry
+       their own status bar and Dynamic Island, so the drawn ones are gone. */
+    .phone-shot { display: block; width: 100%; height: 100%; object-fit: cover;
+      object-position: top center; border-radius: 35px; background: var(--bg); }
     .phone-screen { background: var(--bg); width: 100%; height: 100%; border-radius: 35px; overflow: hidden; position: relative; }
     .island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 92px; height: 22px; background: #15110d; border-radius: 999px; z-index: 5; }
     .statusbar { display: flex; align-items: center; justify-content: space-between; padding: 13px 20px 4px; font-size: 11px; font-weight: 700; color: var(--ink); }
@@ -383,74 +387,7 @@
 <div class="phone-stage reveal">
 <div class="blob"></div>
 <div class="phone">
-<div class="phone-screen">
-<div class="island"></div>
-<div class="statusbar">
-<span>9:41</span>
-<span class="sb-icons">▮▮▮ 📶 🔋</span>
-</div>
-<div class="app-head">
-<div class="app-loc">
-<span class="pin"><span class="ico">📍</span> Kuala Lumpur ⌄</span>
-<span class="app-bell">🔔</span>
-</div>
-<div class="app-title">Collabs near you</div>
-<div class="app-search">
-<div class="field">🔍 Search restaurants, cuisines…</div>
-<div class="filter">⚙️</div>
-</div>
-</div>
-<div class="app-chips">
-<span class="c on">All</span>
-<span class="c">Nasi Lemak</span>
-<span class="c">Ramen</span>
-<span class="c">Mala</span>
-<span class="c">Brunch</span>
-</div>
-<div class="feed">
-<div class="feed-card">
-<div class="feed-photo ph-sushi">
-<div class="emoji-bg">🍣</div>
-<span class="badge">✦ Featured</span>
-<span class="heart">♡</span>
-<span class="comp">RM 200 Food Credit</span>
-</div>
-<div class="feed-body">
-<div class="row1">
-<span class="rest">SHIN Zushi <span class="cat">· Omakase</span></span>
-<span class="star">★ 4.9</span>
-</div>
-<h5>8-Course Chef's Omakase</h5>
-<div class="deliv"><span>1 Reel</span><span>Instagram Reel</span></div>
-<div class="foot">
-<span class="meta"><span>📍 1.2 km</span><span>👥 27 applied</span></span>
-<span class="spots">3 spots left</span>
-</div>
-</div>
-</div>
-<div class="feed-card">
-<div class="feed-photo ph-mala">
-<div class="emoji-bg">🍲</div>
-<span class="badge">✦ Featured</span>
-<span class="badge new">New</span>
-<span class="heart">♡</span>
-</div>
-<div class="feed-body">
-<div class="row1">
-<span class="rest">Mala Republic <span class="verified">✔</span> <span class="cat">· Hotpot</span></span>
-<span class="star">★ 4.7</span>
-</div>
-<h5>Film our signature mala tornado pot</h5>
-</div>
-</div>
-</div>
-<div class="app-tabbar">
-<div class="tab on"><span class="ti">🧭</span> Explore</div>
-<div class="tab"><span class="ti">♡</span> Saved</div>
-<div class="tab add"><span class="ti">+</span></div>
-<div class="tab"><span class="ti">👤</span> Profile</div>
-</div>
-</div>
+<div class="phone-screen"><img alt="The Share Eat! app showing live restaurant campaigns near you, each with its food credit and deliverables" class="phone-shot" decoding="async" fetchpriority="high" height="1370" loading="eager" src="/app/kol-explore.jpg?v=1" width="640"/></div>
 </div>
 </div>
 </div>
@@ -557,61 +494,7 @@
 </div>
 <div class="phone-stage">
 <div class="phone flat" style="width:288px;">
-<div class="phone-screen">
-<div class="island"></div>
-<div class="statusbar">
-<span>9:41</span>
-<span class="sb-icons">▮▮▮ 📶 🔋</span>
-</div>
-<div class="app-head">
-<div class="app-loc">
-<span class="pin"><span class="ico">📍</span> Petaling Jaya ⌄</span>
-<span class="app-bell">🔔</span>
-</div>
-<div class="app-title">My collabs</div>
-</div>
-<div class="app-chips">
-<span class="c on">Active · 3</span>
-<span class="c">Pending</span>
-<span class="c">Done</span>
-</div>
-<div class="feed">
-<div class="feed-card">
-<div class="feed-photo ph-burger">
-<div class="emoji-bg">🍔</div>
-<span class="badge" style="background:#2a8a6a;color:#fff">✓ Approved</span>
-<span class="comp">RM 120 Food Credit</span>
-</div>
-<div class="feed-body">
-<div class="row1">
-<span class="rest">Smash &amp; Co <span class="cat">· Bangsar</span></span>
-<span class="star">★ 4.8</span>
-</div>
-<h5>Smash burger combo for two</h5>
-<div class="deliv"><span>1 Reel</span><span>Instagram Reel</span></div>
-</div>
-</div>
-<div class="feed-card">
-<div class="feed-photo ph-matcha">
-<div class="emoji-bg">🍵</div>
-<span class="badge" style="background:#fff;color:var(--ink)">⏳ Pending</span>
-</div>
-<div class="feed-body">
-<div class="row1">
-<span class="rest">Hojicha House <span class="cat">· KL</span></span>
-<span class="star">Applied 2h</span>
-</div>
-<h5>Aesthetic matcha latte pour shots</h5>
-</div>
-</div>
-</div>
-<div class="app-tabbar">
-<div class="tab"><span class="ti">🧭</span> Explore</div>
-<div class="tab"><span class="ti">♡</span> Saved</div>
-<div class="tab add"><span class="ti">+</span></div>
-<div class="tab on"><span class="ti">👤</span> Profile</div>
-</div>
-</div>
+<div class="phone-screen"><img alt="A Share Eat! campaign brief: Ayam Gepuk Launch Week, RM88 food credit plus RM150 cash, with an Apply to collab button" class="phone-shot" decoding="async" height="1370" loading="lazy" src="/app/kol-brief.jpg?v=1" width="640"/></div>
 </div>
 </div>
 </div>
