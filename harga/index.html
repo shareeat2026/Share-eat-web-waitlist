@@ -132,8 +132,7 @@ h1 .swing{display:inline-block;animation:swing 5s ease-in-out infinite;transform
 .nudge .n-t small{display:block;font-weight:600;font-size:.78rem;color:var(--ink-soft);margin-top:2px}
 .nudge a{background:var(--ink);color:var(--gold);font-weight:800;font-size:.85rem;padding:11px 18px;border-radius:12px;text-decoration:none;white-space:nowrap;flex:0 0 auto}
 .se-band{max-width:760px;margin:30px auto 0;background:linear-gradient(135deg,#fff,#FFFBF0);border:1px solid var(--line);border-radius:22px;padding:24px 26px;box-shadow:var(--sh-sm);text-align:center}
-.se-band .sb-k{font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-ink)}
-.se-band .sb-h{font-weight:800;font-size:1.02rem;margin-top:8px;line-height:1.4}
+.se-band .sb-h{font-weight:800;font-size:1.02rem;line-height:1.4}
 .se-band .sb-logo{height:18px;display:block;margin:11px auto 0}
 .se-band .sb-p{font-size:.87rem;color:var(--ink-soft);margin-top:7px;line-height:1.6;max-width:520px;margin-inline:auto;text-wrap:balance}
 .se-band .sb-a{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
@@ -170,6 +169,7 @@ section.band::before{top:0}
 section.band::after{bottom:0}
 section[id]{scroll-margin-top:70px}
 .fold{display:flex;justify-content:center;margin-top:6px}
+.rank-top{margin-bottom:20px}
 .fold-btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;background:var(--card);border:2px solid var(--line);border-radius:14px;font:inherit;font-weight:800;font-size:.9rem;color:var(--ink);cursor:pointer;padding:13px 22px;box-shadow:var(--sh-sm);transition:border-color .18s,transform .15s,box-shadow .18s}
 .fold-btn:hover{border-color:var(--gold-deep);transform:translateY(-1px);box-shadow:var(--sh-md)}
 .fold-btn .fb-i{position:relative;flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:2px solid var(--gold-deep);font-size:0;transition:transform .25s}
@@ -454,17 +454,30 @@ h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;te
 .ractions{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:340px;margin:18px auto 0}
 .ractions .playbtn,.ractions .sharebtn{margin:0;width:100%;text-align:center;padding-inline:12px;white-space:nowrap;font-size:clamp(.64rem,3.1vw,.85rem)}
 .gbody{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
-.gempty{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-top:18px;padding:24px 20px;border:1.5px dashed rgba(255,248,241,.16);border-radius:18px}
+.gempty{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;margin-top:18px;padding:26px 20px;border:0;border-radius:18px;background:rgba(255,248,241,.045)}
 .gempty.gone{display:none}
-.gempty p{font-size:.82rem;line-height:1.65;opacity:.55;margin:0;text-wrap:balance}
+.gempty p{font-size:.78rem;line-height:1.6;opacity:.5;margin:0;text-wrap:balance}
 .gempty p b{color:var(--gold);opacity:.9}
-.get-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;max-width:320px}
-.get{display:flex;flex-direction:column;align-items:center;gap:5px;padding:11px 4px;border-radius:13px;background:rgba(255,248,241,.06);animation:qpulse 3.4s ease-in-out infinite}
+/* the price spread, drawn rather than described: it previews the slider
+   the player is about to drag, and puts the two headline numbers where
+   the eye already is */
+.gspan{width:100%;max-width:360px}
+.gspan-bar{position:relative;height:6px;border-radius:999px;background:linear-gradient(90deg,rgba(245,200,66,.22),rgba(245,200,66,.85))}
+.gs-dot{position:absolute;top:50%;width:8px;height:18px;border-radius:3px;background:var(--gold);transform:translate(-50%,-50%);box-shadow:0 0 0 4px var(--ink)}
+.gs-dot.lo{left:0}
+.gs-dot.hi{left:100%}
+.gspan-ends{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+.gs-end{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0}
+.gs-end.r{align-items:flex-end;text-align:right}
+.gs-end b{font-size:1.05rem;font-weight:900;letter-spacing:-.015em;color:var(--gold)}
+.gs-end small{font-size:clamp(.58rem,2.2vw,.63rem);font-weight:600;opacity:.45;letter-spacing:.02em;white-space:nowrap}
+.get-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;max-width:376px}
+.get{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px 4px;border-radius:13px;background:rgba(255,248,241,.06);animation:qpulse 3.4s ease-in-out infinite}
 .get:nth-child(2){animation-delay:.35s}
 .get:nth-child(3){animation-delay:.7s}
 .get:nth-child(4){animation-delay:1.05s}
 .get .e{font-size:1.25rem;line-height:1}
-.get .q{font-size:.72rem;font-weight:800;color:var(--gold);opacity:.75;letter-spacing:.02em}
+.get .q{font-size:clamp(.58rem,2.4vw,.65rem);font-weight:800;color:var(--gold);opacity:.72;letter-spacing:.01em;line-height:1.2;text-align:center}
 @keyframes qpulse{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 @media (prefers-reduced-motion: reduce){.get{animation:none}}
 .playbtn.gone{display:none}
@@ -682,6 +695,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
   .gap-row{grid-template-columns:minmax(0,1fr);text-align:left}
   .gap-card{padding:22px 18px}
   .gap-row .g{display:grid;grid-template-columns:106px minmax(0,1fr);align-items:center;column-gap:10px;padding:12px 0}
+  /* the card already pads the top; the first row's own padding stacked on
+     top of it and made the space above "Cheapest" larger than the space
+     between the rows */
+  .gap-row .g:first-child{padding-top:0}
   .gap-row .g+.g{border-top:1px solid var(--line)}
   .gap-row .g+.g::before{display:none}
   .gap-row .g .v{font-size:1.32rem;margin-bottom:0;white-space:nowrap}
@@ -796,12 +813,19 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
         <div class="gbody">
         <div class="gempty" id="gEmpty">
           <div class="get-grid">
-            <div class="get"><span class="e">🍛</span><span class="q">RM ?</span></div>
-            <div class="get"><span class="e">🍗</span><span class="q">RM ?</span></div>
-            <div class="get"><span class="e">☕</span><span class="q">RM ?</span></div>
-            <div class="get"><span class="e">🍵</span><span class="q">RM ?</span></div>
+            <div class="get"><span class="e">🍛</span><span class="q">Nasi Lemak</span></div>
+            <div class="get"><span class="e">🍗</span><span class="q">Ayam Gepuk</span></div>
+            <div class="get"><span class="e">☕</span><span class="q">Kopi Ais</span></div>
+            <div class="get"><span class="e">🍵</span><span class="q">Matcha</span></div>
           </div>
-          <p>Four dishes, 15 states, 619 real prices.<br>The cheapest plate we found was <b>RM5.30</b>. The priciest was <b>RM40.00</b>.<br>Five rounds. Good luck.</p>
+          <div class="gspan">
+            <div class="gspan-bar"><i class="gs-dot lo"></i><i class="gs-dot hi"></i></div>
+            <div class="gspan-ends">
+              <span class="gs-end"><b>RM5.30</b><small>cheapest we found</small></span>
+              <span class="gs-end r"><b>RM40.00</b><small>the priciest</small></span>
+            </div>
+          </div>
+          <p>15 states · 619 real prices. Every answer is somewhere on that line.</p>
         </div>
         <div class="guess-zone" id="guessZone">
           <div class="q" id="guessQ"></div>
@@ -879,9 +903,9 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
       </div>
       <div class="paycheck">
         <div class="pc-q">What did <b>you</b> last pay for nasi lemak?<small>Drag to find out where you sit</small></div>
-        <div class="pc-val" id="pcVal">RM12.00</div>
+        <div class="pc-val" id="pcVal">RM8.50</div>
         <div class="pc-scale">
-          <input type="range" id="pcSlider" min="5" max="26" step="0.5" value="12" aria-label="What you last paid for nasi lemak" oninput="runPayCheck()">
+          <input type="range" id="pcSlider" min="5" max="26" step="0.5" value="8.5" aria-label="What you last paid for nasi lemak" oninput="runPayCheck()">
           <div class="pc-med" id="pcMed"><span></span><small>national median</small></div>
         </div>
         <div class="pc-ends"><span>RM5</span><span>RM26</span></div>
@@ -942,10 +966,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <div class="sec-pill"><span class="pill gold">The State Battle</span></div>
     <h2 id="rankTitle">Which state charges the most?</h2>
     <p class="sec-sub" id="rankSub"></p>
+    <div class="chart rank-top reveal-sec" id="rankTop"></div>
     <div class="fold"><button class="fold-btn" id="fb_ranking" onclick="toggleFold('ranking')" aria-expanded="false" aria-controls="fold_ranking"><span class="fb-i">+</span><span class="fb-l" data-open="Show the full state ranking" data-close="Hide the ranking">Show the full state ranking</span></button></div>
     <div class="fold-body" id="fold_ranking">
     <div class="chart reveal-sec" id="rankChart"></div>
-    <div style="text-align:center"><button class="showmore" id="rankMore" onclick="toggleRank()"></button></div>
     <div class="callout" id="rankCallout"></div>
   </div>
     </div>
@@ -990,7 +1014,6 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;co
     <p style="text-align:center;font-size:.75rem;color:var(--ink-mute);margin-top:10px">v1 is price-based (median nasi lemak + median ayam gepuk). Ratings and delivery fees join the formula in Vol. 2.</p>
   </div>
     <div class="se-band reveal-sec">
-      <div class="sb-k">Who makes this</div>
       <div class="sb-h">The Harga Index is built by</div>
       <svg class="se-word sb-logo" role="img" aria-label="Share Eat!"><use href="#seword"/></svg>
       <div class="sb-p">We connect Malaysian restaurants with food creators, so restaurants get discovered without an ad budget and creators stop paying for every meal they film. Counting prices is how we started understanding the problem.</div>
@@ -1254,19 +1277,21 @@ function renderRank(){
   const s = dsum();
   const full = ranked();
   const hi = s[full[0]].med;
-  const order = rankOpen ? full : full.slice(0,8);
+  const podium = document.getElementById('rankTop');
   const chart = document.getElementById('rankChart');
   const medals = ['🥇','🥈','🥉'];
-  chart.innerHTML = order.map((st,i)=>{
+  const row = (st,i)=>{
     const v = s[st];
     const w = Math.max(8, Math.round(v.med/hi*92));
     const cls = i===0?'top1':(st===full[full.length-1]?'champ':'');
     return `<div class="row ${cls}" style="animation-delay:${Math.min(i,8)*26}ms"><span class="rk">${medals[i]||i+1}</span><span class="state"><img class="flag sm" src="${DATA.flags[st]||''}" alt="">${st}</span><div class="bar-track"><div class="bar" data-w="${w}%"></div></div><span class="val">RM${v.med.toFixed(2)}</span></div>`;
-  }).join('');
-  const btn = document.getElementById('rankMore');
-  btn.textContent = rankOpen ? 'Show the top 8 only ↑' : `See all ${full.length} states, including the cheapest ↓`;
+  };
+  /* Podium stays on the page; the rest lives behind the fold button, so the
+     section answers its own headline before asking anyone to tap. */
+  podium.innerHTML = full.slice(0,3).map((st,i)=>row(st,i)).join('');
+  chart.innerHTML = full.slice(3).map((st,i)=>row(st,i+3)).join('');
   requestAnimationFrame(()=>setTimeout(()=>{
-    chart.querySelectorAll('.bar').forEach(b=>b.style.width=b.dataset.w);
+    podium.querySelectorAll('.bar').forEach(b=>b.style.width=b.dataset.w);
   },80));
   const TITLES = {
     nl:'Which state charges the most for nasi lemak?',
@@ -1300,7 +1325,6 @@ function setDish(d){
 }
 
 /* absurdity leaderboard */
-let rankOpen = false;
 function toggleFold(id){
   const btn = document.getElementById('fb_'+id), body = document.getElementById('fold_'+id);
   const open = !body.classList.contains('open');
@@ -1318,7 +1342,6 @@ function toggleFold(id){
   }
 }
 let tableBuilt = false;
-function toggleRank(){ rankOpen = !rankOpen; renderRank(); if(!rankOpen) scrollToEl(document.getElementById('ranking')); }
 let absurdOpen = false;
 function renderAbsurd(){
   const el = document.getElementById('absurdList');
@@ -1390,6 +1413,12 @@ function placePayMedian(){
   if(!sl || !m) return;
   const lo = +sl.min, hi = +sl.max, med = 11.87;
   m.style.left = Math.min(94, Math.max(6, (med-lo)/(hi-lo)*100)) + '%';
+  /* Start the handle halfway between the floor and the median rather than
+     on the median itself, where it covered the marker and made the two
+     read as the same thing. Computed, so it stays right if Vol. 2 moves
+     the median. */
+  const step = +sl.step || 0.5;
+  sl.value = (Math.round(((lo + med) / 2) / step) * step).toFixed(2);
 }
 
 /* the one insight worth keeping from the old spending widget */
