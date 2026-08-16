@@ -448,3 +448,89 @@ footer .se-foot-nav a{min-height:44px}
 
 /* tap targets: phones only, so the desktop nav stays slim */
 @media(max-width:720px){nav a{min-height:34px;display:inline-flex;align-items:center}}
+
+/* ============ RESTAURANT LOGO SCROLLER =========================
+   The source logos are wildly inconsistent: 12 square files and one 4:1
+   banner, backgrounds ranging from transparent to white to solid black to a
+   photograph, and every mark padded differently inside its own canvas. Rather
+   than fight that in CSS, each logo is pre-baked into an identical 160x96
+   card at build time, trimmed of its own padding and scaled to equal optical
+   area, on a card tinted with that brand's own background colour. So the CSS
+   here only has to lay out identical rectangles.                          */
+.logostrip{padding:34px 0 36px;background:var(--bg,#faf9f5);overflow:hidden}
+/* same pill as the page's own .eyebrow, so the rail's label reads as part of
+   the existing system rather than a new kind of heading */
+.logostrip > .container{text-align:center}
+.logostrip-head{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 15px;border-radius:999px;
+  font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  background:#fff;border:1px solid var(--line,rgba(26,23,20,.08));
+  color:var(--primary-ink,#8a6500);
+  box-shadow:var(--shadow-sm,0 4px 18px rgba(26,23,20,.04));
+  margin:0 0 20px;
+}
+.mq{
+  position:relative;overflow:hidden;
+  --fade:64px;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%);
+}
+/* Two identical copies of the list sit in the track and it slides exactly
+   -50%. The gap lives on the item, not on the flex container, so half the
+   track is a whole number of items and the loop has no seam. */
+.mq-track{display:flex;width:max-content;animation:mq-scroll 52s linear infinite}
+.mq:hover .mq-track,.mq:focus-within .mq-track{animation-play-state:paused}
+@keyframes mq-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lgc{flex:0 0 auto;width:160px;margin-right:18px;text-align:center}
+.lgc img{
+  display:block;width:160px;height:96px;border-radius:14px;
+  border:1px solid rgba(26,23,20,.10);background:#fff;
+  box-shadow:0 1px 2px rgba(26,23,20,.05),0 6px 16px rgba(26,23,20,.05);
+}
+.lgc b{
+  display:block;margin-top:10px;font-size:11.5px;font-weight:700;
+  color:var(--ink-soft,#5c554d);letter-spacing:.01em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.logostrip-foot{
+  text-align:center;margin:24px 0 0;font-size:13px;color:var(--ink-soft,#5c554d);
+}
+.logostrip-foot a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){
+  .logostrip{padding:28px 0 30px}
+  /* the label is nearly the full width of a 390px phone at desktop size */
+  .logostrip-head{font-size:11px;letter-spacing:.03em;padding:6px 13px}
+  .mq{--fade:28px}
+  .lgc{width:132px;margin-right:14px}
+  .lgc img{width:132px;height:79px;border-radius:12px}
+}
+/* Motion off: the marquee becomes a normal swipeable rail, so nothing is
+   unreachable for anyone who never sees it move. */
+@media(prefers-reduced-motion:reduce){
+  .mq{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .mq::-webkit-scrollbar{display:none}
+  .mq-track{animation:none}
+  .mq-track .mq-dup{display:none}
+}
+
+/* The rail lives inside the hero grid, not as its own band. On phones the
+   grid is one column so DOM order alone puts it between the "founding 100"
+   line and the phone mockup. On desktop the grid is two columns, so it is
+   ordered last and spanned across both. */
+.hero-grid > .logostrip{padding:0;background:transparent;overflow:visible;margin-top:26px;
+  /* grid items default to min-width:auto, so the 3796px track was sizing
+     the whole column and the fade mask landed off-screen */
+  min-width:0}
+.hero-grid > .logostrip > .container{width:auto;max-width:none;padding:0}
+.hero-grid > .logostrip .logostrip-head{margin-bottom:16px}
+.hero-grid > .logostrip .mq{overflow:hidden}
+@media(min-width:941px){
+  .hero-grid > .logostrip{order:3;grid-column:1/-1;margin-top:44px}
+}
+@media(max-width:940px){
+  .hero-grid{row-gap:28px}
+  /* the rail is a distinct band between the founding-100 line and the phone,
+     so it needs more air than the grid's own row gap gives it */
+  .hero-grid > .logostrip{margin-top:26px;margin-bottom:24px}
+}
