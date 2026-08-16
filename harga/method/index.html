@@ -80,6 +80,15 @@ p b{color:var(--ink)}
 .btn:hover{transform:scale(1.04)}
 .door.biz .btn{background:var(--gold);color:var(--ink)}
 .door.creator .btn{background:var(--ink);color:#fff}
+/* the people behind it: same three faces as the marketing site */
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.tm{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 16px;text-align:center;box-shadow:var(--sh-sm)}
+.tm .pfp{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;overflow:hidden;display:grid;place-items:center;font-weight:800;font-size:1.9rem;color:#fff;background:linear-gradient(150deg,#f9b16e,#e8543b)}
+.tm .pfp img{width:100%;height:100%;object-fit:cover;display:block}
+.tm h3{font-size:1.02rem;margin:0 0 2px}
+.tm .role{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:9px}
+.tm p{font-size:.86rem;color:var(--ink-soft);margin:0;line-height:1.5}
+@media(max-width:680px){.team{grid-template-columns:1fr;gap:12px}.tm{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;text-align:left;align-items:center;padding:16px}.tm .pfp{width:64px;height:64px;margin:0}.tm .role{margin-bottom:4px}}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:var(--ink-mute);font-size:.8rem}
 .backlink{text-align:center;margin:10px 0 30px}
 .backlink a{font-weight:800;color:var(--gold-ink);text-decoration:none}
@@ -142,6 +151,18 @@ header h1{white-space:nowrap;font-size:clamp(2rem,8.2vw,3.6rem)}
 .logo-c .gets{display:flex;gap:8px;justify-content:center;margin-top:10px}
 .logo-c .gets a{font-size:.74rem;font-weight:800;text-decoration:none;color:var(--gold-ink);border:1.5px solid rgba(224,169,10,.4);border-radius:999px;padding:5px 12px}
 .logo-c .gets a:hover{background:var(--gold-soft)}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.tm{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;display:flex;flex-direction:column}
+.tm .pfp{width:84px;height:84px;border-radius:50%;margin:0 auto 12px;overflow:hidden;display:grid;place-items:center;font-weight:800;font-size:1.9rem;color:#fff;background:linear-gradient(150deg,#f9b16e,#e8543b)}
+.tm .pfp img{width:100%;height:100%;object-fit:cover;display:block}
+.tm b{display:block;font-size:.98rem;font-weight:800}
+.tm .role{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);margin:2px 0 8px}
+.tm span{display:block;font-size:.82rem;color:var(--ink-mute);line-height:1.5}
+.tm .gets{display:flex;gap:8px;justify-content:center;margin-top:auto;padding-top:12px}
+.tm .gets a{font-size:.72rem;font-weight:800;text-decoration:none;color:var(--gold-ink);border:1.5px solid rgba(224,169,10,.4);border-radius:999px;padding:4px 11px}
+.tm .gets a:hover{background:var(--gold-soft)}
+.tm .gets a span{font-weight:600;opacity:.65}
+@media(max-width:680px){.team{grid-template-columns:1fr}.tm{display:grid;grid-template-columns:64px minmax(0,1fr);gap:0 14px;text-align:left;align-items:center;padding:15px}.tm .pfp{grid-row:span 4}.tm .pfp{width:64px;height:64px;margin:0}.tm .gets{justify-content:flex-start;margin-top:8px}}
 /* the two-link nav overflowed at 390px: centre it, let it breathe */
 nav .links{align-items:center;line-height:1}
 @media(max-width:680px){
@@ -291,7 +312,7 @@ nav .links{align-items:center;line-height:1}
     This page and the CSV link are permanent; if a figure is ever corrected, the correction is
     noted here rather than quietly changed.<br>
     Found a price that looks wrong? Tell us and we will check the source page and correct it:
-    <a href="https://wa.me/60147113585?text=Hi%20Share%20Eat!%20I%20think%20a%20price%20in%20The%20Harga%20Index%20needs%20checking%3A">WhatsApp 014-711 3585</a>.</p>
+    <a href="https://wa.me/60146791868?text=Hi%20Share%20Eat!%20I%20think%20a%20price%20in%20The%20Harga%20Index%20needs%20checking%3A">WhatsApp 014-679 1868</a>.</p>
   </div>
 
   <div class="backlink"><a href="/harga/">← Back to the Harga Index</a></div>
