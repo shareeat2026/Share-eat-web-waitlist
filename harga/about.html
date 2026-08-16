@@ -78,6 +78,15 @@ p b{color:var(--ink)}
 .btn:hover{transform:scale(1.04)}
 .door.biz .btn{background:var(--gold);color:var(--ink)}
 .door.creator .btn{background:var(--ink);color:#fff}
+/* the people behind it: same three faces as the marketing site */
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.tm{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 16px;text-align:center;box-shadow:var(--sh-sm)}
+.tm .pfp{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;overflow:hidden;display:grid;place-items:center;font-weight:800;font-size:1.9rem;color:#fff;background:linear-gradient(150deg,#f9b16e,#e8543b)}
+.tm .pfp img{width:100%;height:100%;object-fit:cover;display:block}
+.tm h3{font-size:1.02rem;margin:0 0 2px}
+.tm .role{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:9px}
+.tm p{font-size:.86rem;color:var(--ink-soft);margin:0;line-height:1.5}
+@media(max-width:680px){.team{grid-template-columns:1fr;gap:12px}.tm{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;text-align:left;align-items:center;padding:16px}.tm .pfp{width:64px;height:64px;margin:0}.tm .role{margin-bottom:4px}}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:var(--ink-mute);font-size:.8rem}
 .backlink{text-align:center;margin:10px 0 30px}
 .backlink a{font-weight:800;color:var(--gold-ink);text-decoration:none}
@@ -153,6 +162,31 @@ nav .links{align-items:center;line-height:1}
       <p>We wanted to understand Malaysian food culture from the perspective of data, so we started going through restaurant menus. And we noticed something: there are thousands of restaurants on delivery platforms, but there isn't really a fun, accessible way for Malaysians to understand what food actually costs.</p>
       <p>So we started collecting the data. Plate by plate. State by state. And we figured: <b>if we're already collecting it, why not make it useful?</b></p>
       <p>That's how the Harga Index was born. It isn't a marketing gimmick. It's a by-product of the mission: we're literally making food discovery more accessible through data.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="emo">👋</span>Who's building it</h2>
+      <p>Three Malaysians who got tired of watching creators burn cash and restaurants overpay for ads, so we built a better way. Between us we count the prices, talk to the restaurants, and write the code.</p>
+      <div class="team">
+        <div class="tm">
+          <div class="pfp"><img src="/app/keith-sm.jpg" alt="Keith Ko, co-founder of Share Eat!" width="84" height="84" loading="lazy" decoding="async"></div>
+          <h3>Keith Ko</h3>
+          <div class="role">Co-founder · CEO</div>
+          <p>Looks after the brand, the product, and how the whole app feels to use.</p>
+        </div>
+        <div class="tm">
+          <div class="pfp">K</div>
+          <h3>Kelvin</h3>
+          <div class="role">Co-founder · COO</div>
+          <p>Runs the F&amp;B network and restaurant partnerships.</p>
+        </div>
+        <div class="tm">
+          <div class="pfp"><img src="/app/jason-sm.jpg" alt="Jason, co-founder of Share Eat!" width="84" height="84" loading="lazy" decoding="async"></div>
+          <h3>Jason</h3>
+          <div class="role">Co-founder · CTO</div>
+          <p>Built the platform and the campaign engine.</p>
+        </div>
+      </div>
     </div>
 
     <div class="manif">
