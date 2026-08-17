@@ -1,0 +1,584 @@
+dish,tier,restaurant,city,state,item_name,price_rm_original,source,collected
+roti_canai,kosong,Restoran Fathima,Kuala Lumpur,Kuala Lumpur,Roti Canai,2.30,foodpanda.my/restaurant/s4hj,2026-08-16
+roti_canai,kosong,Husen Cafe,Kuala Lumpur,Kuala Lumpur,Roti Canai,2.10,foodpanda.my/restaurant/n1br,2026-08-16
+roti_canai,kosong,Nasi Kandar Utara (Plentong),Johor Bahru,Johor,Roti Canai (2 pcs set RM5.30),2.65,foodpanda.my/restaurant/ahok,2026-08-16
+roti_canai,kosong,Restoran Hamidia (Fair Park),Ipoh,Perak,Roti Canai Biasa,2.30,foodpanda.my/restaurant/c8zi,2026-08-16
+roti_canai,kosong,Ali Maju Kafe (Presint 2),Putrajaya,Putrajaya,Roti Canai,2.50,foodpanda.my/restaurant/e8om,2026-08-16
+roti_canai,kosong,Restoran DSH Batu Burok,Kuala Terengganu,Terengganu,Roti Canai,2.65,foodpanda.my/restaurant/ga0a,2026-08-16
+roti_canai,kosong,Restoran KRS Ampangan,Seremban,Negeri Sembilan,Roti Canai,1.80,foodpanda.my/restaurant/tl74,2026-08-16
+roti_canai,kosong,Warung Che Pa,Kuantan,Pahang,Roti Kosong,1.60,foodpanda.my/restaurant/vbcg,2026-08-16
+roti_canai,kosong,Ezi Roti Canai,Penang,Penang,Roti Canai,2.00,foodpanda.my/restaurant/f6sy,2026-08-16
+teh_tarik,panas,Restoran Fathima,Kuala Lumpur,Kuala Lumpur,Teh Tarik,3.70,foodpanda.my/restaurant/s4hj,2026-08-16
+teh_tarik,panas,Banana Leaf Corner,Kuala Lumpur,Kuala Lumpur,Teh Tarik,2.60,foodpanda.my/restaurant/qjho,2026-08-16
+teh_tarik,panas,Nasi Kandar Utara (Plentong),Johor Bahru,Johor,Teh Tarik,2.80,foodpanda.my/restaurant/ahok,2026-08-16
+teh_tarik,panas,Restoran Hamidia (Fair Park),Ipoh,Perak,Teh Tarik,3.30,foodpanda.my/restaurant/c8zi,2026-08-16
+teh_tarik,panas,Ali Maju Kafe (Presint 2),Putrajaya,Putrajaya,Teh Tarik,3.90,foodpanda.my/restaurant/e8om,2026-08-16
+teh_tarik,panas,Restoran DSH Batu Burok,Kuala Terengganu,Terengganu,Teh Tarik,3.15,foodpanda.my/restaurant/ga0a,2026-08-16
+teh_tarik,panas,Restoran Kapitan (Chulia Street),George Town,Penang,Teh Tarik,2.48,foodpanda.my/restaurant/v6bg,2026-08-16
+teh_tarik,panas,Kanteen Kopitiam (Bukit Kayangan),Kangar,Perlis,Teh Tarik,6.00,foodpanda.my/restaurant/e7q0,2026-08-16
+teh_tarik,panas,11 Satu-satu Cafe,Alor Setar,Kedah,Teh Tarik,2.80,foodpanda.my/restaurant/chep,2026-08-16
+mee_goreng,mamak,Restoran Fathima,Kuala Lumpur,Kuala Lumpur,Mee Goreng,9.20,foodpanda.my/restaurant/s4hj,2026-08-16
+mee_goreng,mamak,Husen Cafe,Kuala Lumpur,Kuala Lumpur,Mee Goreng Biasa,8.30,foodpanda.my/restaurant/n1br,2026-08-16
+mee_goreng,mamak,Nasi Kandar Utara (Plentong),Johor Bahru,Johor,Mee Goreng Mamak,9.90,foodpanda.my/restaurant/ahok,2026-08-16
+mee_goreng,mamak,Restoran Hamidia (Fair Park),Ipoh,Perak,Mee Goreng Biasa,8.00,foodpanda.my/restaurant/c8zi,2026-08-16
+mee_goreng,mamak,Restoran Majeedia,Ipoh,Perak,Mee Goreng,9.00,foodpanda.my/restaurant/o9cb,2026-08-16
+mee_goreng,mamak,Ali Maju Kafe (Presint 2),Putrajaya,Putrajaya,Mee Goreng,8.30,foodpanda.my/restaurant/e8om,2026-08-16
+mee_goreng,mamak,Warung Che Pa,Kuantan,Pahang,Mee Goreng,3.60,foodpanda.my/restaurant/vbcg,2026-08-16
+mee_goreng,mamak,Tawau Kopitiam,Tawau,Sabah,Mee Goreng Kosong,9.80,foodpanda.my/restaurant/l1qf,2026-08-16
+mee_goreng,mamak,One Rahmath Bistro (Seksyen 9),Shah Alam,Selangor,Mee Goreng Mamak Biasa,9.50,foodpanda.my/restaurant/n7nv,2026-08-16
+mee_goreng,mamak,11 Satu-satu Cafe,Alor Setar,Kedah,Mee Goreng,9.80,foodpanda.my/restaurant/chep,2026-08-16
+roti_canai,kosong,Restaurant Saravanna Sdn Bhd,Melaka,Melaka,Roti Canai,2.00,foodpanda.my/restaurant/uzhn,2026-08-16
+roti_canai,kosong,Restoran Ria Katering 24 Jam,Kota Belud,Sabah,Roti Canai,4.00,foodpanda.my/restaurant/aykg,2026-08-16
+teh_tarik,panas,Restaurant Saravanna Sdn Bhd,Melaka,Melaka,Teh Tarik,2.70,foodpanda.my/restaurant/uzhn,2026-08-16
+teh_tarik,panas,Arafah Restoran (Panji),Kota Bharu,Kelantan,Teh Tarik,3.90,foodpanda.my/restaurant/n8w9,2026-08-16
+mee_goreng,mamak,Restaurant Saravanna Sdn Bhd,Melaka,Melaka,Mee Goreng,7.50,foodpanda.my/restaurant/uzhn,2026-08-16
+mee_goreng,mamak,Arafah Restoran (Panji),Kota Bharu,Kelantan,Mee Goreng,10.90,foodpanda.my/restaurant/n8w9,2026-08-16
+mee_goreng,mamak,Restoran Ria Katering 24 Jam,Kota Belud,Sabah,Mee Goreng Biasa,15.40,foodpanda.my/restaurant/aykg,2026-08-16
+roti_canai,kosong,Roti Tempayan Kg Kebakat 2,Kota Bharu,Kelantan,Roti Canai Kosong,2.10,foodpanda.my/restaurant/rj9j,2026-08-16
+roti_canai,kosong,Barokah Roti Canai Seri Chempaka,Kota Bharu,Kelantan,Roti Kosong,2.50,foodpanda.my/restaurant/d6oc,2026-08-16
+roti_canai,kosong,ABE DEE Roti Canai Panchor,Kota Bharu,Kelantan,Roti Canai Kosong,2.20,foodpanda.my/restaurant/bmwp,2026-08-16
+roti_canai,kosong,Miria Roti Canai Kari Gearbox,Kota Bharu,Kelantan,Roti Canai Kosong,1.50,foodpanda.my/restaurant/iazz,2026-08-16
+roti_canai,kosong,Roti Canai Amy,Kuching,Sarawak,Roti Canai Kosong,2.90,foodpanda.my/restaurant/gg15,2026-08-16
+roti_canai,kosong,Roti Canai Cafe (Demak Laut),Kuching,Sarawak,Roti Canai Kosong,2.50,foodpanda.my/restaurant/p5k8,2026-08-16
+roti_canai,kosong,Roti Canai Benteng (Medan Niaga Satok),Kuching,Sarawak,Roti Canai Kosong,2.30,foodpanda.my/restaurant/rw6c,2026-08-16
+roti_canai,kosong,Idaman Station,Kuching,Sarawak,Roti Canai Kosong,1.50,foodpanda.my/restaurant/w8c4,2026-08-16
+teh_tarik,panas,Roti Tempayan Kg Kebakat 2,Kota Bharu,Kelantan,Teh Tarik,3.50,foodpanda.my/restaurant/rj9j,2026-08-16
+teh_tarik,panas,Roti Canai Cafe (Demak Laut),Kuching,Sarawak,Teh Tarik,4.90,foodpanda.my/restaurant/p5k8,2026-08-16
+mee_goreng,mamak,Barokah Roti Canai Seri Chempaka,Kota Bharu,Kelantan,Mee Goreng,7.50,foodpanda.my/restaurant/d6oc,2026-08-16
+mee_goreng,mamak,Miria Roti Canai Kari Gearbox,Kota Bharu,Kelantan,Mee Goreng,8.80,foodpanda.my/restaurant/iazz,2026-08-16
+mee_goreng,mamak,Idaman Station,Kuching,Sarawak,Mee Goreng Biasa,6.00,foodpanda.my/restaurant/w8c4,2026-08-16
+roti_canai,kosong,Restoran ABS Mukmin,Johor Bahru,Johor,Roti Kosong,2.50,foodpanda.my/restaurant/s0dl,2026-08-16
+roti_canai,kosong,The Garden Villa's- (Country Garden),Johor Bahru,Johor,Roti Canai Biasa,2.20,foodpanda.my/restaurant/k954,2026-08-16
+roti_canai,kosong,RESTORAN AL AJWA @ TAMAN SRI STULANG,Johor Bahru,Johor,Roti Kosong,1.96,foodpanda.my/restaurant/tjzy,2026-08-16
+roti_canai,kosong,Restoran Al-Rahmat Nasi Kandar (Kempas Indah),Johor Bahru,Johor,Roti Canai,2.50,foodpanda.my/restaurant/x6xc,2026-08-16
+roti_canai,kosong,Mr Mamak Bistro (Jaya Mas),Skudai,Johor,Roti Canai,1.82,foodpanda.my/restaurant/o34x,2026-08-16
+roti_canai,kosong,Nasi Kandar Rasul Maju,Batu Pahat,Johor,R1. Roti Canai Biasa,2.70,foodpanda.my/restaurant/r8ha,2026-08-16
+roti_canai,kosong,Restoran Cuba Rasa ABC Budaya,Batu Pahat,Johor,RC12. Roti Canai Kosong,1.70,foodpanda.my/restaurant/c08h,2026-08-16
+roti_canai,kosong,Restoran Jamilah Taman Sri (Kluang),Kluang,Johor,Roti Kosong,2.20,foodpanda.my/restaurant/xhhk,2026-08-16
+roti_canai,kosong,Restoran Annapoorani Unavagam (Kluang),Kluang,Johor,Roti Kosong,3.00,foodpanda.my/restaurant/n3g2,2026-08-16
+roti_canai,kosong,Restoran Nasi Kandar Haleefa Maju (Muar),Muar,Johor,Roti Kosong,1.70,foodpanda.my/restaurant/apnr,2026-08-16
+roti_canai,kosong,Southern Food Restaurant (Taman Marin),Muar,Johor,Roti Canai Kosong,2.20,foodpanda.my/restaurant/huif,2026-08-16
+roti_canai,kosong,Nasi Kandar Ally Garden,Pontian,Johor,Roti Canai,2.20,foodpanda.my/restaurant/guml,2026-08-16
+roti_canai,kosong,RESTORAN B&B (TAMAN SENAI UTAMA),Senai,Johor,Roti Canai,2.20,foodpanda.my/restaurant/j3aa,2026-08-16
+roti_canai,kosong,Nasi Kandar Stadium (Gelang Patah),Gelang Patah,Johor,Roti Canai,2.47,foodpanda.my/restaurant/qspm,2026-08-16
+teh_tarik,panas,Restoran ABS Mukmin,Johor Bahru,Johor,TehTarik,4.20,foodpanda.my/restaurant/s0dl,2026-08-16
+teh_tarik,panas,The Garden Villa's- (Country Garden),Johor Bahru,Johor,Teh Tarik,3.30,foodpanda.my/restaurant/k954,2026-08-16
+teh_tarik,panas,Restoran Habib (Nusa Bestari),Johor Bahru,Johor,Teh Tarik,5.25,foodpanda.my/restaurant/n7qv,2026-08-16
+teh_tarik,panas,Restoran TKR (Larkin),Johor Bahru,Johor,T5. Teh Tarik,3.00,foodpanda.my/restaurant/hewy,2026-08-16
+teh_tarik,panas,Mr Mamak Bistro (Jaya Mas),Skudai,Johor,Teh Tarik,2.20,foodpanda.my/restaurant/o34x,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar AKRD (T.U.T.A),Skudai,Johor,Teh Tarik,2.60,foodpanda.my/restaurant/lpy6,2026-08-16
+teh_tarik,panas,Nasi Kandar Rasul Maju,Batu Pahat,Johor,M1. Teh Tarik,4.40,foodpanda.my/restaurant/r8ha,2026-08-16
+teh_tarik,panas,Restoran Cuba Rasa ABC Budaya,Batu Pahat,Johor,TH02. Teh Tarik,2.50,foodpanda.my/restaurant/c08h,2026-08-16
+teh_tarik,panas,SANTAI STATION CAFE,Batu Pahat,Johor,Teh Tarik Panas,3.10,foodpanda.my/restaurant/m142,2026-08-16
+teh_tarik,panas,Restoran Pesta,Muar,Johor,Teh Tarik,2.80,foodpanda.my/restaurant/h7pt,2026-08-16
+teh_tarik,panas,K.B.S. CORNER,Muar,Johor,Teh Tarik,3.50,foodpanda.my/restaurant/m3m0,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Amin,Pontian,Johor,Teh Tarik,2.50,foodpanda.my/restaurant/di5g,2026-08-16
+teh_tarik,panas,Nasi Kandar Ally Garden,Pontian,Johor,Teh Tarik,2.90,foodpanda.my/restaurant/guml,2026-08-16
+teh_tarik,panas,Restoran AKRD (Senai),Senai,Johor,Teh Tarik,3.20,foodpanda.my/restaurant/b7hn,2026-08-16
+teh_tarik,panas,Nasi Kandar Stadium (Gelang Patah),Gelang Patah,Johor,Teh Tarik,2.99,foodpanda.my/restaurant/qspm,2026-08-16
+mee_goreng,mamak,Restoran ABS Mukmin,Johor Bahru,Johor,Mee Goreng Biasa,11.50,foodpanda.my/restaurant/s0dl,2026-08-16
+mee_goreng,mamak,Restoran TKR (Larkin),Johor Bahru,Johor,C1. Mee Goreng Biasa,9.00,foodpanda.my/restaurant/hewy,2026-08-16
+mee_goreng,mamak,RESTORAN AL AJWA @ TAMAN SRI STULANG,Johor Bahru,Johor,Mee Goreng,8.40,foodpanda.my/restaurant/tjzy,2026-08-16
+mee_goreng,mamak,Restoran Al-Rahmat Nasi Kandar (Kempas Indah),Johor Bahru,Johor,Mee Goreng Biasa,9.50,foodpanda.my/restaurant/x6xc,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Farook (Taman U),Skudai,Johor,Mee Goreng,8.50,foodpanda.my/restaurant/kl61,2026-08-16
+mee_goreng,mamak,Nasi Kandar Rasul Maju,Batu Pahat,Johor,M7. Mee Goreng,9.90,foodpanda.my/restaurant/r8ha,2026-08-16
+mee_goreng,mamak,Restoran Cuba Rasa ABC Budaya,Batu Pahat,Johor,MG01. Mee Goreng,11.20,foodpanda.my/restaurant/c08h,2026-08-16
+mee_goreng,mamak,SANTAI STATION CAFE,Batu Pahat,Johor,Mee Goreng Mamak,9.30,foodpanda.my/restaurant/m142,2026-08-16
+mee_goreng,mamak,RESTORAN SK MAJU,Kluang,Johor,Mee goreng mamak,9.20,foodpanda.my/restaurant/fu83,2026-08-16
+mee_goreng,mamak,Restoran Jamilah Taman Sri (Kluang),Kluang,Johor,Mee Goreng Biasa,6.50,foodpanda.my/restaurant/xhhk,2026-08-16
+mee_goreng,mamak,Restoran Annapoorani Unavagam (Kluang),Kluang,Johor,Mee Goreng,10.00,foodpanda.my/restaurant/n3g2,2026-08-16
+mee_goreng,mamak,Restoran Pesta,Muar,Johor,Mee Goreng Biasa,7.00,foodpanda.my/restaurant/h7pt,2026-08-16
+mee_goreng,mamak,Southern Food Restaurant (Taman Marin),Muar,Johor,Mee Goreng,8.60,foodpanda.my/restaurant/huif,2026-08-16
+mee_goreng,mamak,Nasi Kandar Ally Garden,Pontian,Johor,Mee Goreng Mamak,7.20,foodpanda.my/restaurant/guml,2026-08-16
+mee_goreng,mamak,RESTORAN B&B (TAMAN SENAI UTAMA),Senai,Johor,Mee Goreng,8.70,foodpanda.my/restaurant/j3aa,2026-08-16
+mee_goreng,mamak,Nasi Kandar Stadium (Gelang Patah),Gelang Patah,Johor,Mee Goreng,10.28,foodpanda.my/restaurant/qspm,2026-08-16
+roti_canai,kosong,Restoran Aiza,Alor Setar,Kedah,Roti Canai,1.70,foodpanda.my/restaurant/rcqu,2026-08-16
+roti_canai,kosong,Roti Canai King (Medan Selera Taman PKNK),Alor Setar,Kedah,Roti Canai Biasa,2.00,foodpanda.my/restaurant/dg04,2026-08-16
+roti_canai,kosong,Restoran Manja Ehsan (Bang Mad Roti Canai),Alor Setar,Kedah,Roti Canai Biasa,2.20,foodpanda.my/restaurant/eiwk,2026-08-16
+roti_canai,kosong,RESTORAN MIKAMAL,Alor Setar,Kedah,Roti Canai Kosong,2.30,foodpanda.my/restaurant/g3md,2026-08-16
+roti_canai,kosong,Man Roti Canai (Tok Geduk Kitchen),Alor Setar,Kedah,Roti Canai,2.39,foodpanda.my/restaurant/ivpj,2026-08-16
+roti_canai,kosong,"Indian Breakfast Corner - Roti Canai, Tosai & Capati",Alor Setar,Kedah,Roti Canai Biasa,2.50,foodpanda.my/restaurant/p5my,2026-08-16
+roti_canai,kosong,Hussain Nasi Kandar,Sungai Petani,Kedah,Roti Canai (2pcs) (RM5.90 for 2),2.95,foodpanda.my/restaurant/o5ui,2026-08-16
+roti_canai,kosong,RESTORAN NASI KANDAR KISWAH (Kulim),Kulim,Kedah,R00. Roti Canai,2.70,foodpanda.my/restaurant/skdg,2026-08-16
+roti_canai,kosong,Mutalib Roti Canai Gear Box,Jitra,Kedah,Roti Kosong,2.50,foodpanda.my/restaurant/bmg9,2026-08-16
+roti_canai,kosong,Hussain's Nasi Kandar (Jitra),Jitra,Kedah,Roti Canai (2pcs) (RM5.90 for 2),2.95,foodpanda.my/restaurant/i42b,2026-08-16
+teh_tarik,panas,Mee Hanifa (Alor Setar),Alor Setar,Kedah,Teh Tarik,3.50,foodpanda.my/restaurant/iwwr,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Najmudin (BPJ),Sungai Petani,Kedah,Teh Tarik,2.90,foodpanda.my/restaurant/it4m,2026-08-16
+teh_tarik,panas,D Anggerik Corner,Sungai Petani,Kedah,Teh Tarik,2.90,foodpanda.my/restaurant/y7kt,2026-08-16
+teh_tarik,panas,Ache Arusuai Restaurant,Sungai Petani,Kedah,Teh Tarik,3.00,foodpanda.my/restaurant/rlwi,2026-08-16
+teh_tarik,panas,Nash Bistro (Kulim),Kulim,Kedah,Teh Tarik,3.00,foodpanda.my/restaurant/s8yz,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Yasmeen (Jitra),Jitra,Kedah,Teh Tarik,2.10,foodpanda.my/restaurant/q5ct,2026-08-16
+teh_tarik,panas,Sup Kambing Jitra,Jitra,Kedah,Teh Tarik Panas,2.30,foodpanda.my/restaurant/rhjr,2026-08-16
+teh_tarik,panas,Mutalib Roti Canai Gear Box,Jitra,Kedah,Teh Tarik,3.70,foodpanda.my/restaurant/bmg9,2026-08-16
+teh_tarik,panas,Bayu Cholek,Kuah,Kedah,Teh Tarik,4.00,foodpanda.my/restaurant/z39o,2026-08-16
+teh_tarik,panas,Nasi Goreng & Roti Canai Langkawi Foodhall (Kuah),Kuah,Kedah,Teh Tarik,4.00,foodpanda.my/restaurant/e2um,2026-08-16
+mee_goreng,mamak,Mee Abu Tandop,Alor Setar,Kedah,Mee Goreng,7.50,foodpanda.my/restaurant/f5jh,2026-08-16
+mee_goreng,mamak,RESTORAN MEEHAMID (Tanjung Bendahara),Alor Setar,Kedah,Mee Goreng,8.50,foodpanda.my/restaurant/jxqd,2026-08-16
+mee_goreng,mamak,Haji Ali Mee Goreng Daun Pisang,Alor Setar,Kedah,Mee Goreng,8.50,foodpanda.my/restaurant/y4ik,2026-08-16
+mee_goreng,mamak,Restoran MoHa (Kafe 97),Alor Setar,Kedah,Mee Goreng,8.60,foodpanda.my/restaurant/pbiu,2026-08-16
+mee_goreng,mamak,Mee Hanifa (Alor Setar),Alor Setar,Kedah,Mee Goreng Biasa,9.00,foodpanda.my/restaurant/iwwr,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Najmudin (BPJ),Sungai Petani,Kedah,Mee Goreng Mamak,7.90,foodpanda.my/restaurant/it4m,2026-08-16
+mee_goreng,mamak,Tomyam Padang Bola,Kulim,Kedah,Mee Goreng Mamak,8.00,foodpanda.my/restaurant/e2p5,2026-08-16
+mee_goreng,mamak,RESTORAN NASI KANDAR KISWAH (Kulim),Kulim,Kedah,ME1. Mee Goreng Biasa,8.90,foodpanda.my/restaurant/skdg,2026-08-16
+mee_goreng,mamak,Sup Kambing Jitra,Jitra,Kedah,Mee Goreng,6.50,foodpanda.my/restaurant/rhjr,2026-08-16
+mee_goreng,mamak,Raajaathi Raaja,Lunas,Kedah,Mee Goreng,9.00,foodpanda.my/restaurant/jpi3,2026-08-16
+roti_canai,kosong,Ayuni Thai Restoran (Kampung Apam),Pasir Mas,Kelantan,Roti Canai Kosong,2.20,foodpanda.my/restaurant/q37q,2026-08-16
+roti_canai,kosong,Kedai Makan Smile (Depan Tabung Haji),Pasir Mas,Kelantan,Roti Kosong,2.00,foodpanda.my/restaurant/rs83,2026-08-16
+roti_canai,kosong,Nasi Kandar Cikgu Basheer,Tanah Merah,Kelantan,Roti Canai Kosong,1.90,foodpanda.my/restaurant/w49m,2026-08-16
+roti_canai,kosong,Port Roti Canai,Pasir Puteh,Kelantan,Roti Kosong,2.00,foodpanda.my/restaurant/nswu,2026-08-16
+roti_canai,kosong,PC Roti Canai (Cabang 3 Jerus),Pasir Puteh,Kelantan,Roti Kosong,1.50,foodpanda.my/restaurant/yh57,2026-08-16
+roti_canai,kosong,Roti Tempayan & Restoran Warisan Gobbanali (Wakaf Bharu),Wakaf Bharu,Kelantan,Roti Canai Kosong,2.10,foodpanda.my/restaurant/hg0j,2026-08-16
+teh_tarik,panas,Resipi Anak Jate (Pasir Mas),Pasir Mas,Kelantan,Teh Tarik Hot,2.00,foodpanda.my/restaurant/z8b7,2026-08-16
+teh_tarik,panas,Nasi kandar Al Yaseen,Tanah Merah,Kelantan,Teh Tarik,3.50,foodpanda.my/restaurant/qrbb,2026-08-16
+teh_tarik,panas,Nasi Kandar Cikgu Basheer,Tanah Merah,Kelantan,Teh Tarik,3.00,foodpanda.my/restaurant/w49m,2026-08-16
+teh_tarik,panas,Restoran Edde (Taman Kota Harmoni),Tanah Merah,Kelantan,Teh Tarik,4.00,foodpanda.my/restaurant/rqdo,2026-08-16
+teh_tarik,panas,Nasi Kerabu Kak Yah 2 (Belimbing),Tanah Merah,Kelantan,Teh Tarik,2.90,foodpanda.my/restaurant/qttw,2026-08-16
+teh_tarik,panas,Mami Kitchen (Kg Hutan Kuin),Machang,Kelantan,Teh Tarik,3.00,foodpanda.my/restaurant/nlkm,2026-08-16
+teh_tarik,panas,Impian Cafe & Catering,Machang,Kelantan,Teh Tarik,4.50,foodpanda.my/restaurant/k9m3,2026-08-16
+teh_tarik,panas,Roti Tempayan & Restoran Warisan Gobbanali (Wakaf Bharu),Wakaf Bharu,Kelantan,Teh Tarik,3.50,foodpanda.my/restaurant/hg0j,2026-08-16
+mee_goreng,mamak,Nasi Kandar Cikgu Basheer,Tanah Merah,Kelantan,Mee Goreng Mamak Biasa,8.00,foodpanda.my/restaurant/w49m,2026-08-16
+mee_goreng,mamak,Restoran Edde (Taman Kota Harmoni),Tanah Merah,Kelantan,Mee Goreng Mamak,10.30,foodpanda.my/restaurant/rqdo,2026-08-16
+mee_goreng,mamak,Gmie Tomyam & Roti Canai - Kampung Dangar (Pasir Mas),Pasir Mas,Kelantan,Mee Goreng Biasa,8.80,foodpanda.my/restaurant/r5j6,2026-08-16
+mee_goreng,mamak,Mat Yee Seafood (Kampung Banggol Ara),Pasir Mas,Kelantan,Mee Goreng Mamak,9.00,foodpanda.my/restaurant/wyvo,2026-08-16
+mee_goreng,mamak,Key Roti Canai (Pokok Cherry),Pasir Puteh,Kelantan,Mee Goreng,10.00,foodpanda.my/restaurant/eln9,2026-08-16
+mee_goreng,mamak,Nasi Air Kak Lah,Machang,Kelantan,Mee Goreng,6.00,foodpanda.my/restaurant/v4wi,2026-08-16
+mee_goreng,mamak,Yah Tom Yam (Kg Kepas),Machang,Kelantan,Mee Goreng,8.90,foodpanda.my/restaurant/eubo,2026-08-16
+roti_canai,kosong,Raja Laut Curry House,Chow Kit,Kuala Lumpur,Roti Canai Biasa,1.60,foodpanda.my/restaurant/xso2,2026-08-16
+roti_canai,kosong,Mamak Jalan Midah 8,Cheras,Kuala Lumpur,Roti Canai Kosong,1.80,foodpanda.my/restaurant/l9k9,2026-08-16
+roti_canai,kosong,Jalal Bistro,Setapak,Kuala Lumpur,Roti Canai Biasa,2.20,foodpanda.my/restaurant/g9ch,2026-08-16
+roti_canai,kosong,MEE GORENG MAMAK CORNER,Wangsa Melawati,Kuala Lumpur,Roti Canai Biasa,2.20,foodpanda.my/restaurant/lmag,2026-08-16
+roti_canai,kosong,Restoran Nasi Kandar Safreen TRX,Bukit Bintang,Kuala Lumpur,Roti Canai,2.30,foodpanda.my/restaurant/st14,2026-08-16
+roti_canai,kosong,Qasim Mamak (Pudu),Pudu,Kuala Lumpur,Roti Canai Kosong,2.50,foodpanda.my/restaurant/nr8f,2026-08-16
+roti_canai,kosong,Restoran Ali Maju (Rampai),Setapak,Kuala Lumpur,Roti Canai,2.50,foodpanda.my/restaurant/n8ex,2026-08-16
+roti_canai,kosong,SUN RAJ CURRY HOUSE,Desa Petaling,Kuala Lumpur,Roti Canai Kosong,2.50,foodpanda.my/restaurant/fmeh,2026-08-16
+roti_canai,kosong,KARIM ROTI CANAI (Pusat Penjaja DBKL),Chow Kit,Kuala Lumpur,Roti Canai,2.80,foodpanda.my/restaurant/c6bm,2026-08-16
+roti_canai,kosong,Roti Canai Queen (Medan Mara),Chow Kit,Kuala Lumpur,R. Kosong,3.00,foodpanda.my/restaurant/k55f,2026-08-16
+roti_canai,kosong,Restoran Royale Mamak,Kepong,Kuala Lumpur,Roti Canai,3.20,foodpanda.my/restaurant/kslc,2026-08-16
+teh_tarik,panas,NASI KANDAR MAMAK CAFE,Kuala Lumpur,Kuala Lumpur,Teh Tarik,2.00,foodpanda.my/restaurant/cudo,2026-08-16
+teh_tarik,panas,Qasim Mamak (Pudu),Pudu,Kuala Lumpur,Teh Tarik,2.50,foodpanda.my/restaurant/nr8f,2026-08-16
+teh_tarik,panas,Raja Laut Curry House,Chow Kit,Kuala Lumpur,Teh Tarik,2.50,foodpanda.my/restaurant/xso2,2026-08-16
+teh_tarik,panas,SOMe Coffee & Space (Wangsa Melawati),Wangsa Melawati,Kuala Lumpur,Teh Tarik Panas,2.50,foodpanda.my/restaurant/evsy,2026-08-16
+teh_tarik,panas,Saddam Nasi Kandar (Chowkit),Chow Kit,Kuala Lumpur,Teh Tarik,2.80,foodpanda.my/restaurant/jx6m,2026-08-16
+teh_tarik,panas,Malaya Restaurant (Jln Imbi),Bukit Bintang,Kuala Lumpur,Teh Tarik,3.00,foodpanda.my/restaurant/tsp2,2026-08-16
+teh_tarik,panas,Mamak Jalan Midah 8,Cheras,Kuala Lumpur,Teh Tarik,3.20,foodpanda.my/restaurant/l9k9,2026-08-16
+teh_tarik,panas,SUN RAJ CURRY HOUSE,Desa Petaling,Kuala Lumpur,Teh Tarik,3.20,foodpanda.my/restaurant/fmeh,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Safreen TRX,Bukit Bintang,Kuala Lumpur,Teh Tarik,3.40,foodpanda.my/restaurant/st14,2026-08-16
+teh_tarik,panas,Mr Roti Naan (SAMA Square),Setapak,Kuala Lumpur,Teh Tarik,3.50,foodpanda.my/restaurant/qkht,2026-08-16
+teh_tarik,panas,MEE GORENG MAMAK CORNER,Wangsa Melawati,Kuala Lumpur,Teh Tarik,3.70,foodpanda.my/restaurant/lmag,2026-08-16
+teh_tarik,panas,Restoran Ali Maju (Rampai),Setapak,Kuala Lumpur,Teh Tarik,3.90,foodpanda.my/restaurant/n8ex,2026-08-16
+teh_tarik,panas,Khan Jee Restaurant 1 (Chow Kit),Chow Kit,Kuala Lumpur,Teh Tarik,4.00,foodpanda.my/restaurant/g0lg,2026-08-16
+mee_goreng,mamak,NASI KANDAR MAMAK CAFE,Kuala Lumpur,Kuala Lumpur,Mee Goreng Biasa,6.00,foodpanda.my/restaurant/cudo,2026-08-16
+mee_goreng,mamak,Raja Laut Curry House,Chow Kit,Kuala Lumpur,Mee Goreng,6.00,foodpanda.my/restaurant/xso2,2026-08-16
+mee_goreng,mamak,Saddam Nasi Kandar (Chowkit),Chow Kit,Kuala Lumpur,Mee Goreng Biasa Mamak,6.80,foodpanda.my/restaurant/jx6m,2026-08-16
+mee_goreng,mamak,MEE GORENG MAMAK CORNER,Wangsa Melawati,Kuala Lumpur,Mee Goreng,7.50,foodpanda.my/restaurant/lmag,2026-08-16
+mee_goreng,mamak,Qasim Mamak (Pudu),Pudu,Kuala Lumpur,Mee Goreng,8.00,foodpanda.my/restaurant/nr8f,2026-08-16
+mee_goreng,mamak,Malaya Restaurant (Jln Imbi),Bukit Bintang,Kuala Lumpur,Mee Goreng Biasa,8.00,foodpanda.my/restaurant/tsp2,2026-08-16
+mee_goreng,mamak,Restoran Ali Maju (Rampai),Setapak,Kuala Lumpur,Mee Goreng,8.30,foodpanda.my/restaurant/n8ex,2026-08-16
+mee_goreng,mamak,Mamak Jalan Midah 8,Cheras,Kuala Lumpur,Mee Goreng,8.40,foodpanda.my/restaurant/l9k9,2026-08-16
+mee_goreng,mamak,SUN RAJ CURRY HOUSE,Desa Petaling,Kuala Lumpur,Mee Goreng,8.50,foodpanda.my/restaurant/fmeh,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Safreen TRX,Bukit Bintang,Kuala Lumpur,Mee Goreng Mamak,8.90,foodpanda.my/restaurant/st14,2026-08-16
+mee_goreng,mamak,Jalal Bistro,Setapak,Kuala Lumpur,Mee Goreng Mamak,9.50,foodpanda.my/restaurant/g9ch,2026-08-16
+mee_goreng,mamak,SOMe Coffee & Space (Wangsa Melawati),Wangsa Melawati,Kuala Lumpur,Mee Goreng Mamak,11.90,foodpanda.my/restaurant/evsy,2026-08-16
+roti_canai,kosong,Restoran Cahaya Dinr,Melaka,Melaka,Roti Canai,1.70,foodpanda.my/restaurant/k9il,2026-08-16
+roti_canai,kosong,Restoran Teja,Melaka,Melaka,Roti Canai Kosong,2.00,foodpanda.my/restaurant/fsoi,2026-08-16
+roti_canai,kosong,Madras Cafe,Melaka,Melaka,Roti Canai,2.20,foodpanda.my/restaurant/s8ft,2026-08-16
+roti_canai,kosong,Roti Canai Roy,Melaka,Melaka,Roti Canai Kosong,2.30,foodpanda.my/restaurant/rfr3,2026-08-16
+roti_canai,kosong,Restaurant ASV Bawah Pokok Malim (Malim),Melaka,Melaka,Roti Canai,2.70,foodpanda.my/restaurant/t6fx,2026-08-16
+roti_canai,kosong,Al Dubai Restaurant,Melaka,Melaka,Roti Canai Kosong,2.00,foodpanda.my/restaurant/q9cy,2026-08-16
+roti_canai,kosong,ZR Food Empire (Taman Kesidang),Melaka,Melaka,Roti Kosong,2.00,foodpanda.my/restaurant/o504,2026-08-16
+roti_canai,kosong,Lebai family corner (Pekan Lama),Melaka,Melaka,Roti Kosong,2.20,foodpanda.my/restaurant/hdxf,2026-08-16
+roti_canai,kosong,Warung Fadeha,Melaka,Melaka,Roti Canai Kosong,2.20,foodpanda.my/restaurant/e29r,2026-08-16
+roti_canai,kosong,Restoran Melaka Raya,Melaka,Melaka,Roti Canai,2.60,foodpanda.my/restaurant/t3vv,2026-08-16
+roti_canai,kosong,Gendang Gendut Tali Kecapi,Batu Berendam,Melaka,Roti Canai Kosong,1.50,foodpanda.my/restaurant/vkmg,2026-08-16
+roti_canai,kosong,Restoran Nisa Din (Jasin),Jasin,Melaka,Roti Kosong,1.60,foodpanda.my/restaurant/w4ef,2026-08-16
+roti_canai,kosong,Restoran D'Lauk (Ayer Keroh),Ayer Keroh,Melaka,Roti Kosong,1.70,foodpanda.my/restaurant/l0hs,2026-08-16
+roti_canai,kosong,Dapur Kak Hanie (Medan Selera Ayer Keroh),Ayer Keroh,Melaka,Roti Kosong,1.95,foodpanda.my/restaurant/styg,2026-08-16
+roti_canai,kosong,Kedai Atok,Masjid Tanah,Melaka,Roti Canai,2.00,foodpanda.my/restaurant/wit9,2026-08-16
+roti_canai,kosong,Restoran Al-Masyhur (Jalan Pengkalan),Alor Gajah,Melaka,Roti Canai,2.20,foodpanda.my/restaurant/wo26,2026-08-16
+roti_canai,kosong,Restoran Dak Zul,Alor Gajah,Melaka,Roti Canai,2.20,foodpanda.my/restaurant/ptjn,2026-08-16
+roti_canai,kosong,Lapa'q Station (Sungai Udang),Sungai Udang,Melaka,Roti Canai Kosong,2.20,foodpanda.my/restaurant/g0yy,2026-08-16
+roti_canai,kosong,Hazin Bistro (Kuala Sg Baru),Kuala Sungai Baru,Melaka,Roti Canai,2.50,foodpanda.my/restaurant/epi3,2026-08-16
+roti_canai,kosong,Warisan Roti Achik,Merlimau,Melaka,Roti Kosong,1.70,foodpanda.my/restaurant/patb,2026-08-16
+teh_tarik,panas,Restaurant Selvam,Melaka,Melaka,Teh Tarik,3.50,foodpanda.my/restaurant/b2bj,2026-08-16
+teh_tarik,panas,Restaurant ASV Bawah Pokok Malim (Malim),Melaka,Melaka,Teh Tarik,3.50,foodpanda.my/restaurant/t6fx,2026-08-16
+teh_tarik,panas,Restoran Melaka Raya,Melaka,Melaka,Teh Tarik,3.70,foodpanda.my/restaurant/t3vv,2026-08-16
+teh_tarik,panas,HYDRA VIRUNDHU,Melaka,Melaka,Teh Tarik,3.50,foodpanda.my/restaurant/ikan,2026-08-16
+teh_tarik,panas,Restaurant cayshveena ahw,Melaka,Melaka,Teh Tarik,3.00,foodpanda.my/restaurant/xqey,2026-08-16
+teh_tarik,panas,BURGER 363 ENTERPRISE,Melaka,Melaka,Teh Tarik,3.50,foodpanda.my/restaurant/yr9l,2026-08-16
+teh_tarik,panas,Wawa Kitchen (Ayer Keroh),Ayer Keroh,Melaka,Teh Tarik,2.10,foodpanda.my/restaurant/ow9e,2026-08-16
+teh_tarik,panas,Lepak Makan Santai,Ayer Keroh,Melaka,Teh Tarik,5.60,foodpanda.my/restaurant/buov,2026-08-16
+teh_tarik,panas,Restoran Al-Masyhur (Jalan Pengkalan),Alor Gajah,Melaka,Teh Tarik,2.90,foodpanda.my/restaurant/wo26,2026-08-16
+teh_tarik,panas,Restoran Rafa,Alor Gajah,Melaka,Teh Tarik,3.75,foodpanda.my/restaurant/jeh1,2026-08-16
+teh_tarik,panas,Hazin Bistro (Kuala Sg Baru),Kuala Sungai Baru,Melaka,Teh Tarik,3.70,foodpanda.my/restaurant/epi3,2026-08-16
+teh_tarik,panas,Restoran Nisa Din (Jasin),Jasin,Melaka,Teh Tarik,2.70,foodpanda.my/restaurant/w4ef,2026-08-16
+mee_goreng,mamak,Roti Canai Roy,Melaka,Melaka,Mee Goreng,8.10,foodpanda.my/restaurant/rfr3,2026-08-16
+mee_goreng,mamak,Restoran Cahaya Dinr,Melaka,Melaka,Mee Goreng Biasa,8.00,foodpanda.my/restaurant/k9il,2026-08-16
+mee_goreng,mamak,Madras Cafe,Melaka,Melaka,Mee Goreng Biasa,8.20,foodpanda.my/restaurant/s8ft,2026-08-16
+mee_goreng,mamak,Restaurant ASV Bawah Pokok Malim (Malim),Melaka,Melaka,Mee Goreng,7.00,foodpanda.my/restaurant/t6fx,2026-08-16
+mee_goreng,mamak,Al Dubai Restaurant,Melaka,Melaka,Mee Goreng Biasa,8.00,foodpanda.my/restaurant/q9cy,2026-08-16
+mee_goreng,mamak,Warung Fadeha,Melaka,Melaka,Mee Goreng,10.00,foodpanda.my/restaurant/e29r,2026-08-16
+mee_goreng,mamak,Restoran Melaka Raya,Melaka,Melaka,Mee Goreng,9.50,foodpanda.my/restaurant/t3vv,2026-08-16
+mee_goreng,mamak,HYDRA VIRUNDHU,Melaka,Melaka,Mee Goreng,8.50,foodpanda.my/restaurant/ikan,2026-08-16
+mee_goreng,mamak,Restaurant cayshveena ahw,Melaka,Melaka,Mee Goreng,7.00,foodpanda.my/restaurant/xqey,2026-08-16
+mee_goreng,mamak,Restoran Hj Bakrin & Hj Jamirah,Bukit Katil,Melaka,Mee Goreng,8.00,foodpanda.my/restaurant/ljgl,2026-08-16
+mee_goreng,mamak,Sarapan Pagi Kedai Kak Mek,Jasin,Melaka,Mee Goreng,6.00,foodpanda.my/restaurant/y7kc,2026-08-16
+mee_goreng,mamak,Restoran Nisa Din (Jasin),Jasin,Melaka,Mee Goreng Mamak,5.50,foodpanda.my/restaurant/w4ef,2026-08-16
+mee_goreng,mamak,Lepak Makan Santai,Ayer Keroh,Melaka,Mee Goreng,11.30,foodpanda.my/restaurant/buov,2026-08-16
+mee_goreng,mamak,Restoran D'Lauk (Ayer Keroh),Ayer Keroh,Melaka,Mee Goreng,4.20,foodpanda.my/restaurant/l0hs,2026-08-16
+mee_goreng,mamak,Restoran Al-Masyhur (Jalan Pengkalan),Alor Gajah,Melaka,Mee Goreng Mamak,10.30,foodpanda.my/restaurant/wo26,2026-08-16
+mee_goreng,mamak,Restoran Dak Zul,Alor Gajah,Melaka,Mee Goreng,4.50,foodpanda.my/restaurant/ptjn,2026-08-16
+mee_goreng,mamak,Restoran Rafa,Alor Gajah,Melaka,Mee Goreng,11.40,foodpanda.my/restaurant/jeh1,2026-08-16
+mee_goreng,mamak,Gendang Gendut Tali Kecapi,Batu Berendam,Melaka,Mee Goreng Mamak,9.65,foodpanda.my/restaurant/vkmg,2026-08-16
+mee_goreng,mamak,Hazin Bistro (Kuala Sg Baru),Kuala Sungai Baru,Melaka,Mee Goreng,9.10,foodpanda.my/restaurant/epi3,2026-08-16
+mee_goreng,mamak,Lapa'q Station (Sungai Udang),Sungai Udang,Melaka,Mee Goreng Mamak / Bihun Goreng / Kuey Teow Goreng,12.00,foodpanda.my/restaurant/g0yy,2026-08-16
+roti_canai,kosong,Restoran Telawi Corner,Seremban,Negeri Sembilan,roti canai biasa,1.80,foodpanda.my/restaurant/jdkx,2026-08-16
+roti_canai,kosong,Restoran Araz Maju (Seremban),Seremban,Negeri Sembilan,Roti Canai,1.50,foodpanda.my/restaurant/vqiy,2026-08-16
+roti_canai,kosong,D'Myra Kitchen,Seremban,Negeri Sembilan,Roti Kosong,2.20,foodpanda.my/restaurant/o74x,2026-08-16
+roti_canai,kosong,Restoran NK Melawati (Jalan Pantai),Port Dickson,Negeri Sembilan,Roti Canai,2.00,foodpanda.my/restaurant/eaeo,2026-08-16
+roti_canai,kosong,Nasi Kandar MZ Maju,Port Dickson,Negeri Sembilan,Roti Canai,2.15,foodpanda.my/restaurant/isfj,2026-08-16
+roti_canai,kosong,Dmc Curry House (Nilai),Nilai,Negeri Sembilan,Roti Canai,2.00,foodpanda.my/restaurant/dj10,2026-08-16
+roti_canai,kosong,Restoran Syed Malik Nilai Impian (Jalan Dahlia),Nilai,Negeri Sembilan,Roti Kosong,2.00,foodpanda.my/restaurant/g28e,2026-08-16
+roti_canai,kosong,Restoran Abdul Hameed,Kuala Pilah,Negeri Sembilan,Roti Canai,2.00,foodpanda.my/restaurant/k7ws,2026-08-16
+roti_canai,kosong,Restoran Ramesh Bahau (Taman Satelite),Bahau,Negeri Sembilan,Roti Canai Kosong,2.00,foodpanda.my/restaurant/nm4x,2026-08-16
+roti_canai,kosong,Ngeteh Dichembong,Rembau,Negeri Sembilan,Roti Canai Biasa,2.00,foodpanda.my/restaurant/wckt,2026-08-16
+teh_tarik,panas,Restoran Maulana Medan Selera,Seremban,Negeri Sembilan,Teh Tarik,3.50,foodpanda.my/restaurant/vs76,2026-08-16
+teh_tarik,panas,Restoran NK Melawati (Jalan Pantai),Port Dickson,Negeri Sembilan,Teh Tarik,3.50,foodpanda.my/restaurant/eaeo,2026-08-16
+teh_tarik,panas,Nasi Kandar MZ Maju,Port Dickson,Negeri Sembilan,Teh Tarik,3.19,foodpanda.my/restaurant/isfj,2026-08-16
+teh_tarik,panas,AL WAZER MAJU NASI KANDAR,Port Dickson,Negeri Sembilan,Teh Tarik,3.90,foodpanda.my/restaurant/y06q,2026-08-16
+teh_tarik,panas,Dmc Curry House (Nilai),Nilai,Negeri Sembilan,Teh Tarik,3.30,foodpanda.my/restaurant/dj10,2026-08-16
+teh_tarik,panas,Restoran Syed Malik Nilai Impian (Jalan Dahlia),Nilai,Negeri Sembilan,Teh Tarik Hot,2.60,foodpanda.my/restaurant/g28e,2026-08-16
+teh_tarik,panas,RESTORAN SAPPAHIRE INTAN,Nilai,Negeri Sembilan,Teh Tarik,3.40,foodpanda.my/restaurant/x058,2026-08-16
+teh_tarik,panas,Restoran Urat Ketin Soho (K.Pilah),Kuala Pilah,Negeri Sembilan,Teh Tarik,3.25,foodpanda.my/restaurant/e5dk,2026-08-16
+teh_tarik,panas,Roti Canai (Simpang Gentam),Kuala Pilah,Negeri Sembilan,Teh Tarik,3.60,foodpanda.my/restaurant/axkk,2026-08-16
+teh_tarik,panas,RESTORAN ICE CREAM & ROTI CANAI SPECIAL,Bahau,Negeri Sembilan,Teh Tarik,3.40,foodpanda.my/restaurant/w8vl,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Al-Bismi (Seremban),Seremban,Negeri Sembilan,Mee Goreng Biasa Mamak,9.50,foodpanda.my/restaurant/l1ji,2026-08-16
+mee_goreng,mamak,Restoran Telawi Corner,Seremban,Negeri Sembilan,Mee Goreng,4.00,foodpanda.my/restaurant/jdkx,2026-08-16
+mee_goreng,mamak,Restoran Al-Gemilang,Port Dickson,Negeri Sembilan,Mee Goreng Biasa,7.80,foodpanda.my/restaurant/a3vu,2026-08-16
+mee_goreng,mamak,Nasi Kandar MZ Maju,Port Dickson,Negeri Sembilan,Mee Goreng,8.70,foodpanda.my/restaurant/isfj,2026-08-16
+mee_goreng,mamak,Restoran Ijaz Corner,Port Dickson,Negeri Sembilan,Mee Goreng,8.10,foodpanda.my/restaurant/ahaw,2026-08-16
+mee_goreng,mamak,Dmc Curry House (Nilai),Nilai,Negeri Sembilan,Mee Goreng Biasa,4.60,foodpanda.my/restaurant/dj10,2026-08-16
+mee_goreng,mamak,Restoran Syed Malik Nilai Impian (Jalan Dahlia),Nilai,Negeri Sembilan,Mee Goreng Mamak,6.50,foodpanda.my/restaurant/g28e,2026-08-16
+mee_goreng,mamak,Restoran Abdul Hameed,Kuala Pilah,Negeri Sembilan,Mee Goreng Mama,8.00,foodpanda.my/restaurant/k7ws,2026-08-16
+mee_goreng,mamak,RESTORAN ICE CREAM & ROTI CANAI SPECIAL,Bahau,Negeri Sembilan,Mee Goreng Biasa,7.50,foodpanda.my/restaurant/w8vl,2026-08-16
+mee_goreng,mamak,DNS Masakan Sedap,Pedas,Negeri Sembilan,Mee Goreng,6.70,foodpanda.my/restaurant/xnb0,2026-08-16
+roti_canai,kosong,Restoran Sri Cemerlang (Kuantan),Kuantan,Pahang,Roti Canai Biasa,1.80,foodpanda.my/restaurant/k2rp,2026-08-16
+roti_canai,kosong,Warung Aman Roti canai (Kuantan),Kuantan,Pahang,Roti Kosong,2.10,foodpanda.my/restaurant/xl7q,2026-08-16
+roti_canai,kosong,Restaurant Hajra (Bentong),Bentong,Pahang,Roti Canai,2.60,foodpanda.my/restaurant/dxvz,2026-08-16
+roti_canai,kosong,Restoran Arhham Maju (Bentong),Bentong,Pahang,Roti Canai,2.30,foodpanda.my/restaurant/appl,2026-08-16
+roti_canai,kosong,MK Curry House,Mentakab,Pahang,Roti Canai,1.50,foodpanda.my/restaurant/x7aw,2026-08-16
+roti_canai,kosong,Temerloh Cafe,Temerloh,Pahang,Roti Canai,2.50,foodpanda.my/restaurant/fxac,2026-08-16
+roti_canai,kosong,NASI KANDAR POKOK KELAPA,Raub,Pahang,Roti Canai,2.90,foodpanda.my/restaurant/s0va,2026-08-16
+roti_canai,kosong,Nasi Kandar Line Q (Mydin Jengka),Jengka,Pahang,Roti Canai,2.70,foodpanda.my/restaurant/zw2k,2026-08-16
+roti_canai,kosong,Ali D'Ubai (Berhadapan BS Peramu),Pekan,Pahang,Roti Canai,2.50,foodpanda.my/restaurant/a5dn,2026-08-16
+roti_canai,kosong,Kedai Makan Siti $ Matt,Pekan,Pahang,Roti Kosong,1.50,foodpanda.my/restaurant/paij,2026-08-16
+teh_tarik,panas,WARUNG CHE PA (KUANTAN),Kuantan,Pahang,Teh Tarik Kepaduan,2.50,foodpanda.my/restaurant/vbcg,2026-08-16
+teh_tarik,panas,Restoran Rahath Bistro,Kuantan,Pahang,Teh Tarik (Panas),2.20,foodpanda.my/restaurant/pgdz,2026-08-16
+teh_tarik,panas,ZM Roti Canai,Kuantan,Pahang,Teh Tarik,3.50,foodpanda.my/restaurant/g8tq,2026-08-16
+teh_tarik,panas,Restoran Salsabeel Bistro (Bentong),Bentong,Pahang,Teh Tarik,2.50,foodpanda.my/restaurant/k8sf,2026-08-16
+teh_tarik,panas,NASI KANDAR AZMI,Bentong,Pahang,Teh Tarik,3.30,foodpanda.my/restaurant/ujzb,2026-08-16
+teh_tarik,panas,MK Curry House,Mentakab,Pahang,Teh Tarik,2.10,foodpanda.my/restaurant/x7aw,2026-08-16
+teh_tarik,panas,Ratha Curry Fish Head (RAUB),Raub,Pahang,TEH TARIK,4.00,foodpanda.my/restaurant/r5ea,2026-08-16
+teh_tarik,panas,NASI KANDAR POKOK KELAPA,Raub,Pahang,Teh Tarik,4.80,foodpanda.my/restaurant/s0va,2026-08-16
+teh_tarik,panas,KEDAI MAKAN LEEZA EMERY,Kuala Lipis,Pahang,Teh Tarik (Hot Teh Tarik),3.90,foodpanda.my/restaurant/uznm,2026-08-16
+teh_tarik,panas,Ali D'Ubai (Berhadapan BS Peramu),Pekan,Pahang,Teh Tarik,3.20,foodpanda.my/restaurant/a5dn,2026-08-16
+mee_goreng,mamak,Restoran Sri Cemerlang (Kuantan),Kuantan,Pahang,Mee Goreng Biasa,9.50,foodpanda.my/restaurant/k2rp,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Al Areezah,Kuantan,Pahang,Mee Goreng Mamak,5.50,foodpanda.my/restaurant/e4w2,2026-08-16
+mee_goreng,mamak,Restoran Rahath Bistro,Kuantan,Pahang,Mee Goreng Mamak,6.85,foodpanda.my/restaurant/pgdz,2026-08-16
+mee_goreng,mamak,Restaurant Hajra (Bentong),Bentong,Pahang,Mee Goreng Mamak,11.10,foodpanda.my/restaurant/dxvz,2026-08-16
+mee_goreng,mamak,MK Curry House,Mentakab,Pahang,Mee Goreng,6.60,foodpanda.my/restaurant/x7aw,2026-08-16
+mee_goreng,mamak,Temerloh Cafe,Temerloh,Pahang,Mee Goreng Biasa,6.50,foodpanda.my/restaurant/fxac,2026-08-16
+mee_goreng,mamak,Restoran H.M @ Temerloh,Temerloh,Pahang,Mee Goreng Biasa,7.50,foodpanda.my/restaurant/rzs9,2026-08-16
+mee_goreng,mamak,Ratha Curry Fish Head (RAUB),Raub,Pahang,Mee Goreng,11.00,foodpanda.my/restaurant/r5ea,2026-08-16
+mee_goreng,mamak,NASI KANDAR POKOK KELAPA,Raub,Pahang,Mee Goreng Mamak,10.10,foodpanda.my/restaurant/s0va,2026-08-16
+mee_goreng,mamak,Roma Kuppi Cafe (Taman Wawasan Fasa 3),Jerantut,Pahang,Mee Goreng Mamak,14.40,foodpanda.my/restaurant/gogl,2026-08-16
+roti_canai,kosong,Restoran Nasi Kandar Al Bismi Maju,Butterworth,Penang,Roti Canai Biasa,1.60,foodpanda.my/restaurant/n172,2026-08-16
+roti_canai,kosong,Restoran Jaya (Gottlieb),George Town,Penang,Roti Canai,1.75,foodpanda.my/restaurant/q4lo,2026-08-16
+roti_canai,kosong,Nasi Kandar Subaidah (Kubang Semang),Kubang Semang,Penang,R01. Roti Canai,1.80,foodpanda.my/restaurant/sxlu,2026-08-16
+roti_canai,kosong,Apom Telur & Roti Canai,George Town,Penang,Roti Canai Kosong,1.80,foodpanda.my/restaurant/wo14,2026-08-16
+roti_canai,kosong,Nasi Kandar Nasmir (Taman Pelangi),Bukit Mertajam,Penang,Roti Canai,1.90,foodpanda.my/restaurant/r3xh,2026-08-16
+roti_canai,kosong,Mamu N.K.U Roti Canai (Huang Jia 600 Cafe),George Town,Penang,Roti Canai Biasa,2.00,foodpanda.my/restaurant/irc2,2026-08-16
+roti_canai,kosong,Nasi Kandar Ar Rizq (Jln Sintuk 1),Penaga,Penang,Roti Canai,2.15,foodpanda.my/restaurant/pgc3,2026-08-16
+roti_canai,kosong,Restoran Deen Claypot Briyani,George Town,Penang,Roti Canai - 2 Pcs (RM4.35 for 2),2.18,foodpanda.my/restaurant/x9hu,2026-08-16
+roti_canai,kosong,Restoran Raffe Nasi Kandar Pulau Tikus,George Town,Penang,Roti Canai,2.20,foodpanda.my/restaurant/t7oy,2026-08-16
+roti_canai,kosong,Restoran Thaiyyub Nasi Kandar,Kepala Batas,Penang,Roti Canai,2.20,foodpanda.my/restaurant/s3jl,2026-08-16
+roti_canai,kosong,Aroma Signature Mee Goreng,Tanjung Bungah,Penang,Roti Canai,2.55,foodpanda.my/restaurant/zzze,2026-08-16
+roti_canai,kosong,Bhaii Roti Canai Pajak Song,Kepala Batas,Penang,Roti Canai,2.85,foodpanda.my/restaurant/k2uz,2026-08-16
+roti_canai,kosong,Wahab Roti Canai (Jalan Dato Keramat),George Town,Penang,Roti Canai Biasa,2.90,foodpanda.my/restaurant/xdh5,2026-08-16
+roti_canai,kosong,Original Penang Kayu Nasi Kandar (Penang),Bayan Lepas,Penang,RC1. Roti Canai,4.00,foodpanda.my/restaurant/s8nd,2026-08-16
+teh_tarik,panas,Family & Saylin,Perai,Penang,Teh Tarik,2.20,foodpanda.my/restaurant/yab0,2026-08-16
+teh_tarik,panas,Hameediyah (Bayan Lepas),Bayan Lepas,Penang,Teh Tarik,3.30,foodpanda.my/restaurant/zja7,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Salam (Raja Uda),Butterworth,Penang,Teh Tarik,3.50,foodpanda.my/restaurant/x6ez,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Salam (Ayer Itam),Air Itam,Penang,Teh Tarik,3.50,foodpanda.my/restaurant/r5wf,2026-08-16
+teh_tarik,panas,Bhaii Roti Canai Pajak Song,Kepala Batas,Penang,Teh Tarik,3.50,foodpanda.my/restaurant/k2uz,2026-08-16
+teh_tarik,panas,Mami Som Legacy,Perai,Penang,Teh Tarik,3.50,foodpanda.my/restaurant/qwcc,2026-08-16
+teh_tarik,panas,Dapoq Kak Zii (Kepala Batas),Kepala Batas,Penang,Teh Tarik,3.60,foodpanda.my/restaurant/rygg,2026-08-16
+teh_tarik,panas,Syed Bistro (Bayan Lepas),Bayan Lepas,Penang,Teh Tarik,3.70,foodpanda.my/restaurant/m4mw,2026-08-16
+teh_tarik,panas,Nasi Kandar Beratur 786 (Bayan Lepas),Bayan Lepas,Penang,Teh Tarik Panas,3.70,foodpanda.my/restaurant/i1ld,2026-08-16
+teh_tarik,panas,Restoran Deen Claypot Briyani,George Town,Penang,Teh Tarik,3.80,foodpanda.my/restaurant/x9hu,2026-08-16
+teh_tarik,panas,Rimbun (Gelugor),Gelugor,Penang,Teh Tarik,3.80,foodpanda.my/restaurant/pg7x,2026-08-16
+teh_tarik,panas,Dhea Cafe 45,Bayan Lepas,Penang,Teh Tarik,4.00,foodpanda.my/restaurant/h6my,2026-08-16
+teh_tarik,panas,Restoran Thaiyyub Nasi Kandar,Kepala Batas,Penang,Teh Tarik Panas,4.00,foodpanda.my/restaurant/s3jl,2026-08-16
+teh_tarik,panas,Original Penang Kayu Nasi Kandar (Penang),Bayan Lepas,Penang,Teh Tarik,5.80,foodpanda.my/restaurant/s8nd,2026-08-16
+mee_goreng,mamak,Mami Som Legacy,Perai,Penang,Mee Goreng,5.30,foodpanda.my/restaurant/qwcc,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Al Bismi Maju,Butterworth,Penang,Mee Goreng Biasa,6.00,foodpanda.my/restaurant/n172,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Salam (Ayer Itam),Air Itam,Penang,Mee Goreng Biasa,6.80,foodpanda.my/restaurant/r5wf,2026-08-16
+mee_goreng,mamak,Nasi Kandar Subaidah (Kubang Semang),Kubang Semang,Penang,GG01. Mee Goreng Biasa,7.10,foodpanda.my/restaurant/sxlu,2026-08-16
+mee_goreng,mamak,Nasi Kandar Nasmir (Taman Pelangi),Bukit Mertajam,Penang,Mee Goreng Mamak,7.30,foodpanda.my/restaurant/r3xh,2026-08-16
+mee_goreng,mamak,Kadir Pasembor (Lotus's Bukit Mertajam),Bukit Mertajam,Penang,Mee Goreng Mamak,7.70,foodpanda.my/restaurant/z9qh,2026-08-16
+mee_goreng,mamak,Nasi Kandar Ar Rizq (Jln Sintuk 1),Penaga,Penang,Mee Goreng,7.87,foodpanda.my/restaurant/pgc3,2026-08-16
+mee_goreng,mamak,Hameediyah (Bayan Lepas),Bayan Lepas,Penang,Mee Goreng,8.00,foodpanda.my/restaurant/zja7,2026-08-16
+mee_goreng,mamak,Saravanas Restaurant,Butterworth,Penang,Mee Goreng,8.50,foodpanda.my/restaurant/o4cv,2026-08-16
+mee_goreng,mamak,Hatyai Station (Perda),Bukit Mertajam,Penang,Mee Goreng,8.60,foodpanda.my/restaurant/kzuf,2026-08-16
+mee_goreng,mamak,Syed Bistro (Bayan Lepas),Bayan Lepas,Penang,Mee Goreng Mamak,9.60,foodpanda.my/restaurant/m4mw,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Salam (Raja Uda),Butterworth,Penang,Mee Goreng Biasa,9.80,foodpanda.my/restaurant/x6ez,2026-08-16
+mee_goreng,mamak,Original Penang Kayu Nasi Kandar (Penang),Bayan Lepas,Penang,MG1. Mee Goreng Mamak,13.40,foodpanda.my/restaurant/s8nd,2026-08-16
+roti_canai,kosong,Restoran Syed Mohamed (Restoran Taman Maju),Seri Iskandar,Perak,Roti Canai,1.60,foodpanda.my/restaurant/r6ja,2026-08-16
+roti_canai,kosong,Roti Canai Pak Tam (Kg. Sitiawan),Sitiawan,Perak,Roti Kosong,2.00,foodpanda.my/restaurant/acvi,2026-08-16
+roti_canai,kosong,Roti Canai Kapitol,Kuala Kangsar,Perak,Roti Canai,2.00,foodpanda.my/restaurant/mab7,2026-08-16
+roti_canai,kosong,Restoran SS Sri Food Corner,Ipoh,Perak,Roti Canai,2.20,foodpanda.my/restaurant/w1d6,2026-08-16
+roti_canai,kosong,TIRUPATHI VILAS,Ipoh,Perak,Roti Canai - 2 Pcs (RM4.40 for 2),2.20,foodpanda.my/restaurant/o9bc,2026-08-16
+roti_canai,kosong,Chetty Tiffin Cafe (Taiping),Taiping,Perak,Roti Canai,2.30,foodpanda.my/restaurant/fvaf,2026-08-16
+roti_canai,kosong,NSM BISTRO,Seri Manjung,Perak,Roti Canai,2.40,foodpanda.my/restaurant/fp43,2026-08-16
+roti_canai,kosong,RESTORAN M AZWAN MAJU (Kampar),Kampar,Perak,Roti Canai,2.40,foodpanda.my/restaurant/ve9z,2026-08-16
+roti_canai,kosong,Restoran Oren 55 (Jalan Sultan Abdullah),Teluk Intan,Perak,Roti Canai,2.50,foodpanda.my/restaurant/y6zy,2026-08-16
+roti_canai,kosong,Anna Restaurant,Taiping,Perak,Plain Roti Canai,2.70,foodpanda.my/restaurant/dkz4,2026-08-16
+teh_tarik,panas,Kamal Bihun Sup Kemta,Kamunting,Perak,Teh Tarik,2.30,foodpanda.my/restaurant/w2c6,2026-08-16
+teh_tarik,panas,Haji Kadir Pasembor TPG Lotus (Taiping),Taiping,Perak,Teh Tarik,3.00,foodpanda.my/restaurant/lypl,2026-08-16
+teh_tarik,panas,Roti Canai Pak Tam (Kg. Sitiawan),Sitiawan,Perak,Teh Tarik Panas,3.10,foodpanda.my/restaurant/acvi,2026-08-16
+teh_tarik,panas,RESTORAN M AZWAN MAJU (Kampar),Kampar,Perak,Teh Tarik,3.30,foodpanda.my/restaurant/ve9z,2026-08-16
+teh_tarik,panas,TIRUPATHI VILAS,Ipoh,Perak,Teh Tarik,3.50,foodpanda.my/restaurant/o9bc,2026-08-16
+teh_tarik,panas,Restoran Sri Kumuthavalli,Sitiawan,Perak,Teh Tarik,3.50,foodpanda.my/restaurant/yhvw,2026-08-16
+teh_tarik,panas,Gerai Hasnah Daud,Teluk Intan,Perak,Teh Tarik Panas,3.50,foodpanda.my/restaurant/q6wp,2026-08-16
+teh_tarik,panas,NSM BISTRO,Seri Manjung,Perak,Teh Tarik,3.80,foodpanda.my/restaurant/fp43,2026-08-16
+teh_tarik,panas,Anna Restaurant,Taiping,Perak,Teh Tarik,3.90,foodpanda.my/restaurant/dkz4,2026-08-16
+teh_tarik,panas,Suvai Restaurant,Ipoh,Perak,Teh Tarik,5.80,foodpanda.my/restaurant/rsmd,2026-08-16
+mee_goreng,mamak,Restoran Thalapathy Thiruvizha (Taman Rishah),Ipoh,Perak,Mee Goreng,4.30,foodpanda.my/restaurant/jxmx,2026-08-16
+mee_goreng,mamak,Restoran SS Sri Food Corner,Ipoh,Perak,Mee Goreng,4.30,foodpanda.my/restaurant/w1d6,2026-08-16
+mee_goreng,mamak,Restoran Syed Mohamed (Restoran Taman Maju),Seri Iskandar,Perak,Mee Goreng Biasa,5.50,foodpanda.my/restaurant/r6ja,2026-08-16
+mee_goreng,mamak,Haseena Maju Bistro,Kuala Kangsar,Perak,Mee Goreng Mamak,6.50,foodpanda.my/restaurant/keqj,2026-08-16
+mee_goreng,mamak,Kamal Bihun Sup Kemta,Kamunting,Perak,Mee Goreng,6.80,foodpanda.my/restaurant/w2c6,2026-08-16
+mee_goreng,mamak,Maidins Corner (Teluk Intan),Teluk Intan,Perak,Mee Goreng Biasa,7.00,foodpanda.my/restaurant/twyb,2026-08-16
+mee_goreng,mamak,Chetty Tiffin Cafe (Taiping),Taiping,Perak,Mee Goreng,7.70,foodpanda.my/restaurant/fvaf,2026-08-16
+mee_goreng,mamak,RESTORAN M AZWAN MAJU (Kampar),Kampar,Perak,Mee Goreng,7.70,foodpanda.my/restaurant/ve9z,2026-08-16
+mee_goreng,mamak,Haji Kadir Pasembor TPG Lotus (Taiping),Taiping,Perak,Mee Goreng Mamak,8.60,foodpanda.my/restaurant/lypl,2026-08-16
+mee_goreng,mamak,NSM BISTRO,Seri Manjung,Perak,Mee Goreng Biasa,8.60,foodpanda.my/restaurant/fp43,2026-08-16
+roti_canai,kosong,Pak Ali Roti Canai Terbang,Beseri,Perlis,Roti Canai Biasa,1.50,foodpanda.my/restaurant/fmwv,2026-08-16
+roti_canai,kosong,Warung Hijrah,Kangar,Perlis,Roti Canai Biasa,3.00,foodpanda.my/restaurant/gdlj,2026-08-16
+roti_canai,kosong,Nazlee Roti Canai (Kangar),Kangar,Perlis,Roti Biasa,4.00,foodpanda.my/restaurant/yni1,2026-08-16
+roti_canai,kosong,Warung Roti Canai Warisan (Chuping),Chuping,Perlis,Roti Biasa,5.00,foodpanda.my/restaurant/ir19,2026-08-16
+roti_canai,kosong,Aishah Roti Canai (Jalan Sarawak),Kuala Perlis,Perlis,Roti Canai Kosong,2.00,foodpanda.my/restaurant/rn36,2026-08-16
+roti_canai,kosong,Roti Canai 2 Beradik (Kangar),Kangar,Perlis,Roti Canai Biasa,1.50,foodpanda.my/restaurant/ddnd,2026-08-16
+roti_canai,kosong,YRC Roti Canai (Pekan Pauh),Arau,Perlis,Roti Canai Biasa,2.00,foodpanda.my/restaurant/pc8e,2026-08-16
+roti_canai,kosong,Warung Sabar Menanti (Kampung Panggas Kechil),Chuping,Perlis,Roti Biasa,2.00,foodpanda.my/restaurant/jgfb,2026-08-16
+roti_canai,kosong,Ziezan's Station,Kangar,Perlis,Roti Canai Biasa,2.00,foodpanda.my/restaurant/ojm3,2026-08-16
+roti_canai,kosong,Roti Canai Alor Tampang (Beseri),Beseri,Perlis,Roti Kosong,2.00,foodpanda.my/restaurant/zoyb,2026-08-16
+roti_canai,kosong,Din Roti Canai (Utan Aji),Kangar,Perlis,Roti Biasa,2.00,foodpanda.my/restaurant/ghg8,2026-08-16
+roti_canai,kosong,Don Corner Kuala Perlis,Kuala Perlis,Perlis,Roti Canai Kosong,1.60,foodpanda.my/restaurant/rdyf,2026-08-16
+roti_canai,kosong,Restoran Ismail,Kangar,Perlis,Roti Canai,2.30,foodpanda.my/restaurant/oriz,2026-08-16
+roti_canai,kosong,Restoran Sri Pauh,Arau,Perlis,RC Biasa,1.60,foodpanda.my/restaurant/s1jc,2026-08-16
+roti_canai,kosong,Olan Roti Canai (Simpang Empat),Simpang Empat,Perlis,Roti Biasa,2.20,foodpanda.my/restaurant/etk9,2026-08-16
+roti_canai,kosong,Warung 5A Adam 3 Beradik,Simpang Empat,Perlis,Roti Canai Kosong,1.50,foodpanda.my/restaurant/co2d,2026-08-16
+roti_canai,kosong,PcHoT Station,Simpang Empat,Perlis,Roti Canai Biasa,2.00,foodpanda.my/restaurant/sy7f,2026-08-16
+roti_canai,kosong,Warung Pija [Catering],Kuala Perlis,Perlis,Roti Canai Biasa,2.00,foodpanda.my/restaurant/e5ns,2026-08-16
+roti_canai,kosong,Gee Corner (Anjung Selera Kuala Perlis),Kuala Perlis,Perlis,Roti Biasa,2.00,foodpanda.my/restaurant/k7wl,2026-08-16
+roti_canai,kosong,Warung Epy Canai,Arau,Perlis,Roti Canai Kosong,1.80,foodpanda.my/restaurant/y4ke,2026-08-16
+roti_canai,kosong,Kedai Makan Maksu (Cikton),Kuala Perlis,Perlis,Roti Canai Kosong,1.90,foodpanda.my/restaurant/vf3m,2026-08-16
+roti_canai,kosong,Khalipah Cafe 2,Kuala Perlis,Perlis,Roti Canai Biasa,1.99,foodpanda.my/restaurant/b9at,2026-08-16
+teh_tarik,panas,Warung Roti Canai Warisan (Chuping),Chuping,Perlis,Teh Tarik,6.00,foodpanda.my/restaurant/ir19,2026-08-16
+teh_tarik,panas,Ziezan's Station,Kangar,Perlis,Teh Tarik,3.00,foodpanda.my/restaurant/ojm3,2026-08-16
+teh_tarik,panas,Din Roti Canai (Utan Aji),Kangar,Perlis,Teh Tarik,3.00,foodpanda.my/restaurant/ghg8,2026-08-16
+teh_tarik,panas,Restoran Diwanie - Kompleks Niaga PKENPS,Kangar,Perlis,Teh Tarik,3.20,foodpanda.my/restaurant/ymtn,2026-08-16
+teh_tarik,panas,Abang Wan Nasi Kerabu (Jalan Hospital),Kangar,Perlis,Hot Teh Tarik,3.00,foodpanda.my/restaurant/qjfp,2026-08-16
+teh_tarik,panas,Ijat Nasi Lemak Kukus Ayam Berempah,Arau,Perlis,Teh Tarik (Hot),4.00,foodpanda.my/restaurant/va0y,2026-08-16
+teh_tarik,panas,NAM Nasi Lemak,Arau,Perlis,Teh Tarik Panas,2.50,foodpanda.my/restaurant/vlx2,2026-08-16
+teh_tarik,panas,Kedai Makan Kak Zaweyah,Arau,Perlis,Teh Tarik,2.20,foodpanda.my/restaurant/l2fc,2026-08-16
+teh_tarik,panas,Warung Tok Piah,Arau,Perlis,Teh Tarik (Hot),3.00,foodpanda.my/restaurant/ytry,2026-08-16
+teh_tarik,panas,Gerai Makan Hanida (Arau),Arau,Perlis,Teh Tarik,2.20,foodpanda.my/restaurant/w9gq,2026-08-16
+teh_tarik,panas,Don Corner Kuala Perlis,Kuala Perlis,Perlis,Teh Tarik,3.30,foodpanda.my/restaurant/rdyf,2026-08-16
+teh_tarik,panas,Sheik Bistro (Yasmeen Arau),Arau,Perlis,Teh Tarik,5.00,foodpanda.my/restaurant/c8yq,2026-08-16
+teh_tarik,panas,Nasir Nasi Kandar (Kangar),Arau,Perlis,Teh Tarik,3.00,foodpanda.my/restaurant/f8ha,2026-08-16
+teh_tarik,panas,Warung D' Kolam Titi Tinggi (Jalan Padang Besar),Padang Besar,Perlis,Minuman Teh Tarik,3.00,foodpanda.my/restaurant/hz1s,2026-08-16
+mee_goreng,mamak,Roti Canai Borneo (Jalan Kaki Bukit),Kangar,Perlis,Mee Goreng,6.00,foodpanda.my/restaurant/f37v,2026-08-16
+mee_goreng,mamak,Warong kontena,Kangar,Perlis,Mee Goreng Mamak,11.00,foodpanda.my/restaurant/q872,2026-08-16
+mee_goreng,mamak,Tok Uban Cafe,Kangar,Perlis,Mee Goreng Mamak,7.00,foodpanda.my/restaurant/ymkn,2026-08-16
+mee_goreng,mamak,Waniefooddkola,Kuala Perlis,Perlis,Mee Goreng,5.00,foodpanda.my/restaurant/vddm,2026-08-16
+mee_goreng,mamak,WARUNG KAK TAM,Kuala Perlis,Perlis,MEE GORENG,7.00,foodpanda.my/restaurant/ml1u,2026-08-16
+mee_goreng,mamak,Citarasa Kak Zue,Kangar,Perlis,Mee Goreng,7.50,foodpanda.my/restaurant/l8u5,2026-08-16
+mee_goreng,mamak,Fiqkir House Cafe (Beseri),Beseri,Perlis,Mee Goreng Mamak,12.00,foodpanda.my/restaurant/olnd,2026-08-16
+mee_goreng,mamak,Restoran Rasa Serantau (Jalan Kangar),Kangar,Perlis,Mee Goreng,7.50,foodpanda.my/restaurant/ub5d,2026-08-16
+mee_goreng,mamak,Gerai Makan Hanida (Arau),Arau,Perlis,Mee Goreng,9.00,foodpanda.my/restaurant/w9gq,2026-08-16
+mee_goreng,mamak,Restoran Sri Pauh,Arau,Perlis,Mee Goreng,8.00,foodpanda.my/restaurant/s1jc,2026-08-16
+mee_goreng,mamak,Warung Amsyar,Arau,Perlis,Mee Goreng Mamak,9.80,foodpanda.my/restaurant/obwd,2026-08-16
+mee_goreng,mamak,Penang Char Kuey Teaw & Tomyam,Arau,Perlis,Mee Goreng Mamak,9.90,foodpanda.my/restaurant/owk2,2026-08-16
+mee_goreng,mamak,Asha Restaurant,Arau,Perlis,Mee Goreng Mamak,8.00,foodpanda.my/restaurant/m8z2,2026-08-16
+mee_goreng,mamak,Gee Corner (Anjung Selera Kuala Perlis),Kuala Perlis,Perlis,Mee Goreng Mamak,10.00,foodpanda.my/restaurant/k7wl,2026-08-16
+roti_canai,kosong,Warung Santai Kita,Putrajaya,Putrajaya,Roti Canai Biasa,2.25,foodpanda.my/restaurant/xl6c,2026-08-16
+roti_canai,kosong,Restoran Nasi Kandar Al-Azwan (Putrajaya),Putrajaya,Putrajaya,Roti Canai,2.25,foodpanda.my/restaurant/ok3q,2026-08-16
+roti_canai,kosong,Char Keow Teow & Roti Canai Surau An-Najah(putrjaya),Putrajaya,Putrajaya,Roti Kosong,2.40,foodpanda.my/restaurant/vf9g,2026-08-16
+roti_canai,kosong,Cik Na Nasi Dagang Ganu,Putrajaya,Putrajaya,Roti Canai Kosong,2.50,foodpanda.my/restaurant/rn7q,2026-08-16
+roti_canai,kosong,ALI MAJU KAFE (Presint 5),Putrajaya,Putrajaya,Roti Canai,2.50,foodpanda.my/restaurant/i3qf,2026-08-16
+roti_canai,kosong,Unkle Canai (Presint 15),Putrajaya,Putrajaya,Roti Canai,2.60,foodpanda.my/restaurant/zrmv,2026-08-16
+roti_canai,kosong,Restoran Nasi Kandar Asli Shahnaz Maju (Ayer@8),Putrajaya,Putrajaya,Roti Canai,2.70,foodpanda.my/restaurant/n7vd,2026-08-16
+roti_canai,kosong,Ujana Roti Canai Pak Uda (Jalan P5),Putrajaya,Putrajaya,Roti Kosong,2.70,foodpanda.my/restaurant/d841,2026-08-16
+roti_canai,kosong,Restoran Soraya,Putrajaya,Putrajaya,Roti Canai Kosong,2.80,foodpanda.my/restaurant/f7jh,2026-08-16
+roti_canai,kosong,Abe Roti Canai @ Presint 15,Putrajaya,Putrajaya,Roti Canai,2.90,foodpanda.my/restaurant/aebo,2026-08-16
+roti_canai,kosong,Roti Canai Pak Samad (Presint 11),Putrajaya,Putrajaya,Roti Canai,2.90,foodpanda.my/restaurant/lgdx,2026-08-16
+roti_canai,kosong,Abe Roti Canai @ Presint 11,Putrajaya,Putrajaya,Roti Canai,2.93,foodpanda.my/restaurant/ezx8,2026-08-16
+roti_canai,kosong,Red White Cafe Roti Canai(Presint 9),Putrajaya,Putrajaya,Roti Canai Kosong,3.00,foodpanda.my/restaurant/wqog,2026-08-16
+roti_canai,kosong,Restoran Darussalam,Putrajaya,Putrajaya,Roti Canai (Serve With Dhall Only),3.00,foodpanda.my/restaurant/t3zp,2026-08-16
+roti_canai,kosong,Q Bistro Nasi Kandar (Putrajaya),Putrajaya,Putrajaya,Roti Kosong,3.23,foodpanda.my/restaurant/vt09,2026-08-16
+roti_canai,kosong,Q Bistro (Putrajaya 2),Putrajaya,Putrajaya,Roti Kosong,3.23,foodpanda.my/restaurant/wtx0,2026-08-16
+teh_tarik,panas,Unkle Canai (Presint 15),Putrajaya,Putrajaya,Teh Tarik,2.80,foodpanda.my/restaurant/zrmv,2026-08-16
+teh_tarik,panas,Nasi Kandar Liga Maju Penang (Putrajaya),Putrajaya,Putrajaya,teh tarik,2.80,foodpanda.my/restaurant/mw0x,2026-08-16
+teh_tarik,panas,Restoran Selasih (Putrajaya),Putrajaya,Putrajaya,Teh Tarik,3.00,foodpanda.my/restaurant/hu6q,2026-08-16
+teh_tarik,panas,Thai Express (Putrajaya),Putrajaya,Putrajaya,Teh Tarik Panas,3.30,foodpanda.my/restaurant/gxla,2026-08-16
+teh_tarik,panas,MIKER PUTRAJAYA,Putrajaya,Putrajaya,Teh Tarik,3.44,foodpanda.my/restaurant/fmk9,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Asli Shahnaz Maju (Ayer@8),Putrajaya,Putrajaya,Teh Tarik,3.60,foodpanda.my/restaurant/n7vd,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Al-Azwan (Putrajaya),Putrajaya,Putrajaya,Teh Tarik Hot,3.60,foodpanda.my/restaurant/ok3q,2026-08-16
+teh_tarik,panas,Warung Santai Kita,Putrajaya,Putrajaya,Teh Tarik Panas,3.70,foodpanda.my/restaurant/xl6c,2026-08-16
+teh_tarik,panas,ALI MAJU KAFE (Presint 5),Putrajaya,Putrajaya,Teh Tarik,3.90,foodpanda.my/restaurant/i3qf,2026-08-16
+teh_tarik,panas,Q Bistro Nasi Kandar (Putrajaya),Putrajaya,Putrajaya,Teh Tarik,4.78,foodpanda.my/restaurant/vt09,2026-08-16
+teh_tarik,panas,Q Bistro (Putrajaya 2),Putrajaya,Putrajaya,Teh Tarik,4.78,foodpanda.my/restaurant/wtx0,2026-08-16
+teh_tarik,panas,"Oldtown White Coffee (IOI City Mall , Putrajaya)",Putrajaya,Putrajaya,GD4 OldTown Teh Tarik (Hot),9.90,foodpanda.my/restaurant/cej7,2026-08-16
+mee_goreng,mamak,Warung Santai Kita,Putrajaya,Putrajaya,Mee Goreng,5.95,foodpanda.my/restaurant/xl6c,2026-08-16
+mee_goreng,mamak,Yumai Rasa (Presint 9),Putrajaya,Putrajaya,Mee Goreng Biasa,7.90,foodpanda.my/restaurant/il74,2026-08-16
+mee_goreng,mamak,Restoran Tomyam Susana (Putrajaya),Putrajaya,Putrajaya,Mee Goreng,8.00,foodpanda.my/restaurant/pup6,2026-08-16
+mee_goreng,mamak,ALI MAJU KAFE (Presint 5),Putrajaya,Putrajaya,Mee Goreng,8.30,foodpanda.my/restaurant/i3qf,2026-08-16
+mee_goreng,mamak,Nasi Kandar Hidayah Maju (Putrajaya),Putrajaya,Putrajaya,Mee Goreng Biasa Mamak,8.40,foodpanda.my/restaurant/hrb5,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Asli Shahnaz Maju (Ayer@8),Putrajaya,Putrajaya,Mee Goreng,8.50,foodpanda.my/restaurant/n7vd,2026-08-16
+mee_goreng,mamak,Nasi Kandar Liga Maju Penang (Putrajaya),Putrajaya,Putrajaya,Mee Goreng,8.90,foodpanda.my/restaurant/mw0x,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Al-Azwan (Putrajaya),Putrajaya,Putrajaya,Mee Goreng Biasa Mamak,9.00,foodpanda.my/restaurant/ok3q,2026-08-16
+mee_goreng,mamak,Nasi Lemak Royale Kedah (Putrajaya),Putrajaya,Putrajaya,Mee Goreng Biasa,9.00,foodpanda.my/restaurant/l2yj,2026-08-16
+mee_goreng,mamak,Restoran Darussalam,Putrajaya,Putrajaya,Mee Goreng Mamak,9.30,foodpanda.my/restaurant/t3zp,2026-08-16
+mee_goreng,mamak,Thai Express (Putrajaya),Putrajaya,Putrajaya,Mee Goreng Biasa,9.90,foodpanda.my/restaurant/gxla,2026-08-16
+mee_goreng,mamak,"Red White Cafe (Presint 9, Putrajaya)",Putrajaya,Putrajaya,Mee Goreng Mamak,10.10,foodpanda.my/restaurant/w4rm,2026-08-16
+mee_goreng,mamak,Zara Bistro,Putrajaya,Putrajaya,Mee Goreng Mamak,10.40,foodpanda.my/restaurant/lm7q,2026-08-16
+mee_goreng,mamak,Nasgor Mamu (Presint 11),Putrajaya,Putrajaya,Mee Goreng,10.50,foodpanda.my/restaurant/xqow,2026-08-16
+mee_goreng,mamak,Q Bistro Nasi Kandar (Putrajaya),Putrajaya,Putrajaya,Mee Goreng,11.11,foodpanda.my/restaurant/vt09,2026-08-16
+mee_goreng,mamak,Q Bistro (Putrajaya 2),Putrajaya,Putrajaya,Mee Goreng,11.11,foodpanda.my/restaurant/wtx0,2026-08-16
+mee_goreng,mamak,"Oldtown White Coffee (IOI City Mall , Putrajaya)",Putrajaya,Putrajaya,GN24 Mee Goreng Mamak,19.50,foodpanda.my/restaurant/cej7,2026-08-16
+roti_canai,kosong,Ahfrinah Curry House (KK),Kota Kinabalu,Sabah,Roti Canai,3.60,foodpanda.my/restaurant/oj1n,2026-08-16
+roti_canai,kosong,Restoran Nikmat (Towering Industrial Centre),Kota Kinabalu,Sabah,Roti Canai Kosong,2.10,foodpanda.my/restaurant/ivhn,2026-08-16
+roti_canai,kosong,Restoran Ajmal Maju (Api-Api Centre),Kota Kinabalu,Sabah,Roti Canai Kosong,2.90,foodpanda.my/restaurant/x4dt,2026-08-16
+roti_canai,kosong,Restoran Al-Mubaraq (Garden City),Tawau,Sabah,Roti Kosong,2.20,foodpanda.my/restaurant/sx1s,2026-08-16
+roti_canai,kosong,Restoran Madras Cafe (Tanjung Batu),Tawau,Sabah,A1. Roti Kosong,1.80,foodpanda.my/restaurant/susr,2026-08-16
+roti_canai,kosong,Restoran Rahmat Perdana,Lahad Datu,Sabah,Roti Canai,2.20,foodpanda.my/restaurant/s8tu,2026-08-16
+roti_canai,kosong,Restoran Akbar (Fajar Centre),Lahad Datu,Sabah,Roti Kosong,2.80,foodpanda.my/restaurant/y13m,2026-08-16
+roti_canai,kosong,Restaurant Habeeb Sabanah (Sandakan),Sandakan,Sabah,Roti Kosong,2.30,foodpanda.my/restaurant/buhk,2026-08-16
+roti_canai,kosong,TAJ Restaurant Corner (Mawar),Sandakan,Sabah,Roti Kosong,3.30,foodpanda.my/restaurant/xoqi,2026-08-16
+roti_canai,kosong,Mohideen Bistro 24 Jam (Cyber Square),Penampang,Sabah,Roti Canai,2.40,foodpanda.my/restaurant/qgno,2026-08-16
+teh_tarik,panas,Ahfrinah Curry House (KK),Kota Kinabalu,Sabah,Teh Tarik,4.90,foodpanda.my/restaurant/oj1n,2026-08-16
+teh_tarik,panas,Restoran Al-Mubaraq (Garden City),Tawau,Sabah,Teh Tarik,4.80,foodpanda.my/restaurant/sx1s,2026-08-16
+teh_tarik,panas,Restoran Benazir (Jalan Dunlop),Tawau,Sabah,Teh Tarik,4.10,foodpanda.my/restaurant/bwau,2026-08-16
+teh_tarik,panas,Restaurant Habeeb Sabanah (Sandakan),Sandakan,Sabah,Teh Tarik,3.90,foodpanda.my/restaurant/buhk,2026-08-16
+teh_tarik,panas,TAJ Restaurant Corner (Mawar),Sandakan,Sabah,Teh Tarik,4.80,foodpanda.my/restaurant/xoqi,2026-08-16
+teh_tarik,panas,Restoran Akbar (Fajar Centre),Lahad Datu,Sabah,Teh Tarik,3.50,foodpanda.my/restaurant/y13m,2026-08-16
+teh_tarik,panas,Restoran Bafakhy (Fajar Centre - Lorong 9),Lahad Datu,Sabah,Teh Tarik,4.30,foodpanda.my/restaurant/n1j4,2026-08-16
+teh_tarik,panas,Mohideen Bistro 24 Jam (Cyber Square),Penampang,Sabah,Teh Tarik,3.00,foodpanda.my/restaurant/qgno,2026-08-16
+teh_tarik,panas,Chewan Nasi Lemak Berlauk (Beaufort Sentral),Beaufort,Sabah,Teh Tarik,5.20,foodpanda.my/restaurant/qklc,2026-08-16
+teh_tarik,panas,Sabamian (Keningau),Keningau,Sabah,Teh Tarik,7.10,foodpanda.my/restaurant/o0l8,2026-08-16
+mee_goreng,mamak,Restoran Ajmal Maju (Api-Api Centre),Kota Kinabalu,Sabah,Mee Goreng Kosong,7.20,foodpanda.my/restaurant/x4dt,2026-08-16
+mee_goreng,mamak,Ahfrinah Curry House (KK),Kota Kinabalu,Sabah,Mee Goreng Mamak,12.80,foodpanda.my/restaurant/oj1n,2026-08-16
+mee_goreng,mamak,Restoran Madras Cafe (Tanjung Batu),Tawau,Sabah,D1. Mee Goreng Kosong,5.20,foodpanda.my/restaurant/susr,2026-08-16
+mee_goreng,mamak,Restoran Al-Mubaraq (Garden City),Tawau,Sabah,Mee Goreng Mamak,12.20,foodpanda.my/restaurant/sx1s,2026-08-16
+mee_goreng,mamak,Restoran Benazir (Jalan Dunlop),Tawau,Sabah,Mee Goreng Mamak,13.70,foodpanda.my/restaurant/bwau,2026-08-16
+mee_goreng,mamak,Restoran Rahmat Perdana,Lahad Datu,Sabah,Mee Goreng Mamak,11.80,foodpanda.my/restaurant/s8tu,2026-08-16
+mee_goreng,mamak,Restoran Ajmeer (Darvel Bay),Lahad Datu,Sabah,Mee Goreng Mamak,18.00,foodpanda.my/restaurant/fu71,2026-08-16
+mee_goreng,mamak,TAJ Restaurant Corner (Mawar),Sandakan,Sabah,Mee Goreng Kosong,7.00,foodpanda.my/restaurant/xoqi,2026-08-16
+mee_goreng,mamak,Restaurant Habeeb Sabanah (Sandakan),Sandakan,Sabah,Mee Goreng Mamak,14.30,foodpanda.my/restaurant/buhk,2026-08-16
+mee_goreng,mamak,Sulap Soo' Linggit (Penampang),Penampang,Sabah,Mee Goreng Mamak,15.00,foodpanda.my/restaurant/gix4,2026-08-16
+roti_canai,kosong,Khan's Bilal Restaurant (Permy),Miri,Sarawak,Roti Canai Kosong,2.00,foodpanda.my/restaurant/d3tu,2026-08-16
+roti_canai,kosong,AK Curry House (Miri Permyjaya),Miri,Sarawak,Roti Kosong,2.70,foodpanda.my/restaurant/shh0,2026-08-16
+roti_canai,kosong,ROTI CANAI RAHMAH,Sibu,Sarawak,Roti Kosong,2.00,foodpanda.my/restaurant/danf,2026-08-16
+roti_canai,kosong,ETA ISLAMIC CAFE,Sibu,Sarawak,Roti Kosong,2.90,foodpanda.my/restaurant/c7vv,2026-08-16
+roti_canai,kosong,Noor Satay Islamic Cafe,Sibu,Sarawak,Roti Canai Kosong,2.30,foodpanda.my/restaurant/t8aq,2026-08-16
+roti_canai,kosong,Nina Islamic Cafe (Nearby Star Megamall),Sibu,Sarawak,Roti Canai Kosong,2.70,foodpanda.my/restaurant/c6e6,2026-08-16
+roti_canai,kosong,Al Madinah Parkcity,Bintulu,Sarawak,Roti Kosong,2.50,foodpanda.my/restaurant/x6wh,2026-08-16
+roti_canai,kosong,Al Madinah Lamb Shank,Bintulu,Sarawak,Roti Kosong,2.00,foodpanda.my/restaurant/xvgq,2026-08-16
+roti_canai,kosong,Refah Cafe,Bintulu,Sarawak,Roti Canai Kosong,2.80,foodpanda.my/restaurant/d3aj,2026-08-16
+roti_canai,kosong,New Atmosferah Restaurant (Kota Samarahan),Kota Samarahan,Sarawak,Canai Kosong,2.50,foodpanda.my/restaurant/sv6q,2026-08-16
+roti_canai,kosong,Nasi Kandar Line Q (Kota Samarahan),Kota Samarahan,Sarawak,Roti Canai,2.30,foodpanda.my/restaurant/j415,2026-08-16
+roti_canai,kosong,Bombay Spices (Kota Samarahan),Kota Samarahan,Sarawak,Roti Canai Kosong,2.10,foodpanda.my/restaurant/s9kw,2026-08-16
+teh_tarik,panas,Khan's Bilal Restaurant (Permy),Miri,Sarawak,Teh Tarik,2.70,foodpanda.my/restaurant/d3tu,2026-08-16
+teh_tarik,panas,AK Curry House (Miri Permyjaya),Miri,Sarawak,Teh Tarik,4.50,foodpanda.my/restaurant/shh0,2026-08-16
+teh_tarik,panas,"Mamak Cafe Sibu (Malay,India,Indonesia Food)",Sibu,Sarawak,Teh Tarik,3.90,foodpanda.my/restaurant/aau2,2026-08-16
+teh_tarik,panas,Liza Islamic Cafe,Sibu,Sarawak,Teh Tarik,3.90,foodpanda.my/restaurant/a0gk,2026-08-16
+teh_tarik,panas,ETA ISLAMIC CAFE,Sibu,Sarawak,Teh Tarik,2.90,foodpanda.my/restaurant/c7vv,2026-08-16
+teh_tarik,panas,Noor Satay Islamic Cafe,Sibu,Sarawak,Teh Tarik,3.50,foodpanda.my/restaurant/t8aq,2026-08-16
+teh_tarik,panas,Nina Islamic Cafe (Nearby Star Megamall),Sibu,Sarawak,Teh Tarik,3.60,foodpanda.my/restaurant/c6e6,2026-08-16
+teh_tarik,panas,Daun Pisang Bintulu (Bintulu),Bintulu,Sarawak,Teh Tarik,5.80,foodpanda.my/restaurant/qx45,2026-08-16
+teh_tarik,panas,Target Cafe,Bintulu,Sarawak,Teh Tarik Panas,5.00,foodpanda.my/restaurant/t1uf,2026-08-16
+teh_tarik,panas,Refah Cafe,Bintulu,Sarawak,Teh Tarik,5.50,foodpanda.my/restaurant/d3aj,2026-08-16
+teh_tarik,panas,New Atmosferah Restaurant (Kota Samarahan),Kota Samarahan,Sarawak,Teh Tarik,3.70,foodpanda.my/restaurant/sv6q,2026-08-16
+teh_tarik,panas,Nasi Kandar Line Q (Kota Samarahan),Kota Samarahan,Sarawak,Teh Tarik,3.75,foodpanda.my/restaurant/j415,2026-08-16
+mee_goreng,mamak,Khan's Bilal Restaurant (Permy),Miri,Sarawak,Mee Goreng Biasa,8.10,foodpanda.my/restaurant/d3tu,2026-08-16
+mee_goreng,mamak,AK Curry House (Miri Permyjaya),Miri,Sarawak,Mee Goreng Biasa,10.40,foodpanda.my/restaurant/shh0,2026-08-16
+mee_goreng,mamak,Liza Islamic Cafe,Sibu,Sarawak,Goreng Biasa (listed under Mee Goreng section),6.50,foodpanda.my/restaurant/a0gk,2026-08-16
+mee_goreng,mamak,Nina Islamic Cafe (Nearby Star Megamall),Sibu,Sarawak,Mee Goreng Biasa,8.10,foodpanda.my/restaurant/c6e6,2026-08-16
+mee_goreng,mamak,Al Madinah Parkcity,Bintulu,Sarawak,Mee Goreng Biasa,8.00,foodpanda.my/restaurant/x6wh,2026-08-16
+mee_goreng,mamak,Al Madinah Lamb Shank,Bintulu,Sarawak,Mee Goreng Biasa,9.00,foodpanda.my/restaurant/xvgq,2026-08-16
+mee_goreng,mamak,Daun Pisang Bintulu (Bintulu),Bintulu,Sarawak,Mee Goreng,13.00,foodpanda.my/restaurant/qx45,2026-08-16
+mee_goreng,mamak,Target Cafe,Bintulu,Sarawak,Mee Goreng,9.90,foodpanda.my/restaurant/t1uf,2026-08-16
+mee_goreng,mamak,New Atmosferah Restaurant (Kota Samarahan),Kota Samarahan,Sarawak,Mee Goreng Biasa,8.90,foodpanda.my/restaurant/sv6q,2026-08-16
+mee_goreng,mamak,Nasi Kandar Line Q (Kota Samarahan),Kota Samarahan,Sarawak,Mee Goreng,9.00,foodpanda.my/restaurant/j415,2026-08-16
+mee_goreng,mamak,Bombay Spices (Kota Samarahan),Kota Samarahan,Sarawak,Mee Goreng Mamak,8.00,foodpanda.my/restaurant/s9kw,2026-08-16
+roti_canai,kosong,RESTORAN HARIS,Shah Alam,Selangor,Roti Canai Biasa,1.60,foodpanda.my/restaurant/gk4r,2026-08-16
+roti_canai,kosong,Roti Canai Kabin (SS18),Shah Alam,Selangor,Roti Kosong,2.40,foodpanda.my/restaurant/ccby,2026-08-16
+roti_canai,kosong,MC Corner (Sec 14),Petaling Jaya,Selangor,Roti Canai,2.60,foodpanda.my/restaurant/w81l,2026-08-16
+roti_canai,kosong,Alisha Maju,Subang Jaya,Selangor,Roti Kosong,2.00,foodpanda.my/restaurant/r99h,2026-08-16
+roti_canai,kosong,Restoran Al Shaik Nasi Kandar (Klang),Klang,Selangor,Roti Kosong,1.90,foodpanda.my/restaurant/ttvu,2026-08-16
+roti_canai,kosong,BHUKARRY NASI KANDAR (Klang),Klang,Selangor,ROTI KOSONG (2 PCS) (RM4.90 for 2),2.45,foodpanda.my/restaurant/n4nx,2026-08-16
+roti_canai,kosong,Restoran Jamek,Cyberjaya,Selangor,Roti Canai,2.30,foodpanda.my/restaurant/n2fr,2026-08-16
+roti_canai,kosong,Restoran Al Sarifa,Kajang,Selangor,ROTI CANAI,2.10,foodpanda.my/restaurant/p0ew,2026-08-16
+roti_canai,kosong,Restoran Nasi Kandar Ar Belanga,Puchong,Selangor,Roti Canai,1.60,foodpanda.my/restaurant/s9wr,2026-08-16
+roti_canai,kosong,Restoran Ayza's (Bangi Sek 15),Bandar Baru Bangi,Selangor,Roti Canai,2.70,foodpanda.my/restaurant/r5cb,2026-08-16
+teh_tarik,panas,RESTORAN HARIS,Shah Alam,Selangor,Teh Tarik Panas,2.90,foodpanda.my/restaurant/gk4r,2026-08-16
+teh_tarik,panas,Restoran Nasi Kandar Kaif,Shah Alam,Selangor,Teh Tarik,3.50,foodpanda.my/restaurant/h3yi,2026-08-16
+teh_tarik,panas,MC Corner (Sec 14),Petaling Jaya,Selangor,Teh Tarik Panas,4.30,foodpanda.my/restaurant/w81l,2026-08-16
+teh_tarik,panas,Restoran Jaya (Petaling Jaya),Petaling Jaya,Selangor,Teh Tarik Hot,2.00,foodpanda.my/restaurant/q0vn,2026-08-16
+teh_tarik,panas,Alisha Maju,Subang Jaya,Selangor,Teh Tarik,3.00,foodpanda.my/restaurant/r99h,2026-08-16
+teh_tarik,panas,Restoran Al Shaik Nasi Kandar (Klang),Klang,Selangor,Teh Tarik,3.40,foodpanda.my/restaurant/ttvu,2026-08-16
+teh_tarik,panas,Nasi Kandar Jabbar,Klang,Selangor,Teh Tarik,2.40,foodpanda.my/restaurant/w6j8,2026-08-16
+teh_tarik,panas,Restoran Al Sarifa,Kajang,Selangor,TEH TARIK,3.50,foodpanda.my/restaurant/p0ew,2026-08-16
+teh_tarik,panas,ZAT CORNER,Puchong,Selangor,Teh Tarik,2.70,foodpanda.my/restaurant/wbzf,2026-08-16
+teh_tarik,panas,Saddam Nasi Kandar (Alam Suria),Bandar Puncak Alam,Selangor,Teh Tarik,3.50,foodpanda.my/restaurant/fabo,2026-08-16
+mee_goreng,mamak,RESTORAN HARIS,Shah Alam,Selangor,Mee Goreng Biasa,6.50,foodpanda.my/restaurant/gk4r,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Kaif,Shah Alam,Selangor,Mee Goreng,8.20,foodpanda.my/restaurant/h3yi,2026-08-16
+mee_goreng,mamak,MC Corner (Sec 14),Petaling Jaya,Selangor,Mee Goreng,9.90,foodpanda.my/restaurant/w81l,2026-08-16
+mee_goreng,mamak,Alisha Maju,Subang Jaya,Selangor,Mee Goreng Mamak,7.00,foodpanda.my/restaurant/r99h,2026-08-16
+mee_goreng,mamak,Restoran Al Shaik Nasi Kandar (Klang),Klang,Selangor,Mee Goreng Mamak,8.80,foodpanda.my/restaurant/ttvu,2026-08-16
+mee_goreng,mamak,Nasi Kandar Jabbar,Klang,Selangor,Mee Goreng Biasa,6.80,foodpanda.my/restaurant/w6j8,2026-08-16
+mee_goreng,mamak,Restoran Jamek,Cyberjaya,Selangor,Mee Goreng Mamak,7.50,foodpanda.my/restaurant/n2fr,2026-08-16
+mee_goreng,mamak,Restoran Al Sarifa,Kajang,Selangor,MEE GORENG BIASA,8.60,foodpanda.my/restaurant/p0ew,2026-08-16
+mee_goreng,mamak,Restoran Nasi Kandar Ar Belanga,Puchong,Selangor,Mee Goreng Mamak Biasa,6.50,foodpanda.my/restaurant/s9wr,2026-08-16
+mee_goreng,mamak,Restoran Ayza's (Bangi Sek 15),Bandar Baru Bangi,Selangor,Mee Goreng Mamak,9.90,foodpanda.my/restaurant/r5cb,2026-08-16
+roti_canai,kosong,Restoran Mat Binjai,Kuala Terengganu,Terengganu,Roti Kosong,1.80,foodpanda.my/restaurant/o9eb,2026-08-16
+roti_canai,kosong,Warung Roti Canai Adik Mat,Kuala Terengganu,Terengganu,Roti Kosong,2.00,foodpanda.my/restaurant/yohy,2026-08-16
+roti_canai,kosong,Roti Canai Dillah Manir,Kuala Terengganu,Terengganu,Roti Kosong,2.20,foodpanda.my/restaurant/mkbw,2026-08-16
+roti_canai,kosong,Warung Kopi Al-Fateh (Roti Canai Usop) Seberang Takir,Kuala Nerus,Terengganu,Roti Canai Kosong,3.20,foodpanda.my/restaurant/ktik,2026-08-16
+roti_canai,kosong,Restoran Sharbudin,Dungun,Terengganu,Roti Canai Kosong,2.50,foodpanda.my/restaurant/a4eu,2026-08-16
+roti_canai,kosong,Warung Mat Roti Payang,Dungun,Terengganu,Roti Canai Kosong,2.20,foodpanda.my/restaurant/cljb,2026-08-16
+roti_canai,kosong,Ombak Rasa (Kampung Sura Tengah),Dungun,Terengganu,Roti Canai Kosong,2.00,foodpanda.my/restaurant/dm8v,2026-08-16
+roti_canai,kosong,GELIGA KOPITIAM,Chukai,Terengganu,Roti Kosong,2.50,foodpanda.my/restaurant/bbep,2026-08-16
+roti_canai,kosong,Cerok Dapo Corner,Chukai,Terengganu,Roti Canai Kosong,3.00,foodpanda.my/restaurant/je3k,2026-08-16
+roti_canai,kosong,MAKANAN PAGI,Besut,Terengganu,Roti canai kosong,2.30,foodpanda.my/restaurant/iy37,2026-08-16
+teh_tarik,panas,Satay Pok Ali Pantai Timur,Kuala Terengganu,Terengganu,TEH TARIK PANAS,2.80,foodpanda.my/restaurant/mvl1,2026-08-16
+teh_tarik,panas,Norrul Cafe,Kuala Nerus,Terengganu,Teh Tarik Panas,2.50,foodpanda.my/restaurant/wi0h,2026-08-16
+teh_tarik,panas,The Payek Cafe (Gong Badak),Kuala Nerus,Terengganu,Teh Tarik,3.60,foodpanda.my/restaurant/o6qn,2026-08-16
+teh_tarik,panas,RESTORAN M.RAZALI ABDULLAH,Chukai,Terengganu,Teh Tarik Panas,2.90,foodpanda.my/restaurant/ugun,2026-08-16
+teh_tarik,panas,Nasi Kandar Utara (Kemaman),Chukai,Terengganu,Teh Tarik (Panas),2.90,foodpanda.my/restaurant/d3aa,2026-08-16
+teh_tarik,panas,Warung Saida,Chukai,Terengganu,Teh Tarik Panas,2.90,foodpanda.my/restaurant/k4pu,2026-08-16
+teh_tarik,panas,Galley Kemaman (Chukai),Chukai,Terengganu,Teh Tarik,4.40,foodpanda.my/restaurant/t74j,2026-08-16
+teh_tarik,panas,Amin Roti Canai (Besut),Jerteh,Terengganu,Teh Tarik Panas,2.90,foodpanda.my/restaurant/tkta,2026-08-16
+teh_tarik,panas,Warung Roti Canai Dalam Taman Pokde (Taman Safiah Murni),Marang,Terengganu,Tea tarik,2.80,foodpanda.my/restaurant/dp4p,2026-08-16
+teh_tarik,panas,Restoran Ayuseri (Kampung Cacar Baru),Dungun,Terengganu,Teh Tarik (Panas),4.50,foodpanda.my/restaurant/z2q3,2026-08-16
+mee_goreng,mamak,WARUNG USOP MEE LEGEND,Kuala Terengganu,Terengganu,Mee Goreng,7.00,foodpanda.my/restaurant/dhlz,2026-08-16
+mee_goreng,mamak,WARUNG MEK ARAA,Kuala Terengganu,Terengganu,Mee Goreng Mamak,10.80,foodpanda.my/restaurant/w613,2026-08-16
+mee_goreng,mamak,WARONG PADANG AIR,Kuala Nerus,Terengganu,Mee Goreng Biasa,10.00,foodpanda.my/restaurant/f8s9,2026-08-16
+mee_goreng,mamak,Norrul Cafe,Kuala Nerus,Terengganu,Mee Goreng,11.00,foodpanda.my/restaurant/wi0h,2026-08-16
+mee_goreng,mamak,Restoran Sharbudin,Dungun,Terengganu,Mee Goreng Mamak,9.90,foodpanda.my/restaurant/a4eu,2026-08-16
+mee_goreng,mamak,Ziana kedai makan batu 6,Dungun,Terengganu,Mee Goreng Biasa,10.00,foodpanda.my/restaurant/j1pf,2026-08-16
+mee_goreng,mamak,Alongs Corner,Paka,Terengganu,Mee Goreng Biasa,7.70,foodpanda.my/restaurant/ovg2,2026-08-16
+mee_goreng,mamak,Restoran Arena (Besut),Jerteh,Terengganu,Mee Goreng Mamak,10.80,foodpanda.my/restaurant/i7yr,2026-08-16
+mee_goreng,mamak,Galley Kemaman (Chukai),Chukai,Terengganu,Mee Goreng,13.00,foodpanda.my/restaurant/t74j,2026-08-16
+mee_goreng,mamak,Warung Roti Canai Dalam Taman Pokde (Taman Safiah Murni),Marang,Terengganu,Mee Goreng Mamak,9.40,foodpanda.my/restaurant/dp4p,2026-08-16
