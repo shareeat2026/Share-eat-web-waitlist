@@ -188,6 +188,17 @@
       .section { padding: 60px 0; }
       .category, .cta-band { padding: 36px 24px; }
     }
+
+    /* quick lead-capture form inside the dark CTA band */
+    .lead-form { margin: 34px auto 0; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.14); max-width: 480px; text-align: left; }
+    .lead-form-lbl { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 16px; text-align: center; }
+    .lead-form-row { display: flex; gap: 12px; }
+    .lead-form input { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 13px 16px; color: #fff; font-family: var(--font-body); font-size: 0.95rem; margin-bottom: 12px; }
+    .lead-form input::placeholder { color: rgba(255,255,255,0.45); }
+    .lead-form input:focus { outline: none; border-color: #ffd454; }
+    .lead-form .btn-submit { width: 100%; margin-top: 2px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.24); }
+    .lead-form .btn-submit:hover { background: rgba(255,255,255,0.16); transform: translateY(-2px); }
+    @media (max-width: 620px) { .lead-form-row { flex-direction: column; } }
   </style>
   <!-- Meta Pixel Code -->
   <script>
@@ -235,7 +246,7 @@
             <a href="#contact" class="btn btn-primary btn-lg">Become a partner →</a>
             <a href="#model" class="btn btn-ghost btn-lg">See the model</a>
           </div>
-          <p class="hero-note">In conversations with KOL agencies and F&amp;B groups across the Klang Valley ahead of our July 2026 launch.</p>
+          <p class="hero-note">In conversations with KOL agencies and F&amp;B groups across the Klang Valley as we onboard our founding partners.</p>
         </div>
 
         <!-- Engine diagram -->
@@ -476,12 +487,40 @@
       <div class="cta-band reveal">
         <span class="eyebrow">🚀 Phase 1 partner slots</span>
         <h2>Let's build the meal-for-content economy together</h2>
-        <p>We're hand-picking a small group of launch partners before July 2026. If you bring creators, restaurants, brands, or the tech around them, we'd love to talk.</p>
+        <p>We're hand-picking a small group of founding partners. If you bring creators, restaurants, brands, or the tech around them, we'd love to talk.</p>
         <a href="mailto:keith@shareeat.io?subject=Partnership%20with%20Share%20Eat!" class="btn btn-primary btn-lg">Become a partner →</a>
         <p class="email">Or email us directly at <a href="mailto:keith@shareeat.io">keith@shareeat.io</a></p>
+
+        <form class="lead-form" id="partnerLeadForm">
+          <p class="lead-form-lbl">Prefer a quick form? Tell us a bit about you and we'll follow up.</p>
+          <div class="lead-form-row">
+            <input type="text" id="lfName" placeholder="Your name" required>
+            <input type="text" id="lfCompany" placeholder="Company" required>
+          </div>
+          <input type="text" id="lfRole" placeholder="Role (e.g. agency founder, BD lead)" required>
+          <input type="text" id="lfWhat" placeholder="One line: what do you do?" required>
+          <button type="submit" class="btn btn-submit btn-lg">Send intro →</button>
+        </form>
       </div>
     </div>
   </section>
+
+  <script>
+    (function(){
+      var f = document.getElementById('partnerLeadForm');
+      if (!f) return;
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        var name = document.getElementById('lfName').value.trim();
+        var company = document.getElementById('lfCompany').value.trim();
+        var role = document.getElementById('lfRole').value.trim();
+        var what = document.getElementById('lfWhat').value.trim();
+        var subject = 'Partnership with Share Eat! - ' + company;
+        var body = 'Name: ' + name + '\nCompany: ' + company + '\nRole: ' + role + '\nWhat we do: ' + what;
+        window.location.href = 'mailto:keith@shareeat.io?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
 
   <!-- ============ FOOTER ============ -->
   <footer>
