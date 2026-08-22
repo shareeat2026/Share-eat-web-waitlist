@@ -117,6 +117,44 @@
     .chip-wait { background: rgba(224,169,10,0.16); color: var(--primary-ink); }
     .chip-new { background: rgba(47,143,91,0.12); color: var(--green); }
     .chip-grey { background: rgba(26,23,20,0.06); color: var(--ink-soft); }
+    .chip-pro { background: linear-gradient(180deg, #ffe9a8, #f5c842); color: #6b4e00; }
+    .chip-status-active { background: rgba(47,143,91,0.12); color: var(--green); }
+    .chip-status-draft { background: rgba(26,23,20,0.06); color: var(--ink-soft); }
+    .chip-status-completed { background: rgba(26,23,20,0.10); color: var(--ink); }
+    .chip-status-cancelled { background: rgba(232,84,59,0.11); color: var(--tomato); }
+    .chip-app-pending { background: rgba(224,169,10,0.16); color: var(--primary-ink); }
+    .chip-app-approved { background: rgba(47,143,91,0.12); color: var(--green); }
+    .chip-app-rejected { background: rgba(232,84,59,0.11); color: var(--tomato); }
+    .chip-app-withdrawn { background: rgba(26,23,20,0.06); color: var(--ink-soft); }
+    .row.click { cursor: pointer; transition: border-color .18s ease; }
+    .row.click:hover { border-color: rgba(224,169,10,0.5); }
+
+    /* ── Campaign cards ───────────────────────────────────────────────── */
+    .camp { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm); overflow: hidden; }
+    .camp-head { padding: 18px 20px; display: flex; align-items: center; gap: 14px; cursor: pointer; }
+    .camp-head:hover { background: rgba(26,23,20,0.02); }
+    .caret { flex-shrink: 0; color: var(--ink-soft); font-size: 12px; transition: transform .18s ease; }
+    .camp.open .caret { transform: rotate(90deg); }
+    .camp-body { border-top: 1px solid var(--line); padding: 6px 20px 20px; display: none; }
+    .camp.open .camp-body { display: block; }
+    .sect { margin-top: 16px; }
+    .sect h3 { font-family: var(--font-body); font-size: 11.5px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+    .mini { display: flex; align-items: center; gap: 14px; padding: 11px 0; }
+    .mini + .mini { border-top: 1px solid var(--line); }
+    .mini-main { flex: 1; min-width: 0; }
+    .mini-name { font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .mini-meta { color: var(--ink-soft); font-size: 0.82rem; margin-top: 2px; word-break: break-word; }
+    .mini-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .sect .none { color: var(--ink-soft); font-size: 0.86rem; font-style: italic; padding: 8px 0; }
+    @media (max-width: 700px){
+      .mini { flex-direction: column; align-items: stretch; gap: 10px; }
+      .mini-actions { justify-content: flex-start; flex-wrap: wrap; }
+    }
+
+    .filter-pill { display: inline-flex; align-items: center; gap: 10px; padding: 8px 9px 8px 15px; border-radius: 999px; background: rgba(245,200,66,0.18); border: 1px solid rgba(224,169,10,0.35); font-size: 13px; font-weight: 700; color: var(--primary-ink); margin-bottom: 14px; }
+    .filter-pill button { border: none; background: rgba(26,23,20,0.08); border-radius: 999px; min-width: 22px; height: 22px; cursor: pointer; font-weight: 800; color: var(--ink); font-family: var(--font-body); }
+    .filter-pill button:hover { background: rgba(26,23,20,0.14); }
+
     .wa { background: #25d366; color: #fff; box-shadow: 0 6px 16px rgba(37,211,102,0.30); }
     .wa:hover { transform: translateY(-2px); }
     .nophone { font-size: 12.5px; color: var(--ink-soft); font-style: italic; padding-right: 4px; }
@@ -241,6 +279,10 @@
 
   var data = null;
   var activeTab = 'restaurants_no_campaign';
+  var expanded = {};       // campaign_id -> true while its card is open
+  // Set when a user row is clicked: {type: 'restaurant'|'creator', id, name}.
+  // Filters the Campaigns tab to that user's campaigns / applications.
+  var campFilter = null;
 
   var TABS = [
     {
@@ -257,6 +299,11 @@
       key: 'creators_no_applications',
       label: 'Creators idle',
       note: 'Creators that have never applied to a campaign, in any state.'
+    },
+    {
+      key: 'campaigns',
+      label: 'Campaigns',
+      note: 'Every campaign from real accounts, newest first — drafts and cancelled included. Click a campaign to see its applicants and submitted content. Clicking a user row in the other tabs jumps here filtered to them.'
     }
   ];
 
@@ -329,6 +376,8 @@
     var tiles = [
       [o.restaurants, 'Restaurants'],
       [o.creators, 'Creators'],
+      [o.restaurants_pro, 'Pro restaurants'],
+      [o.creators_pro, 'Pro creators'],
       [o.campaigns_published, 'Campaigns live'],
       [(o.campaigns_by_status && o.campaigns_by_status.draft) || 0, 'Drafts'],
       [o.applications_pending, 'Applications pending'],
@@ -434,6 +483,7 @@
       btn.addEventListener('click', function () {
         activeTab = btn.getAttribute('data-key');
         $('search').value = '';
+        campFilter = null;
         renderTabs();
         renderList();
       });
@@ -443,6 +493,24 @@
   function currentRows() {
     var rows = (data[activeTab] || []).slice();
     var q = $('search').value.trim().toLowerCase();
+
+    if (activeTab === 'campaigns') {
+      if (campFilter) {
+        rows = rows.filter(function (c) {
+          if (campFilter.type === 'restaurant') return c.restaurant_profile_id === campFilter.id;
+          return (c.applicants || []).some(function (a) { return a.creator_profile_id === campFilter.id; }) ||
+                 (c.submissions || []).some(function (s) { return s.creator_profile_id === campFilter.id; });
+        });
+      }
+      if (!q) return rows;
+      return rows.filter(function (c) {
+        var hay = [c.title, c.business_name, c.restaurant_display_name, c.restaurant_email]
+          .concat((c.applicants || []).map(function (a) { return a.display_name; }))
+          .filter(Boolean).join(' ').toLowerCase();
+        return hay.indexOf(q) > -1;
+      });
+    }
+
     if (!q) return rows;
     return rows.filter(function (r) {
       return [r.business_name, r.display_name, r.email, r.phone_number,
@@ -456,6 +524,9 @@
     var name = (!isCreator && r.business_name) || r.display_name || 'Unnamed';
 
     var chips = '';
+    if (r.is_pro) {
+      chips += '<span class="chip chip-pro">Pro</span>';
+    }
     if (r.has_role_profile === false) {
       chips += '<span class="chip chip-grey">Onboarding incomplete</span>';
     }
@@ -503,7 +574,9 @@
       actions += '<button class="btn btn-ghost btn-sm" data-copy="' + esc(r.email) + '">Copy email</button>';
     }
 
-    return '<div class="row">' +
+    return '<div class="row click" data-profile-id="' + esc(r.profile_id) + '"' +
+             ' data-profile-role="' + (isCreator ? 'creator' : 'restaurant') + '"' +
+             ' data-profile-name="' + esc(name) + '" title="View campaigns">' +
              '<div class="row-main">' +
                '<div class="row-name">' + esc(name) + chips + '</div>' +
                '<div class="row-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
@@ -512,22 +585,182 @@
            '</div>';
   }
 
+  /* ── campaigns tab ────────────────────────────────────────────────── */
+
+  function countBy(arr, status) {
+    return arr.filter(function (x) { return x.status === status; }).length;
+  }
+
+  function applicantHtml(a) {
+    var chips = '<span class="chip chip-app-' + esc(a.status) + '">' + esc(a.status) + '</span>';
+    if (a.is_pro) chips += '<span class="chip chip-pro">Pro</span>';
+
+    var bits = [];
+    bits.push('Applied ' + esc(fmtDate(a.applied_at)) + ' · ' + esc(ago(a.applied_at)));
+    var handles = [];
+    if (a.instagram_handle) handles.push('IG @' + esc(a.instagram_handle));
+    if (a.tiktok_handle) handles.push('TT @' + esc(a.tiktok_handle));
+    if (a.rednote_handle) handles.push('RED ' + esc(a.rednote_handle));
+    if (handles.length) bits.push(handles.join(' · '));
+    if (a.follower_count) bits.push(esc(a.follower_count) + ' followers');
+    if (a.email) bits.push(esc(a.email));
+
+    var digits = waDigits(a.phone_number);
+    var actions = '';
+    if (digits) {
+      var greet = 'Hi ' + String(a.display_name || '').split(' ')[0] + ', this is Share Eat 👋';
+      actions += '<a class="btn btn-sm wa" target="_blank" rel="noopener" href="https://wa.me/' +
+                 esc(digits) + '?text=' + encodeURIComponent(greet) + '">WhatsApp</a>';
+    }
+    if (a.email) {
+      actions += '<button class="btn btn-ghost btn-sm" data-copy="' + esc(a.email) + '">Copy email</button>';
+    }
+
+    return '<div class="mini">' +
+             '<div class="mini-main">' +
+               '<div class="mini-name">' + esc(a.display_name || 'Unnamed') + chips + '</div>' +
+               '<div class="mini-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
+             '</div>' +
+             '<div class="mini-actions">' + actions + '</div>' +
+           '</div>';
+  }
+
+  function submissionHtml(s) {
+    var chips = s.is_pro ? '<span class="chip chip-pro">Pro</span>' : '';
+    var bits = [];
+    bits.push('Submitted ' + esc(fmtDate(s.submitted_at)) + ' · ' + esc(ago(s.submitted_at)));
+    var stats = [];
+    if (s.views !== null && s.views !== undefined) stats.push(esc(s.views) + ' views');
+    if (s.likes !== null && s.likes !== undefined) stats.push(esc(s.likes) + ' likes');
+    if (s.comments !== null && s.comments !== undefined) stats.push(esc(s.comments) + ' comments');
+    bits.push(stats.length ? stats.join(' · ') : 'No analytics reported yet');
+
+    var actions = s.content_url
+      ? '<a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="' + esc(s.content_url) + '">Open content ↗</a>'
+      : '';
+
+    return '<div class="mini">' +
+             '<div class="mini-main">' +
+               '<div class="mini-name">' + esc(s.display_name || 'Unnamed') + chips + '</div>' +
+               '<div class="mini-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
+             '</div>' +
+             '<div class="mini-actions">' + actions + '</div>' +
+           '</div>';
+  }
+
+  function campaignHtml(c) {
+    var apps = c.applicants || [];
+    var subs = c.submissions || [];
+    var pending = countBy(apps, 'pending');
+    var approved = countBy(apps, 'approved');
+
+    var chips = '<span class="chip chip-status-' + esc(c.status) + '">' + esc(c.status) + '</span>';
+    if (c.restaurant_is_pro) chips += '<span class="chip chip-pro">Pro</span>';
+    if (c.is_paid_campaign) chips += '<span class="chip chip-grey">Paid</span>';
+
+    var bits = [];
+    bits.push(esc(c.business_name || c.restaurant_display_name || 'Unknown restaurant'));
+    bits.push('Created ' + esc(fmtDate(c.created_at)) + ' · ' + esc(ago(c.created_at)));
+    if (c.starts_on) bits.push(esc(fmtDate(c.starts_on)) + (c.ends_on ? ' – ' + esc(fmtDate(c.ends_on)) : ''));
+    bits.push(plural(apps.length, 'applicant', 'applicants') + (pending ? ' (' + pending + ' pending)' : ''));
+    bits.push(approved + ' approved' + (c.slots_total ? ' of ' + esc(c.slots_total) + ' slots' : ''));
+    bits.push(plural(subs.length, 'submission', 'submissions'));
+
+    var body =
+      '<div class="sect">' +
+        '<h3>Applicants (' + apps.length + ')</h3>' +
+        (apps.length ? apps.map(applicantHtml).join('') : '<div class="none">No applications yet.</div>') +
+      '</div>' +
+      '<div class="sect">' +
+        '<h3>Submitted content (' + subs.length + ')</h3>' +
+        (subs.length ? subs.map(submissionHtml).join('') : '<div class="none">Nothing submitted yet.</div>') +
+      '</div>';
+
+    return '<div class="camp' + (expanded[c.campaign_id] ? ' open' : '') + '" data-campaign-id="' + esc(c.campaign_id) + '">' +
+             '<div class="camp-head">' +
+               '<div class="row-main">' +
+                 '<div class="row-name">' + esc(c.title || 'Untitled campaign') + chips + '</div>' +
+                 '<div class="row-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
+               '</div>' +
+               '<span class="caret">▶</span>' +
+             '</div>' +
+             '<div class="camp-body">' + body + '</div>' +
+           '</div>';
+  }
+
   function renderList() {
     var tab = TABS.filter(function (t) { return t.key === activeTab; })[0];
     $('list-note').textContent = tab.note;
 
+    var isCampaigns = activeTab === 'campaigns';
+    var pill = '';
+    if (isCampaigns && campFilter) {
+      pill = '<div><span class="filter-pill">' +
+             (campFilter.type === 'restaurant' ? 'Campaigns by ' : 'Applications by ') +
+             esc(campFilter.name) +
+             '<button id="clear-filter" title="Clear filter" type="button">×</button></span></div>';
+    }
+
     var rows = currentRows();
     if (!rows.length) {
       var all = (data[activeTab] || []).length;
-      $('rows').innerHTML = '<div class="empty"><span class="e">' + (all ? '🔍' : '🎉') + '</span>' +
-        (all ? 'No matches for that search.' : 'Nobody in this list right now.') + '</div>';
+      var msg;
+      if (isCampaigns && campFilter) msg = 'No campaigns for ' + esc(campFilter.name) + '.';
+      else if (all) msg = 'No matches for that search.';
+      else msg = isCampaigns ? 'No campaigns yet.' : 'Nobody in this list right now.';
+      $('rows').innerHTML = pill + '<div class="empty"><span class="e">' +
+        (all || (isCampaigns && campFilter) ? '🔍' : '🎉') + '</span>' + msg + '</div>';
+      bindClearFilter();
       return;
     }
-    $('rows').innerHTML = rows.map(rowHtml).join('');
+
+    $('rows').innerHTML = pill + rows.map(isCampaigns ? campaignHtml : rowHtml).join('');
+    bindClearFilter();
+
     Array.prototype.forEach.call($('rows').querySelectorAll('[data-copy]'), function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (ev) {
+        ev.stopPropagation();
         copy(btn.getAttribute('data-copy'), 'Email copied');
       });
+    });
+
+    if (isCampaigns) {
+      // Expand/collapse in place — no re-render, so scroll position survives.
+      Array.prototype.forEach.call($('rows').querySelectorAll('.camp-head'), function (head) {
+        head.addEventListener('click', function (ev) {
+          if (ev.target.closest('a, button')) return;
+          var card = head.parentNode;
+          var id = card.getAttribute('data-campaign-id');
+          expanded[id] = !expanded[id];
+          card.classList.toggle('open', expanded[id]);
+        });
+      });
+    } else {
+      // Click a user → Campaigns tab filtered to them.
+      Array.prototype.forEach.call($('rows').querySelectorAll('.row.click'), function (row) {
+        row.addEventListener('click', function (ev) {
+          if (ev.target.closest('a, button')) return;
+          campFilter = {
+            type: row.getAttribute('data-profile-role'),
+            id: row.getAttribute('data-profile-id'),
+            name: row.getAttribute('data-profile-name')
+          };
+          activeTab = 'campaigns';
+          $('search').value = '';
+          renderTabs();
+          renderList();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    }
+  }
+
+  function bindClearFilter() {
+    var btn = $('clear-filter');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      campFilter = null;
+      renderList();
     });
   }
 
@@ -633,8 +866,12 @@
   $('search').addEventListener('input', renderList);
 
   $('copy-emails').addEventListener('click', function () {
-    var emails = currentRows().map(function (r) { return r.email; }).filter(Boolean);
+    var emails = currentRows().map(function (r) {
+      return activeTab === 'campaigns' ? r.restaurant_email : r.email;
+    }).filter(Boolean);
     if (!emails.length) return toast('No emails in this list');
+    // Campaigns tab: one restaurant can own several campaigns — dedupe.
+    emails = emails.filter(function (e, i) { return emails.indexOf(e) === i; });
     copy(emails.join(', '), plural(emails.length, 'email', 'emails') + ' copied');
   });
 
