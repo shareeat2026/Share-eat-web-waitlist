@@ -35,30 +35,59 @@
   .tap { cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .tap:active { opacity: 0.85; }
 
-  /* Home: one scroll surface, floating tab bar over it */
   #home { height: 100%; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
   #home::-webkit-scrollbar, #detail-scroll::-webkit-scrollbar { display: none; }
   #home, #detail-scroll { scrollbar-width: none; }
 
   .edge { padding-left: 16px; padding-right: 16px; }
 
-  /* Detail page: pushes in from the right like a native navigation */
+  /* ── Campaign brief ── */
   #detail {
     position: absolute; inset: 0;
-    display: flex; flex-direction: column;
     background: #fff8f1;
     transform: translateX(102%);
     transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
     box-shadow: -8px 0 24px rgba(31,27,18,0.08);
   }
   #app.detail-open #detail { transform: translateX(0); }
-  #detail-scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  #detail-scroll { position: absolute; inset: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 
-  .meta-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
-  .meta-tile { border-radius: 12px; background: #f0e7d8; padding: 12px; }
-  .meta-label { font-weight: 700; font-size: 10px; letter-spacing: 1.4px; color: #4e4634; }
-  .meta-value { font-weight: 700; font-size: 14px; color: #1f1b12; margin-top: 6px; }
-  .apply-btn { display: flex; height: 56px; border-radius: 16px; background: #f5c842; box-shadow: 0 3px 8px rgba(0,0,0,0.08); align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: #6c5400; text-decoration: none; }
+  /* Header sits above the scroll view and fades away as it scrolls (0 → 60px) */
+  #detail-header {
+    position: absolute; left: 0; right: 0; top: 0;
+    background: #fff8f1;
+    padding-top: env(safe-area-inset-top);
+    z-index: 2;
+  }
+  #detail-header-row { display: flex; align-items: center; justify-content: space-between; padding: 12px; position: relative; }
+  #detail-header-title {
+    position: absolute; left: 0; right: 0; text-align: center;
+    font-weight: 800; font-size: 17px; line-height: 22px; letter-spacing: -0.3px;
+    pointer-events: none;
+  }
+  .hdr-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+
+  .brief-card { border-radius: 14px; background: #ffffff; box-shadow: 0 6px 16px rgba(0,0,0,0.10); overflow: hidden; }
+  .rule { height: 1px; background: #d2cdc7; }
+  .sec-heading { font-weight: 700; font-size: 20px; line-height: 26px; letter-spacing: -0.4px; margin-bottom: 20px; }
+  .sec-row { display: flex; align-items: flex-start; gap: 16px; }
+  .sec-body { font-family: inherit; font-weight: 500; font-size: 15px; line-height: 22px; }
+  .pill-soft { border-radius: 999px; border: 1px solid #ffffff; background: #fbfbfb; padding: 4px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); font-weight: 600; font-size: 12px; }
+  .nav-pill { flex: 1; min-height: 40px; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 999px; border: 1px solid #e0d8cb; background: #ffffff; padding: 8px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); font-weight: 500; font-size: 12px; }
+  .bullet-line { display: flex; align-items: flex-start; gap: 12px; padding: 16px 0; }
+  .bullet-dot { margin-top: 6px; width: 6px; height: 6px; flex-shrink: 0; border-radius: 999px; background: #f5c842; }
+
+  #detail-footer {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    border-top: 1px solid #d2cdc7; background: #fff8f1;
+    padding: 12px 12px calc(env(safe-area-inset-bottom) + 12px) 12px;
+    z-index: 2;
+  }
+  .apply-btn {
+    display: flex; height: 48px; min-height: 44px; align-items: center; justify-content: center;
+    border-radius: 32px; background: #f5c842; text-decoration: none;
+    font-weight: 700; font-size: 12px; letter-spacing: -0.22px; color: #6f6432;
+  }
 </style>
 </head>
 <body>
@@ -67,7 +96,6 @@
   <!-- ═══ Home ═══ -->
   <div id="home">
 
-    <!-- Top bar: wordmark + notification bell -->
     <div class="edge" style="display: flex; align-items: center; justify-content: space-between; padding-top: calc(env(safe-area-inset-top) + 16px); padding-bottom: 8px;">
       <div style="font-weight: 800; font-size: 19px; letter-spacing: -0.4px;">Share <span style="color: #b8960a;">Eat</span></div>
       <div style="position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
@@ -76,7 +104,6 @@
       </div>
     </div>
 
-    <!-- Hero: title + location -->
     <div class="edge" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding-top: 4px; padding-bottom: 16px;">
       <div style="font-weight: 800; font-size: 24px; line-height: 30px; letter-spacing: -0.48px;">Campaigns near you</div>
       <div style="display: flex; align-items: center; gap: 4px; margin-top: 6px; flex-shrink: 0;">
@@ -85,7 +112,6 @@
       </div>
     </div>
 
-    <!-- Pill row: search / filters / halal -->
     <div class="edge" style="display: flex; align-items: center; gap: 8px; padding-bottom: 20px;">
       <div style="width: 48px; height: 48px; flex-shrink: 0; border-radius: 999px; background: rgba(255,255,255,0.72); box-shadow: 0 6px 16px rgba(0,0,0,0.10); display: flex; align-items: center; justify-content: center;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
@@ -99,7 +125,6 @@
       </div>
     </div>
 
-    <!-- Paid campaigns banner -->
     <div class="edge" style="padding-bottom: 20px;">
       <div style="display: flex; align-items: flex-start; gap: 12px; border-radius: 16px; background: rgba(245,200,66,0.15); padding: 12px 16px;">
         <svg style="margin-top: 2px; flex-shrink: 0;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6c5400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15h16l-1 5H5z"></path><path d="M5 11c0-3.9 3.1-7 7-7s7 3.1 7 7"></path><line x1="3" y1="11" x2="21" y2="11"></line></svg>
@@ -110,10 +135,8 @@
       </div>
     </div>
 
-    <!-- Discover heading -->
     <div style="padding: 0 16px 12px 33px; font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: -0.4px;">Discover</div>
 
-    <!-- Feed -->
     <div class="edge" style="display: flex; flex-direction: column; gap: 16px; padding-bottom: calc(env(safe-area-inset-bottom) + 108px);">
 
       <!-- Campaign card 1 -->
@@ -188,96 +211,160 @@
     </div>
   </div>
 
-  <!-- ═══ Campaign detail ═══ -->
+  <!-- ═══ Campaign Brief ═══ -->
   <div id="detail">
+
     <div id="detail-scroll">
+      <div style="padding: 16px 12px 0 12px;">
 
-      <!-- Hero -->
-      <div id="d-hero" style="position: relative; height: 240px; border-bottom: 1px solid #d2cdc7;">
-        <span id="d-hero-icon-c1" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.35;">
-          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#8a6d00" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5.5"></circle><path d="M12 9.5a2.5 2.5 0 0 0-2.5 2.5"></path></svg>
-        </span>
-        <span id="d-hero-icon-c2" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.35;">
-          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#0e8578" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v2a8 8 0 0 1-16 0z"></path><path d="M9 6.5c0-1 .8-1 .8-2M13.5 6.5c0-1 .8-1 .8-2"></path><path d="M18 12h2.5a1.5 1.5 0 0 1 0 3H18"></path></svg>
-        </span>
-        <div id="detail-back" class="tap" style="position: absolute; left: 16px; top: calc(env(safe-area-inset-top) + 16px); width: 38px; height: 38px; border-radius: 999px; background: rgba(255,255,255,0.92); box-shadow: 0 3px 8px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f1b12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"></path></svg>
-        </div>
-        <div style="position: absolute; right: 16px; top: calc(env(safe-area-inset-top) + 20px);">
-          <div id="d-halal" style="border-radius: 999px; padding: 4px 12px; font-weight: 700; font-size: 12px; letter-spacing: 0.6px; color: #ffffff;"></div>
-        </div>
-        <div style="position: absolute; left: 16px; bottom: 14px; display: flex; align-items: center; gap: 6px; border-radius: 999px; background: #ffffff; padding: 6px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6c5400" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M16 12h5v3h-5a1.5 1.5 0 0 1 0-3"></path></svg>
-          <div id="d-hero-offer" style="font-weight: 600; font-size: 12px; color: #8A6D00;"></div>
-        </div>
-      </div>
-
-      <!-- Brief -->
-      <div style="padding: 20px 20px 28px 20px;">
-        <div id="d-title" style="font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: -0.4px;"></div>
-
-        <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
-          <div id="d-goal" style="border-radius: 999px; background: rgba(245,200,66,0.15); padding: 4px 10px; font-weight: 700; font-size: 10px; letter-spacing: 0.8px; color: #755b00;"></div>
-          <div id="d-hot" style="border-radius: 999px; background: rgba(186,26,26,0.10); padding: 4px 10px; font-weight: 700; font-size: 10px; letter-spacing: 0.8px; color: #ba1a1a;">HIGH DEMAND</div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 12px; border-radius: 16px; border: 1px solid #d1c5ae; background: #fcf2e4; padding: 12px; margin-top: 16px;">
-          <div id="d-rest-initial" style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; border: 1px solid #d1c5ae; background: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: #6c5400;"></div>
-          <div style="flex: 1; min-width: 0;">
-            <div id="d-rest-name" style="font-weight: 700; font-size: 14px; line-height: 20px;"></div>
-            <div id="d-rest-meta" style="font-size: 14px; line-height: 20px; color: #4e4634;"></div>
+        <!-- Header card -->
+        <div class="brief-card">
+          <!-- Square cover -->
+          <div id="d-cover" style="position: relative; width: 100%; aspect-ratio: 1 / 1; background: #f6edde;">
+            <span id="d-cover-icon-c1" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.35;">
+              <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#8a6d00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5.5"></circle><path d="M12 9.5a2.5 2.5 0 0 0-2.5 2.5"></path></svg>
+            </span>
+            <span id="d-cover-icon-c2" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.35;">
+              <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#0e8578" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v2a8 8 0 0 1-16 0z"></path><path d="M9 6.5c0-1 .8-1 .8-2M13.5 6.5c0-1 .8-1 .8-2"></path><path d="M18 12h2.5a1.5 1.5 0 0 1 0 3H18"></path></svg>
+            </span>
           </div>
-          <svg style="flex-shrink: 0;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg>
-        </div>
 
-        <div style="border-radius: 16px; border: 1px solid rgba(245,200,66,0.4); background: rgba(245,200,66,0.10); padding: 14px 16px; margin-top: 16px;">
-          <div style="font-weight: 700; font-size: 10px; letter-spacing: 1.4px; color: #6c5400;">WHAT YOU GET</div>
-          <div id="d-offer" style="font-weight: 800; font-size: 18px; line-height: 24px; margin-top: 4px;"></div>
-          <div id="d-value" style="font-weight: 700; font-size: 12px; letter-spacing: 0.6px; color: #755b00; margin-top: 4px;"></div>
-          <div id="d-offer-sub" style="font-size: 14px; line-height: 20px; color: #4e4634; margin-top: 6px;"></div>
-        </div>
+          <div style="padding: 20px;">
+            <div id="d-title" style="font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: -0.4px;"></div>
 
-        <div class="meta-grid">
-          <div class="meta-tile">
-            <div class="meta-label">PLATFORM</div>
-            <div style="display: flex; align-items: center; gap: 6px; margin-top: 6px;">
-              <span id="d-icon-tiktok"><svg width="18" height="18" viewBox="0 0 24 24" fill="#1f1b12"><path d="M16.6 3c.4 2.1 1.8 3.6 3.9 3.9v3.1c-1.5 0-2.8-.5-3.9-1.3v6.6a5.8 5.8 0 1 1-5.8-5.8c.3 0 .7 0 1 .1v3.2a2.7 2.7 0 1 0 1.9 2.6V3z"></path></svg></span>
-              <span id="d-icon-insta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f1b12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="#1f1b12" stroke="none"></circle></svg></span>
-              <div id="d-platform" style="font-weight: 700; font-size: 14px;"></div>
+            <div style="margin-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
+              <div id="d-compensation" style="font-weight: 700; font-size: 17px; line-height: 22px; letter-spacing: -0.28px; color: #6f6432;"></div>
+            </div>
+
+            <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px;">
+              <div id="d-goal" class="pill-soft" style="color: #1f1b12;"></div>
+              <div id="d-halal" style="border-radius: 999px; padding: 4px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); font-weight: 600; font-size: 12px; color: #ffffff;"></div>
+            </div>
+
+            <div class="rule" style="margin-top: 20px; margin-bottom: 16px;"></div>
+
+            <!-- Listed by -->
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div id="d-logo" style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 6px; background: rgba(245,200,66,0.2); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: #6c5400;"></div>
+              <div style="flex: 1; min-width: 0;">
+                <div id="d-listed-by" style="font-weight: 700; font-size: 14px; line-height: 20px;"></div>
+                <div id="d-cuisine" style="font-size: 12px; line-height: 16px; color: #4e4634;"></div>
+              </div>
+            </div>
+
+            <div class="rule" style="margin-top: 16px;"></div>
+
+            <!-- Location -->
+            <div style="margin-top: 8px; display: flex; align-items: center; gap: 16px;">
+              <div style="width: 46px; height: 46px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div id="d-location" style="flex: 1; min-width: 0; font-size: 12px; line-height: 16px; color: #4e4634; position: relative; top: 2px;"></div>
+            </div>
+
+            <div class="rule" style="margin-top: 16px;"></div>
+
+            <!-- Waze / Google Maps -->
+            <div style="margin-top: 16px; display: flex; gap: 8px;">
+              <div class="nav-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="#6c5400"><path d="M21.5 2.5 2.8 10.2c-.9.4-.8 1.7.1 2l7.4 2.3c.3.1.5.3.6.6l2.3 7.4c.3.9 1.6 1 2 .1L22.9 3.7c.3-.8-.6-1.5-1.4-1.2"></path></svg>
+                <span>Waze</span>
+              </div>
+              <div class="nav-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="#6c5400"><path d="M12 3.5a8.5 8.5 0 1 0 8.3 10.3h-8.3v-3.2h11.6c.1.6.2 1.2.2 1.9 0 6.6-4.5 11.3-11.4 11.3A11.9 11.9 0 0 1 .5 12 11.9 11.9 0 0 1 12.4.1c3.2 0 5.9 1.2 8 3.1l-2.7 2.6A7.6 7.6 0 0 0 12 3.5"></path></svg>
+                <span>Google Maps</span>
+              </div>
             </div>
           </div>
-          <div class="meta-tile">
-            <div class="meta-label">SLOTS</div>
-            <div id="d-slots" class="meta-value"></div>
-          </div>
-          <div class="meta-tile">
-            <div class="meta-label">CAMPAIGN WINDOW</div>
-            <div id="d-window" class="meta-value"></div>
-          </div>
-          <div class="meta-tile">
-            <div class="meta-label">APPLY BY</div>
-            <div id="d-applyby" class="meta-value"></div>
-          </div>
         </div>
 
-        <div style="margin-top: 18px;">
-          <div style="font-weight: 700; font-size: 12px; letter-spacing: 0.8px; color: #7f7662;">WHAT TO POST</div>
-          <div style="display: flex; align-items: flex-start; gap: 12px; border-radius: 12px; border: 1px solid #d1c5ae; background: #ffffff; padding: 12px; margin-top: 8px;">
-            <div style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: #f6edde; display: flex; align-items: center; justify-content: center;">
-              <span id="d-deliv-icon-tiktok"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1f1b12"><path d="M16.6 3c.4 2.1 1.8 3.6 3.9 3.9v3.1c-1.5 0-2.8-.5-3.9-1.3v6.6a5.8 5.8 0 1 1-5.8-5.8c.3 0 .7 0 1 .1v3.2a2.7 2.7 0 1 0 1.9 2.6V3z"></path></svg></span>
-              <span id="d-deliv-icon-insta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f1b12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="#1f1b12" stroke="none"></circle></svg></span>
-            </div>
+        <!-- Sections -->
+        <div style="margin-top: 32px; padding: 0 20px;">
+
+          <!-- Food Credit -->
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div class="sec-heading" style="margin-bottom: 0;">Food Credit</div>
+            <div style="width: 20px; height: 20px; border-radius: 999px; background: #f6edde; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: #4e4634;">i</div>
+          </div>
+          <div class="sec-row">
+            <svg style="flex-shrink: 0;" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M16 12h5v3h-5a1.5 1.5 0 0 1 0-3"></path></svg>
+            <div class="sec-body" style="flex: 1; position: relative; top: 2px;">You&rsquo;ll get <span id="d-credit"></span></div>
+          </div>
+          <div style="margin-top: 8px; font-size: 12px; line-height: 20px; color: #4e4634;">A free meal. You order, the restaurant covers it, and you keep everything you create.</div>
+
+          <div class="rule" style="margin-top: 20px; margin-bottom: 24px;"></div>
+
+          <!-- Timeline -->
+          <div class="sec-heading">Timeline</div>
+          <div class="sec-row">
+            <svg style="flex-shrink: 0;" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="16" y1="3" x2="16" y2="7"></line></svg>
             <div style="flex: 1; min-width: 0;">
-              <div id="d-deliv-label" style="font-weight: 700; font-size: 14px; line-height: 20px;"></div>
-              <div id="d-deliv-sub" style="font-size: 12px; line-height: 16px; color: #4e4634; margin-top: 2px;"></div>
+              <div class="sec-body" style="position: relative; top: 2px;">Post content before <span id="d-post-before"></span></div>
+              <div id="d-period" style="margin-top: 8px; font-size: 14px; line-height: 20px; color: #4e4634;"></div>
+            </div>
+          </div>
+
+          <div class="rule" style="margin-top: 20px; margin-bottom: 24px;"></div>
+
+          <!-- What to post -->
+          <div class="sec-heading">What to post</div>
+          <div style="margin-bottom: 8px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px; background: #f6edde; display: flex; align-items: center; justify-content: center;">
+              <span id="d-deliv-icon-tiktok"><svg width="18" height="18" viewBox="0 0 24 24" fill="#1f1b12"><path d="M16.6 3c.4 2.1 1.8 3.6 3.9 3.9v3.1c-1.5 0-2.8-.5-3.9-1.3v6.6a5.8 5.8 0 1 1-5.8-5.8c.3 0 .7 0 1 .1v3.2a2.7 2.7 0 1 0 1.9 2.6V3z"></path></svg></span>
+              <span id="d-deliv-icon-insta"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f1b12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="#1f1b12" stroke="none"></circle></svg></span>
+            </div>
+            <div id="d-deliv-label" class="sec-body" style="flex: 1; min-width: 0;"></div>
+          </div>
+          <div style="padding-left: 56px; font-size: 14px; line-height: 20px; color: #4e4634; white-space: pre-line;">Recommended: ~1 minute video length
+Format: Vertical</div>
+        </div>
+
+        <!-- What to mention -->
+        <div style="margin-top: 32px;">
+          <div class="brief-card">
+            <div style="padding: 20px;">
+              <div class="sec-heading">What to mention</div>
+              <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 16px;">
+                <svg style="flex-shrink: 0;" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"></path><circle cx="8.5" cy="10" r=".6" fill="#4e4634"></circle><circle cx="12" cy="10" r=".6" fill="#4e4634"></circle><circle cx="15.5" cy="10" r=".6" fill="#4e4634"></circle></svg>
+                <div class="sec-body" style="flex: 1; min-width: 0;">What to highlight</div>
+              </div>
+              <div id="d-highlight-lines"></div>
             </div>
           </div>
         </div>
+
+        <!-- Dishes to show -->
+        <div style="margin-top: 24px; padding-bottom: 24px;">
+          <div class="brief-card">
+            <div style="padding: 20px;">
+              <div class="sec-heading">Dishes to show</div>
+              <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 16px;">
+                <svg style="flex-shrink: 0;" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v8a2.5 2.5 0 0 0 5 0V3"></path><line x1="8.5" y1="11" x2="8.5" y2="21"></line><path d="M17.5 3c-1.4 1.2-2 3-2 5.5 0 1.7.7 2.5 2 2.8V21"></path></svg>
+                <div class="sec-body" style="flex: 1; min-width: 0;">Featured items</div>
+              </div>
+              <div id="d-feature-lines"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spacer for the sticky footer -->
+        <div id="d-footer-spacer" style="height: 96px;"></div>
+      </div>
+    </div>
+
+    <!-- Header (paints over the scroll view, fades on scroll) -->
+    <div id="detail-header">
+      <div id="detail-header-row">
+        <div id="detail-back" class="tap hdr-btn" style="z-index: 1;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f1b12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"></path></svg>
+        </div>
+        <div id="detail-header-title">Campaign Brief</div>
+        <div class="hdr-btn"></div>
       </div>
     </div>
 
     <!-- Sticky apply footer -->
-    <div style="border-top: 1px solid #d1c5ae; background: #fff8f1; padding: 16px 20px calc(env(safe-area-inset-bottom) + 20px) 20px;">
+    <div id="detail-footer">
       <a class="apply-btn" href="https://apps.apple.com/my/app/share-eat-food-creator-collab/id6779893847" target="_blank" rel="noopener">Apply to campaign</a>
     </div>
   </div>
@@ -288,81 +375,111 @@
   var CAMPAIGNS = {
     c1: {
       title: 'Viral the ultimate Nasi Lemak brunch',
-      goal: 'RESTAURANT AWARENESS',
-      hot: true,
-      heroBg: '#e8d9bd',
+      compensation: 'RM120 food credit for 2 pax',
+      goal: 'Restaurant Awareness',
       halalBg: '#19a254',
-      halalLabel: 'HALAL',
-      restInitial: 'K',
+      halalLabel: 'Halal',
+      coverBg: '#e8d9bd',
+      logoInitial: 'K',
       restName: 'Kopi & Santan',
-      restMeta: 'Malaysian · Bangsar',
-      offer: 'RM120 food credit for 2 pax',
-      value: 'VALUE: RM120',
-      offerSub: 'Full brunch spread for you and a plus one — signature nasi lemak, sides and drinks included.',
+      cuisine: 'Malaysian',
+      location: '18 Jalan Telawi 3, Bangsar Baru, 59100 Kuala Lumpur',
+      postBefore: 'Sep 21',
+      period: 'Campaign period: Sep 1 to Sep 21',
       tiktok: true,
-      platform: 'TikTok',
-      slots: '5 creators',
-      window: 'Sep 1 to Sep 21',
-      applyBy: 'Aug 30',
       delivLabel: '1× TikTok Video',
-      delivSub: '30s or longer — tag the restaurant and @shareeat.my, keep the food the star.'
+      highlight: [
+        'Sambal is cooked fresh every morning, never from a jar',
+        'Ayam goreng berempah is marinated overnight in 12 spices',
+        'We open at 7:30am for the breakfast crowd'
+      ],
+      feature: [
+        'Nasi Lemak Istimewa',
+        'Ayam Goreng Berempah',
+        'Teh Tarik Kaw'
+      ]
     },
     c2: {
       title: 'Soft launch: first taste of our matcha bar',
-      goal: 'NEW OPENING',
-      hot: false,
-      heroBg: '#d9e4d5',
+      compensation: 'RM90 tasting set for 2',
+      goal: 'New Opening',
       halalBg: '#0e8578',
-      halalLabel: 'MUSLIM-FRIENDLY',
-      restInitial: 'H',
+      halalLabel: 'Muslim-Friendly',
+      coverBg: '#d9e4d5',
+      logoInitial: 'H',
       restName: 'Hikari Matcha Bar',
-      restMeta: 'Cafe · TTDI',
-      offer: 'RM90 tasting set for 2',
-      value: 'VALUE: RM90',
-      offerSub: 'Full tasting flight for two — signature matcha drinks and dessert pairings.',
+      cuisine: 'Cafe',
+      location: '5 Jalan Tun Mohd Fuad 2, Taman Tun Dr Ismail, 60000 Kuala Lumpur',
+      postBefore: 'Sep 25',
+      period: 'Campaign period: Sep 5 to Sep 25',
       tiktok: false,
-      platform: 'Instagram',
-      slots: '3 creators',
-      window: 'Sep 5 to Sep 25',
-      applyBy: 'Sep 2',
       delivLabel: '1× Instagram Reel',
-      delivSub: 'Reel of the full experience — tag the cafe and @shareeat.my in the caption.'
+      highlight: [
+        'Ceremonial-grade matcha flown in from Uji, Kyoto',
+        'Every drink is whisked to order, no pre-mixes',
+        'Soft launch pricing runs until the end of September'
+      ],
+      feature: [
+        'Hojicha Latte',
+        'Matcha Strawberry Cream',
+        'Warabi Mochi Set'
+      ]
     }
   };
 
   function setText(id, text) { document.getElementById(id).textContent = text; }
   function show(id, on) { document.getElementById(id).style.display = on ? '' : 'none'; }
 
+  function renderLines(containerId, lines) {
+    var box = document.getElementById(containerId);
+    box.innerHTML = '';
+    lines.forEach(function (line, i) {
+      if (i > 0) {
+        var rule = document.createElement('div');
+        rule.className = 'rule';
+        box.appendChild(rule);
+      }
+      var row = document.createElement('div');
+      row.className = 'bullet-line';
+      var dot = document.createElement('div');
+      dot.className = 'bullet-dot';
+      var text = document.createElement('div');
+      text.style.cssText = 'flex: 1; min-width: 0; font-size: 14px; line-height: 20px;';
+      text.textContent = line;
+      row.appendChild(dot);
+      row.appendChild(text);
+      box.appendChild(row);
+    });
+  }
+
   function openCampaign(key) {
     var c = CAMPAIGNS[key];
     if (!c) return;
-    document.getElementById('d-hero').style.background = c.heroBg;
-    show('d-hero-icon-c1', key === 'c1');
-    show('d-hero-icon-c2', key === 'c2');
-    setText('d-hero-offer', c.offer);
+    document.getElementById('d-cover').style.background = c.coverBg;
+    show('d-cover-icon-c1', key === 'c1');
+    show('d-cover-icon-c2', key === 'c2');
     setText('d-title', c.title);
+    setText('d-compensation', c.compensation);
     setText('d-goal', c.goal);
-    show('d-hot', c.hot);
     var halal = document.getElementById('d-halal');
     halal.textContent = c.halalLabel;
     halal.style.background = c.halalBg;
-    setText('d-rest-initial', c.restInitial);
-    setText('d-rest-name', c.restName);
-    setText('d-rest-meta', c.restMeta);
-    setText('d-offer', c.offer);
-    setText('d-value', c.value);
-    setText('d-offer-sub', c.offerSub);
-    show('d-icon-tiktok', c.tiktok);
-    show('d-icon-insta', !c.tiktok);
+    setText('d-logo', c.logoInitial);
+    setText('d-listed-by', 'Listed by ' + c.restName);
+    setText('d-cuisine', c.cuisine);
+    setText('d-location', c.location);
+    setText('d-credit', c.compensation);
+    setText('d-post-before', c.postBefore);
+    setText('d-period', c.period);
     show('d-deliv-icon-tiktok', c.tiktok);
     show('d-deliv-icon-insta', !c.tiktok);
-    setText('d-platform', c.platform);
-    setText('d-slots', c.slots);
-    setText('d-window', c.window);
-    setText('d-applyby', c.applyBy);
     setText('d-deliv-label', c.delivLabel);
-    setText('d-deliv-sub', c.delivSub);
-    document.getElementById('detail-scroll').scrollTop = 0;
+    renderLines('d-highlight-lines', c.highlight);
+    renderLines('d-feature-lines', c.feature);
+
+    var scroller = document.getElementById('detail-scroll');
+    scroller.scrollTop = 0;
+    applyHeaderScroll(0);
     document.getElementById('app').classList.add('detail-open');
     document.getElementById('tabbar').style.display = 'none';
   }
@@ -372,10 +489,32 @@
     setTimeout(function () { document.getElementById('tabbar').style.display = ''; }, 260);
   }
 
+  // Header fades and lifts over the first 60px of scroll, as in the app.
+  function applyHeaderScroll(y) {
+    var t = Math.min(Math.max(y / 60, 0), 1);
+    var header = document.getElementById('detail-header');
+    header.style.opacity = String(1 - t);
+    header.style.transform = 'translateY(' + (-8 * t) + 'px)';
+    header.style.pointerEvents = t > 0.9 ? 'none' : '';
+  }
+
   document.querySelectorAll('[data-campaign]').forEach(function (el) {
     el.addEventListener('click', function () { openCampaign(el.getAttribute('data-campaign')); });
   });
   document.getElementById('detail-back').addEventListener('click', closeDetail);
+  document.getElementById('detail-scroll').addEventListener('scroll', function (e) {
+    applyHeaderScroll(e.target.scrollTop);
+  });
+
+  // The brief's content clears the fixed header and footer.
+  function sizeDetailChrome() {
+    var headerH = document.getElementById('detail-header').offsetHeight;
+    var footerH = document.getElementById('detail-footer').offsetHeight;
+    document.getElementById('detail-scroll').style.paddingTop = (headerH + 8) + 'px';
+    document.getElementById('d-footer-spacer').style.height = (footerH + 24) + 'px';
+  }
+  sizeDetailChrome();
+  window.addEventListener('resize', sizeDetailChrome);
 </script>
 <script defer src="/analytics.js"></script>
 </body>
