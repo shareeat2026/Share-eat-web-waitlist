@@ -77,6 +77,30 @@
   .bullet-line { display: flex; align-items: flex-start; gap: 12px; padding: 16px 0; }
   .bullet-dot { margin-top: 6px; width: 6px; height: 6px; flex-shrink: 0; border-radius: 999px; background: #f5c842; }
 
+  /* Hero carousel: cover → featured dishes → the venue */
+  #d-hero { position: relative; width: 100%; aspect-ratio: 1 / 1; background: rgba(245,200,66,0.2); overflow: hidden; }
+  #d-hero-track {
+    display: flex; height: 100%; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  }
+  #d-hero-track::-webkit-scrollbar { display: none; }
+  #d-hero-track { scrollbar-width: none; }
+  .hero-slide { flex: 0 0 100%; height: 100%; scroll-snap-align: start; display: flex; align-items: center; justify-content: center; }
+  #d-hero-overlay { position: absolute; left: 0; right: 0; bottom: 0; }
+  #d-hero-fade { position: absolute; left: 0; right: 0; bottom: 0; height: 64px; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.2)); pointer-events: none; }
+  #d-hero-controls { position: relative; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 12px 10px 12px; }
+  .hero-overlay-text { font-weight: 700; font-size: 12px; color: #ffffff; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+  .hero-dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(255,255,255,0.5); }
+  .hero-dot.is-active { background: #ffffff; }
+
+  /* "Dishes to show" rail — square photo card with a name bar, bleeding right */
+  #d-dish-rail { display: flex; gap: 12px; padding: 4px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #d-dish-rail::-webkit-scrollbar { display: none; }
+  #d-dish-rail { scrollbar-width: none; }
+  .dish-card { flex: 0 0 176px; border-radius: 16px; background: #ffffff; box-shadow: 0 6px 16px rgba(0,0,0,0.10); }
+  .dish-photo { height: 176px; border-radius: 16px 16px 0 0; background: #f6edde; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .dish-name { padding: 8px 12px; font-weight: 700; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
   #detail-footer {
     position: absolute; left: 0; right: 0; bottom: 0;
     border-top: 1px solid #d2cdc7; background: #fff8f1;
@@ -219,14 +243,22 @@
 
         <!-- Header card -->
         <div class="brief-card">
-          <!-- Square cover -->
-          <div id="d-cover" style="position: relative; width: 100%; aspect-ratio: 1 / 1; background: #f6edde;">
-            <span id="d-cover-icon-c1" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.35;">
-              <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#8a6d00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5.5"></circle><path d="M12 9.5a2.5 2.5 0 0 0-2.5 2.5"></path></svg>
-            </span>
-            <span id="d-cover-icon-c2" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.35;">
-              <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#0e8578" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v2a8 8 0 0 1-16 0z"></path><path d="M9 6.5c0-1 .8-1 .8-2M13.5 6.5c0-1 .8-1 .8-2"></path><path d="M18 12h2.5a1.5 1.5 0 0 1 0 3H18"></path></svg>
-            </span>
+          <!-- Square hero: swipe through the cover, the featured dishes, then the venue -->
+          <div id="d-hero">
+            <div id="d-hero-track"></div>
+            <div id="d-hero-overlay">
+              <div id="d-hero-fade"></div>
+              <div id="d-hero-controls">
+                <div style="width: 32px; flex-shrink: 0;"></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; pointer-events: none;">
+                  <div id="d-hero-label" style="margin-bottom: 6px; display: flex; align-items: center; gap: 4px; max-width: 75%;"></div>
+                  <div id="d-hero-dots" style="display: flex; justify-content: center; gap: 6px;"></div>
+                </div>
+                <div id="d-hero-expand" style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5));"><path d="M9 3H3v6"></path><path d="M15 3h6v6"></path><path d="M15 21h6v-6"></path><path d="M9 21H3v-6"></path></svg>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div style="padding: 20px;">
@@ -333,17 +365,13 @@ Format: Vertical</div>
           </div>
         </div>
 
-        <!-- Dishes to show -->
-        <div style="margin-top: 24px; padding-bottom: 24px;">
-          <div class="brief-card">
-            <div style="padding: 20px;">
-              <div class="sec-heading">Dishes to show</div>
-              <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 16px;">
-                <svg style="flex-shrink: 0;" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4e4634" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v8a2.5 2.5 0 0 0 5 0V3"></path><line x1="8.5" y1="11" x2="8.5" y2="21"></line><path d="M17.5 3c-1.4 1.2-2 3-2 5.5 0 1.7.7 2.5 2 2.8V21"></path></svg>
-                <div class="sec-body" style="flex: 1; min-width: 0;">Featured items</div>
-              </div>
-              <div id="d-feature-lines"></div>
-            </div>
+        <!-- Dishes to show: photo rail that bleeds off the right edge -->
+        <div style="margin-top: 24px;">
+          <div style="padding-left: 20px;">
+            <div class="sec-heading">Dishes to show</div>
+          </div>
+          <div style="padding-left: 4px; margin-right: -12px;">
+            <div id="d-dish-rail"></div>
           </div>
         </div>
 
@@ -372,6 +400,17 @@ Format: Vertical</div>
 </div>
 
 <script>
+  // Stand-in "photos": a tinted block with a line-art glyph, one per dish.
+  var GLYPH = {
+    nasiLemak: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#8a6d00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5.5"></circle><path d="M12 9.5a2.5 2.5 0 0 0-2.5 2.5"></path></svg>',
+    chicken: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#8a6d00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 4.5a4.5 4.5 0 0 0-7 5.4l-4.6 4.6a2.4 2.4 0 0 0 3.4 3.4l4.6-4.6a4.5 4.5 0 0 0 5.4-7z"></path><line x1="7.5" y1="16.5" x2="5" y2="19"></line></svg>',
+    drink: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#8a6d00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v2a8 8 0 0 1-16 0z"></path><path d="M9 6.5c0-1 .8-1 .8-2M13.5 6.5c0-1 .8-1 .8-2"></path><path d="M18 12h2.5a1.5 1.5 0 0 1 0 3H18"></path></svg>',
+    matcha: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#0e8578" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v2a8 8 0 0 1-16 0z"></path><path d="M9 6.5c0-1 .8-1 .8-2M13.5 6.5c0-1 .8-1 .8-2"></path><path d="M18 12h2.5a1.5 1.5 0 0 1 0 3H18"></path></svg>',
+    dessert: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#0e8578" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h12l-1.5 8h-9z"></path><path d="M8 11a4 4 0 0 1 8 0"></path><circle cx="12" cy="5.5" r="1.6"></circle></svg>',
+    cake: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#0e8578" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"></rect><path d="M4 15c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5"></path><line x1="12" y1="5" x2="12" y2="9"></line></svg>',
+    venue: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#7f7662" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16v11H4z"></path><path d="M3 9l1.6-4h14.8L21 9"></path><path d="M9 20v-6h6v6"></path></svg>'
+  };
+
   var CAMPAIGNS = {
     c1: {
       title: 'Viral the ultimate Nasi Lemak brunch',
@@ -379,7 +418,6 @@ Format: Vertical</div>
       goal: 'Restaurant Awareness',
       halalBg: '#19a254',
       halalLabel: 'Halal',
-      coverBg: '#e8d9bd',
       logoInitial: 'K',
       restName: 'Kopi & Santan',
       cuisine: 'Malaysian',
@@ -393,11 +431,13 @@ Format: Vertical</div>
         'Ayam goreng berempah is marinated overnight in 12 spices',
         'We open at 7:30am for the breakfast crowd'
       ],
-      feature: [
-        'Nasi Lemak Istimewa',
-        'Ayam Goreng Berempah',
-        'Teh Tarik Kaw'
-      ]
+      dishes: [
+        { name: 'Nasi Lemak Istimewa', bg: '#e8d9bd', glyph: 'nasiLemak' },
+        { name: 'Ayam Goreng Berempah', bg: '#e3cfa8', glyph: 'chicken' },
+        { name: 'Teh Tarik Kaw', bg: '#dfd3bd', glyph: 'drink' }
+      ],
+      cover: { bg: '#e8d9bd', glyph: 'nasiLemak' },
+      venue: { bg: '#ded6c6', glyph: 'venue' }
     },
     c2: {
       title: 'Soft launch: first taste of our matcha bar',
@@ -405,7 +445,6 @@ Format: Vertical</div>
       goal: 'New Opening',
       halalBg: '#0e8578',
       halalLabel: 'Muslim-Friendly',
-      coverBg: '#d9e4d5',
       logoInitial: 'H',
       restName: 'Hikari Matcha Bar',
       cuisine: 'Cafe',
@@ -419,13 +458,18 @@ Format: Vertical</div>
         'Every drink is whisked to order, no pre-mixes',
         'Soft launch pricing runs until the end of September'
       ],
-      feature: [
-        'Hojicha Latte',
-        'Matcha Strawberry Cream',
-        'Warabi Mochi Set'
-      ]
+      dishes: [
+        { name: 'Hojicha Latte', bg: '#ded3c0', glyph: 'matcha' },
+        { name: 'Matcha Strawberry Cream', bg: '#d9e4d5', glyph: 'dessert' },
+        { name: 'Warabi Mochi Set', bg: '#e2e6d8', glyph: 'cake' }
+      ],
+      cover: { bg: '#d9e4d5', glyph: 'matcha' },
+      venue: { bg: '#dde0d6', glyph: 'venue' }
     }
   };
+
+  var heroSlides = [];
+  var heroPage = 0;
 
   function setText(id, text) { document.getElementById(id).textContent = text; }
   function show(id, on) { document.getElementById(id).style.display = on ? '' : 'none'; }
@@ -452,12 +496,81 @@ Format: Vertical</div>
     });
   }
 
+  // Hero: cover first, then each featured dish, then the venue photo last.
+  function buildHero(c) {
+    heroSlides = [{ id: 'cover', name: '', bg: c.cover.bg, glyph: c.cover.glyph }]
+      .concat(c.dishes.map(function (d, i) {
+        return { id: 'dish-' + i, name: d.name, bg: d.bg, glyph: d.glyph };
+      }))
+      .concat([{ id: 'venue', name: 'The venue', bg: c.venue.bg, glyph: c.venue.glyph }]);
+
+    var track = document.getElementById('d-hero-track');
+    track.innerHTML = '';
+    heroSlides.forEach(function (s) {
+      var slide = document.createElement('div');
+      slide.className = 'hero-slide';
+      slide.style.background = s.bg;
+      slide.innerHTML = '<span style="opacity: 0.35; display: flex;">' + GLYPH[s.glyph] + '</span>';
+      track.appendChild(slide);
+    });
+
+    var dots = document.getElementById('d-hero-dots');
+    dots.innerHTML = '';
+    heroSlides.forEach(function () {
+      var dot = document.createElement('div');
+      dot.className = 'hero-dot';
+      dots.appendChild(dot);
+    });
+
+    track.scrollLeft = 0;
+    heroPage = 0;
+    renderHeroOverlay();
+  }
+
+  function renderHeroOverlay() {
+    var slide = heroSlides[heroPage];
+    var label = document.getElementById('d-hero-label');
+    if (!slide) { label.innerHTML = ''; return; }
+    if (slide.id === 'cover') {
+      label.innerHTML = '<span class="hero-overlay-text" style="line-height: 14px;">Scroll for more</span>' +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5));"><path d="m9 6 6 6-6 6"></path></svg>';
+    } else if (slide.name) {
+      label.innerHTML = '<span class="hero-overlay-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>';
+      label.firstChild.textContent = slide.name;
+    } else {
+      label.innerHTML = '';
+    }
+    var dots = document.getElementById('d-hero-dots').children;
+    for (var i = 0; i < dots.length; i += 1) {
+      dots[i].className = 'hero-dot' + (i === heroPage ? ' is-active' : '');
+    }
+  }
+
+  function buildDishRail(c) {
+    var rail = document.getElementById('d-dish-rail');
+    rail.innerHTML = '';
+    c.dishes.forEach(function (d) {
+      var card = document.createElement('div');
+      card.className = 'dish-card';
+      var photo = document.createElement('div');
+      photo.className = 'dish-photo';
+      photo.style.background = d.bg;
+      photo.innerHTML = '<span style="opacity: 0.35; display: flex; transform: scale(0.75);">' + GLYPH[d.glyph] + '</span>';
+      var name = document.createElement('div');
+      name.className = 'dish-name';
+      name.textContent = d.name;
+      card.appendChild(photo);
+      card.appendChild(name);
+      rail.appendChild(card);
+    });
+    rail.scrollLeft = 0;
+  }
+
   function openCampaign(key) {
     var c = CAMPAIGNS[key];
     if (!c) return;
-    document.getElementById('d-cover').style.background = c.coverBg;
-    show('d-cover-icon-c1', key === 'c1');
-    show('d-cover-icon-c2', key === 'c2');
+    buildHero(c);
+    buildDishRail(c);
     setText('d-title', c.title);
     setText('d-compensation', c.compensation);
     setText('d-goal', c.goal);
@@ -475,7 +588,6 @@ Format: Vertical</div>
     show('d-deliv-icon-insta', !c.tiktok);
     setText('d-deliv-label', c.delivLabel);
     renderLines('d-highlight-lines', c.highlight);
-    renderLines('d-feature-lines', c.feature);
 
     var scroller = document.getElementById('detail-scroll');
     scroller.scrollTop = 0;
@@ -504,6 +616,17 @@ Format: Vertical</div>
   document.getElementById('detail-back').addEventListener('click', closeDetail);
   document.getElementById('detail-scroll').addEventListener('scroll', function (e) {
     applyHeaderScroll(e.target.scrollTop);
+  });
+
+  // Page dots + caption follow the hero carousel.
+  document.getElementById('d-hero-track').addEventListener('scroll', function (e) {
+    var width = e.target.clientWidth;
+    if (!width) return;
+    var page = Math.round(e.target.scrollLeft / width);
+    if (page !== heroPage && page >= 0 && page < heroSlides.length) {
+      heroPage = page;
+      renderHeroOverlay();
+    }
   });
 
   // The brief's content clears the fixed header and footer.
