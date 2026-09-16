@@ -70,6 +70,9 @@
     .tile { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 16px; box-shadow: var(--shadow-sm); }
     .tile .n { font-family: var(--font-display); font-size: 1.9rem; font-weight: 900; color: var(--primary-deep); line-height: 1; }
     .tile .l { color: var(--ink-soft); font-size: 0.82rem; margin-top: 6px; }
+    .tile.click { cursor: pointer; text-align: left; font-family: var(--font-body); transition: border-color .18s ease, transform .18s ease; }
+    .tile.click:hover { border-color: rgba(224,169,10,0.5); transform: translateY(-1px); }
+    .tile.click .l::after { content: ' →'; opacity: .55; }
 
     /* ── Free-tier usage ──────────────────────────────────────────────── */
     .usage { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow-sm); margin-bottom: 34px; }
@@ -122,6 +125,10 @@
     .chip-status-draft { background: rgba(26,23,20,0.06); color: var(--ink-soft); }
     .chip-status-completed { background: rgba(26,23,20,0.10); color: var(--ink); }
     .chip-status-cancelled { background: rgba(232,84,59,0.11); color: var(--tomato); }
+    /* Restaurant lifecycle (All restaurants tab) */
+    .chip-rest-active { background: rgba(47,143,91,0.12); color: var(--green); }
+    .chip-rest-onboarding { background: rgba(224,169,10,0.16); color: var(--primary-ink); }
+    .chip-rest-inactive { background: rgba(26,23,20,0.06); color: var(--ink-soft); }
     .chip-app-pending { background: rgba(224,169,10,0.16); color: var(--primary-ink); }
     .chip-app-approved { background: rgba(47,143,91,0.12); color: var(--green); }
     .chip-app-rejected { background: rgba(232,84,59,0.11); color: var(--tomato); }
@@ -296,6 +303,11 @@
       note: 'Restaurants with a published campaign that have never approved a creator. If applicants are waiting, they are the warmest possible nudge.'
     },
     {
+      key: 'restaurants_all',
+      label: 'All restaurants',
+      note: 'Every restaurant account. Active = has a live campaign right now. Onboarding = signed up but never finished the restaurant profile. Inactive = onboarded, nothing live (never published, or every campaign has ended).'
+    },
+    {
       key: 'creators_no_applications',
       label: 'Creators idle',
       note: 'Creators that have never applied to a campaign, in any state.'
@@ -369,12 +381,99 @@
 
   function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
 
+  /* ── all restaurants ──────────────────────────────────────────────── */
+  //
+  // admin_dashboard_data() has no "every restaurant" list, but the three places
+  // a real restaurant can appear partition the set exactly:
+  //   restaurants_no_campaign   never published
+  //   restaurants_no_approvals  published, never approved a creator
+  //   campaigns (owner fields)  published AND approved — appears nowhere else
+  // so their union is the full roster and matches overview.restaurants. If the
+  // payload ever ships restaurants_all directly, that wins.
+  function buildAllRestaurants(d) {
+    if (Array.isArray(d.restaurants_all)) return d.restaurants_all;
+
+    var byId = {};
+    var out = [];
+    function add(r) {
+      if (!r.profile_id || byId[r.profile_id]) return;
+      // Copy: the tallies below must not leak onto the follow-up tabs' rows.
+      var row = Object.assign({}, r);
+      byId[r.profile_id] = row;
+      out.push(row);
+    }
+    (d.restaurants_no_campaign || []).forEach(add);
+    (d.restaurants_no_approvals || []).forEach(add);
+    (d.campaigns || []).forEach(function (c) {
+      if (!c.restaurant_profile_id || byId[c.restaurant_profile_id]) return;
+      // Owner-only rows: the campaign payload carries no phone, location or
+      // join date, so those cells stay blank until the SQL exports them.
+      add({
+        profile_id: c.restaurant_profile_id,
+        display_name: c.restaurant_display_name,
+        business_name: c.business_name,
+        email: c.restaurant_email,
+        is_pro: c.restaurant_is_pro,
+        created_at: null
+      });
+    });
+
+    // Campaign tallies from one source so a restaurant shows the same numbers
+    // whichever bucket it came from.
+    var tally = {};
+    (d.campaigns || []).forEach(function (c) {
+      var t = tally[c.restaurant_profile_id] ||
+              (tally[c.restaurant_profile_id] = { drafts: 0, published: 0, active: 0 });
+      if (c.status === 'draft') t.drafts++; else t.published++;
+      if (c.status === 'active') t.active++;
+    });
+    out.forEach(function (r) {
+      var t = tally[r.profile_id] || { drafts: 0, published: 0, active: 0 };
+      if (r.draft_count === undefined) r.draft_count = t.drafts;
+      if (r.campaign_count === undefined) r.campaign_count = t.published;
+      if (r.active_count === undefined) r.active_count = t.active;
+    });
+
+    // Newest first like the other lists; rows without a join date go last, A–Z.
+    out.sort(function (a, b) {
+      if (!a.created_at !== !b.created_at) return a.created_at ? -1 : 1;
+      if (a.created_at && b.created_at) {
+        var diff = new Date(b.created_at) - new Date(a.created_at);
+        if (diff) return diff;
+      }
+      return String(a.business_name || a.display_name || '')
+        .localeCompare(String(b.business_name || b.display_name || ''));
+    });
+    return out;
+  }
+
+  // onboarding: signed up, never finished the restaurant profile
+  // active:     has a campaign live right now
+  // inactive:   onboarded, nothing live (never published, or all ended)
+  function restaurantStatus(r) {
+    if (r.has_role_profile === false) return 'onboarding';
+    return r.active_count > 0 ? 'active' : 'inactive';
+  }
+
+  function goToTab(key, focusSearch) {
+    activeTab = key;
+    campFilter = null;
+    $('search').value = '';
+    renderTabs();
+    renderList();
+    if (focusSearch) {
+      $('search').scrollIntoView({ block: 'center', behavior: 'smooth' });
+      $('search').focus({ preventScroll: true });
+    }
+  }
+
   /* ── rendering ────────────────────────────────────────────────────── */
 
   function renderTiles() {
     var o = data.overview || {};
+    // Optional third item: the tab a tile jumps to when pressed.
     var tiles = [
-      [o.restaurants, 'Restaurants'],
+      [o.restaurants, 'Restaurants', 'restaurants_all'],
       [o.creators, 'Creators'],
       [o.restaurants_pro, 'Pro restaurants'],
       [o.creators_pro, 'Pro creators'],
@@ -384,9 +483,19 @@
       [o.applications_approved, 'Applications approved']
     ];
     $('tiles').innerHTML = tiles.map(function (t) {
-      return '<div class="tile"><div class="n">' + esc(t[0] || 0) + '</div>' +
-             '<div class="l">' + esc(t[1]) + '</div></div>';
+      var inner = '<div class="n">' + esc(t[0] || 0) + '</div>' +
+                  '<div class="l">' + esc(t[1]) + '</div>';
+      if (t[2]) {
+        return '<button class="tile click" type="button" data-tab="' + esc(t[2]) +
+               '" title="See every ' + esc(t[1]).toLowerCase() + '">' + inner + '</button>';
+      }
+      return '<div class="tile">' + inner + '</div>';
     }).join('');
+    Array.prototype.forEach.call($('tiles').querySelectorAll('[data-tab]'), function (btn) {
+      btn.addEventListener('click', function () {
+        goToTab(btn.getAttribute('data-tab'), true);
+      });
+    });
   }
 
   // ── Free-tier usage ───────────────────────────────────────────────
@@ -481,11 +590,7 @@
     }).join('');
     Array.prototype.forEach.call($('tabs').querySelectorAll('.tab'), function (btn) {
       btn.addEventListener('click', function () {
-        activeTab = btn.getAttribute('data-key');
-        $('search').value = '';
-        campFilter = null;
-        renderTabs();
-        renderList();
+        goToTab(btn.getAttribute('data-key'), false);
       });
     });
   }
@@ -521,13 +626,19 @@
 
   function rowHtml(r) {
     var isCreator = activeTab === 'creators_no_applications';
+    var isAll = activeTab === 'restaurants_all';
     var name = (!isCreator && r.business_name) || r.display_name || 'Unnamed';
 
     var chips = '';
+    if (isAll) {
+      var st = restaurantStatus(r);
+      chips += '<span class="chip chip-rest-' + st + '">' + st + '</span>';
+    }
     if (r.is_pro) {
       chips += '<span class="chip chip-pro">Pro</span>';
     }
-    if (r.has_role_profile === false) {
+    // The status chip already says "onboarding" on the roster tab.
+    if (r.has_role_profile === false && !isAll) {
       chips += '<span class="chip chip-grey">Onboarding incomplete</span>';
     }
     if (r.draft_count > 0) {
@@ -544,7 +655,8 @@
     }
 
     var bits = [];
-    bits.push('Joined ' + esc(fmtDate(r.created_at)) + ' · ' + esc(ago(r.created_at)));
+    // Owner-only rows on the roster tab have no join date (see buildAllRestaurants).
+    if (r.created_at) bits.push('Joined ' + esc(fmtDate(r.created_at)) + ' · ' + esc(ago(r.created_at)));
     if (r.campaign_count) {
       bits.push(esc(plural(r.campaign_count, 'campaign', 'campaigns')) +
                 (r.active_count ? ' (' + esc(r.active_count) + ' active)' : ''));
@@ -690,7 +802,13 @@
 
   function renderList() {
     var tab = TABS.filter(function (t) { return t.key === activeTab; })[0];
-    $('list-note').textContent = tab.note;
+    var note = tab.note;
+    if (activeTab === 'restaurants_all') {
+      var n = { active: 0, onboarding: 0, inactive: 0 };
+      (data.restaurants_all || []).forEach(function (r) { n[restaurantStatus(r)]++; });
+      note = n.active + ' active · ' + n.onboarding + ' onboarding · ' + n.inactive + ' inactive. ' + note;
+    }
+    $('list-note').textContent = note;
 
     var isCampaigns = activeTab === 'campaigns';
     var pill = '';
@@ -802,6 +920,7 @@
       })
       .then(function (json) {
         data = json;
+        data.restaurants_all = buildAllRestaurants(json);
         render();
       })
       .catch(function (err) {
