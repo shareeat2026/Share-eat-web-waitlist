@@ -174,6 +174,10 @@
       .search { width: 100%; }
     }
 
+    /* ── Analytics tab ────────────────────────────────────────────────── */
+    .embed-link { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+    .embed-frame { display: block; width: 100%; height: 900px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+
     .toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(12px); background: var(--ink); color: #fff; font-size: 13.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; z-index: 90; }
     .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
   </style>
@@ -316,8 +320,24 @@
       key: 'campaigns',
       label: 'Campaigns',
       note: 'Every campaign from real accounts, newest first — drafts and cancelled included. Click a campaign to see its applicants and submitted content. Clicking a user row in the other tabs jumps here filtered to them.'
+    },
+    {
+      key: 'kol_posts',
+      label: 'KOL posts',
+      note: 'Every post KOLs submitted from real accounts, newest first. Views, likes and comments are what the KOL reported, and links are not checked to confirm a post is still live.'
+    },
+    {
+      key: 'analytics',
+      label: 'Analytics',
+      noCount: true,
+      note: 'Live charts from PostHog. Only users who gave analytics consent are counted, so use the tiles above for exact signup and campaign numbers.'
     }
   ];
+
+  // The dashboard link opens without a login, so it is never written into this
+  // public file: admin-dashboard sends it only after the allow-list check.
+  var POSTHOG_ORIGIN = 'https://us.posthog.com';
+  var POSTHOG_FRAME = 'share-eat-posthog';
 
   /* ── helpers ──────────────────────────────────────────────────────── */
 
@@ -380,6 +400,134 @@
   }
 
   function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
+
+  // KOLs type these links, so only web links may become clickable: a
+  // javascript: link here would run with a team member's session.
+  function webUrl(raw) {
+    try {
+      var u = new URL(String(raw));
+      return u.protocol === 'https:' || u.protocol === 'http:' ? u.href : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /* ── kol posts ────────────────────────────────────────────────────── */
+
+  // Flattens the submissions nested inside each campaign. Contact details come
+  // from that campaign's applicants, since submissions don't carry them.
+  function buildKolPosts(d) {
+    var out = [];
+    (d.campaigns || []).forEach(function (c) {
+      var byCreator = {};
+      (c.applicants || []).forEach(function (a) { byCreator[a.creator_profile_id] = a; });
+      (c.submissions || []).forEach(function (s) {
+        var a = byCreator[s.creator_profile_id] || {};
+        out.push(Object.assign({}, s, {
+          campaign_id: c.campaign_id,
+          campaign_title: c.title,
+          restaurant: c.business_name || c.restaurant_display_name,
+          email: a.email,
+          phone_number: a.phone_number,
+          instagram_handle: a.instagram_handle,
+          tiktok_handle: a.tiktok_handle,
+          rednote_handle: a.rednote_handle,
+          threads_handle: a.threads_handle,
+          facebook_handle: a.facebook_handle
+        }));
+      });
+    });
+    out.sort(function (a, b) { return new Date(b.submitted_at) - new Date(a.submitted_at); });
+    return out;
+  }
+
+  function postPlatform(url) {
+    var u = webUrl(url);
+    if (!u) return null;
+    var host = new URL(u).hostname;
+    var known = [
+      ['instagram.com', 'Instagram'], ['tiktok.com', 'TikTok'], ['threads.net', 'Threads'],
+      ['threads.com', 'Threads'], ['facebook.com', 'Facebook'], ['fb.watch', 'Facebook'],
+      ['xiaohongshu.com', 'RedNote'], ['xhslink.com', 'RedNote']
+    ];
+    for (var i = 0; i < known.length; i++) {
+      var d = known[i][0];
+      if (host === d || host.slice(-(d.length + 1)) === '.' + d) return known[i][1];
+    }
+    return null;
+  }
+
+  function postHtml(p) {
+    var url = webUrl(p.content_url);
+    var platform = postPlatform(p.content_url);
+    var chips = platform ? '<span class="chip chip-grey">' + esc(platform) + '</span>' : '';
+    if (p.is_pro) chips += '<span class="chip chip-pro">Pro</span>';
+
+    var bits = [];
+    bits.push(esc(p.campaign_title || 'Untitled campaign') + ' — ' + esc(p.restaurant || 'Unknown restaurant'));
+    bits.push('Submitted ' + esc(fmtDate(p.submitted_at)) + ' · ' + esc(ago(p.submitted_at)));
+    var stats = [];
+    if (p.views !== null && p.views !== undefined) stats.push(esc(p.views) + ' views');
+    if (p.likes !== null && p.likes !== undefined) stats.push(esc(p.likes) + ' likes');
+    if (p.comments !== null && p.comments !== undefined) stats.push(esc(p.comments) + ' comments');
+    bits.push(stats.length ? stats.join(' · ') : 'No analytics reported yet');
+
+    var actions = url
+      ? '<a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="' + esc(url) + '">Open post ↗</a>'
+      : '<span class="nophone">Link can’t be opened</span>';
+    var digits = waDigits(p.phone_number);
+    if (digits) {
+      var greet = 'Hi ' + String(p.display_name || '').split(' ')[0] + ', this is Share Eat 👋';
+      actions += '<a class="btn btn-sm wa" target="_blank" rel="noopener" href="https://wa.me/' +
+                 esc(digits) + '?text=' + encodeURIComponent(greet) + '">WhatsApp</a>';
+    }
+
+    return '<div class="row">' +
+             '<div class="row-main">' +
+               '<div class="row-name">' + esc(p.display_name || 'Unnamed') + chips + '</div>' +
+               '<div class="row-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
+             '</div>' +
+             '<div class="row-actions">' + actions + '</div>' +
+           '</div>';
+  }
+
+  /* ── analytics ────────────────────────────────────────────────────── */
+
+  // Accepts the link as PostHog gives it, either /shared/ or /embedded/, and
+  // refuses anything else so only PostHog can ever load in this frame.
+  function posthogToken(raw) {
+    try {
+      var u = new URL(String(raw));
+      var m = u.pathname.match(/^\/(?:embedded|shared)\/([\w-]+)\/?$/);
+      return u.origin === POSTHOG_ORIGIN && m ? m[1] : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function analyticsHtml() {
+    var token = posthogToken(data.posthog_embed_url);
+    if (!token) {
+      return '<div class="empty"><span class="e">📊</span>Analytics isn’t connected yet.</div>';
+    }
+    return '<div class="embed-link">' +
+             '<a class="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer" href="' +
+               POSTHOG_ORIGIN + '/shared/' + esc(token) + '">Open full page ↗</a>' +
+           '</div>' +
+           '<iframe class="embed-frame" id="' + POSTHOG_FRAME + '" name="' + POSTHOG_FRAME + '"' +
+             ' title="Share Eat analytics" referrerpolicy="no-referrer" allowfullscreen' +
+             ' src="' + POSTHOG_ORIGIN + '/embedded/' + esc(token) + '"></iframe>';
+  }
+
+  // PostHog reports the dashboard's height once loaded, so the page scrolls as
+  // one instead of a scrollbar inside a scrollbar.
+  window.addEventListener('message', function (e) {
+    if (e.origin !== POSTHOG_ORIGIN || !e.data) return;
+    if (e.data.event !== 'posthog:dimensions' || e.data.name !== POSTHOG_FRAME) return;
+    var frame = $(POSTHOG_FRAME);
+    var height = Number(e.data.height);
+    if (frame && height > 0) frame.style.height = Math.min(height, 8000) + 'px';
+  });
 
   /* ── all restaurants ──────────────────────────────────────────────── */
   //
@@ -586,7 +734,7 @@
     $('tabs').innerHTML = TABS.map(function (t) {
       var n = (data[t.key] || []).length;
       return '<button class="tab' + (t.key === activeTab ? ' on' : '') + '" data-key="' + t.key + '">' +
-             esc(t.label) + '<span class="c">' + n + '</span></button>';
+             esc(t.label) + (t.noCount ? '' : '<span class="c">' + n + '</span>') + '</button>';
     }).join('');
     Array.prototype.forEach.call($('tabs').querySelectorAll('.tab'), function (btn) {
       btn.addEventListener('click', function () {
@@ -617,6 +765,13 @@
     }
 
     if (!q) return rows;
+    if (activeTab === 'kol_posts') {
+      return rows.filter(function (p) {
+        return [p.display_name, p.email, p.campaign_title, p.restaurant, p.content_url,
+                p.instagram_handle, p.tiktok_handle, p.rednote_handle, p.threads_handle, p.facebook_handle]
+          .filter(Boolean).join(' ').toLowerCase().indexOf(q) > -1;
+      });
+    }
     return rows.filter(function (r) {
       return [r.business_name, r.display_name, r.email, r.phone_number,
               r.location_label, r.instagram_handle, r.tiktok_handle]
@@ -747,8 +902,9 @@
     if (s.comments !== null && s.comments !== undefined) stats.push(esc(s.comments) + ' comments');
     bits.push(stats.length ? stats.join(' · ') : 'No analytics reported yet');
 
-    var actions = s.content_url
-      ? '<a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="' + esc(s.content_url) + '">Open content ↗</a>'
+    var contentUrl = webUrl(s.content_url);
+    var actions = contentUrl
+      ? '<a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="' + esc(contentUrl) + '">Open content ↗</a>'
       : '';
 
     return '<div class="mini">' +
@@ -808,8 +964,23 @@
       (data.restaurants_all || []).forEach(function (r) { n[restaurantStatus(r)]++; });
       note = n.active + ' active · ' + n.onboarding + ' onboarding · ' + n.inactive + ' inactive. ' + note;
     }
+    if (activeTab === 'kol_posts') {
+      var withStats = (data.kol_posts || []).filter(function (p) {
+        return p.views !== null && p.views !== undefined;
+      }).length;
+      note = withStats + ' of ' + (data.kol_posts || []).length + ' have analytics reported. ' + note;
+    }
     $('list-note').textContent = note;
 
+    var isAnalytics = activeTab === 'analytics';
+    $('search').style.display = isAnalytics ? 'none' : '';
+    $('copy-emails').style.display = isAnalytics ? 'none' : '';
+    if (isAnalytics) {
+      $('rows').innerHTML = analyticsHtml();
+      return;
+    }
+
+    var isPosts = activeTab === 'kol_posts';
     var isCampaigns = activeTab === 'campaigns';
     var pill = '';
     if (isCampaigns && campFilter) {
@@ -825,14 +996,15 @@
       var msg;
       if (isCampaigns && campFilter) msg = 'No campaigns for ' + esc(campFilter.name) + '.';
       else if (all) msg = 'No matches for that search.';
+      else if (isPosts) msg = 'No posts submitted yet.';
       else msg = isCampaigns ? 'No campaigns yet.' : 'Nobody in this list right now.';
       $('rows').innerHTML = pill + '<div class="empty"><span class="e">' +
-        (all || (isCampaigns && campFilter) ? '🔍' : '🎉') + '</span>' + msg + '</div>';
+        (all || (isCampaigns && campFilter) ? '🔍' : (isPosts ? '📭' : '🎉')) + '</span>' + msg + '</div>';
       bindClearFilter();
       return;
     }
 
-    $('rows').innerHTML = pill + rows.map(isCampaigns ? campaignHtml : rowHtml).join('');
+    $('rows').innerHTML = pill + rows.map(isCampaigns ? campaignHtml : (isPosts ? postHtml : rowHtml)).join('');
     bindClearFilter();
 
     Array.prototype.forEach.call($('rows').querySelectorAll('[data-copy]'), function (btn) {
@@ -921,6 +1093,7 @@
       .then(function (json) {
         data = json;
         data.restaurants_all = buildAllRestaurants(json);
+        data.kol_posts = buildKolPosts(json);
         render();
       })
       .catch(function (err) {
