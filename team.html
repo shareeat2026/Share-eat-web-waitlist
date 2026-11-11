@@ -350,6 +350,16 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
+  // Creators who skipped onboarding carry the app's 'New Creator' placeholder
+  // name. If they have entered a social handle, show that instead.
+  function creatorName(p) {
+    var n = String((p && p.display_name) || '').trim();
+    if (n && n.toLowerCase() !== 'new creator') return n;
+    var h = p && (p.instagram_handle || p.tiktok_handle || p.rednote_handle ||
+                  p.threads_handle || p.facebook_handle);
+    return h ? '@' + String(h).replace(/^@/, '') : n;
+  }
+
   function show(which) {
     ['gate', 'loading', 'dash'].forEach(function (id) {
       $(id).style.display = id === which ? (id === 'dash' ? 'block' : 'flex') : 'none';
@@ -477,14 +487,14 @@
       : '<span class="nophone">Link can’t be opened</span>';
     var digits = waDigits(p.phone_number);
     if (digits) {
-      var greet = 'Hi ' + String(p.display_name || '').split(' ')[0] + ', this is Share Eat 👋';
+      var greet = 'Hi ' + String(creatorName(p)).split(' ')[0] + ', this is Share Eat 👋';
       actions += '<a class="btn btn-sm wa" target="_blank" rel="noopener" href="https://wa.me/' +
                  esc(digits) + '?text=' + encodeURIComponent(greet) + '">WhatsApp</a>';
     }
 
     return '<div class="row">' +
              '<div class="row-main">' +
-               '<div class="row-name">' + esc(p.display_name || 'Unnamed') + chips + '</div>' +
+               '<div class="row-name">' + esc(creatorName(p) || 'Unnamed') + chips + '</div>' +
                '<div class="row-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
              '</div>' +
              '<div class="row-actions">' + actions + '</div>' +
@@ -782,7 +792,7 @@
   function rowHtml(r) {
     var isCreator = activeTab === 'creators_no_applications';
     var isAll = activeTab === 'restaurants_all';
-    var name = (!isCreator && r.business_name) || r.display_name || 'Unnamed';
+    var name = (!isCreator && r.business_name) || (isCreator ? creatorName(r) : r.display_name) || 'Unnamed';
 
     var chips = '';
     if (isAll) {
@@ -875,7 +885,7 @@
     var digits = waDigits(a.phone_number);
     var actions = '';
     if (digits) {
-      var greet = 'Hi ' + String(a.display_name || '').split(' ')[0] + ', this is Share Eat 👋';
+      var greet = 'Hi ' + String(creatorName(a)).split(' ')[0] + ', this is Share Eat 👋';
       actions += '<a class="btn btn-sm wa" target="_blank" rel="noopener" href="https://wa.me/' +
                  esc(digits) + '?text=' + encodeURIComponent(greet) + '">WhatsApp</a>';
     }
@@ -885,7 +895,7 @@
 
     return '<div class="mini">' +
              '<div class="mini-main">' +
-               '<div class="mini-name">' + esc(a.display_name || 'Unnamed') + chips + '</div>' +
+               '<div class="mini-name">' + esc(creatorName(a) || 'Unnamed') + chips + '</div>' +
                '<div class="mini-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
              '</div>' +
              '<div class="mini-actions">' + actions + '</div>' +
@@ -909,7 +919,7 @@
 
     return '<div class="mini">' +
              '<div class="mini-main">' +
-               '<div class="mini-name">' + esc(s.display_name || 'Unnamed') + chips + '</div>' +
+               '<div class="mini-name">' + esc(creatorName(s) || 'Unnamed') + chips + '</div>' +
                '<div class="mini-meta">' + bits.join('<span class="sep">·</span>') + '</div>' +
              '</div>' +
              '<div class="mini-actions">' + actions + '</div>' +
@@ -941,7 +951,10 @@
       '</div>' +
       '<div class="sect">' +
         '<h3>Submitted content (' + subs.length + ')</h3>' +
-        (subs.length ? subs.map(submissionHtml).join('') : '<div class="none">Nothing submitted yet.</div>') +
+        (subs.length ? subs.map(function (s) {
+          var a = apps.filter(function (x) { return x.creator_profile_id === s.creator_profile_id; })[0];
+          return submissionHtml(a ? Object.assign({}, a, s) : s);
+        }).join('') : '<div class="none">Nothing submitted yet.</div>') +
       '</div>';
 
     return '<div class="camp' + (expanded[c.campaign_id] ? ' open' : '') + '" data-campaign-id="' + esc(c.campaign_id) + '">' +
